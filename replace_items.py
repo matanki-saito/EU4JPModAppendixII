@@ -4,7 +4,7 @@ import pathlib
 import re
 from os.path import join as _
 
-from special_escape import generate_encoder, generate_printer
+from special_escape import generate_printer
 
 encoder = generate_encoder("eu4", "txt")
 printer = generate_printer("eu4", "txt")
@@ -85,8 +85,9 @@ def replace_text(src_text,
         text = x.group(2)
         if text in translation_map:
             lis = translation_map.get(text)
-            if len(lis) > 1:
-                print("複数候補あり、[0]で代用します {}".format(lis))
+            # if len(lis) > 1:
+            #    print("multiple suggestion {}".format(lis))
+            # 通知する。Azure devopsでUnicodeEncodeErrorが出るので一旦コメントアウト
             text = lis[0]
 
         return x.group(1) + text + x.group(3)
