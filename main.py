@@ -12,6 +12,8 @@ from os.path import join
 
 from boto3.session import Session
 
+from replace_items import replace_items
+
 _ = join
 
 
@@ -40,44 +42,59 @@ def download_trans_zip_from_paratranz(project_id,
 
 def assembly_app_mod_zip_file(resource_image_file_path,
                               resource_paratranz_trans_zip_file_path,
+                              resource_game_dir_path,
                               out_file_path):
     """
     Appモッドを作成
     :param resource_paratranz_trans_zip_file_path: Paratranzからダウンロードできるzipファイルのパス
     :param resource_image_file_path: 画像ファイルパス
+    :param resource_game_dir_path:
     :param out_file_path: 出力ファイルパス
     :return:
     """
-
     with tempfile.TemporaryDirectory() as temp_dir_path:
-        # 画像ファイル
+        # tmp
+        tmp_dir_path = _(temp_dir_path, "tmp")
+        os.makedirs(tmp_dir_path, exist_ok=True)
+
+        # output（最終的にzipにするもの）
+        output_dir_path = _(temp_dir_path, "out")
+        os.makedirs(output_dir_path, exist_ok=True)
+
+        # 画像ファイルを入れる
         shutil.copy(resource_image_file_path, temp_dir_path)
 
-        # common
-        salvage_files_from_paratranz_trans_zip(out_dir_path=_(temp_dir_path, "history"),
-                                               folder_list=["history"],
-                                               paratranz_zip_path=resource_paratranz_trans_zip_file_path)
+        # zipを展開
+        with zipfile.ZipFile(resource_paratranz_trans_zip_file_path) as existing_zip:
+            existing_zip.extractall(tmp_dir_path)
 
-        # history
-        salvage_files_from_paratranz_trans_zip(out_dir_path=_(temp_dir_path, "common"),
-                                               folder_list=["common"],
-                                               paratranz_zip_path=resource_paratranz_trans_zip_file_path)
+        # commonを移動。どうしてもフォルダでマージできないので先に移動させる必要あり
+        shutil.move(_(tmp_dir_path, "special", "common"), output_dir_path)
+
+        # historyを移動。
+        shutil.move(_(tmp_dir_path, "special", "history"), output_dir_path)
+
+        # 処理する
+        replace_items(paratranz_unziped_folder_path=tmp_dir_path,
+                      output_folder_path=output_dir_path,
+                      resource_dir_path=resource_game_dir_path)
 
         # zip化する
-        return shutil.make_archive(out_file_path, 'zip', root_dir=temp_dir_path)
+        return shutil.make_archive(out_file_path, 'zip', root_dir=output_dir_path)
 
 
-def salvage_files_from_paratranz_trans_zip(out_dir_path,
+def salvage_files_from_paratranz_trans_zip(root_dir_name,
+                                           out_dir_path,
                                            paratranz_zip_path,
-                                           folder_list=[]):
+                                           folder_list):
     with zipfile.ZipFile(paratranz_zip_path) as paratranz_zip:
-        special_files = filter(lambda name: name.startswith("special/"), paratranz_zip.namelist())
+        special_files = filter(lambda name: name.startswith(root_dir_name + "/"), paratranz_zip.namelist())
 
         with tempfile.TemporaryDirectory() as temp_dir_path:
             paratranz_zip.extractall(path=temp_dir_path, members=special_files)
 
             for folder in folder_list:
-                shutil.copytree(_(temp_dir_path, "special", folder), out_dir_path)
+                shutil.copytree(_(temp_dir_path, root_dir_name, folder), out_dir_path)
 
 
 def generate_dot_mod_file(mod_title_name,
@@ -193,17 +210,20 @@ def main():
 
     # 翻訳の最新版をダウンロードする
     p_file_path = download_trans_zip_from_paratranz(
-        project_id=91,
+        project_id=76,
         secret=os.environ.get("PARATRANZ_SECRET"),
         out_file_path=_(".", "tmp", "paratranz.zip"))
 
     print("p_file_path:{}".format(p_file_path))
 
+    p_file_path = _(".", "tmp", "paratranz.zip")
+
     # AppModを構築する
     app_mod_zip_file_path = assembly_app_mod_zip_file(
         resource_paratranz_trans_zip_file_path=p_file_path,
-        resource_image_file_path=_(".", "resource", "title.jpg"),
-        out_file_path=_(".", "tmp", "mod"))
+        resource_image_file_path=_("resource", "title.jpg"),
+        resource_game_dir_path=_("resource", "gamedir"),
+        out_file_path=_("tmp", "mod"))
 
     print("app_mod_zip_file_path:{}".format(app_mod_zip_file_path))
 
