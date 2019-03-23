@@ -4,7 +4,7 @@ import pathlib
 import re
 from os.path import join as _
 
-from special_escape import generate_printer
+from special_escape import generate_printer, generate_encoder
 
 encoder = generate_encoder("eu4", "txt")
 printer = generate_printer("eu4", "txt")
