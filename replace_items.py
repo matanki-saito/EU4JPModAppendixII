@@ -9,6 +9,11 @@ from special_escape import generate_printer, generate_encoder
 encoder = generate_encoder("eu4", "txt")
 printer = generate_printer("eu4", "txt")
 
+# 万能ではないが、とりあえずこれで
+force_mapping = {
+    "Ibrahim": "イブラーヒーム"
+}
+
 
 def load_map_from_file(file_path,
                        mapping_db,
@@ -83,7 +88,10 @@ def replace_text(src_text,
         :return: 置き換え後の文字列
         """
         text = x.group(2)
-        if text in translation_map:
+
+        if text in force_mapping:
+            text = force_mapping[text]
+        elif text in translation_map:
             lis = translation_map.get(text)
             # if len(lis) > 1:
             #    print("multiple suggestion {}".format(lis))
