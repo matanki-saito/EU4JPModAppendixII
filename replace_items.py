@@ -40,9 +40,8 @@ def load_map_from_file(file_path,
                 continue
 
             # キーのパターンチェック
-            if match_key_compiled_pattern is not None:
-                if match_key_compiled_pattern.search(key) is None:
-                    continue
+            if match_key_compiled_pattern is not None and match_key_compiled_pattern.search(key) is None:
+                continue
 
             # すでに訳が登録されており、それがさらに別の訳である場合、問題となる
             if original in mapping_db:
@@ -87,7 +86,15 @@ def replace_text(src_text,
         :param x: グルーピングされたマッチオブジェクト
         :return: 置き換え後の文字列
         """
-        text = x.group(2)
+        groups = x.groups()
+        if len(groups) >= 7 and groups[5] is not None and groups[6] is not None:
+            pre = groups[5]
+            text = groups[6]
+        elif len(groups) >= 5 and groups[1] is not None and groups[3] is not None:
+            pre = groups[1]
+            text = groups[3]
+        else:
+            raise
 
         if text in force_mapping:
             text = force_mapping[text]
@@ -98,7 +105,7 @@ def replace_text(src_text,
             # 通知する。Azure devopsでUnicodeEncodeErrorが出るので一旦コメントアウト
             text = lis[0]
 
-        return x.group(1) + text + x.group(3)
+        return '{}"{}"'.format(pre, text)
 
     return re.sub(match_pattern, repl, src_text)
 
@@ -171,31 +178,33 @@ def replace_items(paratranz_unziped_folder_path,
     :return:
     """
 
+    dynasty_mapping = gen_map(
+        target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
+        match_key_pattern=r"monarch\|dynasty"
+    )
+
     target_list = [
         Target(ignore_list="TBD",
-               match_pattern=r'(has_ruler\s*=\s*")([^"]+)(")',
+               match_pattern=r'((has_ruler\s*=\s*)("([^"]+)"))|((has_ruler\s*=\s*)([^"\s]+))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"monarch\|name"
                )),
         Target(ignore_list="TBD",
-               match_pattern=r'(has_heir\s*=\s*")([^"]+)(")',
+               match_pattern=r'((has_heir\s*=\s*)("([^"]+)"))|((has_heir\s*=\s*)([^"\s]+))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"heir\|name"
                )),
         Target(ignore_list="TBD",
-               match_pattern=r'(has_leader\s*=\s*")([^"]+)(")',
+               match_pattern=r'((has_leader\s*=\s*)("([^"]+)"))|((has_leader\s*=\s*)([^"\s]+))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"leader\|name"
                )),
         Target(ignore_list="TBD",
-               match_pattern=r'(dynasty\s*=\s*")([^"]+)(")',
-               mapper=gen_map(
-                   target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
-                   match_key_pattern=r"monarch\|dynasty"
-               ))
+               match_pattern=r'((dynasty\s*=\s*)("([^"]+)"))|((dynasty\s*=\s*)([^"\s]+))',
+               mapper=dynasty_mapping)
     ]
 
     scan_files(target_list=target_list,

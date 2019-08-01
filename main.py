@@ -209,12 +209,12 @@ def main():
     os.makedirs(_(".", "out"), exist_ok=True)
 
     # 翻訳の最新版をダウンロードする
-    p_file_path = download_trans_zip_from_paratranz(
-        project_id=76,
-        secret=os.environ.get("PARATRANZ_SECRET"),
-        out_file_path=_(".", "tmp", "paratranz.zip"))
+    # p_file_path = download_trans_zip_from_paratranz(
+    #    project_id=76,
+    #    secret=os.environ.get("PARATRANZ_SECRET"),
+    #    out_file_path=_(".", "tmp", "paratranz.zip"))
 
-    print("p_file_path:{}".format(p_file_path))
+    # print("p_file_path:{}".format(p_file_path))
 
     p_file_path = _(".", "tmp", "paratranz.zip")
 
