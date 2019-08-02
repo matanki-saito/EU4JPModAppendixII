@@ -70,13 +70,15 @@ def gen_map(target_dir_path,
 
 def replace_text(src_text,
                  match_pattern,
-                 translation_map):
+                 translation_map,
+                 wrap_double_quotes):
     """
     対象のテキストを読み込んで、マッチする部分を変更する
 
     :param src_text:　対象のテキスト
     :param match_pattern: マッチパターン、(x)(target)(x)である必要がある
     :param translation_map: 翻訳マッピングオブジェクト key:[text1,text2,...]
+    :param wrap_double_quotes: ダブルクォーテーションで置き換え後文字列を囲むかどうか
     :return: 置換えされたテキストと個数のタプル
     """
 
@@ -86,10 +88,19 @@ def replace_text(src_text,
         :param x: グルーピングされたマッチオブジェクト
         :return: 置き換え後の文字列
         """
+        if wrap_double_quotes:
+            format_text = '{}"{}"'
+        else:
+            format_text = '{}{}'
+
         groups = x.groups()
+        # "でテキストがwrapされていない
         if len(groups) >= 7 and groups[5] is not None and groups[6] is not None:
             pre = groups[5]
             text = groups[6]
+            if text == "no" or text == "yes":
+                format_text = '{}{}'
+        # "でテキストがwrapされている
         elif len(groups) >= 5 and groups[1] is not None and groups[3] is not None:
             pre = groups[1]
             text = groups[3]
@@ -105,7 +116,7 @@ def replace_text(src_text,
             # 通知する。Azure devopsでUnicodeEncodeErrorが出るので一旦コメントアウト
             text = lis[0]
 
-        return '{}"{}"'.format(pre, text)
+        return format_text.format(pre, text)
 
     return re.sub(match_pattern, repl, src_text)
 
@@ -152,7 +163,8 @@ def scan_files(src_path,
             for target in target_list:
                 dst_text = replace_text(src_text=dst_text,
                                         match_pattern=target.match_pattern,
-                                        translation_map=target.map)
+                                        translation_map=target.map,
+                                        wrap_double_quotes=target.wrap_double_quotes)
 
             # 変更があったもののみを保存
             if dst_text != src_text:
@@ -162,10 +174,11 @@ def scan_files(src_path,
 
 
 class Target(object):
-    def __init__(self, ignore_list, match_pattern, mapper):
+    def __init__(self, ignore_list, match_pattern, mapper, wrap_double_quotes):
         self.ignore_list = ignore_list
         self.match_pattern = match_pattern
         self.map = mapper
+        self.wrap_double_quotes = wrap_double_quotes
 
 
 def replace_items(paratranz_unziped_folder_path,
@@ -178,33 +191,35 @@ def replace_items(paratranz_unziped_folder_path,
     :return:
     """
 
-    dynasty_mapping = gen_map(
-        target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
-        match_key_pattern=r"monarch\|dynasty"
-    )
-
     target_list = [
         Target(ignore_list="TBD",
                match_pattern=r'((has_ruler\s*=\s*)("([^"]+)"))|((has_ruler\s*=\s*)([^"\s]+))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"monarch\|name"
-               )),
+               ),
+               wrap_double_quotes=True),
         Target(ignore_list="TBD",
                match_pattern=r'((has_heir\s*=\s*)("([^"]+)"))|((has_heir\s*=\s*)([^"\s]+))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"heir\|name"
-               )),
+               ),
+               wrap_double_quotes=True),
         Target(ignore_list="TBD",
                match_pattern=r'((has_leader\s*=\s*)("([^"]+)"))|((has_leader\s*=\s*)([^"\s]+))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"leader\|name"
-               )),
+               ),
+               wrap_double_quotes=True),
         Target(ignore_list="TBD",
                match_pattern=r'((dynasty\s*=\s*)("([^"]+)"))|((dynasty\s*=\s*)([^"\s]+))',
-               mapper=dynasty_mapping)
+               mapper=gen_map(
+                   target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
+                   match_key_pattern=r"monarch\|dynasty"
+               ),
+               wrap_double_quotes=True)
     ]
 
     scan_files(target_list=target_list,
