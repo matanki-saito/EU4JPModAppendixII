@@ -68,10 +68,14 @@ def gen_map(target_dir_path,
     return result
 
 
+debuga = {}
+
+
 def replace_text(src_text,
                  match_pattern,
                  translation_map,
-                 wrap_double_quotes):
+                 wrap_double_quotes,
+                 file_path):
     """
     対象のテキストを読み込んで、マッチする部分を変更する
 
@@ -79,6 +83,7 @@ def replace_text(src_text,
     :param match_pattern: マッチパターン、(x)(target)(x)である必要がある
     :param translation_map: 翻訳マッピングオブジェクト key:[text1,text2,...]
     :param wrap_double_quotes: ダブルクォーテーションで置き換え後文字列を囲むかどうか
+    :param file_path: ファイルパス
     :return: 置換えされたテキストと個数のタプル
     """
 
@@ -88,35 +93,39 @@ def replace_text(src_text,
         :param x: グルーピングされたマッチオブジェクト
         :return: 置き換え後の文字列
         """
-        if wrap_double_quotes:
-            format_text = '{}"{}"'
-        else:
-            format_text = '{}{}'
 
         groups = x.groups()
         # "でテキストがwrapされていない
-        if len(groups) >= 7 and groups[5] is not None and groups[6] is not None:
-            pre = groups[5]
-            text = groups[6]
-            if text == "no" or text == "yes":
-                format_text = '{}{}'
+        if len(groups) >= 8 and groups[6] is not None and groups[7] is not None:
+            pre = groups[6]
+            text = groups[7]
         # "でテキストがwrapされている
-        elif len(groups) >= 5 and groups[1] is not None and groups[3] is not None:
-            pre = groups[1]
-            text = groups[3]
+        elif len(groups) >= 6 and groups[2] is not None and groups[4] is not None:
+            pre = groups[2]
+            text = groups[4]
         else:
             raise
 
         if text in force_mapping:
-            text = force_mapping[text]
+            mapping_text = force_mapping[text]
         elif text in translation_map:
             lis = translation_map.get(text)
-            # if len(lis) > 1:
-            #    print("multiple suggestion {}".format(lis))
+            if len(lis) > 1:
+                print("multiple suggestion {}".format(lis))
             # 通知する。Azure devopsでUnicodeEncodeErrorが出るので一旦コメントアウト
-            text = lis[0]
+            mapping_text = lis[0]
+        else:
+            mapping_text = None
 
-        return format_text.format(pre, text)
+        key = '{}:{}'.format(text, '' if mapping_text is None else mapping_text)
+        if key not in debuga:
+            debuga[key] = set()
+        debuga[key].add(file_path)
+
+        if mapping_text is None or text == mapping_text:
+            return groups[0]
+        else:
+            return '{}"{}"'.format(pre, mapping_text)
 
     return re.sub(match_pattern, repl, src_text)
 
@@ -164,7 +173,8 @@ def scan_files(src_path,
                 dst_text = replace_text(src_text=dst_text,
                                         match_pattern=target.match_pattern,
                                         translation_map=target.map,
-                                        wrap_double_quotes=target.wrap_double_quotes)
+                                        wrap_double_quotes=target.wrap_double_quotes,
+                                        file_path=file_path)
 
             # 変更があったもののみを保存
             if dst_text != src_text:
@@ -193,28 +203,28 @@ def replace_items(paratranz_unziped_folder_path,
 
     target_list = [
         Target(ignore_list="TBD",
-               match_pattern=r'((has_ruler\s*=\s*)("([^"]+)"))|((has_ruler\s*=\s*)([^"\s]+))',
+               match_pattern=r'(((\shas_ruler\s*=\s*)("([^"]+)"))|((\shas_ruler\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"monarch\|name"
                ),
                wrap_double_quotes=True),
         Target(ignore_list="TBD",
-               match_pattern=r'((has_heir\s*=\s*)("([^"]+)"))|((has_heir\s*=\s*)([^"\s]+))',
+               match_pattern=r'(((\shas_heir\s*=\s*)("([^"]+)"))|((\shas_heir\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"heir\|name"
                ),
                wrap_double_quotes=True),
         Target(ignore_list="TBD",
-               match_pattern=r'((has_leader\s*=\s*)("([^"]+)"))|((has_leader\s*=\s*)([^"\s]+))',
+               match_pattern=r'(((\shas_leader\s*=\s*)("([^"]+)"))|((\shas_leader\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"leader\|name"
                ),
                wrap_double_quotes=True),
         Target(ignore_list="TBD",
-               match_pattern=r'((dynasty\s*=\s*)("([^"]+)"))|((dynasty\s*=\s*)([^"\s]+))',
+               match_pattern=r'(((\sdynasty\s*=\s*)("([^"]+)"))|((\sdynasty\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"monarch\|dynasty"
@@ -225,3 +235,7 @@ def replace_items(paratranz_unziped_folder_path,
     scan_files(target_list=target_list,
                src_path=resource_dir_path,
                dst_path=output_folder_path)
+
+    with open(_('tmp', "keys.txt"), 'w', encoding="utf-8") as fw:
+        for key in debuga:
+            fw.write("{}:\n{}\n\n".format(key, ','.join(map(os.path.basename, debuga[key]))))

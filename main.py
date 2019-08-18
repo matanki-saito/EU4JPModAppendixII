@@ -208,6 +208,7 @@ def main():
     os.makedirs(_(".", "tmp"), exist_ok=True)
     os.makedirs(_(".", "out"), exist_ok=True)
 
+    """
     # 翻訳の最新版をダウンロードする
     p_file_path = download_trans_zip_from_paratranz(
         project_id=76,
@@ -215,8 +216,8 @@ def main():
         out_file_path=_(".", "tmp", "paratranz.zip"))
 
     print("p_file_path:{}".format(p_file_path))
-
-    # p_file_path = _(".", "tmp", "paratranz.zip")
+    """
+    p_file_path = _(".", "tmp", "paratranz.zip")
 
     # AppModを構築する
     app_mod_zip_file_path = assembly_app_mod_zip_file(
@@ -238,6 +239,8 @@ def main():
         mod_supported_version="1.28.*.*")
 
     print("mod_pack_file_path:{}".format(mod_pack_file_path))
+
+    return
 
     # S3にアップロード from datetime import datetime as dt
     from datetime import datetime as dt
