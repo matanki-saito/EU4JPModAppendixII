@@ -71,18 +71,17 @@ def gen_map(target_dir_path,
 debuga = {}
 
 
-def replace_text(src_text,
+def replace_text(name,
+                 src_text,
                  match_pattern,
                  translation_map,
-                 wrap_double_quotes,
                  file_path):
     """
     対象のテキストを読み込んで、マッチする部分を変更する
-
+    :param name: ラベル
     :param src_text:　対象のテキスト
     :param match_pattern: マッチパターン、(x)(target)(x)である必要がある
     :param translation_map: 翻訳マッピングオブジェクト key:[text1,text2,...]
-    :param wrap_double_quotes: ダブルクォーテーションで置き換え後文字列を囲むかどうか
     :param file_path: ファイルパス
     :return: 置換えされたテキストと個数のタプル
     """
@@ -117,7 +116,7 @@ def replace_text(src_text,
         else:
             mapping_text = None
 
-        key = '{}:{}'.format(text, '' if mapping_text is None else mapping_text)
+        key = '{}-{}:{}'.format(name, text, '' if mapping_text is None else mapping_text)
         if key not in debuga:
             debuga[key] = set()
         debuga[key].add(file_path)
@@ -170,10 +169,10 @@ def scan_files(src_path,
         with open(str(file_path), 'r', encoding='windows-1252', errors='ignore') as f:
             src_text = dst_text = f.read()
             for target in target_list:
-                dst_text = replace_text(src_text=dst_text,
+                dst_text = replace_text(name=target.name,
+                                        src_text=dst_text,
                                         match_pattern=target.match_pattern,
                                         translation_map=target.map,
-                                        wrap_double_quotes=target.wrap_double_quotes,
                                         file_path=file_path)
 
             # 変更があったもののみを保存
@@ -184,11 +183,11 @@ def scan_files(src_path,
 
 
 class Target(object):
-    def __init__(self, ignore_list, match_pattern, mapper, wrap_double_quotes):
+    def __init__(self, name, ignore_list, match_pattern, mapper):
+        self.name = name
         self.ignore_list = ignore_list
         self.match_pattern = match_pattern
         self.map = mapper
-        self.wrap_double_quotes = wrap_double_quotes
 
 
 def replace_items(paratranz_unziped_folder_path,
@@ -202,34 +201,34 @@ def replace_items(paratranz_unziped_folder_path,
     """
 
     target_list = [
-        Target(ignore_list="TBD",
+        Target(name="monarch",
+               ignore_list="TBD",
                match_pattern=r'(((\shas_ruler\s*=\s*)("([^"]+)"))|((\shas_ruler\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"monarch\|name"
-               ),
-               wrap_double_quotes=True),
-        Target(ignore_list="TBD",
+               )),
+        Target(name="heir",
+               ignore_list="TBD",
                match_pattern=r'(((\shas_heir\s*=\s*)("([^"]+)"))|((\shas_heir\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"heir\|name"
-               ),
-               wrap_double_quotes=True),
-        Target(ignore_list="TBD",
+               )),
+        Target(name="leader",
+               ignore_list="TBD",
                match_pattern=r'(((\shas_leader\s*=\s*)("([^"]+)"))|((\shas_leader\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"leader\|name"
-               ),
-               wrap_double_quotes=True),
-        Target(ignore_list="TBD",
+               )),
+        Target(name="dynasty",
+               ignore_list="TBD",
                match_pattern=r'(((\sdynasty\s*=\s*)("([^"]+)"))|((\sdynasty\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
                    match_key_pattern=r"monarch\|dynasty"
-               ),
-               wrap_double_quotes=True)
+               ))
     ]
 
     scan_files(target_list=target_list,
