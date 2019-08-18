@@ -15,11 +15,13 @@ force_mapping = {
 }
 
 
-def load_map_from_file(file_path,
+def load_map_from_file(reverse_map,
+                       file_path,
                        mapping_db,
                        match_key_pattern=None):
     """
     ＼＼٩( 'ω' )و ／／
+    :param reverse_map: [A]^-1
     :param file_path: 対象のファイル
     :param mapping_db: マッピング。破壊的
     :param match_key_pattern: マッチさせるキーのパターン
@@ -43,7 +45,7 @@ def load_map_from_file(file_path,
             if match_key_compiled_pattern is not None and match_key_compiled_pattern.search(key) is None:
                 continue
 
-            # すでに訳が登録されており、それがさらに別の訳である場合、問題となる
+            # すでに訳が登録されており、それがさらに別の訳である場合、問題となる(1:n)
             if original in mapping_db:
                 if translation not in mapping_db[original]:
                     mapping_db[original].append(translation)
@@ -52,18 +54,31 @@ def load_map_from_file(file_path,
             else:
                 mapping_db[original] = [translation]
 
+            # n:1をチェックする
+            if translation in reverse_map:
+                if original not in reverse_map[translation]:
+                    reverse_map[translation].append(original)
+            else:
+                reverse_map[translation] = [original]
+
 
 def gen_map(target_dir_path,
             match_key_pattern=None):
+    tmp_reverse_map = {}
     result = {}
 
     # Map生成
     for file in os.listdir(path=target_dir_path):
         load_map_from_file(
+            reverse_map=tmp_reverse_map,
             file_path=os.path.join(target_dir_path, file),
             mapping_db=result,
             match_key_pattern=match_key_pattern
         )
+
+    for key, value in tmp_reverse_map.items():
+        if len(value) > 1:
+            print("n:1 / {}:{}".format(value, key))
 
     return result
 
@@ -110,7 +125,7 @@ def replace_text(name,
         elif text in translation_map:
             lis = translation_map.get(text)
             if len(lis) > 1:
-                print("multiple suggestion {}".format(lis))
+                print("1:n {}".format(lis))
             # 通知する。Azure devopsでUnicodeEncodeErrorが出るので一旦コメントアウト
             mapping_text = lis[0]
         else:
@@ -227,7 +242,7 @@ def replace_items(paratranz_unziped_folder_path,
                match_pattern=r'(((\sdynasty\s*=\s*)("([^"]+)"))|((\sdynasty\s*=\s*)([^"\s]+)))',
                mapper=gen_map(
                    target_dir_path=_(paratranz_unziped_folder_path, "raw\\history\\countries"),
-                   match_key_pattern=r"monarch\|dynasty"
+                   match_key_pattern=r"(monarch|queen|heir)\|dynasty"
                ))
     ]
 
