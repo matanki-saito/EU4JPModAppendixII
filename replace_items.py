@@ -39,7 +39,7 @@ def load_map_from_file(reverse_map,
 
             # 訳が空の場合はスキップ
             if translation is "":
-                continue
+                translation = original
 
             # キーのパターンチェック
             if match_key_compiled_pattern is not None and match_key_compiled_pattern.search(key) is None:
@@ -52,7 +52,7 @@ def load_map_from_file(reverse_map,
 
             # 訳が存在する場合は登録する
             else:
-                mapping_db[original] = [translation]
+                mapping_db[original] = [0, translation]
 
             # n:1をチェックする
             if translation in reverse_map:
@@ -75,6 +75,8 @@ def gen_map(target_dir_path,
             mapping_db=result,
             match_key_pattern=match_key_pattern
         )
+
+    print("---------")
 
     for key, value in tmp_reverse_map.items():
         if len(value) > 1:
@@ -124,14 +126,14 @@ def replace_text(name,
             mapping_text = force_mapping[text]
         elif text in translation_map:
             lis = translation_map.get(text)
-            if len(lis) > 1:
-                print("1:n {}".format(lis))
-            # 通知する。Azure devopsでUnicodeEncodeErrorが出るので一旦コメントアウト
-            mapping_text = lis[0]
+            if len(lis) > 2:
+                lis[0] += 1
+
+            mapping_text = lis[1]
         else:
             mapping_text = None
 
-        key = '{}-{}:{}'.format(name, text, '' if mapping_text is None else mapping_text)
+        key = '{}:{}:{}'.format(name, text, '' if mapping_text is None else mapping_text)
         if key not in debuga:
             debuga[key] = set()
         debuga[key].add(file_path)
@@ -195,6 +197,12 @@ def scan_files(src_path,
                 a = str(file_path).replace(src_path + "\\", "")
                 u_write(os.path.join(dst_path, a),
                         dst_text)
+
+    print("---------")
+    for target in target_list:
+        for key, value in target.map.items():
+            if len(value) > 2:
+                print(("★" if value[0] > 0 else "☆") + " 1:n / {}:{}".format(key, value[1:]))
 
 
 class Target(object):
