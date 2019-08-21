@@ -14,6 +14,9 @@ force_mapping = {
     "Ibrahim": "イブラーヒーム"
 }
 
+# suffix_list = ['', '♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓', '⛎']
+suffix_list = ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13']
+
 
 def load_map_from_file(reverse_map,
                        file_path,
@@ -41,25 +44,29 @@ def load_map_from_file(reverse_map,
             if translation is "":
                 translation = original
 
-            # キーのパターンチェック
-            if match_key_compiled_pattern is not None and match_key_compiled_pattern.search(key) is None:
-                continue
-
-            # すでに訳が登録されており、それがさらに別の訳である場合、問題となる(1:n)
-            if original in mapping_db:
-                if translation not in mapping_db[original]:
-                    mapping_db[original].append(translation)
-
-            # 訳が存在する場合は登録する
-            else:
-                mapping_db[original] = [0, translation]
-
             # n:1をチェックする
             if translation in reverse_map:
                 if original not in reverse_map[translation]:
                     reverse_map[translation].append(original)
             else:
                 reverse_map[translation] = [original]
+
+            suffix_index = reverse_map[translation].index(original)
+
+            # キーのパターンチェック
+            if match_key_compiled_pattern is not None and match_key_compiled_pattern.search(key) is None:
+                continue
+
+            nx_translation = '{}{}'.format(translation, suffix_list[suffix_index])
+
+            # すでに訳が登録されており、それがさらに別の訳である場合、問題となる(1:n)
+            if original in mapping_db:
+                if nx_translation not in mapping_db[original]:
+                    mapping_db[original].append(nx_translation)
+
+            # 訳が存在する場合は登録する
+            else:
+                mapping_db[original] = [0, nx_translation]
 
 
 def gen_map(target_dir_path,
