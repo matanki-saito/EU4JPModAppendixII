@@ -3,7 +3,7 @@ import json
 import re
 from os.path import join as _
 
-suffix_list = ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13']
+suffix_list = ['', '♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓', '⛎']
 
 
 def load_map_from_file(reverse_map,
@@ -160,6 +160,6 @@ def generate_dynasty_name_mapping(paratranz_unzipped_folder_path,
 
 
 if __name__ == "__main__":
-    path = _("./", "2019_12_20_23_04_11")
+    path = _("./", "tmp", "paratranz")
     # generate_dynasty_name_mapping(paratranz_unzipped_folder_path=path)
     generate_first_name_mapping(paratranz_unzipped_folder_path=path, debug=True)

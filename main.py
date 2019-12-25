@@ -68,12 +68,6 @@ def assembly_app_mod_zip_file(resource_image_file_path,
         with zipfile.ZipFile(resource_paratranz_trans_zip_file_path) as existing_zip:
             existing_zip.extractall(tmp_dir_path)
 
-        # commonを移動。どうしてもフォルダでマージできないので先に移動させる必要あり
-        shutil.move(_(tmp_dir_path, "special", "common"), output_dir_path)
-
-        # historyを移動。
-        shutil.move(_(tmp_dir_path, "special", "history"), output_dir_path)
-
         # 処理する
         replace_items(paratranz_unziped_folder_path=tmp_dir_path,
                       output_folder_path=output_dir_path,
@@ -207,9 +201,8 @@ def main():
     # 一時フォルダ用意
     os.makedirs(_(".", "tmp"), exist_ok=True)
     os.makedirs(_(".", "out"), exist_ok=True)
-
-    """
     # 翻訳の最新版をダウンロードする
+    """
     p_file_path = download_trans_zip_from_paratranz(
         project_id=76,
         secret=os.environ.get("PARATRANZ_SECRET"),
