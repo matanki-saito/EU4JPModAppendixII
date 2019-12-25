@@ -61,6 +61,26 @@ POR = {
 		is_year = 1700
 	}
 }
+
+MJZ = {
+	NOT = {
+		exists = QNG
+	}
+	NOT = {
+		exists = MCH
+	}
+}
+
+MCH = {
+	NOT = {
+		exists = QNG
+	}
+}
+
+QNG = {
+	always = yes
+}
+
 BRA = {
 	always = yes
 }

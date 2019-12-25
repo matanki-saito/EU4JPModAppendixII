@@ -541,11 +541,19 @@ CZH = "countries/Zhou.txt"
 CSH = "countries/Shun.txt"
 CXI = "countries/Xi.txt"
 YUA = "countries/GreatYuan.txt"
+FRM = "countries/Formosa.txt"
 
 # 1.27 steppe tags
 ILK = "countries/Ilkhanate.txt"
 KLM = "countries/Kalmyk.txt"
 MGE = "countries/MongolEmpire.txt"
+
+# 1.29 new tags
+SOO = "countries/So.txt" # Japanese potential pirate daimyo
+NVK = "countries/Nivkh.txt" # Split from Yeren
+SOL = "countries/Solon.txt" # Split from Yeren
+EJZ = "countries/EastJianzhou.txt" # Split from Jianzhou
+NHX = "countries/NorthHaixi.txt" # Split from Haixi
 
 #Manchuria tags
 MYR = "countries/Yeren.txt"

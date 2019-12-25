@@ -342,6 +342,15 @@ defined_text = {
 			government = republic
 		}
 	}
+	text = { #fallback
+		localisation_key = string_govtname
+		trigger = {
+			NOT = {
+				government = monarchy
+				government = republic
+			}
+		}
+	}
 }
 
 #Rich or influential Russian Families
@@ -1453,5 +1462,317 @@ defined_text = {
 				value = 5
 			}
 		}
+	}
+}
+
+
+#Makes the country name usable (grammatically) in normal text. So examples of what comes out are "France", "the Ottoman Sultanate", "the Ming Empire" and "the Iroquoi Tribe" (I am open to suggestions on the last) rather than "France", "Ottomans", "Ming" and "Iroquoi"
+defined_text = {
+	name = GetUsableName
+	random = no
+	
+	text = {
+		localisation_key = plural_country_name
+		trigger = {
+			OR = {
+				#Chinese
+				culture_group = east_asian
+				#All the American tribes
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				#Ottomans, Timurids, Mamluks etc
+				tag_with_plural_name_trigger = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = already_has_proper_name
+		trigger = {
+			NOT = {
+				OR = {
+					#Chinese
+					culture_group = east_asian
+					#All the American tribes
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					#Ottomans, Timurids, Mamluks etc
+					tag_with_plural_name_trigger = yes
+				}
+			}
+		}
+	}
+}
+
+#Makes the country name usable (grammatically) in normal text at the start of the sentence. So examples of what comes out are "France", "The Ottoman Sultanate", "The Ming Empire" and "The Iriquoi Tribe" (I am open to suggestions on the last) rather than "France", "Ottomans", "Ming" and "Iriquoi"
+defined_text = {
+	name = GetUsableNameCap
+	random = no
+	
+	text = {
+		localisation_key = plural_country_name_CAP
+		trigger = {
+			OR = {
+				#Chinese
+				culture_group = east_asian
+				#All the American tribes
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				#Ottomans, Timurids, Mamluks etc
+				tag_with_plural_name_trigger = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = already_has_proper_name
+		trigger = {
+			NOT = {
+				OR = {
+					#Chinese
+					culture_group = east_asian
+					#All the American tribes
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					#Ottomans, Timurids, Mamluks etc
+					tag_with_plural_name_trigger = yes
+				}
+			}
+		}
+	}
+}
+
+
+#When you need to refer to a ruling social class but cannot be sure you're dealing with a monarchy.
+#Ex: "Several [noblemen] / [politicians] / [clergymen]"
+defined_text = {
+	name = GetNoblemenPoliticians
+
+	text = {
+		localisation_key = string_noblemen
+		trigger = {
+			NOT = { government = republic }
+			NOT = { government = theocracy }
+			NOT = {
+				has_parliament = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_politicians
+		trigger = {
+			OR = {
+				has_parliament = yes
+				government = republic
+			}
+		}
+	}
+	text = {
+		 localisation_key = string_clergymen
+		trigger = {
+			government = theocracy
+			NOT = {
+				has_parliament = yes
+			}
+		}
+	}
+}
+
+#When you need to refer to a ruling social class but cannot be sure you're dealing with a monarchy.
+#Ex: "Several [members of the nobility] / [politicians] / [members of the clergy]"
+defined_text = {
+	name = GetNobilityPoliticians
+
+	text = {
+		localisation_key = string_members_nobility
+		trigger = {
+			NOT = { government = republic }
+			NOT = { government = theocracy }
+			NOT = {
+				has_parliament = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_politicians
+		trigger = {
+			OR = {
+				has_parliament = yes
+				government = republic
+			}
+		}
+	}
+	text = {
+		 localisation_key = string_clergy_members
+		trigger = {
+			government = theocracy
+			NOT = {
+				has_parliament = yes
+			}
+		}
+	}
+}
+
+
+#Because "the Papal Pope" would be a new kind of stupid, also covers regency councils
+#Ex: The [English King] / The [Pope] / The [English Regency Council]
+defined_text = {
+	name = GetRulerAdjAndTitle
+
+	text = {
+		localisation_key = string_ruler_adj_and_title
+		trigger = {
+			NOT = { tag = PAP }
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_ruler_title
+		trigger = {
+			tag = PAP
+		}
+	}
+	text = {
+		localisation_key = string_adj_and_regency_council
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+
+#Gets ruler title or regency council (not strictly speaking necessary as it will still find "king" even if said king is 1 year old)
+#Ex: The [King] / The [Regency Council]
+defined_text = {
+	name = GetRulerTitleOrRegency
+
+	text = {
+		localisation_key = string_ruler_title
+		trigger = {
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_regency_council_2
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+
+#If you want to refer to the ruler by name but are not sure whether there may be a regency
+#Ex: [King James] / [the Regency Council]
+defined_text = {
+	name = GetRulerTitleAndNameOrRegency
+
+	text = {
+		localisation_key = string_ruler_title_and_name
+		trigger = {
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_regency_council_no_cap
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+#If you want to refer to the ruler by name but are not sure whether there may be a regency
+#Ex: [King James] / [The Regency Council]
+defined_text = {
+	name = GetRulerTitleAndNameOrRegencyCap
+
+	text = {
+		localisation_key = string_ruler_title_and_name
+		trigger = {
+			has_regency = no
+		}
+	}
+	text = {
+		localisation_key = string_regency_council
+		trigger = {
+			has_regency = yes
+		}
+	}
+}
+
+
+
+#For Korean DHE event - didn't fancy writing it out 6 times. Basically prints the relevant estate, except that $ESTATE_NOBLES$ etc does not work.
+defined_text = {
+	name = GetKorDHEEstate1
+
+	text = {
+		localisation_key = string_neoconfucians
+		trigger = {
+			has_country_flag = kor_neoconfucians_strife1
+		}
+	}
+	text = {
+		localisation_key = string_yangban_scholars
+		trigger = {
+			has_country_flag = kor_yangban_scholars_strife1
+		}
+	}
+	text = {
+		localisation_key = string_yangban_admins
+		trigger = {
+			has_country_flag = kor_yangban_admins_strife1
+		}
+	}
+}
+
+#For Korean DHE event - didn't fancy writing it out 6 times. Basically prints the relevant estate, except that $ESTATE_NOBLES$ etc does not work.
+defined_text = {
+	name = GetKorDHEEstate2
+
+	text = {
+		localisation_key = string_neoconfucians
+		trigger = {
+			has_country_flag = kor_neoconfucians_strife2
+		}
+	}
+	text = {
+		localisation_key = string_yangban_scholars
+		trigger = {
+			has_country_flag = kor_yangban_scholars_strife2
+		}
+	}
+	text = {
+		localisation_key = string_yangban_admins
+		trigger = {
+			has_country_flag = kor_yangban_admins_strife2
+		}
+	}
+}
+
+#For Korean DHE event - prints a reason for the struggle. "the respective factions are accusing each other of high treason, apparently after <insert reason> escalated to the point where royal authority"
+defined_text = {
+	name = GetKorFactionReason
+
+	text = {
+		localisation_key = KOR_faction_reason_1
+	}
+	text = {
+		localisation_key = KOR_faction_reason_2
+	}
+	text = {
+		localisation_key = KOR_faction_reason_3
+	}
+	text = {
+		localisation_key = KOR_faction_reason_4
 	}
 }

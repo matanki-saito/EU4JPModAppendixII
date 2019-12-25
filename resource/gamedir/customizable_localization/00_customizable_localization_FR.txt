@@ -670,6 +670,24 @@ defined_text = {
 }
 
 
+# Ex: "[new] Emperor" => "nouv[el/elle] empereur/impératrice"
+defined_text = {
+	name = GetElElleFDir
+	text = {
+		localisation_key = string_el_FR
+		trigger = {
+			is_female = no
+		}
+	}
+	text = {
+		localisation_key = string_elle_FR
+		trigger = {
+			is_female = yes
+		}
+	}
+}
+
+
 # Ex: "The ruler will take a [spouse]" => "Le dirigeant va prendre une [épouse]/La dirigeante va prendre un [époux/épouse]"
 # Defines a character the opposite gender of the ruler / Utilisé pour définir un personnage de sexe opposé à celui du dirigeant ou de la dirigeante
 defined_text = {
@@ -9965,6 +9983,10 @@ defined_text = {
 		trigger = { OR = { primary_culture = manchu culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_ms_FR
+		trigger = { OR = { primary_culture = manchu_new culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { OR = { primary_culture = chihan culture = chihan } }
 	}
@@ -10475,6 +10497,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { OR = { primary_culture = beja culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { OR = { primary_culture = evenk culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -11383,6 +11409,10 @@ defined_text = {
 		trigger = { OR = { primary_culture = manchu culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fs_FR
+		trigger = { OR = { primary_culture = manchu_new culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { OR = { primary_culture = chihan culture = chihan } }
 	}
@@ -11893,6 +11923,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { OR = { primary_culture = beja culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { OR = { primary_culture = evenk culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -12801,6 +12835,10 @@ defined_text = {
 		trigger = { OR = { primary_culture = manchu culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_mp_FR
+		trigger = { OR = { primary_culture = manchu_new culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { OR = { primary_culture = chihan culture = chihan } }
 	}
@@ -13311,6 +13349,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { OR = { primary_culture = beja culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { OR = { primary_culture = evenk culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -14219,6 +14261,10 @@ defined_text = {
 		trigger = { OR = { primary_culture = manchu culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fp_FR
+		trigger = { OR = { primary_culture = manchu_new culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { OR = { primary_culture = chihan culture = chihan } }
 	}
@@ -14729,6 +14775,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { OR = { primary_culture = beja culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { OR = { primary_culture = evenk culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -18247,6 +18297,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_ms_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -18285,6 +18339,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_ms_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -19475,6 +19533,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_ms_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -19529,6 +19591,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -20003,8 +20069,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_ms_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_ms_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -20495,7 +20569,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_ms_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -21415,6 +21489,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fs_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -21453,6 +21531,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fs_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fs_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fs_FR
@@ -22643,6 +22725,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fs_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -22697,6 +22783,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -23171,8 +23261,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fs_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fs_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -23663,7 +23761,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_fs_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -24583,6 +24681,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_mp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -24621,6 +24723,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_mp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -25811,6 +25917,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_mp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -25865,6 +25975,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -26339,8 +26453,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_mp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_mp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -26831,7 +26953,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_mp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -27751,6 +27873,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -27789,6 +27915,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fp_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fp_FR
@@ -28979,6 +29109,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -29033,6 +29167,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -29507,8 +29645,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -29999,7 +30145,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_fp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -30922,6 +31068,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_ms_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -30960,6 +31110,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_ms_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -32150,6 +32304,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_ms_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -32204,6 +32362,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -32678,8 +32840,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_ms_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_ms_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -33170,7 +33340,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_ms_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -34090,6 +34260,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fs_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -34128,6 +34302,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fs_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fs_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fs_FR
@@ -35318,6 +35496,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fs_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -35372,6 +35554,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -35846,8 +36032,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fs_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fs_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -36338,7 +36532,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_fs_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -37258,6 +37452,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_mp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -37296,6 +37494,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_mp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -38486,6 +38688,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_mp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -38540,6 +38746,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -39014,8 +39224,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_mp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_mp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -39506,7 +39724,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_mp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -40426,6 +40644,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -40464,6 +40686,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fp_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fp_FR
@@ -41654,6 +41880,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -41708,6 +41938,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -42182,8 +42416,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -42674,7 +42916,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_fp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -43597,6 +43839,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_ms_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -43635,6 +43881,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_ms_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -44825,6 +45075,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_ms_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -44879,6 +45133,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -45353,8 +45611,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_ms_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_ms_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -45845,7 +46111,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_ms_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -46765,6 +47031,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fs_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -46803,6 +47073,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fs_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fs_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fs_FR
@@ -47993,6 +48267,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fs_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -48047,6 +48325,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -48521,8 +48803,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fs_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fs_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -49013,7 +49303,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_fs_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -49933,6 +50223,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_mp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -49971,6 +50265,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_mp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -51161,6 +51459,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_mp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -51215,6 +51517,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -51689,8 +51995,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_mp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_mp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -52181,7 +52495,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_mp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -53101,6 +53415,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -53139,6 +53457,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fp_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fp_FR
@@ -54329,6 +54651,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -54383,6 +54709,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -54857,8 +55187,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -55349,7 +55687,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_fp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -56271,6 +56609,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_ms_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -56309,6 +56651,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_ms_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -57499,6 +57845,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_ms_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -57553,6 +57903,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -58027,8 +58381,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_ms_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_ms_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -58519,7 +58881,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_ms_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -59439,6 +59801,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fs_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -59477,6 +59843,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fs_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fs_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fs_FR
@@ -60667,6 +61037,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fs_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -60721,6 +61095,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_s_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -61195,8 +61573,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fs_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fs_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_s_FR
@@ -61687,7 +62073,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_s_FR
+		localisation_key = string_ZUN_ADJ_fs_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -62607,6 +62993,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_mp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -62645,6 +63035,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_mp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_m_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_m_FR
@@ -63835,6 +64229,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_mp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -63889,6 +64287,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -64363,8 +64765,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_mp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_mp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -64855,7 +65265,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_mp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -65775,6 +66185,10 @@ defined_text = {
 		trigger = { tag = ETR }
 	}
 	text = {
+		localisation_key = string_EJZ_ADJ_fp_FR
+		trigger = { tag = EJZ }
+	}
+	text = {
 		localisation_key = string_FAD_ADJ_FR
 		trigger = { tag = FAD }
 	}
@@ -65813,6 +66227,10 @@ defined_text = {
 	text = {
 		localisation_key = string_FRI_ADJ_fp_FR
 		trigger = { tag = FRI }
+	}
+	text = {
+		localisation_key = string_FRM_ADJ_fp_FR
+		trigger = { tag = FRM }
 	}
 	text = {
 		localisation_key = string_FRN_ADJ_fp_FR
@@ -67003,6 +67421,10 @@ defined_text = {
 		trigger = { tag = NGP }
 	}
 	text = {
+		localisation_key = string_NHX_ADJ_fp_FR
+		trigger = { tag = NHX }
+	}
+	text = {
 		localisation_key = string_NKO_ADJ_FR
 		trigger = { tag = NKO }
 	}
@@ -67057,6 +67479,10 @@ defined_text = {
 	text = {
 		localisation_key = string_NUP_ADJ_FR
 		trigger = { tag = NUP }
+	}
+	text = {
+		localisation_key = string_NVK_ADJ_p_FR
+		trigger = { tag = NVK }
 	}
 	text = {
 		localisation_key = string_NVR_ADJ_FR
@@ -67531,8 +67957,16 @@ defined_text = {
 		trigger = { tag = SOK }
 	}
 	text = {
+		localisation_key = string_SOL_ADJ_fp_FR
+		trigger = { tag = SOL }
+	}
+	text = {
 		localisation_key = string_SON_ADJ_fp_FR
 		trigger = { tag = SON }
+	}
+	text = {
+		localisation_key = string_SOO_ADJ_FR
+		trigger = { tag = SOO }
 	}
 	text = {
 		localisation_key = string_SOS_ADJ_p_FR
@@ -68023,7 +68457,7 @@ defined_text = {
 		trigger = { tag = ZNI }
 	}
 	text = {
-		localisation_key = string_ZUN_ADJ_p_FR
+		localisation_key = string_ZUN_ADJ_fp_FR
 		trigger = { tag = ZUN }
 	}
 	text = {
@@ -68182,6 +68616,7 @@ defined_text = {
 				tag = MAS
 				has_reform = celestial_empire
 				culture_group = east_asian
+				AND = { tag = KOR religion = confucianism }
 			}
 		}
 	}
@@ -68225,6 +68660,14 @@ defined_text = {
 		}
 	}
 	text = {
+		localisation_key = string_yangban_scholars_FR
+		trigger = {
+			has_estate = estate_church
+			tag = KOR
+			religion = confucianism
+		}
+	}
+	text = {
 		localisation_key = string_gentry_FR
 		trigger = {
 			has_estate = estate_church
@@ -68232,6 +68675,89 @@ defined_text = {
 				has_reform = celestial_empire
 				culture_group = east_asian
 			}
+		}
+	}
+	text = {
+		localisation_key = string_pastors_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+	}
+	text = {
+		localisation_key = string_popes_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			AND = {
+				religion = orthodox
+				OR = {
+					culture_group = east_slavic
+					culture_group = south_slavic
+					culture_group = west_slavic
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_shamans_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			OR = {
+				religion = tengri_pagan_reformed
+				religion = shamanism
+			}
+		}
+	}
+	text = {
+		localisation_key = string_gurus_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			religion = sikhism
+		}
+	}
+	text = {
+		localisation_key = string_medicine_men_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			religion = totemism
+		}
+	}
+	text = {
+		localisation_key = string_godar_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			religion = norse_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = string_rabbis_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			religion_group = jewish_group
+		}
+	}
+	text = {
+		localisation_key = string_priests_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			OR = {
+				religion = confucianism
+				religion = shinto
+				religion = animism
+				religion = inti
+				religion = mesoamerican_religion
+			}
+			NOT = { tag = KOR religion = confucianism }
+		}
+	}
+	text = {
+		localisation_key = string_mobeds_FR # La Pléiade
+		trigger = {
+			has_estate = estate_church
+			religion = zoroastrian
 		}
 	}
 }
@@ -68274,6 +68800,7 @@ defined_text = {
 				culture_group = japanese_g
 				has_reform = celestial_empire
 				tag = MAS
+				AND = { tag = KOR religion = confucianism }
 			}
 		}
 	}
@@ -68387,10 +68914,55 @@ defined_text = {
 		}
 	}
 	text = {
+		localisation_key = string_yangban_administrators_FR
+		trigger = {
+			tag = KOR
+			religion = confucianism
+		}
+	}
+	text = {
 		localisation_key = string_qinwang_FR
 		trigger = {
 			has_estate = estate_nobles
 			has_reform = celestial_empire
+		}
+	}
+	text = {
+		localisation_key = string_warriors_FR # La Pléiade
+		trigger = {
+			has_estate = estate_nobles
+			OR = {
+				primary_culture = samoyed
+				primary_culture = ostyaki
+				primary_culture = sapmi
+				primary_culture = ingrian
+				primary_culture = karelian
+				culture_group = central_american
+				culture_group = maya
+				culture_group = otomanguean
+				culture_group = andean_group
+				culture_group = je_tupi
+				culture_group = je
+				culture_group = maranon
+				culture_group = chibchan
+				culture_group = mataco
+				culture_group = araucanian
+				culture_group = carribean
+				culture_group = eskaleut
+				culture_group = central_algonquian
+				culture_group = plains_algonquian
+				culture_group = eastern_algonquian
+				culture_group = iroquoian
+				culture_group = siouan
+				culture_group = caddoan
+				culture_group = muskogean
+				culture_group = sonoran
+				culture_group = na_dene
+				culture_group = penutian
+				culture_group = pacific
+				culture_group = evenks
+				culture_group = kamchatkan_g
+			}
 		}
 	}
 }
@@ -68427,6 +68999,7 @@ defined_text = {
 			NOT = {
 				culture_group = french
 				culture_group = east_asian
+				AND = { tag = KOR religion = confucianism }
 			}
 		}
 	}
@@ -68445,10 +69018,25 @@ defined_text = {
 		}
 	}
 	text = {
+		localisation_key = string_neoconfucian_reformers_FR
+		trigger = {
+			has_estate = estate_burghers
+			tag = KOR
+			religion = confucianism
+		}
+	}
+	text = {
 		localisation_key = string_merchant_guilds_FR
 		trigger = {
 			has_estate = estate_burghers
 			NOT = { religion_group = christian }
+		}
+	}
+	text = {
+		localisation_key = string_pochteca_FR # La Pléiade
+		trigger = {
+			has_estate = estate_burghers
+			religion = nahuatl
 		}
 	}
 }
@@ -70077,6 +70665,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = ADM culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_ms_FR
+		trigger = { employed_advisor = { category = ADM culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { employed_advisor = { category = ADM culture = chihan } }
 	}
@@ -70587,6 +71179,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { employed_advisor = { category = ADM culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { employed_advisor = { category = ADM culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -71495,6 +72091,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = ADM culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fs_FR
+		trigger = { employed_advisor = { category = ADM culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { employed_advisor = { category = ADM culture = chihan } }
 	}
@@ -72005,6 +72605,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { employed_advisor = { category = ADM culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { employed_advisor = { category = ADM culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -72913,6 +73517,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = ADM culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_mp_FR
+		trigger = { employed_advisor = { category = ADM culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { employed_advisor = { category = ADM culture = chihan } }
 	}
@@ -73427,6 +74035,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { employed_advisor = { category = ADM culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { employed_advisor = { category = ADM culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -74335,6 +74947,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = ADM culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fp_FR
+		trigger = { employed_advisor = { category = ADM culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { employed_advisor = { category = ADM culture = chihan } }
 	}
@@ -74845,6 +75461,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { employed_advisor = { category = ADM culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { employed_advisor = { category = ADM culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -75758,6 +76378,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = DIP culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_ms_FR
+		trigger = { employed_advisor = { category = DIP culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { employed_advisor = { category = DIP culture = chihan } }
 	}
@@ -76268,6 +76892,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { employed_advisor = { category = DIP culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { employed_advisor = { category = DIP culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -77176,6 +77804,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = DIP culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fs_FR
+		trigger = { employed_advisor = { category = DIP culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { employed_advisor = { category = DIP culture = chihan } }
 	}
@@ -77686,6 +78318,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { employed_advisor = { category = DIP culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { employed_advisor = { category = DIP culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -78594,6 +79230,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = DIP culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_mp_FR
+		trigger = { employed_advisor = { category = DIP culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { employed_advisor = { category = DIP culture = chihan } }
 	}
@@ -79108,6 +79748,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { employed_advisor = { category = DIP culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { employed_advisor = { category = DIP culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -80016,6 +80660,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = DIP culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fp_FR
+		trigger = { employed_advisor = { category = DIP culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { employed_advisor = { category = DIP culture = chihan } }
 	}
@@ -80526,6 +81174,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { employed_advisor = { category = DIP culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { employed_advisor = { category = DIP culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -81439,6 +82091,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = MIL culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_ms_FR
+		trigger = { employed_advisor = { category = MIL culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { employed_advisor = { category = MIL culture = chihan } }
 	}
@@ -81949,6 +82605,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { employed_advisor = { category = MIL culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { employed_advisor = { category = MIL culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -82857,6 +83517,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = MIL culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fs_FR
+		trigger = { employed_advisor = { category = MIL culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { employed_advisor = { category = MIL culture = chihan } }
 	}
@@ -83367,6 +84031,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { employed_advisor = { category = MIL culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { employed_advisor = { category = MIL culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -84275,6 +84943,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = MIL culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_mp_FR
+		trigger = { employed_advisor = { category = MIL culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { employed_advisor = { category = MIL culture = chihan } }
 	}
@@ -84789,6 +85461,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { employed_advisor = { category = MIL culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { employed_advisor = { category = MIL culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -85697,6 +86373,10 @@ defined_text = {
 		trigger = { employed_advisor = { category = MIL culture = manchu } }
 	}
 	text = {
+		localisation_key = string_manchu_new_fp_FR
+		trigger = { employed_advisor = { category = MIL culture = manchu_new } }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { employed_advisor = { category = MIL culture = chihan } }
 	}
@@ -86207,6 +86887,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { employed_advisor = { category = MIL culture = beja } }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { employed_advisor = { category = MIL culture = evenk } }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -87120,6 +87804,10 @@ defined_text = {
 		trigger = { ruler_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_ms_FR
+		trigger = { ruler_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { ruler_culture = chihan }
 	}
@@ -87630,6 +88318,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { ruler_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { ruler_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -88538,6 +89230,10 @@ defined_text = {
 		trigger = { ruler_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_fs_FR
+		trigger = { ruler_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { ruler_culture = chihan }
 	}
@@ -89048,6 +89744,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { ruler_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { ruler_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -89956,6 +90656,10 @@ defined_text = {
 		trigger = { ruler_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_mp_FR
+		trigger = { ruler_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { ruler_culture = chihan }
 	}
@@ -90470,6 +91174,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { ruler_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { ruler_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -91378,6 +92086,10 @@ defined_text = {
 		trigger = { ruler_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_fp_FR
+		trigger = { ruler_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { ruler_culture = chihan }
 	}
@@ -91888,6 +92600,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { ruler_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { ruler_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -92801,6 +93517,10 @@ defined_text = {
 		trigger = { consort_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_ms_FR
+		trigger = { consort_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { consort_culture = chihan }
 	}
@@ -93311,6 +94031,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { consort_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { consort_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -94219,6 +94943,10 @@ defined_text = {
 		trigger = { consort_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_fs_FR
+		trigger = { consort_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { consort_culture = chihan }
 	}
@@ -94729,6 +95457,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { consort_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { consort_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -95637,6 +96369,10 @@ defined_text = {
 		trigger = { consort_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_mp_FR
+		trigger = { consort_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { consort_culture = chihan }
 	}
@@ -96151,6 +96887,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { consort_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { consort_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -97059,6 +97799,10 @@ defined_text = {
 		trigger = { consort_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_fp_FR
+		trigger = { consort_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { consort_culture = chihan }
 	}
@@ -97569,6 +98313,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { consort_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { consort_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -98482,6 +99230,10 @@ defined_text = {
 		trigger = { heir_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_ms_FR
+		trigger = { heir_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { heir_culture = chihan }
 	}
@@ -98992,6 +99744,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { heir_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { heir_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -99900,6 +100656,10 @@ defined_text = {
 		trigger = { heir_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_fs_FR
+		trigger = { heir_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_s_FR
 		trigger = { heir_culture = chihan }
 	}
@@ -100410,6 +101170,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_s_FR
 		trigger = { heir_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_s_FR
+		trigger = { heir_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_s_FR
@@ -101318,6 +102082,10 @@ defined_text = {
 		trigger = { heir_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_mp_FR
+		trigger = { heir_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { heir_culture = chihan }
 	}
@@ -101832,6 +102600,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { heir_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { heir_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR
@@ -102740,6 +103512,10 @@ defined_text = {
 		trigger = { heir_culture = manchu }
 	}
 	text = {
+		localisation_key = string_manchu_new_fp_FR
+		trigger = { heir_culture = manchu_new }
+	}
+	text = {
 		localisation_key = string_chihan_p_FR
 		trigger = { heir_culture = chihan }
 	}
@@ -103250,6 +104026,10 @@ defined_text = {
 	text = {
 		localisation_key = string_beja_p_FR
 		trigger = { heir_culture = beja }
+	}
+	text = {
+		localisation_key = string_evenk_p_FR
+		trigger = { heir_culture = evenk }
 	}
 	text = {
 		localisation_key = string_yakut_p_FR

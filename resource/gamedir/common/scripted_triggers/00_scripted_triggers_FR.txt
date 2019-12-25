@@ -253,11 +253,11 @@ frloc_tags_art_pl_masc_cons_chezles_05a = {
 		# Indonesia Additions / Ajouts en Indonésie
 		tag = BNJ tag = MAS
 		# Daimyos & New Daimyos 1.20 / Daimyôs et nouveaux daimyôs 1.20
-		tag = UES tag = CBA tag = CSK tag = DTE tag = KKC tag = KNO tag = MAE tag = MRI tag = RFR tag = SBA tag = SHN tag = SMZ tag = STK tag = TKD tag = TKG tag = TKI tag = TTI tag = YMN tag = AKM tag = AKT tag = AMA tag = ASA tag = ASK tag = HJO tag = HSK tag = HTK tag = IKE tag = IMG tag = ISK tag = ITO tag = ODA tag = OGS tag = OTM tag = OUC tag = UTN tag = KTB
+		tag = AKM tag = AKT tag = AMA tag = ASA tag = ASK tag = CBA tag = CSK tag = DTE tag = HJO tag = HSK tag = HTK tag = IKE tag = IMG tag = ISK tag = ITO tag = KKC tag = KNO tag = KTB tag = MAE tag = MRI tag = ODA tag = OGS tag = OTM tag = OUC tag = RFR tag = SBA tag = SHN tag = SMZ tag = SOO tag = STK tag = TKD tag = TKG tag = TKI tag = TTI tag = UES tag = UTN tag = YMN
 		# Manchuria tags / Mandchourie
-		tag = MJZ tag = MHX tag = MYR
+		tag = EJZ tag = MHX tag = MJZ tag = MYR tag = NHX tag = NVK tag = SOL
 		# Mongol tags / Mongols
-		tag = CHH tag = HMI tag = KAS tag = KLK tag = KRC tag = ZUN
+		tag = CHH tag = HMI tag = KLK tag = KRC tag = ZUN
 		# Great Tibet tags / Tibet
 		tag = KSD tag = SYG
 		# Non-Han China proper tags & Chinese Revolters / Chine non-han et révoltes chinoises
@@ -408,11 +408,13 @@ frloc_tags_noart_sg_fem_cons_de_en_11a = {
 		# African Additions / Ajouts en Afrique
 		tag = JNN tag = KAN tag = KNG tag = KTS tag = TMB tag = YAO tag = ZZZ
 		# Far East / Extrême-Orient
-		tag = BAN tag = BLI tag = CHK tag = CSH tag = CXI tag = CZH tag = LUA tag = MAJ tag = MKS tag = MLC tag = MTR tag = PAT tag = PEG tag = SUK tag = SUL tag = TAU tag = VIE
+		tag = BAN tag = BLI tag = CHK tag = CSH tag = CXI tag = CZH tag = FRM tag = LUA tag = MAJ tag = MKS tag = MLC tag = MTR tag = PAT tag = PEG tag = SUK tag = SUL tag = TAU tag = VIE
 		# Indochina Additions / Ajouts en Indochine
 		tag = HSE tag = JOH tag = MYA
 		# Burma additions / Ajouts en Birmanie
 		tag = BPR tag = HSI tag = KAL tag = MKA tag = MMA tag = MNI tag = MPA
+		# Mongol tags / Mongols
+		tag = KAS
 		# India / Inde
 		tag = BDA tag = BHA tag = BIJ tag = CEY tag = CHD tag = DLH tag = DNG tag = DTI tag = GNG tag = GOC tag = GRK tag = GWA tag = HAD tag = JFN tag = JGD tag = JLV tag = JML tag = JNP tag = JPR tag = JSL tag = KGR tag = KJH tag = KLH tag = KLN tag = KLP tag = KLT tag = KMN tag = KMT tag = KND tag = KOC tag = KTU tag = LWA tag = MAB tag = MAD tag = MBL tag = MKP tag = MUL tag = MYS tag = NAG tag = NGA tag = NVR tag = PAN tag = PRB tag = PRD tag = PTA tag = PTL tag = PTT tag = RJK tag = RTT tag = SBP tag = SDY tag = SRG tag = SRH tag = SRM tag = TNJ tag = VIJ
 		# ???

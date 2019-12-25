@@ -97,9 +97,28 @@ province_event = {
 								has_reform = daimyo
 								has_reform = indep_daimyo
 							}
+							NOT = { war_with = event_target:new_shogunate }
 						}
 						event_target:new_shogunate = {
 							vassalize = PREV
+						}
+					}
+					every_subject_country = {
+						limit = {
+							OR = {
+								has_reform = daimyo
+								has_reform = indep_daimyo
+							}
+							war_with = event_target:new_shogunate
+						}
+						from = {
+							free_vassal = prev
+						}
+						if = {
+							limit = {
+								NOT = { has_reform = indep_daimyo }
+							}
+							add_government_reform = indep_daimyo
 						}
 					}
 					if = {
@@ -142,10 +161,18 @@ province_event = {
 				every_country = {
 					limit = {
 						has_reform = daimyo
+						NOT = { war_with = event_target:new_shogunate }
 					}
 					event_target:new_shogunate = {
 						vassalize = PREV
 					}
+				}
+				every_country = {
+					limit = {
+						has_reform = daimyo
+						war_with = event_target:new_shogunate
+					}
+					add_government_reform = indep_daimyo
 				}
 			}
 			if = {

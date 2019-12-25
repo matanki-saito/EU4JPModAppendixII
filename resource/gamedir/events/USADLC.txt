@@ -1583,6 +1583,7 @@ country_event = {
 			clr_province_flag = cotton_gin_flag1
 			add_province_modifier = { 
 				name = cotton_gin
+				duration = -1
 			}
 		}
 		random_owned_province = {
@@ -1592,6 +1593,7 @@ country_event = {
 			clr_province_flag = cotton_gin_flag2
 			add_province_modifier = { 
 				name = cotton_gin
+				duration = -1
 			}
 		}
 		random_owned_province = {
@@ -1601,6 +1603,7 @@ country_event = {
 			clr_province_flag = cotton_gin_flag3
 			add_province_modifier = { 
 				name = cotton_gin
+				duration = -1
 			}
 		}
 	}

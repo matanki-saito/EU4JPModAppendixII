@@ -372,7 +372,7 @@ cb_daimyo_annex = {
 		is_revolution_target = no
 	}
 
-	war_goal = annex_country
+	war_goal = annex_country_japan
 }
 
 cb_independent_daimyo_annex = {
@@ -390,7 +390,7 @@ cb_independent_daimyo_annex = {
 		is_revolution_target = no
 	}
 
-	war_goal = annex_country
+	war_goal = annex_country_japan
 }
 
 cb_shogun_annex = {
@@ -408,7 +408,7 @@ cb_shogun_annex = {
 		is_revolution_target = no
 	}
 
-	war_goal = annex_country
+	war_goal = annex_country_japan
 }
 
 # Sengoku - Daimyo infighting
@@ -426,7 +426,7 @@ cb_sengoku = {
 		is_revolution_target = no
 	}
 
-	war_goal = annex_country
+	war_goal = annex_country_japan
 }
 
 # Revolutionary CB
@@ -1012,6 +1012,7 @@ cb_take_mandate = {
 		has_dlc = "Mandate of Heaven"
 		is_subject = no
 		is_neighbor_of = FROM
+		NOT = { has_reform = shogunate }
 		FROM = { is_emperor_of_china = yes }
 		OR = {
 			religion_group = pagan

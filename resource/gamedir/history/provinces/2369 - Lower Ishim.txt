@@ -1,4 +1,4 @@
-# 2369 - Lower Ishim
+# 2369 - Upper Ishim, formerly Lower Ishim
 
 owner = SHY
 controller = SHY
