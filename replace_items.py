@@ -20,6 +20,7 @@ debuga = {}
 def replace_text(name,
                  src_text,
                  match_pattern,
+                 get_text_func,
                  translation_map,
                  file_path):
     """
@@ -27,14 +28,11 @@ def replace_text(name,
     :param name: ラベル
     :param src_text:　対象のテキスト
     :param match_pattern: マッチパターン、(x)(target)(x)である必要がある
+    :param get_text_func: テキスト取得関数
     :param translation_map: 翻訳マッピングオブジェクト key:[text1,text2,...]
     :param file_path: ファイルパス
     :return: 置換えされたテキストと個数のタプル
     """
-
-    if match_pattern is None:
-        match_pattern = r'((\s+)("?)(' + '|'.join(map(re.escape, translation_map.keys())) + r')("?)(\s+))'
-        match_pattern = re.compile(match_pattern)
 
     def repl(x):
         """
@@ -44,14 +42,7 @@ def replace_text(name,
         """
 
         groups = x.groups()
-        # "でテキストがwrapされていない
-        if len(groups) >= 5 and groups[3] is not None:
-            pre = groups[1]
-            text = groups[3]
-            post = groups[5]
-        # "でテキストがwrapされている
-        else:
-            raise
+        pre, text, post = get_text_func(groups)
 
         if text in force_mapping:
             mapping_text = force_mapping[text]
@@ -117,7 +108,10 @@ def scan_files(src_path,
         raise Exception('dstがおかしい')
 
     for file_path in pathlib.Path(src_path).glob('**/*.txt'):
+
         base_path = str(file_path).replace(src_path + "\\", "")
+
+        print(base_path)
 
         # resource folderにあるものを見る
         # events/Tenguri.txtなどはコメントにUTF-8で書き込んでいるようで、テキストにCP1252には存在しない
@@ -128,16 +122,37 @@ def scan_files(src_path,
         # utf8 sourceを見る
         t_path = _(translated_utf8_path, base_path)
         if os.path.exists(t_path) and not base_path.startswith("history\\countries\\") \
-                and not base_path.startswith("common\\culutres\\00_cultures.txt"):
+                and not base_path.startswith("common\\cultures\\00_cultures.txt"):
             with open(str(t_path), 'r', encoding='utf-8') as f:
                 dst_text = f.read()
 
         for target in target_list:
+            if target.ignore_list is not None:
+                flag1 = False
+                for ignore_path in target.ignore_list:
+                    if base_path.startswith(ignore_path):
+                        flag1 = True
+                        break
+                if flag1:
+                    continue
+
+            if target.match_list is not None:
+                flag1 = False
+                for match_path in target.match_list:
+                    if base_path.startswith(match_path):
+                        flag1 = True
+                        break
+                if not flag1:
+                    continue
+
+            print("done..")
+
             dst_text = replace_text(name=target.name,
                                     src_text=dst_text,
                                     match_pattern=target.match_pattern,
                                     translation_map=target.map,
-                                    file_path=file_path)
+                                    file_path=file_path,
+                                    get_text_func=target.get_text_func)
 
             # 変更があったもののみを保存
             if dst_text != resource_text:
@@ -151,11 +166,13 @@ def scan_files(src_path,
 
 
 class Target(object):
-    def __init__(self, name, ignore_list, match_pattern, mapper):
+    def __init__(self, name, match_pattern, mapper, get_text_func, match_list=None, ignore_list=None):
         self.name = name
         self.ignore_list = ignore_list
         self.match_pattern = match_pattern
+        self.get_text_func = get_text_func
         self.map = mapper
+        self.match_list = match_list
 
 
 def replace_items(paratranz_unziped_folder_path,
@@ -168,19 +185,73 @@ def replace_items(paratranz_unziped_folder_path,
     :return:
     """
 
-    revert_map1, normal_map1 = generate_dynasty_name_mapping(
+    first_name_revert_map, first_name_normal_map = generate_first_name_mapping(
         paratranz_unzipped_folder_path=paratranz_unziped_folder_path)
 
-    revert_map2, normal_map2 = generate_first_name_mapping(
+    dynasty_revert_map, dynasty_normal_map = generate_dynasty_name_mapping(
         paratranz_unzipped_folder_path=paratranz_unziped_folder_path)
 
-    normal_map1 = dict(normal_map1, **normal_map2)
+    def get_text_1(groups):
+        # "でテキストがwrapされていない
+        if len(groups) >= 8 and groups[6] is not None and groups[7] is not None:
+            pre = groups[6]
+            text = groups[7]
+            post = ""
+        elif len(groups) >= 6 and groups[2] is not None and groups[4] is not None:
+            pre = groups[2]
+            text = groups[4]
+            post = ""
+        else:
+            raise
+        return pre, text, post
 
+    def get_text_2(groups):
+        if len(groups) >= 5 and groups[3] is not None:
+            pre = groups[1]
+            text = groups[3]
+            post = groups[5]
+        else:
+            raise
+        return pre, text, post
+
+    first_name_match_pattern = r'((\s+)("?)(' + '|'.join(map(re.escape, first_name_normal_map.keys())) + r')("?)(\s+))'
+    first_name_match_pattern = re.compile(first_name_match_pattern)
+
+    dynasty_match_pattern = r'((\s+)("?)(' + '|'.join(map(re.escape, dynasty_normal_map.keys())) + r')("?)(\s+))'
+    dynasty_match_pattern = re.compile(dynasty_match_pattern)
+
+    # https://eu4.paradoxwikis.com/Conditions
     target_list = [
+        Target(name="monarch",
+               ignore_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
+               match_pattern=r'(((\shas_ruler\s*=\s*)("([^"]+)"))|((\shas_ruler\s*=\s*)([^"\s]+)))',
+               get_text_func=get_text_1,
+               mapper=first_name_normal_map),
+        Target(name="heir",
+               ignore_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
+               match_pattern=r'(((\shas_heir\s*=\s*)("([^"]+)"))|((\shas_heir\s*=\s*)([^"\s]+)))',
+               get_text_func=get_text_1,
+               mapper=first_name_normal_map),
+        Target(name="leader",
+               ignore_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
+               match_pattern=r'(((\shas_leader\s*=\s*)("([^"]+)"))|((\shas_leader\s*=\s*)([^"\s]+)))',
+               get_text_func=get_text_1,
+               mapper=first_name_normal_map),
         Target(name="dynasty",
-               ignore_list="TBD",
-               match_pattern=None,
-               mapper=normal_map1)
+               ignore_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
+               match_pattern=r'(((\sdynasty\s*=\s*)("([^"]+)"))|((\sdynasty\s*=\s*)([^"\s]+)))',
+               get_text_func=get_text_1,
+               mapper=dynasty_normal_map),
+        Target(name="first name",
+               match_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
+               match_pattern=first_name_match_pattern,
+               get_text_func=get_text_2,
+               mapper=first_name_normal_map),
+        Target(name="dynasty",
+               match_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
+               match_pattern=dynasty_match_pattern,
+               get_text_func=get_text_2,
+               mapper=dynasty_normal_map),
     ]
 
     scan_files(target_list=target_list,
