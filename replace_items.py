@@ -156,15 +156,15 @@ def scan_files(src_path,
                 u_write(os.path.join(dst_path, base_path), dst_text)
 
     print("---------")
-    for target in target_list:
-        for key, value in target.map.items():
-            if len(value) > 2:
-                if value[0] > 0:
-                    mark = "★"
-                else:
-                    mark = "☆"
-
-                print("{} 1:n / {}:{}".format(mark, key, value[1:]))
+    with open(_('tmp', "report.txt"), 'w', encoding="utf-8") as fw:
+        for target in target_list:
+            for key, value in target.map.items():
+                if len(value) > 2:
+                    if value[0] > 0:
+                        mark = "★"
+                    else:
+                        mark = "☆"
+                    fw.write("{} 1:n / {}:{}\n".format(mark, key, value[1:]))
 
 
 class Target(object):
