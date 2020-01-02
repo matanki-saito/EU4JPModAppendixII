@@ -122,7 +122,7 @@ def scan_files(src_path,
         t_path = _(translated_utf8_path, base_path)
         if os.path.exists(t_path) and not base_path.startswith("history\\countries\\") \
                 and not base_path.startswith("common\\cultures\\00_cultures.txt"):
-            with open(str(t_path), 'r', encoding='utf-8') as f:
+            with open(str(t_path), 'r', encoding='utf_8_sig') as f:
                 dst_text = f.read()
 
         for target in target_list:
