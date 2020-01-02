@@ -62,6 +62,14 @@ alliance = {
 	end_date = 1455.1.1
 }
 
+# Shoni-So
+alliance = {
+	first = SHN
+	second = SOO
+	start_date = 1444.1.1
+	end_date = 1559.2.18
+}
+
 #Marriages
 royal_marriage = {
 	first = IMG
@@ -87,6 +95,13 @@ royal_marriage = {
 # Daimyo Vassals
 #1573.7.3 -> Oda
 #1600.10.21 -> Tokugawa
+
+vassal = { #So
+	first = ASK
+	second = SOO
+	start_date = 1444.11.11
+	end_date = 1573.7.1
+}
 
 vassal = { #Kitabatake
 	first = ASK
@@ -336,6 +351,13 @@ vassal = {
 
 #Oda:
 
+vassal = { #So
+	first = ODA
+	second = SOO
+	start_date = 1573.7.1
+	end_date = 1600.10.21
+}
+
 vassal = {
 	first = ODA
 	second = CSK
@@ -547,6 +569,20 @@ vassal = {
 }
 
 #Tokugawa:
+
+vassal = { #Oda
+	first = TKG
+	second = ODA
+	start_date = 1600.10.21
+	end_date = 1821.1.1
+}
+
+vassal = { #So
+	first = TKG
+	second = SOO
+	start_date = 1600.10.21
+	end_date = 1821.1.1
+}
 
 vassal = {
 	first = TKG

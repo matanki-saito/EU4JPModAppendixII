@@ -19,7 +19,7 @@ discovered_by = KHA
 discovered_by = OIR
 discovered_by = QNG
 
-1467.1.1 = { owner = AKM controller = AKM }
+1468.1.1 = { owner = AKM controller = AKM }
 1488.1.1 = { remove_core = YMN }
 1520.1.1   = { add_core = AMA }
 1542.1.1 = { discovered_by = POR }

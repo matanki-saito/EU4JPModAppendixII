@@ -117,10 +117,10 @@ adm_idea_modifiers = {
 		}	
 	}
 	custom_idea_republican_tradition = {
-		republican_tradition = 0.5
+		republican_tradition = 0.15
 		max_level = 2
-		level_cost_1 = 30
-		level_cost_2 = 140	
+		level_cost_1 = 20
+		level_cost_2 = 60	
 		
 		# Used for random generation
 		chance = {

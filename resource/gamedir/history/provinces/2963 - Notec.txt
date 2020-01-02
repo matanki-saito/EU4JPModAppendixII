@@ -2,7 +2,7 @@
 
 owner = POL
 controller = POL
-capital = "Notec"
+capital = "Naklo"
 culture = polish
 religion = catholic
 trade_goods = livestock

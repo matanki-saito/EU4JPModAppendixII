@@ -19,6 +19,9 @@ country_event = {
 	trigger = {
 		tag = MNG
 		NOT = { is_year = 1470 }
+		has_faction = bureaucrats
+		has_faction = enuchs
+		has_faction = temples
 	}
 	
 	mean_time_to_happen = {
@@ -26,19 +29,16 @@ country_event = {
 	}
 	
 	option = {
-		name = "flavor_mng.EVTOPTA1" #Inward Perfection
-		add_adm_power = 100
-		add_faction_influence = { faction = bureaucrats influence = 50 }
+		name = "flavor_mng.EVTOPTC1" #Outward Expansion
+		add_faction_influence = { faction = temples influence = 50 }
 	}
 	option = {
 		name = "flavor_mng.EVTOPTB1" #Balanced Position
-		add_dip_power = 100
 		add_faction_influence = { faction = enuchs influence = 50 }
 	}
 	option = {
-		name = "flavor_mng.EVTOPTC1" #Outward Expansion
-		add_mil_power = 100
-		add_faction_influence = { faction = temples influence = 50 }
+		name = "flavor_mng.EVTOPTA1" #Inward Perfection
+		add_faction_influence = { faction = bureaucrats influence = 50 }
 	}
 }
 
@@ -55,6 +55,12 @@ country_event = {
 		tag = MNG
 		is_year = 1450
 		NOT = { is_year = 1490 }
+		owns = 1816
+		controls = 1816
+		owns = 726
+		controls = 726
+		owns = 697
+		controls = 697
 	}
 	
 	mean_time_to_happen = {
@@ -63,12 +69,37 @@ country_event = {
 	
 	option = {
 		name = "flavor_mng.EVTOPTA2" #Yes, we need to repair the Great Wall
-		add_years_of_income = -0.50
-		add_army_tradition = 25
+		add_years_of_income = -1
+		1816 = {
+			add_province_modifier = {
+				name = "repaired_great_wall"
+				duration = 18250
+			}
+		}
+		726 = {
+			add_province_modifier = {
+				name = "repaired_great_wall"
+				duration = 18250
+			}
+		}
+		697 = {
+			add_province_modifier = {
+				name = "repaired_great_wall"
+				duration = 18250
+			}
+		}
 	}
 	option = {
 		name = "flavor_mng.EVTOPTB2" #Let it continue to crumble
-		add_prestige = -10
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		else = {
+			add_prestige = -10
+		}
 	}
 }
 
@@ -85,6 +116,12 @@ country_event = {
 		tag = MNG
 		is_year = 1500
 		NOT = { is_year = 1540 }
+		owns = 1816
+		controls = 1816
+		owns = 726
+		controls = 726
+		owns = 697
+		controls = 697
 	}
 	
 	mean_time_to_happen = {
@@ -93,12 +130,37 @@ country_event = {
 	
 	option = {
 		name = "flavor_mng.EVTOPTA2" #Yes, we need to repair the Great Wall
-		add_years_of_income = -0.50
-		add_army_tradition = 25
+		add_years_of_income = -1
+		1816 = {
+			add_province_modifier = {
+				name = "repaired_great_wall"
+				duration = 18250
+			}
+		}
+		726 = {
+			add_province_modifier = {
+				name = "repaired_great_wall"
+				duration = 18250
+			}
+		}
+		697 = {
+			add_province_modifier = {
+				name = "repaired_great_wall"
+				duration = 18250
+			}
+		}
 	}
 	option = {
 		name = "flavor_mng.EVTOPTB2" #Let it continue to crumble
-		add_prestige = -10
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		else = {
+			add_prestige = -10
+		}
 	}
 }
 
@@ -311,8 +373,16 @@ country_event = {
 	option = {
 		name = "flavor_mng.EVTOPTA8" # There is nothing we can do
 		ai_chance = { factor = 25 }
-
-		
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+		else = {
+			add_prestige = -20
+		}
+		add_stability = -1
 		add_country_modifier = {
 			name = severe_famine
 			duration = 3650
@@ -321,7 +391,16 @@ country_event = {
 	option = {
 		name = "flavor_mng.EVTOPTB8" # Try to ease the suffering
 		ai_chance = { factor = 50 }
-		add_years_of_income = -0.50
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -5
+		}
+		else = {
+			add_prestige = -10
+		}
+		add_years_of_income = -1
 		add_country_modifier = {
 			name = famine
 			duration = 3650
@@ -330,7 +409,7 @@ country_event = {
 	option = {
 		name = "flavor_mng.EVTOPTC8" # Use all our resources to aim those in need
 		ai_chance = { factor = 25 }
-		add_years_of_income = -0.50
+		add_years_of_income = -3
 		add_adm_power = -100
 		add_country_modifier = {
 			name = fighting_famine
@@ -352,12 +431,23 @@ country_event = {
 		tag = MNG
 		is_year = 1600
 		any_owned_province = {
-			culture = manchu
+			OR = {
+				culture = manchu
+				culture = manchu_new
+			}
 		}
-		NOT = {	DIP = 3 }
-		NOT = {	ADM = 3 }
-		NOT = {	MIL = 3	}
-		NOT = { stability = 2 }
+		any_neighbor_country = {
+			OR = {
+				primary_culture = manchu
+				primary_culture = manchu_new
+			}
+		}
+		OR = {
+			NOT = {	DIP = 3 }
+			NOT = {	ADM = 3 }
+			NOT = {	MIL = 3	}
+			NOT = { stability = 2 }
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -366,6 +456,12 @@ country_event = {
 	
 	option = {
 		name = "flavor_mng.EVTOPTA9" #We are too weak to crush the rebels
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
 		every_owned_province = {
 			limit = {
 				culture = manchu
@@ -378,6 +474,12 @@ country_event = {
 	}
 	option = {
 		name = "flavor_mng.EVTOPTB9" #Attempt to crush the rebels
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = 5
+		}
 		add_mil_power = -100
 		every_owned_province = {
 			limit = {
@@ -478,6 +580,12 @@ country_event = {
 	
 	option = {
 		name = "flavor_mng.EVTOPTA10" # Bah, surely these cultists can do no lasting harm!
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
 		random_owned_province = {
 			limit = {
 				has_province_flag = MNG_lotus_cult_flag1
@@ -531,7 +639,13 @@ country_event = {
 	}
 	option = {
 		name = "flavor_mng.EVTOPTB10" #Let the forces of the Empire crush the Rebellion!
-		add_years_of_income = -0.5
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = 5
+		}
+		add_years_of_income = -3
 		random_owned_province = {
 			limit = {
 				has_province_flag = MNG_lotus_cult_flag1
@@ -597,138 +711,17 @@ country_event = {
 	option = {
 		name = "flavor_mng.EVTOPTA11" #Yes, let us raise new taxes
 		add_inflation = 5
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
 	}
 	option = {
 		name = "flavor_mng.EVTOPTB11" #No, our subjects are already angry enough!
-		add_years_of_income = -1
+		add_years_of_income = -3
 	}
-}
-
-#Li Zechang's Rebellion
-country_event = {
-	id = flavor_mng.12
-	title = "flavor_mng.EVTNAME12"
-	desc = "flavor_mng.EVTDESC12"
-	picture = ANGRY_MOB_eventPicture
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = MNG
-		is_year = 1640
-		NOT = { is_year = 1680 }
-		NOT = { stability = 2 }
-	}
-	
-	mean_time_to_happen = {
-		months = 120
-	}
-	
-	immediate = {
-		hidden_effect = {
-			random_owned_province = {
-				limit = {
-					continent = asia
-					is_core = MNG
-				}
-				set_province_flag = MNG_zechang_rebellion_flag1
-			}
-			random_owned_province = {
-				limit = {
-					continent = asia
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag1
-					}
-				}
-				set_province_flag = MNG_zechang_rebellion_flag2
-			}
-			random_owned_province = {
-				limit = {
-					continent = asia
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag1
-					}
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag2
-					}
-				}
-				set_province_flag = MNG_zechang_rebellion_flag3
-			}
-			random_owned_province = {
-				limit = {
-					continent = asia
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag1
-					}
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag2
-					}
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag3
-					}
-				}
-				set_province_flag = MNG_zechang_rebellion_flag4
-			}
-			random_owned_province = {
-				limit = {
-					continent = asia
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag1
-					}
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag2
-					}
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag3
-					}
-					NOT = {
-						has_province_flag = MNG_zechang_rebellion_flag4
-					}
-				}
-				set_province_flag = MNG_zechang_rebellion_flag5
-			}
-		}
-	}
-	
-	option = {
-		name = "flavor_mng.EVTOPTA12" #Let us attempt to destroy the traitor!
-		random_owned_province = {
-			limit = {
-				has_province_flag = MNG_zechang_rebellion_flag1
-			}
-			create_revolt = 3
-			clr_province_flag = MNG_zechang_rebellion_flag1
-		}
-		random_owned_province = {
-			limit = {
-				has_province_flag = MNG_zechang_rebellion_flag2
-			}
-			create_revolt = 2
-			clr_province_flag = MNG_zechang_rebellion_flag2
-		}
-		random_owned_province = {
-			limit = {
-				has_province_flag = MNG_zechang_rebellion_flag3
-			}
-			create_revolt = 2
-			clr_province_flag = MNG_zechang_rebellion_flag3
-		}
-		random_owned_province = {
-			limit = {
-				has_province_flag = MNG_zechang_rebellion_flag4
-			}
-			create_revolt = 1
-			clr_province_flag = MNG_zechang_rebellion_flag4
-		}
-		random_owned_province = {
-			limit = {
-				has_province_flag = MNG_zechang_rebellion_flag5
-			}
-			create_revolt = 1
-			clr_province_flag = MNG_zechang_rebellion_flag5
-		}
-	}
-
 }
 
 #The Expulsion of the Jesuits
@@ -780,36 +773,6 @@ country_event = {
 	option = {
 		name = "flavor_mng.EVTOPTB13"
 		add_stability = -2
-	}
-}
-
-#The Appointment of Heshen
-country_event = {
-	id = flavor_mng.14
-	title = "flavor_mng.EVTNAME14"
-	desc = "flavor_mng.EVTDESC14"
-	picture = ADVISOR_eventPicture
-	
-	fire_only_once = yes
-	
-	trigger = {
-		tag = MNG
-		is_year = 1770
-		NOT = { is_year = 1800 }
-	}
-	
-	mean_time_to_happen = {
-		months = 200
-	}
-	
-	option = {
-		name = "flavor_mng.EVTOPTA14" #Appoint him despite his faults
-		add_adm_power = 100
-	}
-	option = {
-		name = "flavor_mng.EVTOPTB14" #No, such corruption could ruin the state!
-		add_legitimacy = 10
-		add_corruption = -1
 	}
 }
 
@@ -961,6 +924,12 @@ country_event = {
 	
 	option = {
 		name = "flavor_mng.EVTOPTA16" #It's likely just harmless talk
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
 		random_owned_province = {
 			limit = {
 				has_province_flag = MNG_lotus_rebellion_flag1
@@ -999,7 +968,13 @@ country_event = {
 	}
 	option = {
 		name = "flavor_mng.EVTOPTB16" #Crush these plotters!
-		add_years_of_income = -0.50
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = 5
+		}
+		add_years_of_income = -3
 		random_owned_province = {
 			limit = {
 				has_province_flag = MNG_lotus_rebellion_flag1
@@ -1150,6 +1125,7 @@ country_event = {
 		668 = {
 			add_province_modifier = {
 				name = mng_st_pauls_college
+				duration = -1
 			}
 			change_religion = catholic
 			add_institution_embracement = {

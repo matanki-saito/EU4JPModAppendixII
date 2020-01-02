@@ -58,7 +58,7 @@ monarch_names = {
 	"Gustav #0" = 20
 	"Carsten #0" = 20 
 	"Marko #0" = 20 
-	"Michael #0" = 20 
+	"Michael #0" = 30 
 	"Samuel #0" = 10
 	"Mathieu #0" = 10
 	"Sebastian #0" = 10 
@@ -72,6 +72,8 @@ monarch_names = {
 	"Irene #0" = -10
 	"Joakim #0" = 10
 	"Zack #0" = 10
+	"Pierre #0" = 10
+	"Céline #0" = -10
 	
 	"Artur #0" = 5 
 	"Mikael #0" = 5
@@ -113,6 +115,7 @@ leader_names = {
 	Holmgren
 	Isaksson
 	Jakobsson
+	Jensen
 	Johansson
 	Johannesson
 	Khanagov
