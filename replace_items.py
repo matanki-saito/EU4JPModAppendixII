@@ -48,7 +48,7 @@ def replace_text(name,
             mapping_text = force_mapping[text]
         elif text in translation_map:
             lis = translation_map.get(text)
-            if len(lis) > 2:
+            if len(lis) > 2 and name != "default":
                 lis[0] += 1
 
             mapping_text = lis[1]
@@ -83,10 +83,9 @@ def u_write(file_path, text):
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 
-    #    printer(src_array=encoder(src_array=map(ord, text)), out_file_path=file_path)
-
-    with open(file_path, 'w', encoding='utf-8') as f:
-        f.write(text)
+    printer(src_array=encoder(src_array=map(ord, text)), out_file_path=file_path)
+    # with open(file_path, 'w', encoding='utf-8') as f:
+    #    f.write(text)
 
 
 def scan_files(src_path,
@@ -111,7 +110,7 @@ def scan_files(src_path,
 
         base_path = str(file_path).replace(src_path + "\\", "")
 
-        print(base_path)
+        # print(base_path)
 
         # resource folderにあるものを見る
         # events/Tenguri.txtなどはコメントにUTF-8で書き込んでいるようで、テキストにCP1252には存在しない
@@ -145,8 +144,6 @@ def scan_files(src_path,
                 if not flag1:
                     continue
 
-            print("done..")
-
             dst_text = replace_text(name=target.name,
                                     src_text=dst_text,
                                     match_pattern=target.match_pattern,
@@ -162,7 +159,12 @@ def scan_files(src_path,
     for target in target_list:
         for key, value in target.map.items():
             if len(value) > 2:
-                print(("★" if value[0] > 0 else "☆") + " 1:n / {}:{}".format(key, value[1:]))
+                if value[0] > 0:
+                    mark = "★"
+                else:
+                    mark = "☆"
+
+                print("{} 1:n / {}:{}".format(mark, key, value[1:]))
 
 
 class Target(object):
@@ -242,12 +244,17 @@ def replace_items(paratranz_unziped_folder_path,
                match_pattern=r'(((\sdynasty\s*=\s*)("([^"]+)"))|((\sdynasty\s*=\s*)([^"\s]+)))',
                get_text_func=get_text_1,
                mapper=dynasty_normal_map),
-        Target(name="first name",
+        Target(name="default",
+               ignore_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
+               match_pattern=r'(((\sname\s*=\s*)("([^"]+)"))|((\sname\s*=\s*)([^"\s]+)))',
+               get_text_func=get_text_1,
+               mapper=first_name_normal_map),
+        Target(name="default",
                match_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
                match_pattern=first_name_match_pattern,
                get_text_func=get_text_2,
                mapper=first_name_normal_map),
-        Target(name="dynasty",
+        Target(name="default",
                match_list=['common\\cultures\\00_cultures.txt', 'history\\countries\\'],
                match_pattern=dynasty_match_pattern,
                get_text_func=get_text_2,
