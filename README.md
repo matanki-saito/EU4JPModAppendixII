@@ -1,7 +1,8 @@
 # EUIV JPMod AppendixII
 This program assembly EUIV japanese mod.
  - common
-   - countires
+   - countries
+   - cultures
    - disasters
    - government_names
    - ideas

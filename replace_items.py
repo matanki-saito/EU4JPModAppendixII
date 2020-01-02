@@ -115,15 +115,14 @@ def scan_files(src_path,
         # resource folderにあるものを見る
         # events/Tenguri.txtなどはコメントにUTF-8で書き込んでいるようで、テキストにCP1252には存在しない
         # 0x81などが発生してしまうのでignoreしている
-        with open(str(file_path), 'r', encoding='windows-1252', errors='ignore') as f:
+        with open(str(file_path), 'rt', encoding='windows-1252', errors='ignore', newline='') as f:
             dst_text = resource_text = f.read()
 
         # utf8 sourceを見る
         t_path = _(translated_utf8_path, base_path)
-        if os.path.exists(t_path) and not base_path.startswith("history\\countries\\") \
-                and not base_path.startswith("common\\cultures\\00_cultures.txt"):
-            with open(str(t_path), 'r', encoding='utf_8_sig') as f:
-                dst_text = f.read()
+        if os.path.exists(t_path):
+            with open(str(t_path), 'rt', encoding='utf_8_sig', newline=None) as f:
+                dst_text = f.read().replace('\n', '\r\n')
 
         for target in target_list:
             if target.ignore_list is not None:
@@ -216,10 +215,10 @@ def replace_items(paratranz_unziped_folder_path,
             raise
         return pre, text, post
 
-    first_name_match_pattern = r'((\s+)("?)(' + '|'.join(map(re.escape, first_name_normal_map.keys())) + r')("?)(\s+))'
+    first_name_match_pattern = r'((\s+)(")(' + '|'.join(map(re.escape, first_name_normal_map.keys())) + r')(")(\s+))'
     first_name_match_pattern = re.compile(first_name_match_pattern)
 
-    dynasty_match_pattern = r'((\s+)("?)(' + '|'.join(map(re.escape, dynasty_normal_map.keys())) + r')("?)(\s+))'
+    dynasty_match_pattern = r'((\s+)(")(' + '|'.join(map(re.escape, dynasty_normal_map.keys())) + r')(")(\s+))'
     dynasty_match_pattern = re.compile(dynasty_match_pattern)
 
     # https://eu4.paradoxwikis.com/Conditions
