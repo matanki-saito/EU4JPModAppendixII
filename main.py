@@ -176,7 +176,6 @@ def upload_mod_to_s3(upload_file_path,
 
 
 def pack_mod(out_file_path,
-             mod_zip_path,
              mod_title_name,
              mod_file_name,
              mod_tags,
@@ -192,44 +191,18 @@ def pack_mod(out_file_path,
             mod_image_file_path=mod_image_file_path,
             out_dir_path=temp_dir_path)
 
-        # zipをコピー
-        shutil.copy(mod_zip_path, _(temp_dir_path, "{}.zip".format(mod_file_name)))
-
         return shutil.make_archive(out_file_path, 'zip', root_dir=temp_dir_path)
 
 
 def main():
-    # 一時フォルダ用意
-    os.makedirs(_(".", "tmp"), exist_ok=True)
-    os.makedirs(_(".", "out"), exist_ok=True)
-    # 翻訳の最新版をダウンロードする
-
-    p_file_path = download_trans_zip_from_paratranz(
-        project_id=76,
-        secret=os.environ.get("PARATRANZ_SECRET"),
-        out_file_path=_(".", "tmp", "paratranz.zip"))
-
-    print("p_file_path:{}".format(p_file_path))
-    # p_file_path = _(".", "tmp", "paratranz.zip")
-
-    # AppModを構築する
-    app_mod_zip_file_path = assembly_app_mod_zip_file(
-        resource_paratranz_trans_zip_file_path=p_file_path,
-        resource_image_file_path=_("resource", "title.jpg"),
-        resource_game_dir_path=_("resource", "gamedir"),
-        out_file_path=_("tmp", "mod"))
-
-    print("app_mod_zip_file_path:{}".format(app_mod_zip_file_path))
-
     # packする
     mod_pack_file_path = pack_mod(
         out_file_path=_(".", "out", "eu4_ap2_mod"),
         mod_file_name="jpmod_ap2_mod",
-        mod_zip_path=app_mod_zip_file_path,
-        mod_title_name="[評価版] JPMOD Sub 1: Characters, Cultures",
+        mod_title_name="[Deprecated] JPMOD Sub 1: Characters",
         mod_tags={"Translation", "Localisation"},
         mod_image_file_path="title.jpg",
-        mod_supported_version="1.29.*.*")
+        mod_supported_version="1.28.*.*")
 
     print("mod_pack_file_path:{}".format(mod_pack_file_path))
 
