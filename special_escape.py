@@ -84,12 +84,12 @@ def generate_encoder(game_type, ext):
 
             # BMP外の文字
             if code_point > 0xFFFF:
-                print("変換できない文字")
+                print("not convert character")
                 continue
 
             # null文字
             if code_point == 0:
-                print("null文字がある")
+                print("Found null character")
                 continue
 
             high_byte = (code_point >> 8) & 0x000000FF
