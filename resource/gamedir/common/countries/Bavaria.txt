@@ -119,6 +119,13 @@ leader_names = {
 	Satzenhofen
 	Vieregg
 	Treuberg
+	"von Rosenheim"
+	"von Freising"
+	"von Passau"
+	"von Starnberg"
+	"von Dingolfing"
+	"von Garching"
+	"von Tegernsee"
 }
 
 army_names = {
@@ -132,4 +139,5 @@ ship_names = {
 	"König Konrad III" "König Friedrich I" "Pfalzgraf Otto"
 	Augsburg Andechs Burgau Diessen Friedberg Kempten Lindau
 	Memmingen Mindel Oettingen Straubing Wolfstein
+	Rosenheim Passau Freising Landshut Ingolstadt Schwangau Tegernsee
 }

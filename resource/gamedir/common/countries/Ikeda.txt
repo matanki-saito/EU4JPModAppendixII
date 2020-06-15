@@ -3,6 +3,7 @@
 graphical_culture = asiangfx
 
 color = { 178  140  110 }
+revolutionary_colors = { 6 1 6 }
 
 historical_idea_groups = {
 	offensive_ideas
@@ -29,14 +30,16 @@ historical_units = {
 }
 
 monarch_names = { 
-	"Terumasa #0" = 50	"Toshitaka #0" = 50
+	"Terumasa #0" = 50
+	"Toshitaka #0" = 50
 	"Mitsumasa #0" = 50
 	"Tsugumasa #0" = 50
 	"Tsunamasa #0" = 50	
 	"Munemasa #0" = 50	
 	"Harumasa #0" = 50	
 	"Narimasa #0" = 50	
-	"Naritoshi #0" = 50	"Yoshimasa #0" = 50
+	"Naritoshi #0" = 50
+	"Yoshimasa #0" = 50
 	"Toku #0" = -5
 	"Sen #0" = -5
 	"Tama #0" = -5

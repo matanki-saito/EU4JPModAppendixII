@@ -11,9 +11,8 @@ base_tax = 3
 base_production = 2
 trade_goods = fish
 base_manpower = 2
-capital = "A Coruna" 
+capital = "Corunna" 
 is_city = yes
-estate = estate_church
  # Santiago de Compostela pilgrimage
 discovered_by = eastern
 discovered_by = western

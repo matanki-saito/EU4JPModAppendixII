@@ -32,13 +32,11 @@ discovered_by = east_african
 	#controller = ADE #Ottoman Officers
 	#add_core = ADE #Ottoman Officers
 } # 
-1524.1.1 = { discovered_by = POR }
 1538.1.1 = { #Formally annexed by the Ottomans.
 	owner = TUR
 	controller = TUR
 	add_core = TUR
 } # Part of the Ottoman empire
-1524.1.1 = { discovered_by = POR }
 1567.1.1 = { unrest = 4 } # Revolt against the Ottomans
 1570.1.1 = { unrest = 0 }
 1597.9.1 = { unrest = 5 } # Qasimi state, revolt against the Ottomans
@@ -46,5 +44,6 @@ discovered_by = east_african
 1636.1.1 = {
 	owner = RAS
 	controller = RAS
+	add_core = RAS
 	remove_core = TUR
 }

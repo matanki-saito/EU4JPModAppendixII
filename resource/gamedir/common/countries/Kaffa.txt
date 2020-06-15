@@ -4,6 +4,7 @@ graphical_culture = africangfx
 
 #color = { 205  202  221 }
 color = { 150  0  25 }
+revolutionary_colors = { 13 0 5 }
 
 historical_idea_groups = {
 	defensive_ideas

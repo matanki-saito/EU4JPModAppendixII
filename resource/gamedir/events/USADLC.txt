@@ -421,6 +421,10 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {
+		is_revolutionary = no
+	}
+	
 	immediate = {
 		hidden_effect = {
 			country_event = {
@@ -2434,6 +2438,7 @@ country_event = {
 			adm = 5	
 			dip = 4
 			mil = 2
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2458,6 +2463,7 @@ country_event = {
 			adm = 5
 			dip = 4
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2623,6 +2629,7 @@ country_event = {
 			adm = 5
 			dip = 4
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2640,6 +2647,7 @@ country_event = {
 			adm = 3
 			dip = 6
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2657,6 +2665,7 @@ country_event = {
 			adm = 5	
 			dip = 4
 			mil = 2
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2694,12 +2703,7 @@ country_event = {
 				}
 			}
 			any_neighbor_province = {
-				owner = {
-					OR = {
-						tag = USA
-						has_country_flag = usa_declaration_independence_flag
-					}
-				}
+				owned_by = root
 			}
 		}
 	}
@@ -2730,6 +2734,24 @@ country_event = {
 			add_core = ROOT
 			cede_province = ROOT
 		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					is_bankrupt = yes
+					is_in_large_debt = yes
+					AND = {
+						NOT = { treasury = 500 }
+						NOT = { monthly_income = 10 }
+					}
+					AND = {
+						NOT = { treasury = 250 }
+						NOT = { monthly_income = 20 }
+					}
+				}
+			}
+		}
 	}
 
 	option = {
@@ -2738,6 +2760,9 @@ country_event = {
 			who = FRA 
 			modifier = opinion_disappointed
 			years = 20
+		}
+		ai_chance = {
+			factor = 1
 		}
 	}
 }
@@ -2777,6 +2802,7 @@ country_event = {
 			dip = 4
 			adm = 5
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2794,6 +2820,7 @@ country_event = {
 			dip = 3	
 			adm = 4	
 			mil = 5
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2842,6 +2869,7 @@ country_event = {
 			dip = 5	
 			adm = 5	
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2859,6 +2887,7 @@ country_event = {
 			dip = 3	
 			adm = 4	
 			mil = 5
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2876,6 +2905,7 @@ country_event = {
 			dip = 5	
 			adm = 3	
 			mil = 4
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -2981,6 +3011,7 @@ country_event = {
 			dip = 5	
 			adm = 5	
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -3004,6 +3035,7 @@ country_event = {
 			adm = 4	
 			dip = 6
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -3051,6 +3083,7 @@ country_event = {
 			dip = 5	
 			adm = 6	
 			mil = 3
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -3072,6 +3105,7 @@ country_event = {
 			dip = 5
 			adm = 6
 			mil = 5
+			fixed = yes
 		}
 		if = {
 			limit = {
@@ -3098,14 +3132,12 @@ country_event = {
 		SPA = {
 			ai = yes
 		}
-		OR = {
-			any_province = {
-				colonial_region = colonial_eastern_america
-				OR = {
-					owned_by = SPA
-					owner = {
-						is_colonial_nation_of = SPA
-					}
+		any_province = {
+			colonial_region = colonial_eastern_america
+			OR = {
+				owned_by = SPA
+				owner = {
+					is_colonial_nation_of = SPA
 				}
 			}
 		}

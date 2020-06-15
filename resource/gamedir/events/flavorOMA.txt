@@ -64,7 +64,7 @@ country_event = {
 	trigger = {
 		tag = OMA
 		
-		1331 = {
+		4346 = {
 			is_strongest_trade_power = POR
 		}	
 		NOT = { is_year = 1550 }
@@ -91,7 +91,7 @@ country_event = {
 				tooltip = flavor_oma.2.3
 			}
 		}
-		1331 = {
+		4346 = {
 			add_trade_modifier = {
 				who = root
 				duration = 3650

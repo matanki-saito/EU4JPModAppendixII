@@ -1133,7 +1133,15 @@ hint_fortdefense = {
 	title = "HINT_FORTDEFENSE_TITLE"
 	text = "HINT_FORTDEFENSE_TEXT"
 	button = "hint_fortlevel"
+	button = "hint_zoneofcontrol"
 	button = "hint_siege"
+}
+hint_zoneofcontrol = {
+	window = "hints_test"
+	title = "HINT_ZONEOFCONTROL_TITLE"
+	text = "HINT_ZONEOFCONTROL_TEXT"
+	button = "hint_fortdefense"
+	button = "hint_fortlevel"
 }
 hint_elector = {
 	window = "hints_test"
@@ -1164,6 +1172,7 @@ hint_fortlevel  = {
 	title = "HINT_FORTLVL_TITLE"
 	text = "HINT_FORTLVL_TEXT"
 	button = "hint_fortdefense"
+	button = "hint_zoneofcontrol"
 }
 hint_siege = {
 	window = "hints_test"

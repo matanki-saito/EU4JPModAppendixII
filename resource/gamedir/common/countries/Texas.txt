@@ -6,6 +6,7 @@ colonial_parent = SPA
 random_nation_chance = 0
 
 color = { 173  22  27 }
+revolutionary_colors = { 13  0  16 }
 
 historical_idea_groups = {
 	defensive_ideas

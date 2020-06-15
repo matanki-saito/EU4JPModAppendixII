@@ -4815,6 +4815,7 @@ country_event = {
 			type = statesman
 			discount = yes
 			culture = arawak
+			religion = animism
 			skill = 2
 			female = yes
 		}
@@ -5663,6 +5664,7 @@ country_event = {
 
 	trigger = {
 		tag = PAP
+		has_global_flag = borgia_pope_global
 		is_year = 1480
 		NOT = {
 			is_year = 1519
@@ -5673,7 +5675,7 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 200
+		months = 12
 	}
 	
 	immediate = {

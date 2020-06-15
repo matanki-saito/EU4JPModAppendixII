@@ -1179,6 +1179,66 @@
         {
             "pdx_id": "achievement_where_am_i",
             "xbla_id": "211"
+        },
+        {
+            "pdx_id": "achievement_aeiou",
+            "xbla_id": "296"
+        },
+        {
+            "pdx_id": "achievement_napoleons_ambition",
+            "xbla_id": "297"
+        },
+        {
+            "pdx_id": "achievement_everythings_coming_up_mulhouse",
+            "xbla_id": "298"
+        },
+        {
+            "pdx_id": "achievement_global_hegemony",
+            "xbla_id": "299"
+        },
+        {
+            "pdx_id": "achievement_god_tier",
+            "xbla_id": "300"
+        },
+        {
+            "pdx_id": "achievement_spaghetti_western",
+            "xbla_id": "301"
+        },
+        {
+            "pdx_id": "achievement_dont_be_cilli",
+            "xbla_id": "302"
+        },
+        {
+            "pdx_id": "achievement_inner_turmoil",
+            "xbla_id": "303"
+        },
+        {
+            "pdx_id": "achievement_stern_des_sudens",
+            "xbla_id": "304"
+        },
+        {
+            "pdx_id": "achievement_kingdom_of_god",
+            "xbla_id": "305"
+        },
+        {
+            "pdx_id": "achievement_stiff_upper_lippe",
+            "xbla_id": "306"
+        },
+        {
+            "pdx_id": "achievement_on_the_rhodes_again",
+            "xbla_id": "307"
+        },
+        {
+            "pdx_id": "achievement_czechs_and_balances",
+            "xbla_id": "308"
+        },
+        {
+            "pdx_id": "achievement_mary_of_lotharingia",
+            "xbla_id": "309"
+        },
+        {
+            "pdx_id": "achievement_holiest_roman_empire",
+            "xbla_id": "310"
         }
     ]
 }

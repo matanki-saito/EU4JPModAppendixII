@@ -4,6 +4,8 @@ graphical_culture = westerngfx
 
 color = { 246  223  15 }
 
+revolutionary_colors = { 16 0 16 }
+
 historical_idea_groups = {
 	defensive_ideas
 	religious_ideas

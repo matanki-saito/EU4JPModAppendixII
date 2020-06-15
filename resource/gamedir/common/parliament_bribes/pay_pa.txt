@@ -10,6 +10,7 @@ pay_pa = {
 				FROM = { religion = coptic }
 			}
 		}
+		patriarch_authority = 0.05
 	}
 	
 	effect = {

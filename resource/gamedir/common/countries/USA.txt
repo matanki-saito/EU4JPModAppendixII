@@ -8,6 +8,7 @@ random_nation_chance = 0
 historical_score = 200
 
 color = { 69  157  208 }
+revolutionary_colors = { 8 1 8 }
 
 historical_idea_groups = {
 	plutocracy_ideas

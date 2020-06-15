@@ -30,7 +30,7 @@ discovered_by = east_african
 1624.1.1 = {
 	owner = OMA
 	controller = OMA
-	add_core = ORM
+	add_core = OMA
 	remove_core = POR
 }
 1727.1.1 = {

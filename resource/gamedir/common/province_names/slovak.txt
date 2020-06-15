@@ -1,4 +1,5 @@
-128 = "Korutánsko"
+4759 = "Horné Korutánsko"
+128 = "Dolné Korutánsko"
 133 = "Linec"
 134 = "Vieden"
 153 = "Pest-Budin"

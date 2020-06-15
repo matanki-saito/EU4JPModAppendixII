@@ -246,14 +246,6 @@ alliance = {
 	end_date = 1721.9.10
 }
 
-# Russian vassal
-vassal = {
-	first = RUS
-	second = KUR
-	start_date = 1710.11.11
-	end_date = 1795.3.28
-}
-
 # Anti-Swedish alliance
 alliance = {
 	first = RUS

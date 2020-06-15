@@ -11,7 +11,6 @@ trade_goods = livestock
 base_manpower = 2
 capital = "Kamieniec"
 is_city = yes
-estate = estate_nobles
 fort_15th = yes
 add_core = VOL
 add_core = POL

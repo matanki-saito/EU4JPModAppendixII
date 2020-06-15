@@ -17,6 +17,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		is_revolutionary = no
 		OR = {
 			AND = {
 				tag = TIB
@@ -60,9 +61,9 @@ country_event = {
 					government = theocracy
 				}
 			}
-			change_government = theocracy
+			change_government_to_theocracy = yes
 			add_government_reform = leading_clergy_reform
-			set_legacy_government = theocratic_government
+			#set_legacy_government = theocratic_government
 		}
 		else = {
 			add_devotion = 20
@@ -138,6 +139,7 @@ country_event = {
 				adm = 4
 				dip = 4
 				mil = 5
+				fixed = yes
 			}
 		}
 		else = {
@@ -175,6 +177,7 @@ country_event = {
 				adm = 2
 				dip = 4
 				mil = 5
+				fixed = yes
 			}
 		}
 		else = {

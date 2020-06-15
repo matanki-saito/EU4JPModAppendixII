@@ -33,8 +33,8 @@ center_of_trade = 2
 	controller = TUR
 	add_core = TUR
 } # Part of the Ottoman empire
-1547.1.1 = { owner = POR controller = POR } # Occupied by Portugal
-1551.1.1 = { owner = TUR controller = TUR remove_core = TUR }
+1547.1.1 = { owner = POR controller = POR add_core = POR } # Occupied by Portugal
+1551.1.1 = { owner = TUR controller = TUR remove_core = POR }
 1567.1.1 = { unrest = 4 } # Revolt against the Ottomans
 1570.1.1 = { unrest = 0 }
 1597.9.1 = { unrest = 5 } # Qasimi state, revolt against the Ottomans

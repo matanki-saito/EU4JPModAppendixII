@@ -4,6 +4,8 @@ graphical_culture = africangfx
 
 color = { 21 191 16 }
 
+revolutionary_colors = { 10 0 8 }
+
 historical_idea_groups = {
 	trade_ideas
 	defensive_ideas
@@ -47,7 +49,7 @@ monarch_names = {
 	
 	"Baramparaye #0" = -1
 	"Ngenzahago #0" = -1
-	"Baramparaye #0" = -1
+	"Nandabunga #0" = -1
 }
 
 leader_names = {

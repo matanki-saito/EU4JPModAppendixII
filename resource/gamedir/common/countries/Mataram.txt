@@ -3,6 +3,7 @@
 graphical_culture = asiangfx
 
 color = { 227  162  94 }
+revolutionary_colors = { 0 5 13 }
 
 historical_idea_groups = {
 	trade_ideas
@@ -74,7 +75,6 @@ monarch_names = {
     "Purnamaningrum #0" = -1
     "Koesoemarini #0" = -1
     "Wulan #0" = -1
-    "Amangkurat #0" = -1
     "Alit #0" = -1
     "Batang #0" = -1
     "Banawati #0" = -1

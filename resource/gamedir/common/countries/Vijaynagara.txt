@@ -3,6 +3,7 @@
 graphical_culture = indiangfx
 
 color = { 246 196 24 }
+revolutionary_colors = { 8 1 8 }
 
 historical_score = 100
 
@@ -33,7 +34,7 @@ historical_units = {
 
 monarch_names = {
 	"Sriranga #0" = 60
-	"Narasimha #1" = 40
+	"Narasimha #0" = 40
 	"Venkata #1" = 40
 	"Virupaksha #0" = 20
 	"Devaraya #0" = 20

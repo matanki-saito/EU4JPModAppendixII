@@ -14,11 +14,103 @@ offices_to_vassals = {
 		government = monarchy
 	}
 	
-	effect = {
+	on_issue_taken = {
+		every_subject_country = {
+			clr_country_flag = offices_to_vassals
+		}
 		random_subject_country = {
-			add_opinion = {
-				who = FROM
-				modifier = parliament_closer_ties
+			limit = {
+				OR = {
+					is_vassal = yes
+					is_lesser_in_union = yes
+				}
+			}
+			set_country_flag = offices_to_vassals
+		}
+	}
+
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					any_subject_country = {
+						OR = {
+							is_vassal = yes
+							is_lesser_in_union = yes
+						}
+						has_country_flag = offices_to_vassals
+					}
+				}
+			}
+			tooltip = {
+				custom_tooltip = offices_to_vassals_tooltip
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					OR = {
+						is_vassal = yes
+						is_lesser_in_union = yes
+					}
+					has_country_flag = offices_to_vassals
+				}
+			}
+			tooltip = {
+				random_subject_country = {
+					limit = {
+						OR = {
+							is_vassal = yes
+							is_lesser_in_union = yes
+						}
+						has_country_flag = offices_to_vassals
+					}
+					add_opinion = {
+						who = FROM
+						modifier = parliament_closer_ties
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					any_subject_country = {
+						OR = {
+							is_vassal = yes
+							is_lesser_in_union = yes
+						}
+						has_country_flag = offices_to_vassals
+					}
+				}
+				random_subject_country = {
+					limit = {
+						OR = {
+							is_vassal = yes
+							is_lesser_in_union = yes
+						}
+						has_country_flag = offices_to_vassals
+					}
+					add_opinion = {
+						who = FROM
+						modifier = parliament_closer_ties
+					}
+					clr_country_flag = offices_to_vassals
+				}
+			}
+			else = {
+				random_subject_country = {
+					limit = {
+						OR = {
+							is_vassal = yes
+							is_lesser_in_union = yes
+						}
+					}
+					add_opinion = {
+						who = FROM
+						modifier = parliament_closer_ties
+					}
+				}
 			}
 		}
 	}

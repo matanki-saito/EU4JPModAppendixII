@@ -3,6 +3,7 @@
 graphical_culture = africangfx
 
 color = { 43 43 186 }
+revolutionary_colors = { 0 16 9 }
 
 historical_idea_groups = {
 	trade_ideas
@@ -58,7 +59,6 @@ monarch_names = {
 }
 
 leader_names = {
-	#TODO
 	Mwale
 	Phiri
 	Mbewe

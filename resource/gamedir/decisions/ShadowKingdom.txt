@@ -23,7 +23,7 @@ country_decisions = {
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
-				is_part_of_hre = no
+				NOT = { is_part_of_hre = yes }
 				NOT = { owner = { is_subject_of = ROOT } }
 			}
 		}

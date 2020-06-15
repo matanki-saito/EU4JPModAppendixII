@@ -26,7 +26,12 @@ country_event = {
 			OR = {
 				area = morea_area
 				area = northern_greece_area
-				area = macedonia_area
+				area = aegean_archipelago_area
+				province_id = 148
+				province_id = 1853
+				province_id = 4702
+				province_id = 4705
+				province_id = 4779
 			}
 		}
    	}
@@ -39,23 +44,34 @@ country_event = {
 		name = "flavor_gre.1.a"
 		trigger = { NOT = { has_country_flag = greek_information } }
 		set_global_flag = greek_cores
+		morea_area = {
+			limit = { NOT = { is_core = GRE } }
+			add_core = GRE
+		}
+		northern_greece_area = {
+			limit = { NOT = { is_core = GRE } }
+			add_core = GRE
+		}
+		aegean_archipelago_area = {
+			limit = { NOT = { is_core = GRE } }
+			add_core = GRE
+		}
 		every_province = {
 			limit = {
 				OR = {
-					area = macedonia_area
-					area = morea_area
-					area = northern_greece_area
+					province_id = 148
+					province_id = 1853
+					province_id = 4702
+					province_id = 4705
+					province_id = 4779
 				}
+				NOT = { is_core = GRE }
 			}
 			add_core = GRE
 		}
-		if = {
-			limit = {
-				1853 = {
-					NOT = { culture = greek }
-				}
-			}
-			1853 = {
+		1853 = {
+			if = {
+				limit = { NOT = { culture = greek } }
 				change_culture = greek
 			}
 		}
@@ -85,7 +101,14 @@ country_event = {
 						OR = {
 							area = northern_greece_area
 							area = morea_area
-							area = macedonia_area
+							area = aegean_archipelago_area
+							OR = {
+								province_id = 148
+								province_id = 1853
+								province_id = 4702
+								province_id = 4705
+								province_id = 4779
+							}
 						}
 					}
 				}
@@ -102,12 +125,23 @@ country_event = {
 			NOT = { primary_culture = pontic_greek }
 		}
 		tooltip = {
+			morea_area = {
+				add_core = GRE
+			}
+			northern_greece_area = {
+				add_core = GRE
+			}
+			aegean_archipelago_area = {
+				add_core = GRE
+			}
 			every_province = {
 				limit = {
 					OR = {
-						area = macedonia_area
-						area = northern_greece_area
-						area = morea_area
+						province_id = 148
+						province_id = 1853
+						province_id = 4702
+						province_id = 4705
+						province_id = 4779
 					}
 				}
 				add_core = GRE
@@ -118,17 +152,6 @@ country_event = {
 			tooltip = {
 				1853 = {
 					add_unrest = 4
-				}
-			}
-		}
-		if = {
-			limit = {
-				owns = 1853
-				1853 = { NOT = { culture = greek } }
-			}
-			tooltip = {
-				1853 = {
-					change_culture = greek
 				}
 			}
 		}
@@ -143,12 +166,23 @@ country_event = {
 			}
 		}
 		tooltip = {
+			morea_area = {
+				add_core = GRE
+			}
+			northern_greece_area = {
+				add_core = GRE
+			}
+			aegean_archipelago_area = {
+				add_core = GRE
+			}
 			every_province = {
 				limit = {
 					OR = {
-						area = morea_area
-						area = macedonia_area
-						area = northern_greece_area
+						province_id = 148
+						province_id = 1853
+						province_id = 4702
+						province_id = 4705
+						province_id = 4779
 					}
 				}
 				add_core = GRE

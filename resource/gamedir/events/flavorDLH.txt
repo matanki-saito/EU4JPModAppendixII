@@ -194,6 +194,7 @@ country_event = {
 			is_subject_of = ROOT
 		}
 		NOT = { has_global_flag = dlh_bahlul_lodi_flag }
+		is_year = 1445
 		NOT = { is_year = 1450 }
 	}
 	
@@ -221,12 +222,12 @@ country_event = {
 		}
 		custom_tooltip = flavor_dlh.5.b.tt
 		SRH = { country_event = { id = flavor_dlh.7 } }
-		tooltip = {
-			free_vassal = SRH
-		}
 		add_opinion = {
 			 who = SRH
 			 modifier = opinion_lodi_released 
+		}
+		tooltip = {
+			free_vassal = SRH
 		}
 	}
 }

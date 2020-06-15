@@ -3,6 +3,7 @@
 graphical_culture = northamericagfx
 
 color = { 31 164 122 }
+revolutionary_colors = { 10 0 6 }
 
 historical_idea_groups = {
 	religious_ideas
@@ -30,7 +31,7 @@ historical_units = {
 }
 
 leader_names = {
-	Piratininga Tabajara Temiminó Tamoio Tabajara Caeté Tupinaé Temiminó Tupina´ Aricobé
+	Piratininga Tabajara Temiminó Tamoio Tabajara Caeté Tupinaé Temiminó Tupina Aricobé
 }
 
 monarch_names = {

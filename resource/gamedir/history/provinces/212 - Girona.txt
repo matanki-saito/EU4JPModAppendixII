@@ -12,7 +12,6 @@ base_production = 3
 trade_goods = fish 
 base_manpower = 3
 capital = "Girona" 
-estate = estate_nobles
 is_city = yes		# census of 1462, also includes the town of Figueres 
 
 

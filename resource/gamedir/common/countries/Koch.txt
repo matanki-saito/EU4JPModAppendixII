@@ -3,6 +3,7 @@
 graphical_culture = indiangfx
 
 color = { 163  66  74 }
+revolutionary_colors = { 5 8 5 }
 
 historical_idea_groups = {
 	quantity_ideas

@@ -586,6 +586,8 @@ achievement_sweden_is_not_overpowered = {
 			province_id = 2996
 			province_id = 4113
 			province_id = 4165
+			province_id = 4746
+			province_id = 4745
 		}
 		NOT = { owned_by = ROOT }
 	}
@@ -629,6 +631,8 @@ achievement_sweden_is_not_overpowered = {
 		owns_core_province = 2996
 		owns_core_province = 4113
 		owns_core_province = 4165
+		owns_core_province = 4746
+		owns_core_province = 4745
 	}
 }
 
@@ -1609,7 +1613,6 @@ achievement_jihad = {
 	
 	happened = {
 		religion = sunni
-		num_of_cities = 500
 		num_of_owned_provinces_with = {
 			value = 500
 			religion = sunni
@@ -2150,8 +2153,10 @@ achievement_sons_of_carthage = {
 	provinces_to_highlight = {
 		OR = {
 			area = sicily_area
+			area = western_sicily_area
 			province_id = 2986
 			province_id = 127
+			province_id = 4735
 			area = baleares_area
 			area = barbary_coast_area
 			area = upper_andalucia_area
@@ -2173,11 +2178,20 @@ achievement_sons_of_carthage = {
 			owned_by = ROOT
 			is_core = ROOT
 		}
+		western_sicily_area = {
+			type = all
+			owned_by = ROOT
+			is_core = ROOT
+		}
 		2986 = {
 			owned_by = ROOT
 			is_core = ROOT
 		}
 		127 = {
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		4735 = {
 			owned_by = ROOT
 			is_core = ROOT
 		}
@@ -5229,7 +5243,7 @@ achievement_mare_nostrum = {
 		OR = {
 			province_id = 101
 			province_id = 102
-			province_id = 108
+			province_id = 4729
 			province_id = 111
 			province_id = 112
 			province_id = 113
@@ -5249,7 +5263,7 @@ achievement_mare_nostrum = {
 			province_id = 130
 			province_id = 136
 			province_id = 137
-			province_id = 138
+			province_id = 4754
 			province_id = 142
 			province_id = 143
 			province_id = 144
@@ -5311,7 +5325,7 @@ achievement_mare_nostrum = {
 			province_id = 1751
 			province_id = 1756
 			province_id = 1764
-			province_id = 1769
+			province_id = 4738
 			province_id = 1773
 			province_id = 1774
 			province_id = 1826
@@ -5368,18 +5382,40 @@ achievement_mare_nostrum = {
 			province_id = 4175
 			province_id = 4174
 			province_id = 2297
+			province_id = 4696
+			province_id = 4732
+			province_id = 4737
+			province_id = 4736
+			province_id = 4733
+			province_id = 4752
+			province_id = 4753
+			province_id = 4699
+			province_id = 4701
+			province_id = 4700
+			province_id = 4779
+			province_id = 4706
+			province_id = 4705
+			province_id = 4698
+			province_id = 4735
 		}
 		NOT = { owned_by = ROOT }
 	}
 	
 	happened = {
 		tag = ROM
+		owns = 4752
+		owns = 4753
+		owns = 4699
+		owns = 4701
+		owns = 4700
+		owns = 4779
+		owns = 4706
 		owns = 4175
 		owns = 4174
 		owns = 2297
 		owns = 101
 		owns = 102
-		owns = 108
+		owns = 4729
 		owns = 111
 		owns = 112
 		owns = 113
@@ -5399,7 +5435,7 @@ achievement_mare_nostrum = {
 		owns = 130
 		owns = 136
 		owns = 137
-		owns = 138
+		owns = 4754
 		owns = 142
 		owns = 143
 		owns = 144
@@ -5461,7 +5497,7 @@ achievement_mare_nostrum = {
 		owns = 1751
 		owns = 1756
 		owns = 1764
-		owns = 1769
+		owns = 4738
 		owns = 1773
 		owns = 1774
 		owns = 1826
@@ -5515,6 +5551,14 @@ achievement_mare_nostrum = {
 		owns = 4562
 		owns = 4560
 		owns = 4559
+		owns = 4696
+		owns = 4732
+		owns = 4737
+		owns = 4736
+		owns = 4733
+		owns = 4705
+		owns = 4698
+		owns = 4735
 	}
 }
 
@@ -5712,7 +5756,10 @@ achievement_kinslayer = {
 		dynasty = Rurikovich
 		NOT = {
 			any_country = {
-				dynasty = ROOT
+				AND = {
+					NOT = { junior_union_with = ROOT }
+					dynasty = ROOT
+				}
 			}
 		}
 	}
@@ -5998,10 +6045,10 @@ achievement_core_fu = {
 		normal_province_values = yes
 		ironman = yes
 		start_date = 1444.11.11
-		tag = CEP
 	}
 
 	happened = {
+		tag = CEP
 		custom_trigger_tooltip = {
 			tooltip = achievement_core_fu_tooltip
 			has_country_flag = core_fu
@@ -6638,7 +6685,7 @@ achievement_disciples_of_enlightenment = {
 		custom_trigger_tooltip = {
 			tooltip = atleast_10_mahayana_tooltip
 			calc_true_if = {
-				all_country = {
+				all_countries_including_self = {
 					religion = mahayana
 				}
 				amount = 10
@@ -7059,6 +7106,16 @@ achievement_mass_production = {
 		tradecompany = 1
 		mills = 1
 		farm_estate = 1
+		if = {
+			limit = {
+				has_dlc = "Rule Britannia"
+			}
+			furnace = 1
+		}
+		ramparts = 1
+		soldier_households = 1
+		impressment_offices = 1
+		state_house = 1
 	}
 }
 
@@ -7433,16 +7490,23 @@ achievement_great_moravia = {
 	provinces_to_highlight = {
 		OR = {
 			province_id = 60 # Lausitz
+			province_id = 4778
 			province_id = 134 # Wien 
+			province_id = 4762
+			province_id = 4761
 			province_id = 135 # Sopron
 			province_id = 153 # Pest
 			province_id = 154 # Hont
 			province_id = 162 # Zemplen
 			province_id = 262 # Krakow
 			province_id = 263 # Ratibor
+			province_id = 4723
 			province_id = 264 # Breslau
+			province_id = 4726
 			province_id = 265 # Brno
 			province_id = 266 # Prague
+			province_id = 4725
+			province_id = 4724
 			province_id = 267 # Plsen
 			province_id = 1318 # Spis
 			province_id = 1763 # Niederlausitz
@@ -7472,16 +7536,23 @@ achievement_great_moravia = {
 			tag = MVA
 		}
 		owns_core_province = 60 # Lausitz
+		owns_core_province = 4778
 		owns_core_province = 134 # Wien 
+		owns_core_province = 4762
+		owns_core_province = 4761
 		owns_core_province = 135 # Sopron
 		owns_core_province = 153 # Pest
 		owns_core_province = 154 # Hont
 		owns_core_province = 162 # Zemplen
 		owns_core_province = 262 # Krakow
 		owns_core_province = 263 # Ratibor
+		owns_core_province = 4723
 		owns_core_province = 264 # Breslau
+		owns_core_province = 4726
 		owns_core_province = 265 # Brno
 		owns_core_province = 266 # Prague
+		owns_core_province = 4725
+		owns_core_province = 4724
 		owns_core_province = 267 # Plsen
 		owns_core_province = 1318 # Spis
 		owns_core_province = 1763 # Niederlausitz
@@ -7555,7 +7626,7 @@ achievement_voltaires_nightmare = {
 			all_countries_including_self = {
 				is_part_of_hre = yes
 			}
-			amount = 75
+			amount = 100
 		}
 	}
 }
@@ -8424,7 +8495,10 @@ achievement_ganges_khan = {
 	id = 271
 	
 	visible = {
-		has_dlc = "Dharma"
+		OR = {
+			has_dlc = "Dharma"
+			has_dlc = "Emperor"
+		}
 	}
 	
 	possible = {
@@ -8479,7 +8553,10 @@ achievement_populists_in_government = {
 	id = 273
 	
 	visible = {
-		has_dlc = "Dharma"
+		OR = {
+			has_dlc = "Dharma"
+			has_dlc = "Emperor"
+		}
 	}
 	
 	possible = {
@@ -8795,6 +8872,7 @@ achievement_ostindisk_kompagni_te = {
 		tag = DAN
 		any_owned_province = {
 			is_owned_by_trade_company = yes
+			continent = asia
 		}
 		trading_part = {
 			trade_goods = tea
@@ -9262,5 +9340,402 @@ achievement_where_am_i = {
 				}
 			}
 		}
+	}
+}
+
+# 1.30 Achievements - Emperor DLC
+achievement_aeiou = {
+	id = 296
+	
+	visible = {
+		tag = HAB
+		has_dlc = "Emperor"
+	}
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+	}
+	happened = {
+		custom_trigger_tooltip = {
+			tooltip = completed_austrian_missions
+			mission_completed = emp_hab_union_with_poland
+			mission_completed = emp_hab_no_one_to_threaten_us
+			mission_completed = emp_hab_imperial_border
+			mission_completed = emp_hab_empire_united_in_religion
+			mission_completed = emp_hab_an_empire_roman
+			mission_completed = emp_hab_empire_pass_reforms
+			mission_completed = emp_hab_balanced_estates
+			mission_completed = emp_hab_prospering_nation
+			mission_completed = emp_hab_viennese_waltz
+			mission_completed = emp_hab_the_hungarian_question
+			mission_completed = emp_hab_all_minorities_are_welcome
+			mission_completed = emp_hab_take_salzburg
+			mission_completed = emp_hab_union_bayern
+			mission_completed = emp_hab_swabia
+			mission_completed = emp_hab_union_brandenburg
+			mission_completed = emp_hab_connect_further_austria
+			mission_completed = emp_hab_conquer_switzerland
+			mission_completed = emp_hab_conquer_burgundy
+			mission_completed = emp_hab_conquer_france
+			mission_completed = emp_hab_take_serbia
+			mission_completed = emp_hab_take_wallachia_bulgaria
+			mission_completed = emp_hab_scourge_of_europe
+			mission_completed = emp_hab_veneto_lombardy
+			mission_completed = emp_hab_naples
+			mission_completed = emp_hab_balance_of_power
+			mission_completed = emp_hab_spread_dynasties
+			mission_completed = emp_hab_our_balance_of_power
+			mission_completed = emp_hab_crush_the_revolution
+			mission_completed = emp_hab_power_to_habsburg
+			mission_completed = emp_hab_austrian_netherlands
+			mission_completed = emp_hab_ostend_company
+			mission_completed = emp_hab_indian_trading
+			mission_completed = emp_hab_foothold_in_china
+			mission_completed = emp_hab_austrialasia
+			mission_completed = emp_hab_develop_hungary_bohemia
+			mission_completed = secure_the_imperial_crown
+			mission_completed = subjugate_bohemia
+			mission_completed = recover_silesia
+			mission_completed = partition_poland
+			mission_completed = subjugate_hungary
+			mission_completed = austrian_hungary
+			mission_completed = austrian_croatia
+			mission_completed = conquer_transylvania
+			mission_completed = austrian_italian_ambition
+			mission_completed = emp_hab_imperial_capitals
+		}
+	}
+}
+
+achievement_napoleons_ambition = {
+	id = 297
+	
+	visible = {
+		has_dlc = "Emperor"
+	}
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+	}
+	happened = {
+		tag = FRA
+		custom_trigger_tooltip = {
+			tooltip = spread_revolution_ten_times_tt
+			check_variable = {
+				which = revolution_spread
+				value = 10
+			}
+		}
+	}
+}
+
+achievement_everythings_coming_up_mulhouse = {
+	id = 298
+	
+	visible = {
+		has_dlc = "Emperor"
+	}
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = MLH
+	}
+	happened = {
+		is_emperor = yes
+		hre_reform_passed = emperor_reichskrieg
+	}
+}
+
+achievement_global_hegemony = {
+	id = 299
+	
+	visible = {
+		has_dlc = "Emperor"
+	}
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+	}
+	happened = {
+		hegemon_strength = 100
+	}
+}
+
+achievement_god_tier = {
+	id = 300
+	
+	visible = {
+		has_dlc = "Emperor"
+	}
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+	}
+	happened = {
+		NOT = { religion = catholic }
+		NOT = { religion = sunni }
+		is_defender_of_faith_of_tier = 5
+	}
+}
+
+# 1.30 Achievements - Free
+
+achievement_spaghetti_western = {
+	id = 301
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = BLG
+	}
+	happened = {
+		OR = {
+			tag = MEX
+			tag = TEX
+		}
+	}
+}
+
+achievement_dont_be_cilli = {
+	id = 302
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = CLI
+	}
+	happened = {
+		NOT = { tag = CLI }
+		has_switched_nation = no
+	}
+}
+
+achievement_inner_turmoil = {
+	id = 303
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = LOI
+	}
+	happened = {
+		NOT = { is_year = 1500 }
+		num_of_owned_provinces_with = {
+			value = 20
+			is_city = yes
+			province_is_on_an_island = no
+		}
+	}
+}
+
+achievement_stern_des_sudens = {
+	id = 304
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = UBV
+	}
+	happened = {
+		tag = BAV
+		BRE = { is_subject_of = ROOT }
+		BRE = { owns = 2778 }
+	}
+}
+
+achievement_kingdom_of_god = {
+	id = 305
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = PAP
+	}
+	happened = {
+		custom_trigger_tooltip = {
+			tooltip = kingdom_of_god_achievement_tt
+			has_country_flag = is_kingdom_of_god_flag
+		}
+	}
+}
+
+achievement_stiff_upper_lippe = {
+	id = 306
+	
+	provinces_to_highlight = {
+		if = {
+			limit = {
+				NOT = {
+					tag = LPP
+				}
+			}
+			is_core = LPP
+		}
+		else = {
+			region = british_isles_region
+			NOT = { owned_by = ROOT }
+		}
+	}
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+	}
+	happened = {
+		tag = LPP
+		british_isles_region = {
+			type = all
+			owned_by = ROOT
+		}
+	}
+}
+
+achievement_on_the_rhodes_again = {
+	id = 307
+	
+	provinces_to_highlight = {
+		OR = {
+			province_id = 151
+			province_id = 2313
+			province_id = 379
+		}
+		OR = {
+			NOT = { owned_by = ROOT }
+			NOT = { is_core = ROOT }
+		}
+	}
+	
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = KNI
+	}
+	happened = {
+		owns_core_province = 151
+		owns_core_province = 2313
+		owns_core_province = 379
+	}
+}
+
+achievement_czechs_and_balances = {
+	id = 308
+
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = BOH
+	}
+	happened = {
+		crown_land_share = 50
+		num_of_estate_privileges = {
+			estate = estate_church
+			value = 2
+		}
+		num_of_estate_privileges = {
+			estate = estate_burghers
+			value = 2
+		}
+		num_of_estate_privileges = {
+			estate = estate_nobles
+			value = 2
+		}
+	}
+}
+
+achievement_mary_of_lotharingia = {
+	id = 309
+
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+		tag = BUR
+	}
+	happened = {
+		tag = LOT
+		is_female = yes
+		has_ruler = "Marie"
+	}
+}
+
+achievement_holiest_roman_empire = {
+	id = 310
+
+	possible = {
+		normal_or_historical_nations = yes
+		normal_province_values = yes
+		ironman = yes
+		start_date = 1444.11.11
+		NOT = { num_of_custom_nations = 1 }
+		is_random_new_world = no
+	}
+	happened = {
+		OR = {
+			tag = PAP
+			is_emperor = yes
+		}
+		hre_religion = catholic
+		hre_religion_locked = yes
+		PAP = { is_elector = yes }
 	}
 }

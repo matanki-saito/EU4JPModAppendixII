@@ -533,7 +533,7 @@ country_event = {
 			factor = 50
 		}
 		define_general = {
-			name = "Chellappa Nayaka"
+			name = "Chellappa Saluva"
 			shock = 4
 			fire = 3
 			manuever = 4
@@ -576,7 +576,8 @@ country_event = {
 			spawn_rebels = {
 				type = nationalist_rebels
 				size = 2
-				leader = "Chellappa Saluva"
+				leader = "Chellappa"
+				leader_dynasty = "Saluva"
 			}
 		}
 		random_owned_province = {
@@ -604,6 +605,10 @@ country_event = {
 	trigger = {
 		tag = VIJ
 		had_country_flag = { flag = chellappas_ambition days = 1825 }
+		has_leader = "Chellappa Saluva"
+		any_owned_province = {
+			culture = tamil
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -612,18 +617,41 @@ country_event = {
 	
 	option = {
 		name = "flavor_vij.14.a" #Ok
-		random_owned_province = {
+		if = {
 			limit = {
-				culture = tamil
+				any_owned_province = {
+					culture = tamil
+					highest_supply_limit_in_area = yes
+				}
 			}
-			spawn_rebels = {
-				type = pretender_rebels
-				size = 3
-				leader = "Narasimha Saluva"
+			random_owned_province = {
+				limit = {
+					culture = tamil
+					highest_supply_limit_in_area = yes
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 3
+					leader = "Narasimha"
+					leader_dynasty = "Saluva"
+				}
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					culture = tamil
+				}
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 3
+					leader = "Narasimha"
+					leader_dynasty = "Saluva"
+				}
 			}
 		}
 		kill_leader = {
-			type = "Chellappa Nayaka"
+			type = "Chellappa Saluva"
 		}
 		add_stability = -1
 		clr_country_flag = chellappas_ambition
@@ -683,7 +711,8 @@ country_event = {
 			spawn_rebels = {
 				type = nationalist_rebels
 				size = 3
-				leader = "Chellappa Saluva"
+				leader = "Chellappa"
+				leader_dynasty = "Saluva"
 			}
 		}
 		add_stability = -1

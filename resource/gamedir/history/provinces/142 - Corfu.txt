@@ -1,15 +1,15 @@
 #142 - Corfu
 
-owner = CEP
-controller = CEP
+owner = VEN
+controller = VEN
 culture = greek
 religion = orthodox
 capital = "Corfu"
 trade_goods = fish
 hre = no
-base_tax = 4 
-base_production = 4
-base_manpower = 1
+base_tax = 2 
+base_production = 1
+base_manpower = 3
 is_city = yes
 fort_15th = yes
 add_core = CEP

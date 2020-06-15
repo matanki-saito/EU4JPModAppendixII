@@ -13,6 +13,7 @@ country_event = {
 			religion = catholic
 			religion = protestant
 			religion = anglican
+			religion = hussite
 		}
 		japan_region = {
 			has_discovered = ROOT
@@ -995,13 +996,13 @@ country_event = {
 	option = {
 		name = "EVTOPTA9036"
 		add_years_of_income = 1
-		add_adm_power = -25
+		add_adm_power = -50
 		add_prestige = -5
 	}
 	option = {
 		name = "EVTOPTB9036"
 		add_years_of_income = 0.5
-		add_adm_power = -25
+		add_adm_power = -50
 		add_prestige = 5
 	}
 	option = {

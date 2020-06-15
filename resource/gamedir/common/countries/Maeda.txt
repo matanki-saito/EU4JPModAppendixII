@@ -3,6 +3,7 @@
 graphical_culture = asiangfx
 
 color = { 144  121  173 }
+revolutionary_colors = { 1 0 1 }
 
 historical_idea_groups = {
 	offensive_ideas
@@ -33,7 +34,8 @@ monarch_names = {
 	"Toshinaga #0" = 50	
 	"Toshitsune #0" = 50	
 	"Mitsutaka #0" = 50	
-	"Tsunanori #0" = 50	"Yoshinori #0" = 50
+	"Tsunanori #0" = 50
+	"Yoshinori #0" = 50
 	"Munetoki #0" = 50
 	"Shigehiro #0" = 50
 	"Shigenobu #0" = 50

@@ -3,6 +3,7 @@
 graphical_culture = westerngfx
 
 color = { 37 113 207 }
+revolutionary_colors = { 15 0 15 }
 
 preferred_religion = reformed
 
@@ -102,7 +103,7 @@ monarch_names = {
 leader_names = {
 	Arascain Anrias Airchart Ambarsan Aonghais
 	Beitean Blacathathir Banach Blar Braigheach Brun Buiseid
-	Caimbeulach Comyn Camshron Calder "de Charteris" Cochran Colquhoun Canowan Ceiteach Cearr Crob√°n Ciogach
+	Caimbeulach Comyn Camshron Calder "de Charteris" Cochran Colquhoun Canowan Ceiteach Cearr Crob‡n Ciogach
 	Druimeanach Dunchad Dughallach Dalais Deoir
 	Fearsithe Frisealach Fingon Folais Forsaidh Flimean Fearghasdan
 	Galbraith Greumach Grannd Guinne Gutraidh Geadais Gilios Glas Gobha Guaire Giobsan

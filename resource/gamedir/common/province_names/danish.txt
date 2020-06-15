@@ -48,7 +48,7 @@
 
 1139 = "Christiansborg"
 1141 = "Prindsensteen"
-1177 = "Got Haabs Forbierg"
+1177 = { "Got Haabs Forbierg" "Kapstaden" }
 1201 = "Zansjibar"
 1205 = "Mokadischu"
 1775 = "Holsteen"
@@ -71,3 +71,13 @@
 4124 = "Karelen"
 4141 = "Ditmersken"
 4165 = "Gønge"
+
+2002 = "Galápagosøerne"
+
+1987 = "Selskabsøerne"
+1725 = "Tuamotuøerna"
+1238 = "Salomonøerne"
+1991 = "Gilbertøerne"
+1993 = "Marshalløerne"
+782 = "Ildlandet"
+1995 = "Mikronesien"

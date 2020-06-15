@@ -12,7 +12,6 @@ trade_goods = naval_supplies
 base_manpower = 1
 is_city = yes
 capital = "Bergen"
-estate = estate_burghers
 discovered_by = western
 discovered_by = eastern
 extra_cost = 16

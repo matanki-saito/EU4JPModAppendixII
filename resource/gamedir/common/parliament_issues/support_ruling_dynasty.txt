@@ -8,6 +8,12 @@ support_ruling_dynasty = {
 		is_lesser_in_union = no
 		NOT = { legitimacy = 80 }
 		is_year = 1500
+		NOT = {
+			AND = {
+				has_reform = celestial_empire
+				has_dlc = "Mandate of Heaven"
+			}
+		}
 	}
 	
 	effect = {

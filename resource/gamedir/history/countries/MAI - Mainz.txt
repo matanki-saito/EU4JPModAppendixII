@@ -326,4 +326,4 @@ fixed_capital = 78 # Cannot move capital away from this province & no power cost
 	}
 }
 
-1806.7.12 = { elector = no } # The HRE is formally abolished
+1803.4.27 = { elector = no } # Reichsdeputationshauptschluss is ratified by Emperor Francis II, Mainz loses the electoral dignity

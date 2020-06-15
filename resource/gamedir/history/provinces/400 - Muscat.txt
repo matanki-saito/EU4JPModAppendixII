@@ -21,7 +21,6 @@ discovered_by = east_african
 fort_15th = yes
 extra_cost = 16
 center_of_trade = 2
-estate = estate_burghers
 
 1480.1.1 = { discovered_by = TUR }
 1488.1.1 = { discovered_by = POR } # Pêro da Covilhã

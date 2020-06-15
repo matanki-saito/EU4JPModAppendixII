@@ -18,7 +18,7 @@ discovered_by = muslim
 discovered_by = ottoman
 discovered_by = indian
 
-1440.1.1 = {
+1441.1.1 = { # moved date forward a year for balance reasons
 	controller = REB
 	revolt = {
 		type = nationalist_rebels
@@ -28,7 +28,7 @@ discovered_by = indian
 	unrest = 8
 }
 1475.1.1 = { unrest = 5 } #Repression against the Falasha by Baeda Maryam
-1476.1.1 = { unrest = 0 revolt = { size = 0 } }
+1476.1.1 = { unrest = 0 revolt = {} controller = ETH }
 1520.1.1 = {
 	owner = BTI
 	controller = BTI

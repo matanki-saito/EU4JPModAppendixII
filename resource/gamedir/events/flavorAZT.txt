@@ -852,7 +852,7 @@ country_event = {
 		if = {
 			limit = { government = native }
 			change_government = tribal
-			set_legacy_government = tribal_despotism_legacy
+			#set_legacy_government = tribal_despotism_legacy
 		}
 	}
 	option = { #Let them continue worship there.

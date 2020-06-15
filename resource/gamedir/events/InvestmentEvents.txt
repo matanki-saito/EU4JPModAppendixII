@@ -654,6 +654,7 @@ country_event = {
 				}
 			}
 			any_neighbor_province = {
+				NOT = { owned_by = ROOT }
 				owner = {
 					OR = {
 						technology_group = indian
@@ -1109,6 +1110,28 @@ country_event = {
 								technology_group = central_african
 								technology_group = sub_saharan
 								technology_group = chinese
+							}
+							any_country = {
+								NOT = {
+									war_with = ROOT
+								}
+								OR = {
+									is_in_war = {
+										attacker_leader = this
+										defender_leader = prev
+									}
+									is_in_war = {
+										attacker_leader = prev
+										defender_leader = this
+									}
+								}
+								OR = {
+									technology_group = indian
+									technology_group = east_african
+									technology_group = central_african
+									technology_group = sub_saharan
+									technology_group = chinese
+								}
 							}
 						}	
 					}

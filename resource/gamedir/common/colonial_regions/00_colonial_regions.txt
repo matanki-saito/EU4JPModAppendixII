@@ -49,10 +49,18 @@ colonial_alaska = {
 	}
 	# Generic
 	names = {
-		name = "COLONIAL_CALIFORNIA_Cascadia"
+		trigger = {
+			any_owned_province = {
+				OR = {
+					area = alaska_area
+					area = east_alaska_area
+				}
+			}
+		}
+		name = "COLONIAL_ALASKA_Alaska"
 	}
 	names = {
-		name = "COLONIAL_ALASKA_Alaska"
+		name = "COLONIAL_CALIFORNIA_Cascadia"
 	}
 	names = {
 		name = "COLONIAL_REGION_New_Root_GetName"
@@ -214,7 +222,7 @@ colonial_canada = {
 		trigger = {
 			tag = SCO
 		}
-		name = "COLONIAL_CANADA_Nouvelle_Écosse"
+		name = "COLONIAL_CANADA_Nouvelle_Ecosse"
 	}
 	names = {
 		trigger = {
@@ -1148,6 +1156,12 @@ colonial_brazil = {
 	}
 	
 	# Specific
+	names = {
+		trigger = {
+			tag = FRA
+		}
+		name = "COLONIAL_BRAZIL_France_Antarctique"
+	}
 	names = {
 		trigger = {
 			tag = POR

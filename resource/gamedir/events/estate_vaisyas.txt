@@ -48,107 +48,54 @@ country_event = {
 			}
 		}
 		any_owned_province = {
-			has_estate = estate_vaisyas
+			OR = {
+				owner = { government = republic }
+				development = 7
+				province_trade_power = 5
+			}
+			is_capital = no
+			is_city = yes
 		}
 	}
 	
 	immediate = {
 		hidden_effect = {
-			random_owned_province = {
-				limit = { has_estate = estate_vaisyas }
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
+			while = {
 				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-				}
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-				}
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_vaisyas
-							value = 10
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = social_banditry
+							value = estate
+							estate = estate_vaisyas
 						}
 					}
-				}
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_vaisyas
-							value = 15
+					any_owned_province = {
+						OR = {
+							owner = { government = republic }
+							development = 7
+							province_trade_power = 5
 						}
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = social_banditry }
+					}
+					check_reducing_estate_revolt_size_more_trigger = {
+						FLAG = social_banditry
 					}
 				}
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_vaisyas
-							value = 15
+				random_owned_province = {
+					limit = {
+						OR = {
+							owner = { government = republic }
+							development = 7
+							province_trade_power = 5
 						}
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = social_banditry }
 					}
+					set_province_flag = social_banditry
 				}
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_vaisyas
-							value = 20
-						}
-					}
-				}
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_vaisyas
-							value = 20
-						}
-					}
-				}
-				set_province_flag = social_banditry
-			}
-			random_owned_province = {
-				limit = {
-					has_estate = estate_vaisyas
-					NOT = { has_province_flag = social_banditry }
-					owner = {
-						num_of_owned_provinces_with = {
-							has_estate = estate_vaisyas
-							value = 20
-						}
-					}
-				}
-				set_province_flag = social_banditry
 			}
 		}
 	}
@@ -221,8 +168,9 @@ country_event = {
 	
 	trigger = {
 		has_estate = estate_vaisyas
-		any_owned_province = {
-			has_estate = estate_vaisyas
+		estate_territory = { 
+			estate = estate_vaisyas
+			territory = 1
 		}
 		estate_influence = {
 			estate = estate_vaisyas
@@ -231,6 +179,14 @@ country_event = {
 		estate_loyalty = {
 			estate = estate_vaisyas
 			loyalty = 60
+		}
+		any_owned_province = {
+			OR = {
+				owner = { government = republic }
+				development = 7
+				province_trade_power = 5
+			}
+			is_city = yes
 		}
 	}
 	
@@ -242,7 +198,12 @@ country_event = {
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
-					has_estate = estate_vaisyas
+					OR = {
+						owner = { government = republic }
+						development = 7
+						province_trade_power = 5
+					}
+					is_city = yes
 				}
 				save_event_target_as = thriving_vaisyas_province
 			}
@@ -269,8 +230,16 @@ country_event = {
 	
 	trigger = {
 		has_estate = estate_vaisyas
+		estate_territory = { 
+			estate = estate_vaisyas
+			territory = 1
+		}
 		any_owned_province = {
-			has_estate = estate_vaisyas
+			OR = {
+				owner = { government = republic }
+				development = 7
+				province_trade_power = 5
+			}
 			OR = {
 				AND = {
 					has_building = plantations
@@ -301,7 +270,11 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				OR = {
 					has_building = textile
 					AND = {
@@ -575,9 +548,21 @@ country_event = {
 			estate = estate_vaisyas
 			loyalty = 40
 		}
+		estate_territory = {
+			estate = estate_vaisyas
+			territory = 5
+		}
+		estate_influence = {
+			estate = estate_vaisyas
+			influence = 40
+		}
 		num_of_owned_provinces_with = {
 			value = 5
-			has_estate = estate_vaisyas
+			OR = {
+				owner = { government = republic }
+				development = 7
+				province_trade_power = 5
+			}
 			OR = {
 				trade_goods = silk
 				trade_goods = spices
@@ -602,7 +587,11 @@ country_event = {
 	option = {
 		trigger = {
 			any_owned_province = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				trade_goods = gems
 			}
 		}
@@ -616,7 +605,11 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				trade_goods = gems
 			}
 			add_province_modifier = {
@@ -629,7 +622,11 @@ country_event = {
 	option = {
 		trigger = {
 			any_owned_province = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				trade_goods = spices
 			}
 		}
@@ -643,7 +640,11 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				trade_goods = spices
 			}
 			add_province_modifier = {
@@ -655,7 +656,11 @@ country_event = {
 	option = {
 		trigger = {
 			any_owned_province = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				trade_goods = silk
 			}
 		}
@@ -669,7 +674,11 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				trade_goods = silk
 			}
 			add_province_modifier = { # local goods produced
@@ -692,8 +701,9 @@ country_event = {
 	
 	trigger = {
 		has_estate = estate_vaisyas
-		any_owned_province = {
-			has_estate = estate_vaisyas
+		estate_territory = { 
+			estate = estate_vaisyas
+			territory = 1
 		}
 		estate_influence = {
 			estate = estate_vaisyas
@@ -711,7 +721,56 @@ country_event = {
 				estate = estate_vaisyas
 			}
 		}
+		any_owned_province = {
+			OR = {
+				owner = { government = republic }
+				development = 7
+				province_trade_power = 5
+			}
+			is_capital = no
+			is_city = yes
+		}
 	}
+	
+	immediate = {
+		hidden_effect = {
+			while = {
+				limit = {
+					NOT = { 
+						development_in_provinces = {
+							has_province_flag = vaisyas_demand_influence
+							value = estate
+							estate = estate_vaisyas
+						}
+					}
+					any_owned_province = {
+						OR = {
+							owner = { government = republic }
+							development = 7
+							province_trade_power = 5
+						}
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = vaisyas_demand_influence }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						OR = {
+							owner = { government = republic }
+							development = 7
+							province_trade_power = 5
+						}
+						is_capital = no
+						is_city = yes
+						NOT = { has_province_flag = vaisyas_demand_influence }
+					}
+					set_province_flag = vaisyas_demand_influence
+				}
+			}
+		}
+	}
+	
 	mean_time_to_happen = {
 		days = 1
 	}
@@ -729,9 +788,15 @@ country_event = {
 		}
 		every_owned_province = {
 			limit = {
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
+				is_capital = no
 			}
 			add_local_autonomy = 25
+			clr_province_flag = vaisyas_demand_influence
 		}		
 	}
 	option = {
@@ -777,11 +842,9 @@ country_event = {
 				region = deccan_region
 				region = coromandel_region
 			}
-			NOT = {
-				has_estate = estate_vaisyas
-			}
 			is_capital = no
 			base_tax = 2
+			is_city = yes
 		}
 		any_owned_province = {
 			has_port = yes
@@ -789,7 +852,12 @@ country_event = {
 				region = deccan_region
 				region = coromandel_region
 			}
-			has_estate = estate_vaisyas
+			OR = {
+				owner = { government = republic }
+				development = 7
+				province_trade_power = 5
+			}
+			is_city = yes
 		}
 		NOT = {
 			any_owned_province = {
@@ -819,11 +887,9 @@ country_event = {
 						region = deccan_region
 						region = coromandel_region
 					}
-					NOT = {
-						has_estate = estate_vaisyas
-					}
 					is_capital = no
 					base_tax = 2
+					is_city = yes
 				}
 				save_event_target_as = drylands_province
 			}
@@ -874,11 +940,16 @@ country_event = {
 		random_owned_province = {
 			limit = {
 				has_port = yes
-				has_estate = estate_vaisyas
+				OR = {
+					owner = { government = republic }
+					development = 7
+					province_trade_power = 5
+				}
 				OR = {
 					region = deccan_region
 					region = coromandel_region
 				}
+				is_city = yes
 			}
 			add_base_tax = 1
 		}

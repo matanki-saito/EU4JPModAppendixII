@@ -4,8 +4,6 @@ graphical_culture = indiangfx
 
 color = { 237 174 221 }
 
-#TODO: Change after ruler list from Daniel T
-
 historical_idea_groups = {
 	religious_ideas
 	offensive_ideas

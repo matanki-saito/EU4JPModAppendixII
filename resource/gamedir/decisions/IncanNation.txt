@@ -96,7 +96,7 @@ country_decisions = {
 					government = native
 				}
 				change_government = monarchy
-				set_legacy_government = despotic_monarchy
+				#set_legacy_government = despotic_monarchy
 				custom_tooltip = incan_nation_empire_custom_tooltip
 				hidden_effect = {
 					set_government_rank = 3
@@ -108,8 +108,8 @@ country_decisions = {
 					limit = {
 						is_tribal = yes
 					}
-					change_government = monarchy
-					set_legacy_government = despotic_monarchy
+					change_government_to_monarchy = yes
+					#set_legacy_government = despotic_monarchy
 				}
 			}
 			change_tag = INC

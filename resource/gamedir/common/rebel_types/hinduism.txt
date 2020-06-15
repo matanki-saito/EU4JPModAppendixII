@@ -158,6 +158,23 @@ hinduism_rebels = {
 				}
 			}
 		}
+		owner = {
+			if = {
+				limit = { has_estate = estate_brahmins }
+				change_estate_land_share = {
+					estate = estate_brahmins
+					share = 10.0
+					province = ROOT
+				}
+			}
+			else = {
+				change_estate_land_share = {
+					estate = estate_church
+					share = 10.0
+					province = ROOT
+				}
+			}
+		}
 	}
 	
 	# Country scope
@@ -178,6 +195,13 @@ hinduism_rebels = {
 	
 	# Country Scope	
 	demands_enforced_effect = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
 		if = {
 			limit = {
 				NOT = { religion_group = dharmic }
@@ -254,6 +278,19 @@ hinduism_rebels = {
 				has_idea_group = indian_muslim_ideas 
 			}
 			swap_free_idea_group = yes
+		}
+		if = {
+			limit = { has_estate = estate_brahmins }
+			change_estate_land_share = {
+				estate = estate_brahmins
+				share = 10.0
+			}
+		}
+		else = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = 10.0
+			}
 		}
 	}
 }

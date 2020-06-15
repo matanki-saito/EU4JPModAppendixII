@@ -171,7 +171,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 2
-				leader = "Tisquesusa Bacatá"
+				leader = "Tisquesusa"
+				leader_dynasty = "Bacatá"
 			}
 		}
 	}
@@ -229,7 +230,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 2
-				leader = "Quemuenchatocha Hunza"
+				leader = "Quemuenchatocha"
+				leader_dynasty = "Hunza"
 			}
 		}
 	}

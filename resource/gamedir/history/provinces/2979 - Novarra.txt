@@ -1,14 +1,14 @@
-# - Novara
+# 2979 - Novara
 
 owner = MLO
 controller = MLO
 culture = lombard
 religion = catholic
 hre = yes
-base_tax = 7
-base_production = 7
+base_tax = 3
+base_production = 4
 trade_goods = grain
-base_manpower = 5
+base_manpower = 2
 capital = "Novara"
 is_city = yes	# Estimated
 add_core = MLO

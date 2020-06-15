@@ -6,8 +6,19 @@ country_event = {
 	title = "granada_civil_war.1.t"
 	desc = "granada_civil_war.1.desc"
 	picture = CIVIL_WAR_eventPicture
-	
+
 	major = yes
+	# this = country seeing popup, from = original event scope
+	major_trigger = {
+		capital_scope = {
+			OR = {
+				region = iberia_region
+				area = northern_morocco_area
+				area = western_morocco_area
+				area = marrekesh_area
+			}
+		}
+	}
 	
 	is_triggered_only = yes
 	
@@ -29,7 +40,8 @@ country_event = {
 						type = pretender_rebels
 						religion = ROOT
 						size = 2
-						leader = "Yûsuf Nasrid"
+						leader = "Yûsuf"
+						leader_dynasty = "Nasrid"
 						win = yes
 					}
 					add_local_autonomy = 25
@@ -41,7 +53,8 @@ country_event = {
 						type = pretender_rebels
 						religion = ROOT
 						size = 2
-						leader = "Yûsuf Nasrid"
+						leader = "Yûsuf"
+						leader_dynasty = "Nasrid"
 					}
 				}
 			}
@@ -111,6 +124,7 @@ country_event = {
 			mil = 4
 			culture = ROOT
 			religion = ROOT
+			block_disinherit = yes
 		}
 		hidden_effect = {
 			disband_rebels = pretender_rebels

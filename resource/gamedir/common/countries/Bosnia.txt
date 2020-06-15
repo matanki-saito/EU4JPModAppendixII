@@ -4,6 +4,8 @@ graphical_culture = easterngfx
 
 color = { 240  167  130 }
 
+revolutionary_colors = { 13 0 8 }
+
 historical_idea_groups = {
 	defensive_ideas
 	offensive_ideas

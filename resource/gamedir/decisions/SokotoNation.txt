@@ -67,7 +67,7 @@ country_decisions = {
 					NOT = { owner = { has_country_flag = fulani_jihad_state } }
 					OR = {
 						religion = sunni
-						religion = animism
+						religion = shamanism
 					}
 				}
 				add_permanent_claim = SOK
@@ -78,10 +78,14 @@ country_decisions = {
 			if = {
 				limit = {
 					NOT = { government = monarchy }
+					is_revolutionary = no
 				}
-				change_government = monarchy
+				change_government_to_monarchy = yes
 			}
-			add_government_reform = feudal_theocracy
+			if = {
+				limit = { is_revolutionary = no }
+				add_government_reform = feudal_theocracy
+			}
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = { NOT = { government_rank = 2 } }

@@ -56,6 +56,7 @@ country_event = {
 				OR = {
 					continent = north_america
 					continent = south_america
+					continent = new_world
 				}
 			}
 			has_country_modifier = buying_american
@@ -70,6 +71,7 @@ country_event = {
 					OR = {
 						continent = north_america
 						continent = south_america
+						continent = new_world
 					}
 				}
 			}
@@ -90,6 +92,7 @@ country_event = {
 						OR = {
 							continent = north_america
 							continent = south_america
+							continent = new_world
 						}
 					}
 				}
@@ -103,6 +106,7 @@ country_event = {
 						OR = {
 							continent = north_america
 							continent = south_america
+							continent = new_world
 						}
 					}
 				}
@@ -462,6 +466,7 @@ country_event = {
 				value = yes
 			}
 		}
+		highlight = yes
 		add_mercantilism = 1
 		add_prestige = 10
 	}
@@ -519,6 +524,7 @@ country_event = {
 				value = yes
 			}
 		}
+		highlight = yes
 		add_mercantilism = 1
 		add_prestige = 10
 	}
@@ -541,6 +547,9 @@ country_event = {
 			}
 			NOT = { war_with = ROOT }
 		}
+		#Flavour doesn't fit these two at all.
+		NOT = { government = tribal }
+		NOT = { government = native }
 	}
 
 	mean_time_to_happen = {
@@ -568,6 +577,7 @@ country_event = {
 				value = yes
 			}
 		}
+		highlight = yes
 		add_mercantilism = 1
 		add_prestige = 10
 	}

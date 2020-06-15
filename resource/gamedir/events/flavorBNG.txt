@@ -244,7 +244,8 @@ country_event = {
 				size = 3
 				religion = sunni
 				culture = afghani
-				leader = "Sher Shah Suri"
+				leader = "Sher Shah"
+				leader_dynasty = "Suri"
 			}
 		}
 	}
@@ -261,6 +262,7 @@ country_event = {
 			ADM = 4
 			MIL = 6
 			claim = 75
+			fixed = yes
 		}
 		if = {
 			limit = {

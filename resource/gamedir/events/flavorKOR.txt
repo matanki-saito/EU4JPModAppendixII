@@ -117,23 +117,22 @@ country_event = {
 			estate = estate_nobles
 			desc = KOR_supported_faction
 			influence = 10
-			duration = 4875
+			duration = 5475
 		}
 		add_estate_church_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_church
 			desc = KOR_supported_faction
 			influence = 10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_burghers_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_burghers
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
-		
 		ai_chance = {
 			factor = 2
 		}
@@ -148,21 +147,21 @@ country_event = {
 			estate = estate_burghers
 			desc = KOR_supported_faction
 			influence = 10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_nobles_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_nobles
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_church_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_church
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 	}
 	option = {
@@ -213,21 +212,21 @@ country_event = {
 			estate = estate_nobles
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_burghers_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_burghers
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_church_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_church
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 	}
 	option = { #we must maintain the political balance.
@@ -265,7 +264,7 @@ country_event = {
 			add_country_modifier = {
 				name = kor_factionalism_boils_over_timer
 				hidden = yes
-				duration = 4875
+				duration = 5475
 			}
 		}
 	}
@@ -280,21 +279,21 @@ country_event = {
 			estate = estate_nobles
 			desc = KOR_supported_faction
 			influence = 10
-			duration = 4875
+			duration = 5475
 		}
 		add_estate_church_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_church
 			desc = KOR_supported_faction
 			influence = 10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_burghers_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_burghers
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 		
 		ai_chance = {
@@ -326,21 +325,21 @@ country_event = {
 			estate = estate_burghers
 			desc = KOR_supported_faction
 			influence = 10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_nobles_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_nobles
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 		reduce_estate_church_loyalty_effect = yes
 		add_estate_influence_modifier = {
 			estate = estate_church
 			desc = KOR_purged_faction
 			influence = -10
-			duration = 4875
+			duration = 5475
 		}
 	}
 }
@@ -659,7 +658,7 @@ country_event = {
 	picture = STREET_SPEECH_eventPicture
 
 	fire_only_once = yes
-	mean_time_to_happen = { days = 3650 }
+	mean_time_to_happen = { days = 1825 }
 	
 	trigger = {
 		tag = KOR
@@ -701,7 +700,7 @@ country_event = {
 	picture = STREET_SPEECH_eventPicture
 
 	fire_only_once = yes
-	mean_time_to_happen = { days = 7300 }
+	mean_time_to_happen = { days = 3650 }
 	
 	trigger = {
 		tag = KOR
@@ -803,11 +802,6 @@ country_event = {
 	
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = {
-				name = kor_factional_upheaval
-				hidden = yes
-				duration = -1
-			}
 			reduce_estate_church_loyalty_effect = yes
 			reduce_estate_nobles_loyalty_effect = yes
 			reduce_estate_burghers_loyalty_effect = yes
@@ -819,53 +813,21 @@ country_event = {
 
 		custom_tooltip = flavor_kor.10.tt
 
-		hidden_effect = {
-			while = {
-				limit = {
-					NOT = {
-						num_of_owned_provinces_with = {
-							value = 3
-							has_estate = estate_burghers
-						}
-					}
-					any_owned_province = {
-						is_state_core = root
-						is_capital = no
-						culture = korean
-						NOT = { has_estate = estate_burghers }
-					}
-				}
-				if = {
-					limit = {
-						any_owned_province = {
-							is_state_core = root
-							is_capital = no
-							culture = korean
-							has_estate = no
-						}
-					}
-					random_owned_province = {
-						limit = {
-							is_state_core = root
-							is_capital = no
-							culture = korean
-							has_estate = no
-						}
-						set_estate = estate_burghers
-					}
-				}
-				else = {
-					random_owned_province = {
-						limit = {
-							is_state_core = root
-							is_capital = no
-							culture = korean
-							NOT = { has_estate = estate_burghers }
-						}
-						set_estate = estate_burghers
+		add_country_modifier = {
+			name = kor_factional_upheaval
+			duration = -1
+		}
+		custom_tooltip = flavor_kor.10.tt2
+		if = {
+			limit = {
+				NOT = {
+					estate_territory = {
+						estate = estate_burghers
+						territory = 50
 					}
 				}
 			}
+			give_estate_land_share_large = { estate = estate_burghers }
 		}
 	}
 }
@@ -913,7 +875,7 @@ country_event = {
 			add_country_modifier = {
 				name = kor_factionalism_boils_over_timer
 				hidden = yes
-				duration = 4875
+				duration = 5475
 			}
 			if = {
 				limit = { #why can Korea have a parliament anyway???
@@ -976,7 +938,7 @@ country_event = {
 				estate = estate_nobles
 				desc = KOR_supported_faction
 				influence = 10
-				duration = 4875
+				duration = 5475
 			}
 		}
 		else_if = {
@@ -988,7 +950,7 @@ country_event = {
 				estate = estate_church
 				desc = KOR_supported_faction
 				influence = 10
-				duration = 4875
+				duration = 5475
 			}
 		}
 		else = {
@@ -997,7 +959,7 @@ country_event = {
 				estate = estate_burghers
 				desc = KOR_supported_faction
 				influence = 10
-				duration = 4875
+				duration = 5475
 			}
 		}
 
@@ -1010,22 +972,77 @@ country_event = {
 				estate = estate_nobles
 				desc = KOR_opposed_faction
 				influence = -10
-				duration = 4875
+				duration = 5475
 			}
 
 			if = {
 				limit = {
-					any_owned_province = {
-						has_estate = estate_nobles
+					estate_territory = {
+						estate = estate_nobles
+						territory = 50
+					}
+				}
+				random_list = {
+					30 = { }
+					70 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_nobles
+						territory = 30
+					}
+				}
+				random_list = {
+					50 = { }
+					50 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_nobles
+						territory = 15
 					}
 				}
 				random_list = {
 					75 = { }
 					25 = {
 						random_owned_province = {
-							limit = {
-								has_estate = estate_nobles
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
 							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_nobles
+						territory = 5
+					}
+				}
+				random_list = {
+					85 = { }
+					15 = {
+						random_owned_province = {
 							spawn_rebels = {
 								size = 2
 								type = particularist_rebels
@@ -1044,22 +1061,77 @@ country_event = {
 				estate = estate_church
 				desc = KOR_opposed_faction
 				influence = -10
-				duration = 4875
+				duration = 5475
 			}
 
 			if = {
 				limit = {
-					any_owned_province = {
-						has_estate = estate_church
+					estate_territory = {
+						estate = estate_church
+						territory = 50
+					}
+				}
+				random_list = {
+					30 = { }
+					70 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_church
+						territory = 30
+					}
+				}
+				random_list = {
+					50 = { }
+					50 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_church
+						territory = 15
 					}
 				}
 				random_list = {
 					75 = { }
 					25 = {
 						random_owned_province = {
-							limit = {
-								has_estate = estate_church
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
 							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_church
+						territory = 5
+					}
+				}
+				random_list = {
+					85 = { }
+					15 = {
+						random_owned_province = {
 							spawn_rebels = {
 								size = 2
 								type = particularist_rebels
@@ -1075,22 +1147,77 @@ country_event = {
 				estate = estate_burghers
 				desc = KOR_opposed_faction
 				influence = -10
-				duration = 4875
+				duration = 5475
 			}
 
 			if = {
 				limit = {
-					any_owned_province = {
-						has_estate = estate_burghers
+					estate_territory = {
+						estate = estate_burghers
+						territory = 50
+					}
+				}
+				random_list = {
+					30 = { }
+					70 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_burghers
+						territory = 30
+					}
+				}
+				random_list = {
+					50 = { }
+					50 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_burghers
+						territory = 15
 					}
 				}
 				random_list = {
 					75 = { }
 					25 = {
 						random_owned_province = {
-							limit = {
-								has_estate = estate_burghers
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
 							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_burghers
+						territory = 5
+					}
+				}
+				random_list = {
+					85 = { }
+					15 = {
+						random_owned_province = {
 							spawn_rebels = {
 								size = 2
 								type = particularist_rebels
@@ -1146,7 +1273,7 @@ country_event = {
 				estate = estate_nobles
 				desc = KOR_supported_faction
 				influence = 10
-				duration = 4875
+				duration = 5475
 			}
 		}
 		else_if = {
@@ -1158,7 +1285,7 @@ country_event = {
 				estate = estate_church
 				desc = KOR_supported_faction
 				influence = 10
-				duration = 4875
+				duration = 5475
 			}
 		}
 		else = {
@@ -1167,7 +1294,7 @@ country_event = {
 				estate = estate_burghers
 				desc = KOR_supported_faction
 				influence = 10
-				duration = 4875
+				duration = 5475
 			}
 		}
 
@@ -1180,22 +1307,77 @@ country_event = {
 				estate = estate_nobles
 				desc = KOR_opposed_faction
 				influence = -10
-				duration = 4875
+				duration = 5475
 			}
 
 			if = {
 				limit = {
-					any_owned_province = {
-						has_estate = estate_nobles
+					estate_territory = {
+						estate = estate_nobles
+						territory = 50
+					}
+				}
+				random_list = {
+					30 = { }
+					70 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_nobles
+						territory = 30
+					}
+				}
+				random_list = {
+					50 = { }
+					50 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_nobles
+						territory = 15
 					}
 				}
 				random_list = {
 					75 = { }
 					25 = {
 						random_owned_province = {
-							limit = {
-								has_estate = estate_nobles
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
 							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_nobles
+						territory = 5
+					}
+				}
+				random_list = {
+					85 = { }
+					15 = {
+						random_owned_province = {
 							spawn_rebels = {
 								size = 2
 								type = particularist_rebels
@@ -1214,22 +1396,77 @@ country_event = {
 				estate = estate_church
 				desc = KOR_opposed_faction
 				influence = -10
-				duration = 4875
+				duration = 5475
 			}
 
 			if = {
 				limit = {
-					any_owned_province = {
-						has_estate = estate_church
+					estate_territory = {
+						estate = estate_church
+						territory = 50
+					}
+				}
+				random_list = {
+					30 = { }
+					70 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_church
+						territory = 30
+					}
+				}
+				random_list = {
+					50 = { }
+					50 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_church
+						territory = 15
 					}
 				}
 				random_list = {
 					75 = { }
 					25 = {
 						random_owned_province = {
-							limit = {
-								has_estate = estate_church
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
 							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_church
+						territory = 5
+					}
+				}
+				random_list = {
+					85 = { }
+					15 = {
+						random_owned_province = {
 							spawn_rebels = {
 								size = 2
 								type = particularist_rebels
@@ -1245,22 +1482,77 @@ country_event = {
 				estate = estate_burghers
 				desc = KOR_opposed_faction
 				influence = -10
-				duration = 4875
+				duration = 5475
 			}
 
 			if = {
 				limit = {
-					any_owned_province = {
-						has_estate = estate_burghers
+					estate_territory = {
+						estate = estate_burghers
+						territory = 50
+					}
+				}
+				random_list = {
+					30 = { }
+					70 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_burghers
+						territory = 30
+					}
+				}
+				random_list = {
+					50 = { }
+					50 = {
+						random_owned_province = {
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_burghers
+						territory = 15
 					}
 				}
 				random_list = {
 					75 = { }
 					25 = {
 						random_owned_province = {
-							limit = {
-								has_estate = estate_burghers
+							spawn_rebels = {
+								size = 2
+								type = particularist_rebels
 							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					estate_territory = {
+						estate = estate_burghers
+						territory = 5
+					}
+				}
+				random_list = {
+					85 = { }
+					15 = {
+						random_owned_province = {
 							spawn_rebels = {
 								size = 2
 								type = particularist_rebels
@@ -1329,5 +1621,29 @@ country_event = {
 				clr_country_flag = kor_neoconfucians_strife2
 			}
 		}
+	}
+}
+
+
+#Warning Event for Peasant Upheavals in Korea
+country_event = {
+	id = flavor_kor.12
+	title = flavor_kor.12.t
+	desc = flavor_kor.12.d
+	picture = STREET_SPEECH_eventPicture
+
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1825 }
+	
+	trigger = {
+		tag = KOR
+		NOT = { is_year = 1470 }
+		NOT = { has_country_flag = kor_peasant_struggles }
+		NOT = { has_country_flag = kor_peasant_struggles_resolved }
+	}
+
+	option = {
+		name = flavor_kor.12.A
+		custom_tooltip = flavor_kor.12.tt
 	}
 }

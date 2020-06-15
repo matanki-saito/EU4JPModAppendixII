@@ -1439,3 +1439,440 @@ country_event = {
 		}
 	}
 }
+
+#Muxe event
+country_event = {
+	id = nahuatl_events.32
+	title = nahuatl_events.32.t
+	desc = nahuatl_events.32.d
+	picture = wihgfx_FEMALES_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+			has_country_flag = muxe_advisor_flag
+		}
+		OR = {
+			primary_culture = zapotek
+			accepted_culture = zapotek
+		}
+		OR = {
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = treasurer
+				}
+				treasurer = 2
+				NOT = { treasurer = 3 } #prevents advisors gaining or losing skill based on being Muxe
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = philosopher
+				}
+				philosopher = 2
+				NOT = { philosopher = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = artist
+				}
+				artist = 2
+				NOT = { artist = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = master_of_mint
+				}
+				master_of_mint = 2
+				NOT = { master_of_mint = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = natural_scientist
+				}
+				natural_scientist = 2
+				NOT = { natural_scientist = 3 }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+	}
+	
+	immediate = {
+		set_saved_name = {
+			key = muxe_advisor_name
+			type = advisor
+			female = yes
+			scope = ROOT
+		}
+	}
+	
+	option = {
+		name = nahuatl_events.32.a #Women have no place in court
+		ai_chance = { 
+			factor = 100
+			modifier = {
+				factor = 0
+				tag = ZAP
+			}
+		}
+		hidden_effect = {
+			set_country_flag = muxe_advisor_flag
+			if = {
+				limit = { advisor = treasurer }
+				remove_advisor = treasurer
+			}
+			if = {
+				limit = { advisor = philosopher }
+				remove_advisor = philosopher
+			}
+			if = {
+				limit = { advisor = artist }
+				remove_advisor = artist
+			}
+			if = {
+				limit = { advisor = master_of_mint }
+				remove_advisor = master_of_mint
+			}
+			if = {
+				limit = { advisor = natural_scientist }
+				remove_advisor = natural_scientist
+			}
+		}
+		custom_tooltip = muxe_is_fired_tt
+		
+	}
+	option = {
+		name = nahuatl_events.32.b #Advisor becomes female
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = ZAP }
+			}
+		}
+		hidden_effect = {
+			set_country_flag = muxe_advisor_flag
+			if = {
+				limit = { advisor = treasurer }
+				remove_advisor = treasurer
+				define_advisor = {
+					type = treasurer
+					name = muxe_advisor_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = philosopher }
+				remove_advisor = philosopher
+				define_advisor = {
+					type = philosopher
+					name = muxe_advisor_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = artist }
+				remove_advisor = artist
+				define_advisor = {
+					type = artist
+					name = muxe_advisor_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = master_of_mint }
+				remove_advisor = master_of_mint
+				define_advisor = {
+					type = master_of_mint
+					name = muxe_advisor_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = natural_scientist }
+				remove_advisor = natural_scientist
+				define_advisor = {
+					type = natural_scientist
+					name = muxe_advisor_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+		}
+		custom_tooltip = muxe_advisor_tt
+		add_country_modifier = {
+			name = "muxe_at_court"
+			duration = -1
+		}
+	}
+}
+
+#Muxe military event
+country_event = {
+	id = nahuatl_events.321
+	title = nahuatl_events.321.t
+	desc = nahuatl_events.321.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+	
+	trigger = {
+		has_country_modifier = muxe_at_court
+		NOT = {
+			has_country_flag = muxe_military_flag
+		}
+		OR = {
+			primary_culture = zapotek
+			accepted_culture = zapotek
+		}
+		OR = {
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = army_reformer
+				}
+				army_reformer = 2
+				NOT = { army_reformer = 3 } #prevents advisors gaining or losing skill based on being Muxe
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = army_organiser
+				}
+				army_organiser = 2
+				NOT = { army_organiser = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = commandant
+				}
+				commandant = 2
+				NOT = { commandant = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = quartermaster
+				}
+				quartermaster = 2
+				NOT = { quartermaster = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = recruitmaster
+				}
+				recruitmaster = 2
+				NOT = { recruitmaster = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = fortification_expert
+				}
+				fortification_expert = 2
+				NOT = { fortification_expert = 3 }
+			}
+			AND = {
+				employed_advisor = {
+					is_male = yes
+					culture = zapotek
+					type = grand_captain
+				}
+				grand_captain = 2
+				NOT = { grand_captain = 3 }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	immediate = {
+		set_saved_name = {
+			key = muxe_military_name
+			type = advisor
+			female = yes
+			scope = ROOT
+		}
+	}
+	
+	option = {
+		name = nahuatl_events.321.a #Women have no place in court
+		ai_chance = { 
+			factor = 100
+			modifier = {
+				factor = 0
+				tag = ZAP
+			}
+		}
+		hidden_effect = {
+			set_country_flag = muxe_military_flag
+			if = {
+				limit = { advisor = army_reformer }
+				remove_advisor = army_reformer
+			}
+			if = {
+				limit = { advisor = army_organiser }
+				remove_advisor = army_organiser
+			}
+			if = {
+				limit = { advisor = commandant }
+				remove_advisor = commandant
+			}
+			if = {
+				limit = { advisor = quartermaster }
+				remove_advisor = quartermaster
+			}
+			if = {
+				limit = { advisor = recruitmaster }
+				remove_advisor = recruitmaster
+			}
+			if = {
+				limit = { advisor = fortification_expert }
+				remove_advisor = fortification_expert
+			}
+			if = {
+				limit = { advisor = grand_captain }
+				remove_advisor = grand_captain
+			}
+		}
+		custom_tooltip = muxe_general_is_fired_tt
+		
+	}
+	option = {
+		name = nahuatl_events.321.b #Advisor becomes female, women can serve in the military
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				NOT = { tag = ZAP }
+			}
+		}
+		hidden_effect = {
+			set_country_flag = muxe_military_flag
+			if = {
+				limit = { advisor = army_reformer }
+				remove_advisor = army_reformer
+				define_advisor = {
+					type = army_reformer
+					name = muxe_military_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = army_organiser }
+				remove_advisor = army_organiser
+				define_advisor = {
+					type = army_organiser
+					name = muxe_military_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = commandant }
+				remove_advisor = commandant
+				define_advisor = {
+					type = commandant
+					name = muxe_military_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = quartermaster }
+				remove_advisor = quartermaster
+				define_advisor = {
+					type = quartermaster
+					name = muxe_military_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = recruitmaster }
+				remove_advisor = recruitmaster
+				define_advisor = {
+					type = recruitmaster
+					name = muxe_military_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = fortification_expert }
+				remove_advisor = fortification_expert
+				define_advisor = {
+					type = fortification_expert
+					name = muxe_military_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { advisor = grand_captain }
+				remove_advisor = grand_captain
+				define_advisor = {
+					type = grand_captain
+					name = muxe_military_name
+					skill = 2
+					culture = zapotek
+					female = yes
+					cost_multiplier = 0.5
+				}
+			}
+		}
+		custom_tooltip = muxe_advisor_mil_tt
+		add_country_modifier = {
+			name = "muxe_at_military"
+			duration = -1
+		}
+	}
+}

@@ -78,9 +78,15 @@ monarch_names = {
 	"Simon #0" = 0
 	
 	"Marie #0" = -10
+	"Geneviève #0" = -2
+	"Anne #0" = -1
+	"Louise #0" = -1
+	"Charlotte #0" = -1
+	"Hélène #0" = -1
+	"Éléonore #0" = -1
 	"Isabelle #0" = -1
-	"Catherine #0" = -1
-	"Marguerite #0" = -1 # La Pléiade
+	"Catherine #0" = -2
+	"Marguerite #0" = -2 # La Pléiade
 	"Jeanne #0" = -1 # La Pléiade
 	"Agnès #0" = -1 # La Pléiade
 }

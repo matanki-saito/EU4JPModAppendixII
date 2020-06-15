@@ -26,11 +26,18 @@ government_rank = 1
 
 1412.1.1 = {
 	monarch = {
-		name = "Lodovico II"
+		name = "Ludovico II"
 		adm = 2
 		dip = 1
 		mil = 0
 	}
 }
 
-# To Venice in 1402
+1439.12.18 = {
+	monarch = {
+		name = "Ludovico III"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}

@@ -73,6 +73,7 @@ country_event = {
 					DIP = 2
 					MIL = 4
 					ADM = 4
+					fixed = yes
 				}
 				adopt_reform_progress = ROOT
 			}
@@ -210,7 +211,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 2
-				leader = "Raimal Sisodiya"
+				leader = "Raimal"
+				leader_dynasty = "Sisodiya"
 			}
 		}
 	}
@@ -234,7 +236,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 2
-				leader = "Udai Sisodiya"
+				leader = "Udai"
+				leader_dynasty = "Sisodiya"
 			}
 		}
 	}

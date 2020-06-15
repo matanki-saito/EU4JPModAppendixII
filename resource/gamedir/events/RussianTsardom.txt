@@ -314,11 +314,11 @@ country_event = {
 				name = "tolerated_tatar_communities"
 				duration = 10950
 			}
-			if = {
-				limit = { has_estate = estate_cossacks }
-				remove_estate = estate_cossacks
-				owner = { reduce_estate_cossacks_loyalty_effect = yes }
-			}
+		}
+		if = {
+			limit = { has_estate = estate_cossacks }
+			reduce_estate_cossacks_loyalty_effect = yes
+			take_estate_land_share_small = { estate = estate_cossacks }
 		}
 	}
 	option = {
@@ -333,11 +333,11 @@ country_event = {
 				name = "settling_russians_in_steppe"
 				duration = 10950
 			}
-			if = {
-				limit = { has_estate = estate_cossacks }
-				remove_estate = estate_cossacks
-				owner = { reduce_estate_cossacks_loyalty_effect = yes }
-			}
+		}
+		if = {
+			limit = { has_estate = estate_cossacks }
+			reduce_estate_cossacks_loyalty_effect = yes
+			take_estate_land_share_small = { estate = estate_cossacks }
 		}
 	}
 	option = {
@@ -358,10 +358,10 @@ country_event = {
 					name = "cossack_province"
 					duration = 10950
 				}
-				else = {
-					set_estate = estate_cossacks
-					owner = { add_estate_cossacks_loyalty_effect = yes }
-				}
+			}
+			else = {
+				give_estate_land_share_small = { estate = estate_cossacks }
+				add_estate_cossacks_loyalty_effect = yes
 			}
 		}
 	}
@@ -662,9 +662,6 @@ country_event = {
 					save_event_target_as = traitors_in_this_province
 				}
 				random_owned_province = {
-					limit = {
-						has_estate = estate_nobles
-					}
 					save_event_target_as = traitors_in_this_province
 				}
 				else = {
@@ -692,12 +689,6 @@ country_event = {
 			}
 			else = {
 				event_target:traitors_in_this_province = {
-					if = {
-						limit = {
-							has_estate = estate_nobles
-						}
-						remove_estate = estate_nobles
-					}
 					add_devastation = 25
 					add_local_autonomy = -25
 				}

@@ -5,13 +5,12 @@ controller = TUR
 culture = bulgarian
 religion = orthodox
 capital = "Sofia"
-trade_goods = copper
+trade_goods = iron
 hre = no
-base_tax = 5 
+base_tax = 4
 base_production = 4
 base_manpower = 2
 is_city = yes
-estate = estate_nobles
 add_core = TUR
 add_core = BUL
 

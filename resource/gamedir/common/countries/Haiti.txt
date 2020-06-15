@@ -2,10 +2,11 @@
 
 graphical_culture = westerngfx
 
-colonial_parent = SPA
+colonial_parent = FRA
 random_nation_chance = 0
 
 color = { 139  179  207 }
+revolutionary_colors = { 13 0 4 }
 
 historical_idea_groups = {
 	defensive_ideas

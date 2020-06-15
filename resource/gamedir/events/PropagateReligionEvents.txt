@@ -12,6 +12,7 @@ country_event = {
 	title = propagate_religion_events.1.t
 	desc = propagate_religion_events.1.d
 	picture = SULTAN_AND_MERCHANT_eventPicture
+	goto = trade_province
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"
@@ -95,6 +96,7 @@ country_event = {
 	title = propagate_religion_events.2.t
 	desc = propagate_religion_events.2.d
 	picture = MYSTIC_IN_PRAYER_eventPicture
+	goto = trade_province
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"
@@ -262,6 +264,7 @@ country_event = {
 	
 	option = {
 		name = propagate_religion_events.3.a #Let us encourage these sailors to seek out our ports!
+		goto = sailor_province
 		custom_tooltip = explain_conversion_strength_in_true_religion_provinces
 		event_target:sailor_province = {
 			add_province_modifier = {
@@ -304,6 +307,7 @@ country_event = {
 	title = propagate_religion_events.4.t
 	desc = propagate_religion_events.4.d
 	picture = MYSTIC_IN_PRAYER_eventPicture
+	goto = cured_province
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"
@@ -425,6 +429,7 @@ country_event = {
 	title = propagate_religion_events.5.t
 	desc = propagate_religion_events.5.d
 	picture = PRAYER_IN_MOSQUE_eventPicture
+	goto = mosque_province
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"
@@ -720,6 +725,11 @@ country_event = {
 				33 = { set_country_flag = mufti }
 				33 = { set_country_flag = sufi }
 			}
+			set_saved_name = {
+				key = qadi_person
+				type = advisor
+				scope = event_target:converter_country
+			}
 		}
 	}
 	
@@ -727,16 +737,6 @@ country_event = {
 	
 	mean_time_to_happen = {
 		days = 1
-	}
-	
-	immediate = {
-		hidden_effect = {
-			set_saved_name = {
-				key = qadi_person
-				type = advisor
-				scope = event_target:converter_country
-			}
-		}
 	}
 	
 	option = {
@@ -802,6 +802,7 @@ country_event = {
 	title = propagate_religion_events.9.t
 	desc = propagate_religion_events.9.d
 	picture = HEIR_AND_FOREIGN_ADVISOR_eventPicture
+	goto = hinterland_province
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"
@@ -961,6 +962,7 @@ country_event = {
 	}
 	option = {
 		name = propagate_religion_events.10.b #
+		goto = islamic_syncretism_province
 		add_stability_or_adm_power = yes
 		event_target:islamic_syncretism_province = {
 			change_religion = event_target:converter_country
@@ -974,6 +976,7 @@ province_event = {
 	title = propagate_religion_events.11.t
 	desc = propagate_religion_events.11.d
 	picture = SOUP_KITCHEN_eventPicture
+	goto = root
 	
 	trigger = {
 		has_dlc = "Cradle of Civilization"

@@ -3,11 +3,12 @@
 owner = BRA
 controller = BRA
 add_core = BRA
+add_core = RUP
 culture = saxon
 religion = catholic
 hre = yes
-base_tax = 3 
-base_production = 3
+base_tax = 2 
+base_production = 2
 trade_goods = livestock
 base_manpower = 1
 capital = "Neuruppin"

@@ -197,7 +197,7 @@
 4190 = "Hajung" #Shimousa
 4191 = "Hayeh" #Shimotsuke
 4192 = "Yuhau" #Ugo
-4193 = "Do-do" Oshima
+4193 = "Do-do" #Oshima
 4359 = "Yisai" #Ise
 4360 = "Samhaw" #Mikawa
 

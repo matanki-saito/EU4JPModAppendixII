@@ -2901,7 +2901,7 @@ country_event = {
 		days = 1
 		modifier = {
 			factor = 0.5
-			spy_ideas = 0
+			spy_ideas = 1
 		}
 	}
 	
@@ -3349,10 +3349,19 @@ country_event = {
 	trigger = {
 		is_subject_of_type = daimyo_vassal
 		NOT = { has_reform = daimyo }
-		NOT = { has_reform = pirate_republic_reform }
-		NOT = { has_reform = pirate_king_reform }
-		NOT = { has_reform = war_against_the_world_doctrine_reform }
-		NOT = { has_reform = black_market_consortium_reform }
+		NOT = {
+			AND = {
+				tag = SOO
+				OR = {
+					has_reform = pirate_republic_reform
+					has_reform = pirate_king_reform
+					has_reform = war_against_the_world_doctrine_reform
+					has_reform = black_market_consortium_reform
+				}
+			}
+		}
+		NOT = { has_reform = shogunate }
+		is_revolutionary = no
 	}
 	
 	mean_time_to_happen = {
@@ -3363,7 +3372,7 @@ country_event = {
 		name = flavor_jap.58.a
 		if = {
 			limit = { NOT = { government = monarchy } }
-			change_government = monarchy
+			change_government_to_monarchy = yes
 		}
 		add_government_reform = daimyo
 		if = {
@@ -3417,8 +3426,8 @@ country_event = {
 		change_religion = shinto
 		if = {
 			limit = { government = tribal }
-			change_government = monarchy
-			set_legacy_government = despotic_monarchy
+			change_government_to_monarchy = yes
+			#set_legacy_government = despotic_monarchy
 		}
 	}
 	option = { #Let them worship their idols.

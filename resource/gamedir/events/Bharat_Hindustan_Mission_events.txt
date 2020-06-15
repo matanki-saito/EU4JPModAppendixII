@@ -230,7 +230,10 @@ country_event = {
 		}
 		define_ruler = {
 			culture = marathi
-			MIL = 4
+			ADM = 3
+			DIP = 3
+			MIL = 6
+			fixed = yes
 		}
 		if = {
 			limit = {

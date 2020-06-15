@@ -17,6 +17,7 @@ country_event = {
 		has_dlc = "Golden Century"
 		NOT = { exists = NSS }
 		has_global_flag = golden_age_of_piracy
+		NOT = { has_reform = pirate_republic_reform }
 		OR = {
 			AND = {
 				owns_core_province = 482
@@ -151,6 +152,7 @@ country_event = {
 		capital_scope = {
 			continent = africa
 		}
+		NOT = { has_reform = pirate_republic_reform }
 		kongo_region = {
 			owner = {
 				capital_scope = {
@@ -225,6 +227,10 @@ country_event = {
 			define_ruler = {
 				name = "James"
 				dynasty = "Mission"
+				adm = 4
+				dip = 2
+				mil = 3
+				fixed = yes
 			}
 			define_advisor = {
 				type = theologian
@@ -260,6 +266,10 @@ country_event = {
 			define_ruler = {
 				name = "James"
 				dynasty = "Mission"
+				adm = 4
+				dip = 2
+				mil = 3
+				fixed = yes
 			}
 			define_advisor = {
 				type = theologian
@@ -287,6 +297,7 @@ country_event = {
 	trigger = {
 		has_dlc = "Golden Century"
 		not = { exists = SLE }
+		NOT = { has_reform = pirate_republic_reform }
 		218 = {
 			owner = {
 				culture_group = iberian
@@ -421,6 +432,7 @@ country_event = {
 		has_dlc = "Golden Century"
 		is_year = 1515
 		NOT = { is_year = 1542 }
+		NOT = { has_reform = pirate_republic_reform }
 		NOT = { exists = TET }
 		NOT = { exists = GRA }
 		NOT = { exists = ADU }
@@ -488,6 +500,7 @@ country_event = {
 				dip = 4
 				mil = 5
 				female = yes
+				fixed = yes
 			}
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
@@ -527,6 +540,7 @@ country_event = {
 				dip = 4
 				mil = 5
 				female = yes
+				fixed = yes
 			}
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
@@ -548,6 +562,7 @@ country_event = {
 		has_dlc = "Golden Century"
 		NOT = { exists = PRY }
 		has_global_flag = golden_age_of_piracy
+		NOT = { has_reform = pirate_republic_reform }
 		OR = {
 			AND = {
 				owns_core_province = 487
@@ -640,7 +655,10 @@ country_event = {
 			}
 			define_ruler = {
 				name = "John Davis"
-				mil = 2
+				adm = 2
+				dip = 2
+				mil = 5
+				fixed = yes
 			}
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
@@ -673,7 +691,10 @@ country_event = {
 			}
 			define_ruler = {
 				name = "John Davis"
-				mil = 2
+				adm = 2
+				dip = 2
+				mil = 5
+				fixed = yes
 			}
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
@@ -694,11 +715,13 @@ country_event = {
 	trigger = {
 		has_dlc = "Golden Century"
 		NOT = { exists = TOR }
+		NOT = { has_reform = pirate_republic_reform }
 		489 = {
 			OR = {
 				religion = protestant
 				religion = anglican
 				religion = reformed
+				religion = hussite
 			}
 		}
 		has_global_flag = golden_age_of_piracy
@@ -771,6 +794,10 @@ country_event = {
 			}
 			define_ruler = {
 				name = "Henry Morgan"
+				adm = 3
+				dip = 5
+				mil = 4
+				fixed = yes
 			}
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
@@ -803,6 +830,10 @@ country_event = {
 			}
 			define_ruler = {
 				name = "Henry Morgan"
+				adm = 3
+				dip = 5
+				mil = 4
+				fixed = yes
 			}
 			swap_free_idea_group = yes
 			swap_non_generic_missions = yes
@@ -824,6 +855,7 @@ country_event = {
 		tag = PLB
 		NOT = { is_year = 1446 }
 		has_dlc = "Golden Century"
+		NOT = { has_reform = pirate_republic_reform }
 	}
 	
 	mean_time_to_happen = {
@@ -832,16 +864,8 @@ country_event = {
 	
 	option = {
 		name = "pirates.8.a"
-		if = {
-			limit = {
-				has_dlc = "Dharma"
-			}
-			change_government = republic
-			add_government_reform = pirate_republic_reform
-		}
-		else = {
-			set_legacy_government = pirate_republic
-		}
+		change_government = republic
+		add_government_reform = pirate_republic_reform
 		define_ruler = {
 			culture = wu
 		}
@@ -869,6 +893,7 @@ country_event = {
 		has_dlc = "Golden Century"
 		is_year = 1563
 		NOT = { is_year = 1590 }
+		NOT = { has_reform = pirate_republic_reform }
 	}
 	
 	mean_time_to_happen = {
@@ -877,16 +902,8 @@ country_event = {
 	
 	option = {
 		name = "pirates.9.a"
-		if = {
-			limit = {
-				has_dlc = "Dharma"
-			}
-			change_government = republic
-			add_government_reform = pirate_republic_reform
-		}
-		else = {
-			set_legacy_government = pirate_republic
-		}
+		change_government = republic
+		add_government_reform = pirate_republic_reform
 		define_ruler = {
 			name = "Lin Daoqian"
 			culture = wu
@@ -979,6 +996,7 @@ country_event = {
 				has_country_flag = jap_wokou
 			}
 		}
+		NOT = { has_reform = pirate_republic_reform }
 	}
 	
 	mean_time_to_happen = {
@@ -987,16 +1005,8 @@ country_event = {
 	
 	option = {
 		name = "pirates.21.a"
-		if = {
-			limit = {
-				has_dlc = "Dharma"
-			}
-			change_government = republic
-			add_government_reform = pirate_republic_reform
-		}
-		else = {
-			set_legacy_government = pirate_republic
-		}
+		change_government = republic
+		add_government_reform = pirate_republic_reform
 		define_ruler = {
 			name = "Akibatsu Matsura"
 			culture = kyushuan
@@ -1011,7 +1021,167 @@ country_event = {
 	}
 	
 	option = {
-		name = "pirates.19.b"
+		name = "pirates.21.b"
 		add_stability = -1
+	}
+}
+
+
+
+# Pirates of Rugen
+country_event = {
+	id = pirates.22
+	title = "pirates.22.name"
+	picture = SMUGGLERS_eventPicture
+	desc = "pirates.22.desc"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUG
+		has_dlc = "Golden Century"
+		owns_core_province = 4745
+		NOT = { num_of_cities = 2 } #must be an OPM
+		OR = {
+			ai = no
+			is_subject = no
+		}
+		NOT = { has_reform = pirate_republic_reform }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = "pirates.22.a"
+		change_government = republic
+		add_government_reform = pirate_republic_reform
+		define_ruler = {
+			dynasty = "Störtebeker"
+			culture = pommeranian
+		}
+		add_republican_tradition = 50
+		swap_non_generic_missions = yes
+
+		capital_scope = {
+			galley = root
+			galley = root
+			galley = root
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+	
+	option = {
+		name = "pirates.22.b"
+		add_stability = 1
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Pirates of Penzance (by James Beaumont)
+country_event = {
+	id = pirates.23
+	title = "pirates.23.t"
+	picture = SMUGGLERS_eventPicture
+	desc = "pirates.23.d"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CRN
+		has_dlc = "Golden Century"
+		num_ships_privateering = 3
+		NOT = { has_reform = pirate_republic_reform }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "pirates.23.a"
+		ai_chance = {
+			factor = 1
+		}
+		change_government = republic
+		add_government_reform = pirate_republic_reform
+		define_ruler = {
+			dynasty = "Carter"
+		}
+		233 = { rename_capital = "Penzance" }
+		add_republican_tradition = 50
+		set_ruler_flag = historical_pirate
+		swap_non_generic_missions = yes
+	}
+	
+	option = {
+		name = "pirates.23.b"
+		ai_chance = {
+			factor = 1
+		}
+		233 = { 
+			spawn_rebels = {
+				size = 1
+				type = particularist_rebels
+			}
+		}
+	}
+}
+
+# Gilbert and Sulivan references to appease Daniel (by James Beaumont)
+country_event = {
+	id = pirates.24
+	title = "pirates.24.t"
+	picture = SMUGGLERS_eventPicture
+	desc = "pirates.24.d"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = CRN
+			was_tag = CRN
+		}
+		has_dlc = "Golden Century"
+		has_reform = pirate_republic_reform
+		is_year = 1500
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = "pirates.24.a"
+		ai_chance = {
+			factor = 1
+		}
+		define_advisor = {
+			type = naval_reformer
+			skill = 3
+			name = "Gilbert Patter"
+			cost_multiplier = 0.25
+		}
+	}
+	
+	option = {
+		name = "pirates.24.b"
+		ai_chance = {
+			factor = 1
+		}
+		define_ruler = {
+			name = "Gilbert"
+			dynasty = "Patter"
+			adm = 2
+			dip = 2
+			mil = 2
+		}
 	}
 }

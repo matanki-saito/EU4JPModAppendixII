@@ -1,8 +1,8 @@
 #139 - Hum
 
-owner = BOS		# Part of the Bosnian kingdom
-controller = BOS
-culture = serbian
+owner = HRZ
+controller = HRZ
+culture = bosnian
 religion = catholic
 capital = "Mostar"	# Unofficial capital of Herzegovina
 trade_goods = wool
@@ -11,8 +11,8 @@ base_tax = 3
 base_production = 3
 base_manpower = 2
 is_city = yes
-estate = estate_nobles
 add_core = BOS
+add_core = HRZ
 discovered_by = KAZ
 discovered_by = CRI
 discovered_by = GOL

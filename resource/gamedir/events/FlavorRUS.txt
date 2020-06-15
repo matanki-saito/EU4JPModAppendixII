@@ -1223,7 +1223,7 @@ country_event = {
 
 	option = {		# Accept the Treaty
 		name = "flavor_rus.EVTOPTA3421"
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 0 }
 		random_country = {
 			limit = {
 				has_country_flag = nerchiinsk_treaty
@@ -1239,6 +1239,7 @@ country_event = {
 				}
 				cede_province = PREV
 			}
+			add_truce_with = root
 			clr_country_flag = nerchiinsk_treaty
 		}
 		west_siberia_region = {
@@ -2027,6 +2028,7 @@ country_event = {
 			NOT = { is_rival = ROOT }
 			NOT = { is_enemy = ROOT }
 		}
+		is_subject = no
 	}
 	
 	mean_time_to_happen = {
@@ -2497,11 +2499,14 @@ country_event = {
 	picture = REVOLUTION_eventPicture
 	
 	is_triggered_only = yes
+	major = yes
 	
 	fire_only_once = yes
 	
 	trigger = {
-		has_dlc = "Third Rome"
+		tag = RUS
+
+		revolution_event_can_happen_trigger = yes
 	}
 	
 	mean_time_to_happen = {
@@ -2510,6 +2515,16 @@ country_event = {
 	
 	option = {
 		name = "flavor_rus.EVTOPTA2000"
+
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_had_revolution_bringing_someone_to_power_timer
+				duration = 2
+				hidden = yes
+			}
+		}
+		enact_revolution_effect = yes
+
 		random_list = {
 			25 = {
 				define_ruler = {

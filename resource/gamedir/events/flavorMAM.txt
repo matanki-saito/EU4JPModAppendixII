@@ -510,7 +510,7 @@ country_event = {
 		exists = POR
 		manpower_percentage = 0.5
 		owns = 2315
-		1331 = {				#Gulf of Aden
+		4346 = {				#Gulf of Aden
 			is_strongest_trade_power = POR
 		}
 		
@@ -560,7 +560,7 @@ country_event = {
 	option = {
 		name = flavor_mam.15.b
 		add_prestige = -25
-		1331 = {
+		4346 = {
 			add_trade_modifier = {
 				who = root
 				duration = 3650

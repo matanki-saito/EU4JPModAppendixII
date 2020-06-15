@@ -280,6 +280,7 @@ capital = 4383 #Haag
 		culture = sardinian #Corsican
 		religion = catholic
 		dynasty = "Bonaparte"
+		birth_date = 1804.10.11
 		adm = 3
 		dip = 3
 		mil = 2

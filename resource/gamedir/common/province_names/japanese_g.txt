@@ -40,6 +40,7 @@
 2741 = Saishu
 2742 = Funei
 2743 = Kyojo
+2744 = Neihen
 2745 = Keishu
 4227 = Shinshu
 4228 = Rashu

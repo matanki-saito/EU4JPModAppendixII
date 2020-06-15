@@ -139,7 +139,7 @@ country_event = {
 			flag = mng_emperor_captured
 			days = 1825
 		}
-		NOT = { has_country_flag = oir_demands_sent }
+		NOT = { OIR = { has_country_flag = oir_demands_sent } }
 		NOT = {
 			1816 = {
 				num_of_units_in_province = {
@@ -219,7 +219,10 @@ country_event = {
 			MNG = {
 				every_owned_province = {
 					limit = {
-						region = north_china_region
+						OR = {
+							region = north_china_region
+							region = mongolia_region
+						}
 						controlled_by = MNG
 					}
 					change_controller = OIR
@@ -261,6 +264,13 @@ country_event = {
 			add_mandate = -50
 		}
 		set_ruler = mng_exiled_ruler
+		if = {
+			limit = {
+				has_country_flag = mng_exiled_heir_flag
+			}
+			set_heir = mng_exiled_heir
+		}
+		clr_country_flag = mng_emperor_captured
 	}
 }
 
@@ -287,14 +297,19 @@ country_event = {
 	
 	option = {
 		name = "flavor_oir.7.a"
-		clr_country_flag = mng_emperor_captured
+		MNG = {
+			clr_country_flag = mng_emperor_captured
+		}
 		if = {
 			limit = {
 				MNG = {
 					has_country_flag = mng_exiled_heir_flag
 				}
 			}
-			MNG = { set_heir = mng_exiled_heir }
+			MNG = { 
+				set_heir = mng_exiled_heir 
+				clr_country_flag = mng_exiled_heir_flag
+			}
 		}
 	}
 }

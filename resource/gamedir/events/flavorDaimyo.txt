@@ -157,6 +157,7 @@ country_event = {
 				adm = 5
 				dip = 4
 				mil = 5
+				fixed = yes
 			}
 		}
 	}
@@ -306,7 +307,8 @@ country_event = {
 			spawn_rebels = {
 				size = 1
 				type = pretender_rebels
-				leader = "Yoshikado Shiba"
+				leader = "Yoshikado"
+				leader_dynasty = "Shiba"
 			}
 		}
 	}
@@ -374,7 +376,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 1
-				leader = "Mochitomi Hatakeyama"
+				leader = "Mochitomi"
+				leader_dynasty = "Hatakeyama"
 			}
 		}
 	}
@@ -456,7 +459,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 1
-				leader = "Takakuni Hosokawa"
+				leader = "Takakuni"
+				leader_dynasty = "Hosokawa"
 			}
 		}
 		if = {
@@ -467,7 +471,8 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 1
-					leader = "Sumiyuki Hosokawa"
+					leader = "Sumiyuki"
+					leader_dynasty = "Hosokawa"
 				}
 			}
 		}
@@ -485,7 +490,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 1
-				leader = "Takakuni Hosokawa"
+				leader = "Takakuni"
+				leader_dynasty = "Hosokawa"
 			}
 		}
 		if = {
@@ -496,7 +502,8 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 1
-					leader = "Sumitomo Hosokawa"
+					leader = "Sumitomo"
+					leader_dynasty = "Hosokawa"
 				}
 			}
 		}
@@ -513,7 +520,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 1
-				leader = "Sumitomo Hosokawa"
+				leader = "Sumitomo"
+				leader_dynasty = "Hosokawa"
 			}
 		}
 		if = {
@@ -524,7 +532,8 @@ country_event = {
 				spawn_rebels = {
 					type = pretender_rebels
 					size = 1
-					leader = "Sumiyuki Hosokawa"
+					leader = "Sumiyuki"
+					leader_dynasty = "Hosokawa"
 				}
 			}
 		}
@@ -561,7 +570,8 @@ country_event = {
 			spawn_rebels = {
 				size = 1
 				type = pretender_rebels
-				leader = "Nagayoshi Miyoshi"
+				leader = "Nagayoshi"
+				leader_dynasty = "Miyoshi"
 			}
 		}
 	}
@@ -605,7 +615,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 1
-				leader = "Sadamasa Uesugi"
+				leader = "Sadamasa"
+				leader_dynasty = "Uesugi"
 			}
 		}
 	}
@@ -1144,7 +1155,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 1
-				leader = "Shingen Takeda"
+				leader = "Shingen"
+				leader_dynasty = "Takeda"
 			}
 		}
 	}
@@ -1201,7 +1213,8 @@ country_event = {
 				}
 			}
 			spawn_rebels = {
-				leader = "Shigeuji Ashikaga"
+				leader = "Shigeuji"
+				leader_dynasty = "Ashikaga"
 				type = pretender_rebels
 				size = 2
 			}
@@ -1306,12 +1319,13 @@ country_event = {
 		}
 	}
 	option = {
-		name = flavor_daimyo.23.a #Crush him.
+		name = flavor_daimyo.23.b #Crush him.
 		1030 = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 2
-				leader = "Nobunaga Oda"
+				leader = "Nobunaga"
+				leader_dynasty = "Oda"
 			}
 		}
 		

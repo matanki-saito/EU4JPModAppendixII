@@ -3,6 +3,7 @@
 graphical_culture = southamericagfx
 
 color = { 224  214  157 }
+revolutionary_colors = { 4 14 4 }
 
 historical_idea_groups = {
 	economic_ideas

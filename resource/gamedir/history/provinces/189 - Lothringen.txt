@@ -7,10 +7,10 @@ is_city = yes
 culture = burgundian
 religion = catholic
 hre = yes
-base_tax = 6 
-base_production = 6
+base_tax = 5 
+base_production = 5
 trade_goods = iron
-base_manpower = 6
+base_manpower = 5
 add_core = LOR
 
 
@@ -33,5 +33,5 @@ discovered_by = ottoman
 1679.9.20 = { owner = LOR controller = LOR } # Treaty of Rijswijck (End of the War of the Grand Alliance): Lorraine restored
 1702.1.1 = { controller = FRA } # Back to France *yawn* in the Spanish War of Succession
 1714.1.1 = { controller = LOR } # Leopold restored when the Spanish Succession Crisis comes to an end
-1766.1.1 = { owner = FRA controller = FRA } # Death of Duke Stanislaus, Lorraine ceases to exist
+1766.2.23 = { owner = FRA controller = FRA } # Death of Duke Stanislaus, Lorraine ceases to exist
 1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved

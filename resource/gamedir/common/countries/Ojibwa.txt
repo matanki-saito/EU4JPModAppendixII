@@ -3,6 +3,7 @@
 graphical_culture = northamericagfx
 
 color = { 235 229 233 }
+revolutionary_colors = { 13 8 5 }
 
 historical_idea_groups = {
 	religious_ideas

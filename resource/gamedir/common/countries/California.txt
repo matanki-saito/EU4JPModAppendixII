@@ -7,6 +7,8 @@ random_nation_chance = 0
 
 color = { 245  147  54 }
 
+revolutionary_colors = { 0 0 5 }
+
 historical_idea_groups = {
 	defensive_ideas
 	religious_ideas

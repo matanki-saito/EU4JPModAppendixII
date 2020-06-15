@@ -596,7 +596,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 3
-				leader = "Huascar Inca"
+				leader = "Huascar"
+				leader_dynasty = "Inca"
 			}
 			every_neighbor_province = {
 				limit = {
@@ -636,7 +637,8 @@ country_event = {
 			spawn_rebels = {
 				type = pretender_rebels
 				size = 3
-				leader = "Atahualpa Inca"
+				leader = "Atahualpa"
+				leader_dynasty = "Inca"
 			}
 			every_neighbor_province = {
 				limit = {
@@ -1135,7 +1137,7 @@ country_event = {
 		if = {
 			limit = { government = native }
 			change_government = tribal
-			set_legacy_government = tribal_despotism_legacy
+			#set_legacy_government = tribal_despotism_legacy
 		}
 	}
 	option = { #Let them worship the idol.

@@ -222,7 +222,8 @@ country_event = {
 				size = 2
 				culture = oriya
 				religion = hinduism
-				leader = "Hamvira Gajapati"
+				leader = "Hamvira"
+				leader_dynasty = "Gajapati"
 			}
 		}
 		every_owned_province = {
@@ -264,7 +265,8 @@ country_event = {
 				size = 3
 				culture = oriya
 				religion = hinduism
-				leader = "Puroshottama Gajapati"
+				leader = "Puroshottama"
+				leader_dynasty = "Gajapati"
 			}
 		}
 		every_owned_province = {

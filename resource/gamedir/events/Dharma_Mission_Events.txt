@@ -187,7 +187,7 @@ country_event = {
 		vassalize = DEC
 		DEC = {
 			change_government = monarchy
-			set_legacy_government = indian_sultanate_legacy
+			#set_legacy_government = indian_sultanate_legacy
 			add_opinion  = { who = ROOT modifier = opinion_viceroyalty_of_deccan }
 			reverse_add_opinion  = { who = ROOT modifier = opinion_viceroyalty_of_deccan }
 			set_capital = 545

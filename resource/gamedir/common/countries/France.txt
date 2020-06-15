@@ -4,6 +4,8 @@ graphical_culture = westerngfx
 
 color = { 20  50  210 }
 
+historical_council = concilatory
+
 revolutionary_colors = { 15  0  16 }
 
 historical_score = 6700
@@ -161,3 +163,5 @@ army_names = {
 fleet_names = {
 	"Escadre de la Manche" "Escadre de l'Atlantique" "Escadre de Méditerranée" "Escadre de Gascogne" "Escadre Bleue" "Escadre Rouge" "Escadre Blanche"
 }
+
+
