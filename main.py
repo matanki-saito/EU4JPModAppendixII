@@ -226,7 +226,7 @@ def main():
         out_file_path=_(".", "out", "eu4_ap2_mod"),
         mod_file_name="jpmod_ap2_mod",
         mod_zip_path=app_mod_zip_file_path,
-        mod_title_name="[評価版] JPMOD Sub 1: Characters, Cultures",
+        mod_title_name="JPMOD Sub 1: Characters, Cultures",
         mod_tags={"Translation", "Localisation"},
         mod_image_file_path="title.jpg",
         mod_supported_version="1.30.*.*")
