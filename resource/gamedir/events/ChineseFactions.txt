@@ -1183,7 +1183,7 @@ country_event = {
 	id = china_events.22
 	title = "china_events.22.t"
 	desc = "china_events.22.d"
-	picture = FORT_eventPicture
+	picture = SHWEDAGON_PAGON_eventPicture
 	
 	is_triggered_only = yes
 	
@@ -1483,6 +1483,7 @@ country_event = {
 		if = {
 			limit = {
 				has_dlc = "Rights of Man"
+				has_regency = no
 				has_consort = no
 				has_government_attribute = queen
 			}
@@ -1501,6 +1502,7 @@ country_event = {
 		if = {
 			limit = {
 				has_dlc = "Rights of Man"
+				has_regency = no
 				has_consort = no
 				has_government_attribute = queen
 			}
@@ -1519,6 +1521,7 @@ country_event = {
 		if = {
 			limit = {
 				has_dlc = "Rights of Man"
+				has_regency = no
 				has_consort = no
 				has_government_attribute = queen
 			}
@@ -2436,7 +2439,7 @@ country_event = {
 	id = china_events.44
 	title = "EVTNAME11242"
 	desc = "EVTDESC11242"
-	picture = FORT_eventPicture
+	picture = SHWEDAGON_PAGON_eventPicture
 	
 	trigger = {
 		always = no #Removed

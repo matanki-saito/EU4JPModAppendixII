@@ -9,7 +9,7 @@ country_event = {
 	
 	trigger = {
 		government = monarchy
-		has_reform_level = 5
+		reform_level = 5
 		NOT = {
 			has_reform = parliamentary_reform
 		}

@@ -12,6 +12,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		has_dlc = "Emperor"
 		tag = SWI
 		is_part_of_hre = yes
 		is_elector = no
@@ -57,7 +58,14 @@ country_event = {
 				add_claim = emperor
 			}
 		}
-		set_in_empire = no		
+		set_in_empire = no
+		set_country_flag = permanently_left_hre_flag
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = hre_country_left
+			}
+		}
 		add_prestige = 50
 		add_dip_power = 100
 	}

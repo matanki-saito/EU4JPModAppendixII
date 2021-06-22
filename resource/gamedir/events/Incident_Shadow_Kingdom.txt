@@ -335,6 +335,13 @@ country_event = {
 		}
 		name = hre_event.1.a
 		set_in_empire = no
+		set_country_flag = permanently_left_hre_flag
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = hre_country_left
+			}
+		}
 		if = {
 			limit = {
 				any_country = {

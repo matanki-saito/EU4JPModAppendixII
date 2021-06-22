@@ -2444,7 +2444,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = incorruptible_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = incorruptible } }
 		}
 	}
 
@@ -2469,7 +2469,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = lawgiver_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = lawgiver } }
 		}
 	}
 }
@@ -2635,7 +2635,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = lawgiver_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = lawgiver } }
 		}
 	}
 
@@ -2653,7 +2653,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = entrepreneur_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = entrepreneur } }
 		}
 	}
 
@@ -2671,7 +2671,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = incorruptible_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = incorruptible } }
 		}
 	}
 
@@ -2808,7 +2808,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = lawgiver_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = lawgiver } }
 		}
 	}
 
@@ -2826,7 +2826,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = fierce_negotiator_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = fierce_negotiator } }
 		}
 	}
 }
@@ -2875,7 +2875,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = righteous_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = righteous } }
 		}
 	}
 
@@ -2893,7 +2893,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = fierce_negotiator_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = fierce_negotiator } }
 		}
 	}
 
@@ -2911,7 +2911,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = benevolent_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = benevolent } }
 		}
 	}
 }
@@ -3017,7 +3017,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = righteous_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = righteous } }
 		}
 	}
 
@@ -3041,7 +3041,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = architectural_visionary_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = architectural_visionary } }
 		}
 	}
 }
@@ -3089,7 +3089,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = incorruptible_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = incorruptible } }
 		}
 	}
 
@@ -3111,7 +3111,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = charismatic_negotiator_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = charismatic_negotiator } }
 		}
 		# monarch = 03999
 	}

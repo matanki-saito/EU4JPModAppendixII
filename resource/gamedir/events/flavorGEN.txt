@@ -406,7 +406,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = lawgiver_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = lawgiver } }
 		}
 	}
 	option = {

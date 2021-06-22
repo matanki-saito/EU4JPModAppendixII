@@ -696,11 +696,11 @@ country_event = {
 		days = 1
 		modifier = {
 			factor = 0.5
-			ruler_has_personality = tolerant_personality
+			ruler_has_personality_ancestor = { key = tolerant }
 		}
 		modifier = {
 			factor = 1.5
-			ruler_has_personality = zealot_personality
+			ruler_has_personality_ancestor = { key = zealot }
 		}
 	}
 	

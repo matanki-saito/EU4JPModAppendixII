@@ -674,7 +674,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = righteous_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = righteous } }
 		}
 	}
 
@@ -910,7 +910,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = intricate_web_weaver_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = intricate_web_weaver } }
 		}
 		set_ruler_flag = kateregga_seized_power
 	}

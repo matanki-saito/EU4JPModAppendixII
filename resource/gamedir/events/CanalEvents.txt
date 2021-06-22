@@ -20,11 +20,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}		
 	}
 
@@ -73,11 +73,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -126,11 +126,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -179,11 +179,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -232,11 +232,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -285,11 +285,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -338,11 +338,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -394,11 +394,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -454,11 +454,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}
 	}
 
@@ -542,11 +542,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -615,11 +615,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -665,11 +665,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}	
 	}
 
@@ -710,11 +710,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}
 	}
 
@@ -767,7 +767,7 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}
 	}
 
@@ -823,7 +823,7 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}
 	}
 
@@ -873,11 +873,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}
 	}
 	
@@ -930,11 +930,11 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 3
-			has_great_project = kiel_canal
+			has_construction = kiel_canal
 		}
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}
 	}
 
@@ -974,7 +974,7 @@ province_event = {
 		months = 300
 		modifier = {
 			factor = 0.75
-			has_great_project = panama_canal
+			has_construction = panama_canal
 		}
 	}
 
@@ -1007,77 +1007,6 @@ province_event = {
 	}
 }
 
-# Kiel Canal Finished
-province_event = {
-	id = canal_events.25
-	title = "canal_events.25.t"
-	desc = "canal_events.25.d"
-	picture = HARBOUR_eventPicture
-	goto = root
-	
-	fire_only_once = yes
-
-	trigger = {
-		has_great_project = kiel_canal
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = "canal_events.25.a"
-		owner = { add_prestige = 30 }
-	}
-}
-
-# Suez Canal Finished
-province_event = {
-	id = canal_events.26
-	title = "canal_events.26.t"
-	desc = "canal_events.26.d"
-	picture = HARBOUR_eventPicture
-	goto = root
-	
-	fire_only_once = yes
-
-	trigger = {
-		has_great_project = suez_canal
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = "canal_events.25.a"
-		owner = { add_prestige = 40 }
-	}
-}
-
-# Panama Canal Finished
-province_event = {
-	id = canal_events.27
-	title = "canal_events.27.t"
-	desc = "canal_events.27.d"
-	picture = HARBOUR_eventPicture
-	goto = root
-	
-	fire_only_once = yes
-
-	trigger = {
-		has_great_project = panama_canal
-	}
-	
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = "canal_events.25.a"
-		owner = { add_prestige = 50 }
-	}
-}
 
 # Canal Project Delayed - Overlord Notification
 province_event = {

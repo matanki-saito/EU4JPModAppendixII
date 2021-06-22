@@ -450,7 +450,7 @@ country_event = {
 			}
 			hidden_effect = {
 				add_ruler_personality = infertile_personality
-				add_ruler_personality = zealot_personality
+				add_ruler_personality_ancestor = { key = zealot }
 			}
 		}
 		else = {
@@ -464,8 +464,9 @@ country_event = {
 				fixed = yes
 			}
 			hidden_effect = {
-				add_ruler_personality = zealot_personality
+				add_ruler_personality_ancestor = { key = zealot }
 			}
+			add_government_reform = millenarian_theocracy_reform
 		}
 		set_ruler_flag = savonarola_flag
 		add_republican_tradition = 20
@@ -856,6 +857,7 @@ country_event = {
 			government = republic
 		}
 		set_ruler = flo_exiled_ruler
+		remove_government_reform = millenarian_theocracy_reform
 	}
 
 	option = {
@@ -871,6 +873,7 @@ country_event = {
 			}
 			set_heir = flo_exiled_heir
 		}
+		remove_government_reform = millenarian_theocracy_reform
 	}
 }
 
@@ -1172,8 +1175,8 @@ country_event = {
 				25 = { add_ruler_personality = embezzler_personality }
 				25 = { add_ruler_personality = greedy_personality }
 				20 = { add_ruler_personality = sinner_personality }
-				15 = { add_ruler_personality = architectural_visionary_personality }
-				15 = { add_ruler_personality = scholar_personality }
+				15 = { add_ruler_personality_ancestor = { key = architectural_visionary } }
+				15 = { add_ruler_personality_ancestor = { key = scholar } }
 			}
 		}
 	}

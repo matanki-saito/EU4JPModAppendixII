@@ -29,6 +29,17 @@ country_event = {
 	option = {
 		name = "flavor_pap.EVTOPTA1"
 		add_ruler_modifier = { name = pap_saint_peters_basilica }
+		if = {
+			limit = {
+				has_dlc = "Leviathan"
+			}
+			118 = {
+				add_great_project_tier = {
+					type = stpeters_cathedral
+					tier = 1
+				}
+			}
+		}
 	}
 	option = {
 		name = "flavor_pap.EVTOPTB1"
@@ -271,20 +282,25 @@ country_event = {
 			}
 			add_corruption = -1
 		}
-		custom_tooltip = flavor_pap.7.tt
-		hidden_effect = {
-			every_known_country = {
-				limit = {
-					religion = catholic
-					any_owned_province = {
-						has_cardinal = yes
+		if = {
+			limit = {
+				has_dlc = "Emperor"
+			}
+			custom_tooltip = flavor_pap.7.tt
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						religion = catholic
+						any_owned_province = {
+							has_cardinal = yes
+						}
+					}
+					country_event = {
+						id = flavor_pap.8
 					}
 				}
-				country_event = {
-					id = flavor_pap.8
-				}
 			}
-		}		
+		}
 		set_global_flag = counter_reformation
 		if = {
 			limit = {
@@ -317,12 +333,17 @@ country_event = {
 	
 	is_triggered_only = yes
 	
+	trigger = {
+		has_dlc = "Emperor"
+	}
+	
 	option = {
 		name = "flavor_pap.EVTOPTA8"
 		custom_tooltip = can_join_council_of_trent_tt
 		PAP = {
 			add_opinion = {
 				who = ROOT
+				modifier = opinion_trent
 			}
 		}
 	}

@@ -75,6 +75,7 @@ country_event = {
 		tag = GNV
 		government = republic
 		is_subject_of = SAV
+		is_at_war = no
 	}
 	
 	fire_only_once = yes
@@ -638,22 +639,20 @@ country_event = {
 
 	trigger = {
 		is_religion_enabled = reformed
-		OR = {
-			OR = { #Geneva vassals will only get this event if they are a player, otherwise Geneva's overlord or province owner gets this event.
-				is_subject = no
-				AND = {
-					tag = GNV
-					was_player = yes
-				}
+		AND = { #Geneva vassals will only get this event if they are a player, otherwise Geneva's overlord or province owner gets this event.
+			is_subject = no
+			AND = {
+				tag = GNV
+				was_player = yes
 			}
-			OR = { #Geneva is controlled in some way
-				4720 = {
-					owned_by = ROOT
-				}
-				GNV = {
-					is_subject_of = ROOT
-					owns_core_province = 4720
-				}
+		}
+		OR = { #Geneva is controlled in some way
+			4720 = {
+				owned_by = ROOT
+			}
+			GNV = {
+				is_subject_of = ROOT
+				owns_core_province = 4720
 			}
 		}
 		OR = {
@@ -701,6 +700,7 @@ country_event = {
 		trigger = {
 			NOT = {
 				tag = GNV
+				tag = PAP
 			}
 		}
 		if = {

@@ -1282,6 +1282,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Art of War"
+		has_regency = no
 		OR = {
 			culture_group = sahelian
 			culture_group = mande

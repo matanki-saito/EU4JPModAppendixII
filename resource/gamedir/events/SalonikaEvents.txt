@@ -77,6 +77,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		NOT = {	num_of_estate_privileges = { estate = estate_dhimmi	value = 4 } }
 		religion_group = muslim
 		148 = {
 			NOT = { religion = ROOT }

@@ -12,6 +12,7 @@ country_event = {
 	trigger = {
 		tag = HSA
 		has_dlc = "Emperor"
+		is_subject = no
 		emperor = {
 			is_at_war = no
 		}
@@ -238,6 +239,12 @@ country_event = {
 				modifier = opinion_emperor_imperial_embargo
 			}
 		}
+		event_target:lubeck_trade_power = {
+			country_event = { 
+				id = hansa_incident.4
+				days = 1
+			}
+		}
 	}
 }
 
@@ -300,5 +307,19 @@ country_event = {
 		emperor = {
 			add_imperial_influence = -5
 		}
+	}
+}
+
+# Notification of Embargo
+country_event = {
+	id = hansa_incident.4
+	title = hansa_incident.4.t
+	picture = HRE_eventPicture
+	desc = hansa_incident.4.d
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = hansa_incident.4.a
 	}
 }

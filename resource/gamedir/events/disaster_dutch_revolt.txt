@@ -184,6 +184,13 @@ country_event = {
 		name = dutch_revolt.3.a
 		set_in_empire = no
 		add_prestige = 20
+		set_country_flag = permanently_left_hre_flag
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = hre_country_left
+			}
+		}
 	}
 	option = {
 		name = dutch_revolt.3.b

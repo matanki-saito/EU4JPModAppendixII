@@ -16,34 +16,6 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	trigger = {
-		tag = BUR
-		is_subject = no
-		is_at_war = no
-		hre_size = 1
-		is_subject = no
-		has_female_heir = no
-		NOT = {
-			has_country_flag = burgundian_succession_start
-		}
-		OR = {
-			had_country_flag = {
-				flag = bur_crisis_has_happened
-				days = 1825
-			}
-			had_country_flag = {
-				flag = charles_died
-				days = 1825
-			}
-			AND = {
-				NOT = {
-					has_ruler = "Philippe III"
-				}
-				has_heir = yes
-			}
-		}
-	}
-	
 	option = {
 		name = "incidents_bur_join_empire.1.a"
 		ai_chance = {

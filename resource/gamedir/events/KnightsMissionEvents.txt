@@ -155,9 +155,9 @@ country_event = {
 		if = {
 			limit = {
 				OR = {
-					ruler_has_personality = just_personality
-					ruler_has_personality = righteous_personality
-					ruler_has_personality = lawgiver_personality
+					ruler_has_personality_ancestor = { key = just }
+					ruler_has_personality_ancestor = { key = righteous }
+					ruler_has_personality_ancestor = { key = lawgiver }
 				}
 			}
 			random_list = {

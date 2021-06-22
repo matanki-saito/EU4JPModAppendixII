@@ -153,7 +153,6 @@ country_event = {
 			define_ruler = {
 				name = "Soun"
 				dynasty = "Hojo"
-				fixed = yes
 				adm = 5
 				dip = 4
 				mil = 5
@@ -320,6 +319,9 @@ country_event = {
 				spawn_rebels = {
 					type = nationalist_rebels
 					size = 1
+					separatists_target = ASA
+					#this is needed because the only ASA province is also the capital of Shiba
+					should_take_capital = yes
 				}
 			}
 			else = {
@@ -1374,6 +1376,7 @@ country_event = {
 			adm = 5
 			dip = 6
 			mil = 5
+			fixed = yes
 		}
 	}
 }

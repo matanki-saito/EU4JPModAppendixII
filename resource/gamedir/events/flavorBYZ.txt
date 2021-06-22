@@ -36,3 +36,54 @@ country_event = {
 	}
 
 }
+
+# The Patriarch of Constantinople declares the Great Schism mended
+# by Veronica Pazos
+country_event = {
+	id = flavor_byz.2
+	title = flavor_byz.2.t
+	desc = flavor_byz.2.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_byz.2.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				ai_attitude = {
+					who = BYZ
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = BYZ
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = BYZ
+					attitude = attitude_outraged
+				}
+			}
+		}
+		change_religion = orthodox
+		capital_scope = {
+			if = {
+				limit = {
+					NOT = { religion = orthodox }
+				}
+				change_religion = orthodox
+			}
+		}
+		add_stability = -1
+		add_prestige = -30
+	}
+	option = {
+		name = flavor_byz.2.b
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = -3
+	}
+}

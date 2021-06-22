@@ -37,6 +37,7 @@ country_event = {
 	trigger = { 
 		num_of_cities = 3 
 		government = monarchy
+		NOT = { has_country_flag = maj_pretender_event }
 	}
 
 	immediate = {

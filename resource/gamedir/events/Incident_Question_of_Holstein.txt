@@ -187,6 +187,7 @@ country_event = {
 	goto = 1775
 	
 	trigger = {	
+		has_dlc = "Emperor"
 		is_emperor = yes
 		OR = {
 			current_age = age_of_absolutism

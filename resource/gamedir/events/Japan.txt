@@ -54,6 +54,7 @@ province_event = {
 	}
 	
 	immediate = {
+		#Save new owner as shogun if valid
 		hidden_effect = {
 			owner = {
 				if = {
@@ -65,87 +66,56 @@ province_event = {
 					}
 					add_core = 1020
 					set_capital = 1020
+					#There was a bug, which made it possible that the new shogun remained a daimyo despite having Kyoto
+					#I couldn't replicate it though, so I hope the line below might fix it - in the worst case it does nothing
+					grant_independence = yes
 					add_government_reform = shogunate
 					save_event_target_as = new_shogunate
 				}
 			}
 		}
-	}
-	
-	option = {
-		name = "japan.EVTOPTA1"
-		if = {
-			limit = {
-				owner = { has_reform = shogunate }
-			}
-			custom_tooltip = claiming_the_shogunate_tooltip
-		}
+		#Handle daimyo transfer
 		hidden_effect = {
+			#Case - new owner is the new shogun, previous still lives -> all daimyos get transferred from the previous to the new one
 			if = {
 				limit = {
 					FROM = { exists = yes }
 					owner = { has_reform = shogunate }
 					FROM = { has_reform = shogunate }
 				}
+				#Degrade the previous shogun to daimyo level
 				FROM = {
-					free_vassal = PREV
+					every_subject_country = {
+						limit = {
+							is_subject_of_type = daimyo_vassal
+						}
+						set_country_flag = tobe_daimyo_of_new_shogun
+						grant_independence = yes
+					}
+					event_target:new_shogunate = {
+						vassalize = FROM
+					}
+					set_government_rank = 1
+					add_government_reform = daimyo
 				}
-				FROM = {
-					every_subject_country = {
-						limit = {
-							OR = {
-								has_reform = daimyo
-								has_reform = indep_daimyo
-								AND = {
-									tag = SOO
-									OR = {
-										has_reform = pirate_republic_reform
-										has_reform = pirate_king_reform
-										has_reform = war_against_the_world_doctrine_reform
-										has_reform = black_market_consortium_reform
-									}
-								}
-							}
-							NOT = { war_with = event_target:new_shogunate }
-						}
-						event_target:new_shogunate = {
-							vassalize = PREV
-						}
+				#Vassalize all of the former daimyos
+				#NOTE: originally, it was intended that daimyos, who are at war with the shogun, should not be vassalized
+				every_country = {
+					limit = {
+						has_country_flag = tobe_daimyo_of_new_shogun
 					}
-					every_subject_country = {
-						limit = {
-							OR = {
-								has_reform = daimyo
-								has_reform = indep_daimyo
-								AND = {
-									tag = SOO
-									OR = {
-										has_reform = pirate_republic_reform
-										has_reform = pirate_king_reform
-										has_reform = war_against_the_world_doctrine_reform
-										has_reform = black_market_consortium_reform
-									}
-								}
-							}
-							war_with = event_target:new_shogunate
-						}
-						from = {
-							free_vassal = prev
-						}
-						if = {
-							limit = {
-								NOT = { has_reform = indep_daimyo }
-								NOT = { has_reform = pirate_republic_reform }
-								NOT = { has_reform = pirate_king_reform }
-								NOT = { has_reform = war_against_the_world_doctrine_reform }
-								NOT = { has_reform = black_market_consortium_reform }
-							}
-							add_government_reform = indep_daimyo
-						}
+					event_target:new_shogunate = {
+						vassalize = PREV
 					}
-					add_government_reform = indep_daimyo
+				}
+				owner = {
+					country_event = {
+						id = japan.4
+						days = 1
+					}
 				}
 			}
+			#Case - new owner is not the new shogun, previous still lives -> all daimyos get free
 			if = {
 				limit = {
 					FROM = { exists = yes }
@@ -155,18 +125,20 @@ province_event = {
 				FROM = {
 					every_subject_country = {
 						limit = {
-							OR = {
-								has_reform = daimyo
-								has_reform = indep_daimyo
-							}
+							is_subject_of_type = daimyo_vassal
 						}
-						FROM = {
-							free_vassal = PREV
+						grant_independence = yes
+						if = {
+							limit = {
+								has_reform = daimyo
+							}
+							add_government_reform = indep_daimyo
 						}
 					}
 					add_government_reform = indep_daimyo
 				}
 			}
+			#Case - new owner is shogun, previous shogun is dead -> all daimyos become subjects of the new shogun
 			if = {
 				limit = {
 					NOT = {
@@ -205,6 +177,7 @@ province_event = {
 					country_event = { id = japan.2 }
 				}
 			}
+			#Case - new owner is not the new shogun, previous one is dead -> all former daimyos become independent daimyo
 			if = {
 				limit = {
 					NOT = {
@@ -219,26 +192,11 @@ province_event = {
 					overlord = {
 						free_vassal = PREV
 					}
+					add_government_reform = indep_daimyo
 				}
 			}
 		}
-		if = {
-			limit = {
-				NOT = {
-					owner = { has_reform = shogunate }
-				}
-			}
-			owner = {
-				if = {
-					limit = { NOT = { has_country_flag = destroyed_shogunate } }
-					add_prestige = 20
-					add_adm_power = 50
-					add_dip_power = 50
-					add_mil_power = 50
-					set_country_flag = destroyed_shogunate
-				}
-			}
-		}
+		#Catch all remaining daimyos and let them free
 		hidden_effect = {
 			if = {
 				limit = {
@@ -255,6 +213,40 @@ province_event = {
 					overlord = {
 						free_vassal = PREV
 					}
+					if = {
+						limit = {
+							has_reform = daimyo
+						}
+						remove_government_reform = daimyo
+						add_government_reform = indep_daimyo
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "japan.EVTOPTA1"
+		if = {
+			limit = {
+				owner = { has_reform = shogunate }
+			}
+			custom_tooltip = claiming_the_shogunate_tooltip
+		}
+		if = {
+			limit = {
+				NOT = {
+					owner = { has_reform = shogunate }
+				}
+			}
+			owner = {
+				if = {
+					limit = { NOT = { has_country_flag = destroyed_shogunate } }
+					add_prestige = 20
+					add_adm_power = 50
+					add_dip_power = 50
+					add_mil_power = 50
+					set_country_flag = destroyed_shogunate
 				}
 			}
 		}
@@ -295,6 +287,11 @@ country_event = {
 				modifier = opinion_defy_new_shogun
 			}
 			country_event = { id = japan.3 days = 5 }
+			add_casus_belli = {
+				target = ROOT
+				type = cb_vassalize_mission
+				months = 300
+			}
 		}
 
 		ai_chance = {
@@ -319,5 +316,49 @@ country_event = {
 	
 	option = { #be a daimyo
 		name = japan.3.opt
+	}
+}
+
+# Cleaning event - all daimyos, who are at war with the country, who just became the new shogun, should defect from the new shogun
+country_event = {
+	id = japan.4
+	title = japan.4.t
+	desc = japan.4.desc
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = { #We don't follow a bully
+		name = japan.4.a
+		every_country = {
+			limit = {
+				has_country_flag = tobe_daimyo_of_new_shogun
+			}
+			clr_country_flag = tobe_daimyo_of_new_shogun
+			if = {
+				limit = {
+					war_with = ROOT
+					is_subject_of = ROOT
+				}
+				grant_independence = yes
+				if = {
+					limit = {
+						has_reform = daimyo
+					}
+					add_government_reform = indep_daimyo
+				}
+				#The Shogun should be able to retake his defected daimyos
+				reverse_add_casus_belli = {
+					target = ROOT
+					type = cb_vassalize_mission
+					months = 300
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
 	}
 }

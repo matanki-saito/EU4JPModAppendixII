@@ -102,7 +102,7 @@ country_event = {
 				limit = {
 					has_dlc = "Rights of Man" 
 				}
-				hidden_effect = { add_ruler_personality = conqueror_personality }
+				hidden_effect = { add_ruler_personality_ancestor = { key = conqueror } }
 			}
 		}
 		if = {
@@ -127,7 +127,7 @@ country_event = {
 				limit = {
 					has_dlc = "Rights of Man" 
 				}
-				hidden_effect = { add_ruler_personality = conqueror_personality }
+				hidden_effect = { add_ruler_personality_ancestor = { key = conqueror } }
 			}
 		}
 		custom_tooltip = flavor_cri.1.a.tt
@@ -189,7 +189,7 @@ country_event = {
 				limit = {
 					has_dlc = "Rights of Man" 
 				}
-				hidden_effect = { add_ruler_personality = inspiring_leader_personality }
+				hidden_effect = { add_ruler_personality_ancestor = { key = inspiring_leader } }
 			}
 		}
 		if = {
@@ -214,7 +214,7 @@ country_event = {
 				limit = {
 					has_dlc = "Rights of Man" 
 				}
-				hidden_effect = { add_ruler_personality = inspiring_leader_personality }
+				hidden_effect = { add_ruler_personality_ancestor = { key = inspiring_leader } }
 			}
 		}
 		custom_tooltip = flavor_cri.1.b.tt
@@ -543,7 +543,7 @@ country_event = {
 			limit = {
 				has_dlc = "Rights of Man" 
 			}
-			hidden_effect = { add_ruler_personality = conqueror_personality }
+			hidden_effect = { add_ruler_personality_ancestor = { key = conqueror } }
 		}
 		add_opinion = {
 			who = TUR
