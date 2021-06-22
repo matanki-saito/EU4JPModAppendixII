@@ -207,3 +207,60 @@ alliance = {
 	start_date = 1527.1.1
 	end_date = 1552.1.1
 }
+
+# Remaining Mahapahit Tributaries
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MAJ
+	second = BNJ
+	start_date = 1444.1.1
+	end_date = 1468.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MAJ
+	second = BLI
+	start_date = 1444.1.1
+	end_date = 1475.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MAJ
+	second = BLM
+	start_date = 1444.1.1
+	end_date = 1475.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MAJ
+	second = PLB
+	start_date = 1444.1.1
+	end_date = 1475.1.1
+}
+
+# Muan Phuang
+guarantee = {
+	first = LXA
+	second = MPH
+	start_date = 1444.1.1
+	end_date = 1531.1.1
+}
+
+guarantee = {
+	first = DAI
+	second = MPH
+	start_date = 1444.1.1
+	end_date = 1478.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MPH
+	start_date = 1444.1.1
+	end_date = 1531.1.1
+}

@@ -1,7 +1,7 @@
 government = monarchy
 add_government_reform = autocracy_reform
 primary_culture = sumatran
-religion = sunni
+religion = hinduism
 technology_group = chinese
 capital = 622	# Palembang
 religious_school = shafii_school
@@ -62,6 +62,7 @@ religious_school = shafii_school
 }
 
 1670.1.1 = {
+	religion = sunni
 	monarch = {
 		name = "Inayat" # Fictional
 		dynasty = "Palembang"

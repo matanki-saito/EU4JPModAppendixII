@@ -26,7 +26,6 @@ discovered_by = chinese
 	controller = MLW
 	add_core = MLW
 } # Conquest by Malwa
-#TODO History
 1519.1.1 = {
 	owner = HAD
 	controller = HAD

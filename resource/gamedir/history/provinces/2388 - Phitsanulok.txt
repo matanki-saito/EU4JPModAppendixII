@@ -1,7 +1,7 @@
 #2388 - Phitsanulok
 
-owner = AYU 
-controller = AYU
+owner = SUK 
+controller = SUK
 culture = central_thai
 religion = buddhism
 capital = "Phitsanulok"

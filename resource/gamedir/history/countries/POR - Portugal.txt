@@ -723,7 +723,7 @@ add_government_reform = autocracy_reform }
 
 1777.2.23 = {
 	heir = {
-		name = "João"
+		name = "Joao"
 		monarch_name = "João VI"
 		dynasty = "de Bragança"
 		birth_date = 1767.5.13

@@ -17,6 +17,7 @@ discovered_by = chinese
 discovered_by = indian
 extra_cost = 8
 center_of_trade = 1
+add_core = VIE
 
 1535.1.1 = { discovered_by = POR }
 1579.1.1 = { unrest = 5 } # Revolt against vassalization
@@ -27,6 +28,5 @@ center_of_trade = 1
 1707.1.1 = {
 	owner = VIE
 	controller = VIE
-	add_core = VIE
 	remove_core = LXA
 } # Declared independent, Lan Xang was partitioned into three kingdoms; Vientiane, Champasak & Luang Prabang

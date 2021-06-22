@@ -248,7 +248,7 @@ capital = 4743	# Weimar
 
 1573.3.2 = {
 	monarch = {
-		name = "August of Saxony's Regency"
+		name = "August of Saxony's"
 		regent = yes
 		adm = 0
 		dip = 0
@@ -475,7 +475,7 @@ add_government_reform = autocracy_reform }
 
 1758.5.28 = {
 	monarch = {
-		name = "Anna Amalia's Regency"
+		name = "Anna Amalia's"
 		regent = yes
 		adm = 4
 		dip = 5
