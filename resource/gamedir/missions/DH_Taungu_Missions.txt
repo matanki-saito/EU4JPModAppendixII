@@ -6,7 +6,12 @@ tau_slot_1 = {
 		has_dlc = "Dharma"
 	}
 	potential = {
-		tag = TAU
+		OR = {
+			tag = TAU
+			tag = BPR
+			tag = AVA
+			tag = AVA
+		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
 	}
@@ -177,7 +182,8 @@ tau_slot_1 = {
 		required_missions = { tau_conquer_lanna }
 		provinces_to_highlight = {
 			OR = {
-				area = south_laos_area
+				area = champasak_area
+				area = vientiane_area
 				area = north_laos_area
 				area = khorat_area
 			}
@@ -186,7 +192,11 @@ tau_slot_1 = {
 			}
 		}
 		trigger = {
-			south_laos_area = {
+			champasak_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			vientiane_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT	
 			}
@@ -230,7 +240,11 @@ tau_slot_2 = {
 		has_dlc = "Dharma"
 	}
 	potential = {
-		tag = TAU
+		OR = {
+			tag = TAU
+			tag = BPR
+			tag = AVA
+		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
 	}
@@ -240,14 +254,56 @@ tau_slot_2 = {
 		icon = mission_annex_prome
 		required_missions = {  }
 		provinces_to_highlight = {
-			province_id = 4396
-			NOT = {
-				owned_by = ROOT
+			OR = {
+				AND = {
+					ROOT = { tag = TAU }
+					province_id = 4396
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					ROOT = { tag = BPR }
+					province_id = 585
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				AND = {
+					ROOT = {
+						NOT = {
+							tag = TAU
+							tag = BPR
+						}
+					}
+					owner = {
+						is_enemy = ROOT
+					}
+				}
 			}
 		}
 		trigger = {
-			4396 = {
-				owned_by = ROOT
+			if = {
+				limit = {
+					tag = TAU
+				}
+				4396 = {
+					owned_by = ROOT
+				}
+			}
+			else_if = {
+				limit = {
+					tag = BPR
+				}
+				585 = {
+					owned_by = ROOT
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = obj_humiliate_rival_tooltip
+					has_country_flag = humiliated_rival
+				}
 			}
 		}
 		effect = {
@@ -320,7 +376,6 @@ tau_slot_2 = {
 				area = lower_burma_area
 				area = shan_hill_area
 				area = karenni_area
-				area = arakan_area
 				area = 	central_burma_area
 				area = 	chindwin_area
 			}
@@ -391,7 +446,14 @@ tau_slot_2 = {
 				name = "million_rice_fields"
 				duration = 7300
 			}
-			south_laos_area = {
+			champasak_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			vientiane_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
@@ -426,6 +488,13 @@ tau_slot_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			sukhothai_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 	tau_rule_indochina = {
@@ -446,9 +515,24 @@ tau_slot_2 = {
 			}
 		}
 		effect = {
+			if = {
+				limit = {
+					is_revolutionary = no
+				}
+				country_event = {
+					id = flavor_lna.3
+				}
+			}
+			if = {
+				limit = {
+					NOT = { any_country = { has_country_flag = is_burma } }
+				}
+				override_country_name = BURMA
+				set_country_flag = is_burma
+			}
 			add_country_modifier = {
 				name = "chakravarti"
-				duration = 7300
+				duration = -1
 			}
 		}
 	}
@@ -462,7 +546,11 @@ tau_slot_3 = {
 		has_dlc = "Dharma"
 	}
 	potential = {
-		tag = TAU
+		OR = {
+			tag = TAU
+			tag = BPR
+			tag = AVA
+		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
 	}
@@ -537,6 +625,7 @@ tau_slot_3 = {
 			OR = {
 				area = central_thai_area
 				area = north_tenasserim_area
+				area = sukhothai_area
 			}
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
@@ -548,6 +637,10 @@ tau_slot_3 = {
 				country_or_non_sovereign_subject_holds = ROOT	
 			}
 			north_tenasserim_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			sukhothai_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT	
 			}
@@ -578,6 +671,20 @@ tau_slot_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			tay_nguyen_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			angkor_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 }
@@ -590,7 +697,11 @@ tau_slot_4 = {
 		has_dlc = "Dharma"
 	}
 	potential = {
-		tag = TAU
+		OR = {
+			tag = TAU
+			tag = BPR
+			tag = AVA
+		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
 	}
@@ -637,17 +748,6 @@ tau_slot_4 = {
 					NOT = { is_core = ROOT	}
 				}
 				add_permanent_claim = ROOT
-			}
-			568 = {
-				if = {
-					limit = {
-						NOT = {
-							is_permanent_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					add_permanent_claim = ROOT
-				}
 			}
 		}
 	}
@@ -698,9 +798,6 @@ tau_slot_4 = {
 			tripura_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT	
-			}
-			568 = {
-				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
@@ -793,7 +890,11 @@ tau_slot_5 = {
 		has_dlc = "Dharma"
 	}
 	potential = {
-		tag = TAU
+		OR = {
+			tag = TAU
+			tag = BPR
+			tag = AVA
+		}
 		has_dlc = "Dharma"
 		NOT = { map_setup = map_setup_random }
 	}

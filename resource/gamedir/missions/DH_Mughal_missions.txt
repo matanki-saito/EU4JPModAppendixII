@@ -760,6 +760,15 @@ mug_ganges_branch = {
 				}
 				add_permanent_claim = ROOT
 			}
+			sukhothai_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 			northern_thai_area = {
 				limit = {
 					NOT = {
@@ -778,7 +787,16 @@ mug_ganges_branch = {
 				}
 				add_permanent_claim = ROOT
 			}
-			south_laos_area = {
+			champasak_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			vientiane_area = {
 				limit = {
 					NOT = {
 						is_permanent_claim = ROOT
@@ -806,9 +824,11 @@ mug_ganges_branch = {
 				area = tenasserim_area
 				area = north_tenasserim_area
 				area = central_thai_area
+				area = sukhothai_area 
 				area = northern_thai_area
 				area = north_laos_area
-				area = south_laos_area
+				area = champasak_area
+				area = vientiane_area
 				area = khorat_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -826,6 +846,10 @@ mug_ganges_branch = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
+			sukhothai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 			northern_thai_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
@@ -834,7 +858,11 @@ mug_ganges_branch = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			south_laos_area = {
+			champasak_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vientiane_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -869,7 +897,24 @@ mug_ganges_branch = {
 				}
 				add_permanent_claim = ROOT
 			}
-			
+			north_malaya_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			johor_area = {
+				limit = {
+					NOT = {
+						is_permanent_claim = ROOT
+						is_core = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
 			vietnam_area = {
 				limit = {
 					NOT = {
@@ -923,7 +968,9 @@ mug_ganges_branch = {
 		provinces_to_highlight = {
 			OR = {
 				area = malaya_area
+				area = north_malaya_area
 				area = malacca_area
+				area = johor_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -932,7 +979,15 @@ mug_ganges_branch = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
+			north_malaya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 			malaya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			johor_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

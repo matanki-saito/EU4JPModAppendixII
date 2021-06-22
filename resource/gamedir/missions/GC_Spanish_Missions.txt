@@ -260,9 +260,20 @@ gc_spain_1_b = {
 		}
 
 		trigger = {
-			2021 = {
-				country_or_non_sovereign_subject_holds = ROOT
-				has_holy_order_trigger = yes
+			if = {
+				limit = {
+					religion = catholic
+				}
+				2021 = {
+					country_or_non_sovereign_subject_holds = ROOT
+					has_holy_order_trigger = yes
+				}
+			}
+			else = {
+				2021 = {
+					country_or_non_sovereign_subject_holds = ROOT
+					religion = ROOT
+				}
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 5
@@ -552,12 +563,27 @@ gc_spain_2_b = {
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = mexico_holy_order_tooltip
-				num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
-					has_holy_order_trigger = yes
-					region = mexico_region
-					value = 5
+			if = {
+				limit = {
+					religion = catholic
+				}
+				custom_trigger_tooltip = {
+					tooltip = mexico_holy_order_tooltip
+					num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
+						has_holy_order_trigger = yes
+						region = mexico_region
+						value = 5
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = mexico_holy_order_alternative_tooltip
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						religion = ROOT
+						region = mexico_region
+						value = 25
+					}
 				}
 			}
 			mexico_region = {
@@ -1178,17 +1204,35 @@ gc_spain_3_b = {
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = native_reductions_tooltip
-				num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
-					has_holy_order_trigger = yes
-					OR = {
-						continent = north_america
-						continent = south_america
+			if = {
+				limit = {
+					religion = catholic
+				}
+				custom_trigger_tooltip = {
+					tooltip = native_reductions_tooltip
+					num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
+						has_holy_order_trigger = yes
+						OR = {
+							continent = north_america
+							continent = south_america
+						}
+						value = 15
 					}
-					value = 15
 				}
 			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = native_reductions_alternative_tooltip
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						religion = ROOT
+						OR = {
+							continent = north_america
+							continent = south_america
+						}
+						value = 75
+					}
+				}
+			}			
 			216 = { # school of salamanca
 				has_building = university
 			}
@@ -1308,9 +1352,25 @@ gc_spain_4 = {
 			}
 			if = {
 				limit = {
-					NOT = { NAP = { is_subject_of = ROOT } }
+					exists = NAP
+					valid_for_personal_unions_trigger = yes
+					NAP = {
+						valid_for_personal_unions_trigger = yes
+					}
+				}
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					months = 300
+					target = NAP
 				}
 				sicily_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				western_sicily_area = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }
@@ -1337,6 +1397,15 @@ gc_spain_4 = {
 						NOT = { is_permanent_claim = ROOT }
 					}
 					add_permanent_claim = ROOT
+				}
+				120 = {
+					if = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_permanent_claim = ROOT }
+						}
+					add_permanent_claim = ROOT
+					}
 				}
 			}
 			else = {
@@ -1346,6 +1415,12 @@ gc_spain_4 = {
 					}
 					add_permanent_claim = NAP
 				}
+				western_sicily_area = {
+					limit = {
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+					add_permanent_claim = NAP
+				}
 				calabria_area = {
 					limit = {
 						NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -1363,6 +1438,14 @@ gc_spain_4 = {
 						NOT = { country_or_non_sovereign_subject_holds = ROOT }
 					}
 					add_permanent_claim = NAP
+				}
+				120 = {
+					if = {
+						limit = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+					add_permanent_claim = NAP
+					}
 				}
 			}
 		}
@@ -1375,29 +1458,45 @@ gc_spain_4 = {
 		provinces_to_highlight = {
 			OR = {
 				area = sicily_area
+				area = western_sicily_area
 				area = calabria_area
 				area = apulia_area
 				area = naples_area
+				province_id = 120
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 
 		trigger = {
-			sicily_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			calabria_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			apulia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			naples_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			OR = {
+				NAP = {
+					junior_union_with = ROOT
+				}
+				AND = {
+					sicily_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					western_sicily_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					calabria_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					apulia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					naples_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					120 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
 			}
 		}
 
@@ -1447,6 +1546,12 @@ gc_spain_4 = {
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+				remove_casus_belli = {
+					type = cb_restore_personal_union
+					target = NAP
+				}
 			}
 		}
 	}
@@ -2122,7 +2227,15 @@ gc_spain_5_b = {
 			OR = {
 				ROOT = {
 					is_emperor = yes
-					hre_reform_passed = erbkaisertum
+					if = {
+						limit = {
+							has_dlc = "Emperor"
+						}
+						hre_reform_passed = emperor_erbkaisertum
+					}
+					else = {
+						hre_reform_passed = erbkaisertum
+					}
 				}
 				AND = {
 					NOT = { hre_size = 1 }
@@ -2176,12 +2289,27 @@ gc_spain_5_c = {
 		}
 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = colombia_holy_order_tooltip
-				num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
-					has_holy_order_trigger = yes
-					colonial_region = colonial_colombia
-					value = 5
+			if = {
+				limit = {
+					religion = catholic
+				}
+				custom_trigger_tooltip = {
+					tooltip = colombia_holy_order_tooltip
+					num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
+						has_holy_order_trigger = yes
+						colonial_region = colonial_colombia
+						value = 5
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = colombia_holy_order_alternative_tooltip
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						religion = ROOT
+						colonial_region = colonial_colombia
+						value = 25
+					}
 				}
 			}
 			colonial_colombia = {

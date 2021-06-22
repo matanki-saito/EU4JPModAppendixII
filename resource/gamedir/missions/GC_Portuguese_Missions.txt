@@ -151,12 +151,27 @@ gc_por_1 = {
 		}
 		
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = port_jesuits_tooltip
-				num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
-					holy_order = jesuit_order
-					colonial_region = colonial_brazil
-					value = 7
+			if = {
+				limit = {
+					religion = catholic
+				}
+				custom_trigger_tooltip = {
+					tooltip = port_jesuits_tooltip
+					num_of_states_owned_or_owned_by_non_sovereign_subjects_with = {
+						holy_order = jesuit_order
+						colonial_region = colonial_brazil
+						value = 7
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = port_jesuits_alternative_tooltip
+					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+						religion = ROOT
+						colonial_region = colonial_brazil
+						value = 35
+					}
 				}
 			}
 		}

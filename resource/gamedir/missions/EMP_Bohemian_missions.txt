@@ -604,7 +604,7 @@ emp_bohemia_3 = {
 				has_regency = no
 				OR = {
 					PLC = { dynasty = ROOT }
-					is_rival = ROOT
+					is_rival = PLC
 				}
 			}
 			else = {
@@ -809,7 +809,7 @@ emp_bohemia_4 = {
 	}
 	has_country_shield = yes
 	emp_boh_humiliate_austria = {
-		icon = humiliate_austria
+		icon = boh_humiliate_austria
 		required_missions = {  }
 		provinces_to_highlight = {
 			owned_by = HAB
