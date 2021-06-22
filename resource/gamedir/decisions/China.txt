@@ -2,6 +2,7 @@ country_decisions = {
 
 	reparations_of_the_great_wall = {
 		potential = {
+			NOT = {	has_dlc = "Leviathan" }
 			NOT = { has_country_modifier = great_wall_reparations }
 			OR = {
 				tag = QNG
@@ -47,6 +48,7 @@ country_decisions = {
 
 	build_the_forbidden_city = {
 		potential = {
+			NOT = {	has_dlc = "Leviathan" }
 			OR = {
 				tag = MCH
 				tag = MNG
@@ -118,7 +120,7 @@ country_decisions = {
 				has_institution = manufactories
 				has_institution = enlightenment
 			}
-			has_reform_level = 4
+			reform_level = 4
 		}
 		effect = {
 			remove_government_reform = celestial_empire

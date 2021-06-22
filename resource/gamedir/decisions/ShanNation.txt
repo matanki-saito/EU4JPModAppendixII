@@ -71,7 +71,10 @@ country_decisions = {
 				add_permanent_claim = SST
 			}
 			if = {
-				limit = { has_custom_ideas = no }
+				limit = { 
+					has_custom_ideas = no 
+					NOT = { has_idea_group = shan_ideas }
+				}
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
 			set_country_flag = formed_shan_flag

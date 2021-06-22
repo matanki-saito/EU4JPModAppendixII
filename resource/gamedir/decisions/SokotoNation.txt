@@ -37,7 +37,10 @@ country_decisions = {
 				piety = 0.5
 				has_idea_group = religious_ideas
 			}
-			owns_core_province = 1148 #Gobir
+			owns_core_province = 1148 	#Gobir
+			1148 = { 					#Gobir
+				is_state = yes
+			}
 		}
 		effect = {
 			1148 = {

@@ -63,7 +63,10 @@ country_decisions = {
 				owns_core_province = 2075 #Sirhind
 				owns_core_province = 524 #Agra
 			}
-			owns_core_province = 522 #Delhi
+			owns_core_province = 522 	#Delhi
+			522 = {						#Delhi
+				is_state = yes
+			}
 		}
 		effect = {
 			522 = {
@@ -112,14 +115,14 @@ country_decisions = {
 			if = {
 				limit = {
 					has_dlc = "Dharma"
-					has_reform_level = 3
+					reform_level = 3
 				}
 				add_government_reform = mansabdari_reform
 			}
 			if = {
 				limit = {
 					has_dlc = "Dharma"
-					has_reform_level = 4
+					reform_level = 4
 				}
 				add_government_reform = zabt_reform
 			}

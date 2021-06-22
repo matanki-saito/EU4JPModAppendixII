@@ -46,7 +46,10 @@ country_decisions = {
 			is_at_war = no
 			is_tribal = no
 			NOT = { exists = DLH }
-			owns_core_province = 522 #Delhi
+			owns_core_province = 522 	#Delhi
+			522 = {						#Delhi
+				is_state = yes
+			}
 			OR = {
 				owns_core_province = 510 #Sirhind
 				owns_core_province = 524 #Agra

@@ -63,9 +63,12 @@ country_decisions = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no			
 			NOT = { exists = FRA }
-			owns_core_province = 183	# Île-de-France
 			owns_core_province = 184	# Orléannais
 			owns_core_province = 186	# Champagne
+			owns_core_province = 183	# Île-de-France
+			183 = { 					# Île-de-France / Paris
+				is_state = yes
+			}
 			num_of_owned_provinces_with = {
 				value = 15
 				region = france_region

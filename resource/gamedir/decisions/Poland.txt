@@ -12,6 +12,9 @@ country_decisions = {
 				is_playing_custom_nation = no
 			}
 			owns = 257
+			257 = {
+				is_state = yes
+			}
 			NOT = { capital = 257 }
 			NOT = { has_country_flag = relocated_capital_warsawa }
 		}

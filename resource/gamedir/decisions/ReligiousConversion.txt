@@ -97,5 +97,34 @@ country_decisions = {
 			add_stability = -4
 		}
 	}
-
+	
+	malay_islam_decision = {
+		potential = {
+			culture_group = malay
+			OR = {
+				religion_group = dharmic
+				religion_group = eastern
+			}
+		}
+		
+		allow = {
+			dominant_religion = sunni
+			stability = 0
+		}
+		
+		effect = {
+			change_religion = sunni
+			add_stability = -1
+			every_known_country = {
+				limit = {
+					culture_group = malay
+					religion = sunni
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = opinion_malay_converted_to_islam
+				}
+			}
+		}
+	}
 }

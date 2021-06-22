@@ -29,60 +29,17 @@ country_decisions = {
 		}
 		provinces_to_highlight = {
 			OR = {
-				AND = {
-					OR = {
-						province_id = 103		# Piedmont
-						province_id = 2986		# Cagliari
-					}
-					OR = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
-				}
-				AND = {
-					ROOT = {
-						NOT = {
-							num_of_owned_provinces_with = {
-								value = 3 #there are 4 (1 is Corsica)
-								area = corsica_sardinia_area
-								is_core = root
-							}
-						}
-						owns_core_province = 2986
-					}
-					area = corsica_sardinia_area
-					OR = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
-				}
-				AND = {
-					ROOT = {
-						NOT = {
-							num_of_owned_provinces_with = {
-								value = 6 #there are 12, but Savoy never owned most of them
-								OR = {
-									area = piedmont_area
-									area = savoy_dauphine_area
-									area = liguria_area
-								}
-								is_core = root
-							}
-						}
-						owns_core_province = 103
-					}
-					OR = {
-						area = piedmont_area
-						area = savoy_dauphine_area
-						area = liguria_area
-					}
-					OR = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
-				}
+				area = piedmont_area
+				area = savoy_dauphine_area
+				area = liguria_area
+				area = corsica_sardinia_area
+			}	
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
 			}
 		}
+		
 		allow = {
 			adm_tech = 10
 			is_free_or_tributary_trigger = yes
@@ -106,8 +63,11 @@ country_decisions = {
 					NOT = { exists = SAR }
 				}
 			}
-			owns_core_province = 103		# Piedmont
 			owns_core_province = 2986		# Cagliari
+			owns_core_province = 103		# Piedmont
+			103 = {							# Piedmont
+				is_state = yes
+			}
 
 			num_of_owned_provinces_with = {
 				value = 3 #there are 4 (1 is Corsica)
@@ -215,12 +175,18 @@ country_decisions = {
 					senior_union_with = SAV
 					SAV = {
 						owns_core_province = 103		# Piedmont
+						103 = {							# Piedmont
+							is_state = yes
+						}
 						NOT = { num_of_cities = 12 } #Original 7 + 5
 					}
 				}
 				AND = {
 					tag = SAV
 					owns_core_province = 103			# Piedmont
+					103 = {								# Piedmont
+						is_state = yes
+					}
 					senior_union_with = SAR
 					SAR = {
 						owns_core_province = 2986		# Cagliari

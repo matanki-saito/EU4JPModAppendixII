@@ -52,11 +52,14 @@ country_decisions = {
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
-			owns_core_province = 557
 			owns_core_province = 2070
 			owns_core_province = 4483
 			owns_core_province = 4484
 			owns_core_province = 4485
+			owns_core_province = 557
+			557 = {
+				is_state = yes
+			}
 		}
 		effect = {
 			if = {

@@ -85,8 +85,11 @@ country_decisions = {
 			is_nomad = no
 			is_at_war = no
 			OR = {
-				owns_core_province = 131			# Zagreb
 				owns_core_province = 137			# Ragusa
+				owns_core_province = 131			# Zagreb
+				131 = { 							# Zagreb
+					is_state = yes
+				}
 			}
 			num_of_owned_provinces_with = {
 				value = 6

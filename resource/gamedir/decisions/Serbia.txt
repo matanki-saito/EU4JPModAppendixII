@@ -8,6 +8,9 @@ country_decisions = {
 		}
 		allow = {
 			owns_core_province = 4239
+			4239 = {
+				is_state = yes
+			}
 			stability = 1
 			adm_power = 50
 			4239 = {

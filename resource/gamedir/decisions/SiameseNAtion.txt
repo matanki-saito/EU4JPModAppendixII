@@ -1,17 +1,20 @@
 country_decisions = {
-
-	tibetan_nation = {
+	siamese_nation = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
 			was_never_end_game_tag_trigger = yes
-			NOT = { has_country_flag = formed_tibet_flag }
+			NOT = { has_country_flag = formed_siam_flag }
+			NOT = { tag = SIA }
 			OR = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			NOT = { exists = TIB }
-			primary_culture = tibetan
+			OR = {
+				NOT = { exists = SIA }
+				ai = no
+			}
+			culture_group = thai_group
 			OR = {
 				ai = no
 				AND = {
@@ -27,64 +30,62 @@ country_decisions = {
 					ai = no
 				}
 			}
+			OR = {
+				NOT = {
+					tag = AYU
+				}
+				NOT = { has_dlc = "Leviathan" }
+			}
 		}
 		provinces_to_highlight = {
-			OR = {
-				province_id = 677
-				province_id = 678
-				province_id = 2135
-			}
+			region = indo_china_region
 			OR = {
 				NOT = { owned_by = ROOT }
 				NOT = { is_core = ROOT }
 			}
 		}
+		
 		allow = {
-			religion = vajrayana
+			NOT = { exists = SIA }
+			if = {
+				limit = {
+					tag = AYU
+				}
+				adm_tech = 20
+			}
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
-			is_nomad = no
-			owns_core_province = 2135
-			owns_core_province = 678
-			owns_core_province = 677
-			677 = {
-				is_state = yes
+			owns_core_province = 600
+			owns_core_province = 601
+			owns_core_province = 589
+			num_of_owned_provinces_with = {	
+				value = 20
+				is_core = ROOT
+				region = indo_china_region
 			}
 		}
+		
 		effect = {
-			677 = {
-				add_base_tax = 1
-				move_capital_effect = yes
-			}
-			change_tag = TIB
+			change_tag = SIA
 			swap_non_generic_missions = yes
-			remove_non_electors_emperors_from_empire_effect = yes
-			if = {
-				limit = { NOT = { government_rank = 2 } }
-				set_government_rank = 2
-			}
-			every_province = {
+			indo_china_region = {
 				limit = {
-					OR = {
-						region = tibet_region
-						province_id = 2074
+					NOT = {
+						owned_by = ROOT
 					}
-					NOT = { area = tarim_basin_area }
-					NOT = { owned_by = ROOT }
 				}
-				add_permanent_claim = TIB
+				add_permanent_claim = ROOT
 			}
 			add_prestige = 25
-			set_country_flag = formed_tibet_flag
 			if = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
-		}
+			set_country_flag = formed_siam_flag
+		}		
 		ai_will_do = {
 			factor = 1
 		}
 		ai_importance = 400
 	}
-
 }

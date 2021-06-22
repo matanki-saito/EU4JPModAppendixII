@@ -9,7 +9,6 @@ country_decisions = {
 			religion = shinto
 		}
 		allow = {
-			has_country_flag = a_kirishitan_realm
 			religion = shinto
 		}
 		effect = {
@@ -40,7 +39,6 @@ country_decisions = {
 			religion = shinto
 		}
 		allow = {
-			has_country_flag = supporters_in_the_ikko_iki
 			religion = shinto
 		}
 		effect = {
@@ -71,7 +69,6 @@ country_decisions = {
 			religion = shinto
 		}
 		allow = {
-			has_country_modifier = neo_confucian_administration
 			religion = shinto
 		}
 		effect = {

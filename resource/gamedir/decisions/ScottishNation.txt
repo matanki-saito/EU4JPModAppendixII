@@ -45,10 +45,13 @@ country_decisions = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no			
 			NOT = { exists = SCO }
-			owns_core_province = 248 # edinburgh
-			owns_core_province = 251 # aberdeen
-			owns_core_province = 252 # inverness
-			owns_core_province = 249 # ayrshire
+			owns_core_province = 251 	# aberdeen
+			owns_core_province = 252 	# inverness
+			owns_core_province = 249 	# ayrshire
+			owns_core_province = 248 	# edinburgh
+			248 = { 					# edinburgh
+				is_state = yes
+			}
 		}
 		effect = {
 			248 = { #edinburgh

@@ -5,7 +5,10 @@ country_decisions = {
 		potential = {
 			always = no # redundant due to fixed_capital mechanics
 			tag = PAP
-			owns = 118 # Rome
+			owns = 118  # Rome
+			118 = {		# Rome
+				is_state = yes
+			}
 			NOT = { capital = 118 }
 		}
 		allow = {
