@@ -101,7 +101,7 @@ leader_names = {
 	Cabral Coelho Corte-Real Coutinho
 	"da Câmara" "da Costa" "da Cunha" "da Fonseca" "de Albuquerque"
 	"de Almeida" "de Andrade" "de Aveiro" "de Ataíde" "de Azevedo"
-	"de Bragança" "de Brito" "de Carvalho" "de Castelo-Branco" "de Castro"
+	"de Bragança" "de Braganza" "de Brito" "de Carvalho" "de Castelo-Branco" "de Castro"
 	"de Correia" "de Faria" "da Gama" "de Guimarães" "de Lemos" "de Magalhães"
 	"de Marialva" "de Melo" "de Mendonça" "de Meneses" "de Noronha"
 	"de Oliveira" "de Paiva" "de Penamacor" "de Pimentel" "de Queiróz"

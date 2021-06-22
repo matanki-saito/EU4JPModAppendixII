@@ -60,7 +60,62 @@ temple = {
 	modifier = {
 		local_tax_modifier = 0.4
 	}
-
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = 3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = 3
+			}
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = -3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = -3
+			}
+		}
+	}
 	ai_will_do = {
 		factor = 1
 	}
@@ -71,6 +126,30 @@ barracks = {
 	time = 12
 	modifier = {
 		local_manpower_modifier = 0.5
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_manpower = 1
+			}
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_manpower = -1
+			}
+		}
 	}
 
 #	# THIS = Province, FROM = Builder(not nessecairly owner, can be overlord)
@@ -116,7 +195,7 @@ shipyard = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 105 # Little above build cost
+			factor = 1.5 # bit more likely if close to the naval force limit
 			FROM = { navy_size_percentage = 0.95 }
 		}
 		modifier = {
@@ -174,6 +253,7 @@ coastal_defence = {
 	modifier = {
 		blockade_force_required = 0.5
 		hostile_disembark_speed = 1.0
+		block_slave_raid = yes
 	}
 
 	ai_will_do = {
@@ -207,6 +287,32 @@ dock = {
 	}
 	modifier = {
 		local_sailors_modifier = 0.5
+	}
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_sailors = 200
+			}
+		}
+	}
+	
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_sailors = -200
+			}
+		}
 	}
 
 	ai_will_do = {
@@ -250,7 +356,7 @@ regimental_camp = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 215 # Little above build cost
+			factor = 1.5 # more likely if we have an army close to the force limit
 			FROM = { army_size_percentage = 0.95 }
 		}
 		modifier = {
@@ -312,6 +418,7 @@ naval_battery = {
 		blockade_force_required = 1.0
 		hostile_disembark_speed = 2.0
 		hostile_fleet_attrition = 5
+		block_slave_raid = yes
 	}
 
 	ai_will_do = {
@@ -330,6 +437,62 @@ cathedral = {
 	modifier = {
 		local_missionary_strength = 0.03
 		local_tax_modifier = 0.6
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = 3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = 3
+			}
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = -3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = -3
+			}
+		}
 	}
 
 	ai_will_do = {
@@ -413,7 +576,7 @@ grand_shipyard = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 320 # Little above build cost
+			factor = 1.5 # bit more likely if close to the force limit
 			FROM = { navy_size_percentage = 0.95 }
 		}
 		modifier = {
@@ -454,6 +617,31 @@ training_fields = {
 
 	modifier = {
 		local_manpower_modifier = 1
+	}
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_manpower = 1
+			}
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_manpower = -1
+			}
+		}
 	}
 
 	ai_will_do = {
@@ -573,6 +761,32 @@ drydock = {
 	modifier = {
 		local_sailors_modifier = 1.0
 	}
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_sailors = 200
+			}
+		}
+	}
+	
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = corvee_reform
+				}
+			}
+			FROM = {
+				add_sailors = -200
+			}
+		}
+	}
 
 	ai_will_do = {
 		factor = 1
@@ -616,7 +830,7 @@ conscription_center = {
 	ai_will_do = {
 		factor = 1
 		modifier = {
-			factor = 435 # Little above build cost
+			factor = 1.5 # more likely if we have an army close to the force limit
 			FROM = { army_size_percentage = 0.95 }
 		}
 		modifier = {
@@ -694,7 +908,7 @@ wharf = {
 	onmap = yes
 
 	ai_will_do = {
-		factor = 1750
+		factor = 1
 
 		modifier = {
 			factor = 0.4
@@ -770,6 +984,7 @@ tradecompany = {
 		ivory
 		slaves
 		spices
+		cloves
 		fur
 		incense
 	}
@@ -888,9 +1103,13 @@ impressment_offices = {
 
 	modifier = {
 		local_sailors = 250
+		ship_recruit_speed = -0.1
+		local_ship_cost = -0.05
 	}
 	bonus_modifier = {
 		local_sailors = 250
+		ship_recruit_speed = -0.1
+		local_ship_cost = -0.05
 	}
 	onmap = no
 	show_separate = yes # Means as a manufactory it will be shown according to the old way

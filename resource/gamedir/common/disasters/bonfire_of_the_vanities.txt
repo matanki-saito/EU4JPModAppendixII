@@ -103,9 +103,9 @@ bonfire_of_the_vanities_disaster = {
 		OR = {
 			custom_trigger_tooltip = {
 				tooltip = savonarola_dead_tt
-				has_country_flag = savonarola_dead
+				NOT = { has_ruler_flag = savonarola_flag }
 			}
-			government = theocracy
+			NOT = { government = republic }
 		}
 	}
 	

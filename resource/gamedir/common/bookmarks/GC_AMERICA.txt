@@ -8,10 +8,10 @@ bookmark =
 	
 	country = CSU
 	country = AZT
-	country = IRO
+	country = CHE
 	country = CHM
-	country = CRE
-	country = TAR
-	country = HUR
+	country = MOH
+	country = NAH
+	country = CAD
 	
 }

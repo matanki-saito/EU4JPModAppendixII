@@ -94,7 +94,7 @@ leader_names = {
 	Chelmsford Yagan 
 	Strickland Davidson
 	Grey Flinders
-	Bass
+	Bass Curtin
 }
 
 ship_names = {

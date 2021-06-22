@@ -5,3 +5,11 @@
 2374 = "Nha Trang"
 2376 = "Can Tho"
 2377 = "Ca Mau"
+4822 = "Quang Ngai"
+
+613 = "Dong Kinh"
+616 = "Cao Bang"
+1016 = "Ha Tinh"
+610 = "Thanh Hoa"
+2373 = "Hue"
+2372 = "Hai Phong"

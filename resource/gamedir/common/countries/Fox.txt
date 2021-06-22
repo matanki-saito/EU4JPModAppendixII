@@ -84,8 +84,6 @@ monarch_names = {
 leader_names = {
 	Mesquakie Wagosh Asakiwakie Kickapoo Blackhawk Saukenuk Thakiwakie
 	Tama Osakis Etnataek Kickapougwoi Kithlipecanuk
-	"Jumping Fish" "Sun Fish" Bear Giger Lance Devil "Big Eagle"
-	Sturgeon Eagle "Blues Son" Plumbed "the Sioux" "Brave by Hazard"
 }
 
 ship_names = {

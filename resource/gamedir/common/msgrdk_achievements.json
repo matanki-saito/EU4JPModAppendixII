@@ -1239,6 +1239,38 @@
         {
             "pdx_id": "achievement_holiest_roman_empire",
             "xbla_id": "310"
+        },
+        {
+            "pdx_id": "achievement_wonderful",
+            "xbla_id": "311"
+        },
+        {
+            "pdx_id": "achievement_spice_girls",
+            "xbla_id": "312"
+        },
+        {
+            "pdx_id": "achievement_to_the_bone",
+            "xbla_id": "314"
+        },
+        {
+            "pdx_id": "achievement_keep_the_flame_burning",
+            "xbla_id": "315"
+        },
+        {
+            "pdx_id": "achievement_new_new_deli",
+            "xbla_id": "316"
+        },
+        {
+            "pdx_id": "achievement_the_power_of_three",
+            "xbla_id": "317"
+        },
+        {
+            "pdx_id": "achievement_quizquiz_pro_quo",
+            "xbla_id": "318"
+        },
+        {
+            "pdx_id": "achievement_thats_no_mon",
+            "xbla_id": "319"
         }
     ]
 }

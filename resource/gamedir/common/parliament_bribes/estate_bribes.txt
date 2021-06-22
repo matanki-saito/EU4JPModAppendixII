@@ -1,4 +1,7 @@
 estate_church_bribe = {
+	name = estate_bribe
+	estate = estate_church
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_church modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -32,6 +35,9 @@ estate_church_bribe = {
 }
 
 estate_nobles_bribe = {
+	name = estate_bribe
+	estate = estate_nobles
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_nobles modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -65,6 +71,9 @@ estate_nobles_bribe = {
 }
 
 estate_burghers_bribe = {
+	name = estate_bribe
+	estate = estate_burghers
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_burghers modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -98,6 +107,9 @@ estate_burghers_bribe = {
 }
 
 estate_cossacks_bribe = {
+	name = estate_bribe
+	estate = estate_cossacks
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_cossacks modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -131,6 +143,9 @@ estate_cossacks_bribe = {
 }
 
 estate_brahmins_bribe = {
+	name = estate_bribe
+	estate = estate_brahmins
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_brahmins modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -164,6 +179,9 @@ estate_brahmins_bribe = {
 }
 
 estate_maratha_bribe = {
+	name = estate_bribe
+	estate = estate_maratha
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_maratha modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -197,6 +215,9 @@ estate_maratha_bribe = {
 }
 
 estate_vaisyas_bribe = {
+	name = estate_bribe
+	estate = estate_vaisyas
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_vaisyas modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -230,6 +251,9 @@ estate_vaisyas_bribe = {
 }
 
 estate_dhimmi_bribe = {
+	name = estate_bribe
+	estate = estate_dhimmi
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_dhimmi modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -263,6 +287,9 @@ estate_dhimmi_bribe = {
 }
 
 estate_jains_bribe = {
+	name = estate_bribe
+	estate = estate_jains
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_jains modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {
@@ -296,6 +323,9 @@ estate_jains_bribe = {
 }
 
 estate_rajput_bribe = {
+	name = estate_bribe
+	estate = estate_rajput
+
 	trigger = {
 		NOT = { has_estate_influence_modifier = { estate = estate_rajput modifier = EST_VAL_SEAT_BRIBED value = 30 } }
 		estate_territory = {

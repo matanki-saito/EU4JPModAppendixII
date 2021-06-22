@@ -6,6 +6,7 @@ war_of_the_roses = {
 		is_free_or_tributary_trigger = yes
 		uses_doom = no
 		NOT = { has_country_flag = had_war_of_the_roses  }
+		is_tutorial_active = no
 	}
 
 

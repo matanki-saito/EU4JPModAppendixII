@@ -38,10 +38,29 @@ estate_maratha_disaster = {
 	}
 	
 	down_progress = {
-		factor = 1
+		factor = 0
+		modifier = {
+			factor = 1
+			NOT = {
+				estate_influence = {
+					estate = estate_maratha
+					influence = 100
+				}
+			}
+		}
 	}
 	
 	progress = {	
+		modifier = {
+			factor = 0.5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_maratha
+					loyalty = 50
+				}
+			}
+			is_at_war = no
+		}
 		modifier = {
 			factor = 0.5
 			NOT = {

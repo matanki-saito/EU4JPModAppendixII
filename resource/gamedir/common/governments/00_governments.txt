@@ -30,6 +30,8 @@ monarchy = {
 				revolutionary_empire_reform
 				holy_state_reform
 				austrian_archduchy_reform
+				siamese_absolutism
+				confucian_bureaucracy
 			}
 		}
 		hereditary_vs_nobility = {
@@ -46,6 +48,7 @@ monarchy = {
 				black_army_reform
 				legion_of_honor_reform
 				imperial_nobility_reform
+				uparaja_reform
 			}
 		}
 		bureaucracy = {
@@ -58,6 +61,8 @@ monarchy = {
 				penal_colonies_reform
 				liberte_reform
 				fraternite_reform
+				examination_system_reform
+				corvee_reform
 			}
 		}
 		growth_of_administration = {
@@ -72,6 +77,7 @@ monarchy = {
 				revolutionary_principle_reform
 				equality_principle_reform
 				imperial_principle_reform
+				sakdina_system_reform
 			}
 		}
 		deliberative_assembly = {
@@ -239,6 +245,9 @@ republic = {
 				american_republic
 				federal_republic
 				colonial_government
+				crown_colony_government
+				private_enterprise_colony_government
+				self_governing_colony_government
 				dutch_republic
 				peasants_republic
 				revolutionary_republic_reform
@@ -250,6 +259,8 @@ republic = {
 				protectorate_parliament_reform
 				prussian_republic_reform
 				united_cantons_reform
+				kongsi_federation
+				millenarian_theocracy_reform
 			}
 		}
 		republican_virtues = {
@@ -407,6 +418,9 @@ tribal = {
 				siberian_tribe
 				gond_kingdom
 				great_mongol_state_reform
+				stateless_society
+				polynesian_kingdom
+				polynesian_tribe
 			}
 		}
 		tribal_cultural_values = {
@@ -447,6 +461,50 @@ native = {
 		native_council_legacy
 	}
 	color = { 194 127 209 }
+
+	reform_levels = {
+		tribe_organization = {
+			reforms = {
+				native_chiefdom_reform
+				native_federation_reform
+				native_clan_council_reform
+				native_hereditary_reform
+			}
+		}
+
+		story_tradition = {
+			reforms = {
+				native_martial_tradition_reform
+				native_oral_tradition_reform
+				native_land_tradition_reform
+			}
+		}
+
+		agricultural_revolution = {
+			reforms = {
+				native_war_band_reform
+				native_settle_down_reform
+				native_seasonal_travel_reform
+			}
+		}
+
+		legal_basis = {
+			reforms = {
+				native_codified_power_reform
+				native_diplomatic_cermonies_reform
+				native_trading_with_foreigners_reform
+			}
+		}
+
+		national_identity = {
+			reforms = {
+				native_becomes_horde_reform
+				native_becomes_monarchy_reform
+				native_becomes_republic_reform
+				native_becomes_theocracy_reform
+			}
+		}
+	}
 }
 
 
@@ -661,7 +719,7 @@ pre_dharma_mapping = {
 	}
 	trading_city = {
 		government = republic
-		legacy_government = imperial_city_legacy
+		legacy_government = imperial_city
 	}
 	ambrosian_republic = {
 		government = republic
