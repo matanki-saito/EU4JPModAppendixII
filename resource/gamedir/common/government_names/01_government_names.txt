@@ -104,7 +104,12 @@ gov_colonial_government = {
 	}
 	
 	trigger = {
-		has_reform = colonial_government
+		OR = {
+			has_reform = colonial_government
+			has_reform = crown_colony_government
+			has_reform = private_enterprise_colony_government
+			has_reform = self_governing_colony_government
+		}
 	}
 }
 

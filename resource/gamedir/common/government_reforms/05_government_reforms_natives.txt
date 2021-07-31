@@ -14,7 +14,7 @@ native_basic_reform = {
 	}
 	modifiers = {
 		reform_progress_growth = -1.0
-		monthly_reform_progress = 0.5
+		#monthly_reform_progress = 0.5
 		land_maintenance_modifier = -0.25
 		diplomatic_upkeep = -2
 		global_institution_spread = -0.5
@@ -163,6 +163,7 @@ native_land_tradition_reform = {
 
 native_war_band_reform = {
 	icon = "native_war_band_reform"
+	fixed_rank = 0
 	modifiers = {
 		land_forcelimit_modifier = 0.15
 		land_morale = 0.05
@@ -212,6 +213,7 @@ native_war_band_reform = {
 
 native_seasonal_travel_reform = {
 	icon = "native_seasonal_travel_reform"
+	fixed_rank = 0
 	modifiers = {
 		migration_cost = -0.25
 		tribal_development_growth = 0.02
@@ -245,6 +247,7 @@ native_seasonal_travel_reform = {
 
 native_settle_down_reform = {
 	icon = "native_settle_down_reform"
+	fixed_rank = 0
 	trigger = {
 		if = { 
 			limit = {

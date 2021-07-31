@@ -275,6 +275,9 @@ sun_2 = {
 						}
 					}
 				}
+				else = {
+					has_guaranteed = MAJ
+				}
 			}
 		}
 		effect = {

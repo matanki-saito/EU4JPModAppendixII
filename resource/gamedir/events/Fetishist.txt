@@ -4535,6 +4535,7 @@ country_event = {
 	}
 	
 	immediate = {
+		clr_country_flag = orpheus_quest
 		hidden_effect = {
 			random_owned_province = {
 				limit = {
