@@ -281,9 +281,7 @@ mutapa_conquer_africa_missions_slot = {
 		}
 		position = 5
 		trigger = {
-			has_reached_government_reform_tier = {
-				tier_4 = yes
-			}
+			reform_level = 4
 			has_better_tech_than_westerns = yes
 			has_more_institutions_than_westerns = yes
 		}

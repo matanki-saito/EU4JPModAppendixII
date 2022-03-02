@@ -3126,7 +3126,6 @@ achievement_prester_john = {
 	}
 	
 	happened = {
-		tag = ETH
 		religion = coptic
 		owns_core_province = 358 #Alexandria
 		owns_core_province = 2313 #Antioch
@@ -9195,7 +9194,10 @@ achievement_ostindisk_kompagni_te = {
 		tag = DAN
 	}
 	happened = {
-		tag = DAN
+		OR = {
+			tag = DAN
+			tag = SCA
+		}
 		any_owned_province = {
 			is_owned_by_trade_company = yes
 			continent = asia
@@ -10436,7 +10438,6 @@ achievement_fugger_banking = {
 			all_country = {
 				is_great_power = yes
 				subsidised_percent_amount = {
-					who_from = ROOT
 					value = 0.2
 				}
 			}
@@ -10577,7 +10578,7 @@ achievement_this_is_fine = {
 	}
 	happened = { #TODO It doesn't work
 		# At least +10 Global Unrest
-		average_unrest = 10
+		unrest = 10
 		#Be in a winning coalition war, which was targeted against you
 		is_in_war = {
 			defender_leader = ROOT
@@ -10622,9 +10623,6 @@ achievement_knights_of_the_caribbean = {
 			province_id = 2348
 			province_id = 3003
 			province_id = 4700
-			province_id = 145
-			province_id = 1773
-			province_id = 4701
 			province_id = 4698
 			province_id = 142
 			province_id = 2982
@@ -10640,6 +10638,8 @@ achievement_knights_of_the_caribbean = {
 			province_id = 4560
 			province_id = 333
 			province_id = 112
+			province_id = 4735
+			province_id = 2986
 		}
 	}
 
@@ -10665,9 +10665,6 @@ achievement_knights_of_the_caribbean = {
 		owns_core_province = 2348
 		owns_core_province = 3003
 		owns_core_province = 4700
-		owns_core_province = 145
-		owns_core_province = 1773
-		owns_core_province = 4701
 		owns_core_province = 4698
 		owns_core_province = 142
 		owns_core_province = 2982
@@ -10683,6 +10680,8 @@ achievement_knights_of_the_caribbean = {
 		owns_core_province = 4560
 		owns_core_province = 333
 		owns_core_province = 112
+		owns_core_province = 4735
+		owns_core_province = 2986
 	}
 }
 
@@ -10787,6 +10786,7 @@ achievement_one_nation_to_rule_them_all = {
 			all_subject_country = {
 				total_development = 100
 				not = { liberty_desire = 50 }
+				is_subject_of_type = vassal
 			}
 			amount = 9
 		}
@@ -10895,6 +10895,7 @@ achievement_surfin_USA = {
 			tag = MAU
 			tag = OAH
 			tag = KAA
+			tag = UHW
 		}
 	}
 	happened = {
