@@ -150,9 +150,9 @@ def scan_files(src_path,
                                     file_path=file_path,
                                     get_text_func=target.get_text_func)
 
-            # 変更があったもののみを保存
-            if dst_text != resource_text:
-                u_write(os.path.join(dst_path, base_path), dst_text)
+        # 変更があったもののみを保存
+        if dst_text != resource_text:
+            u_write(os.path.join(dst_path, base_path), dst_text)
 
     print("---------")
     with open(_('tmp', "report.txt"), 'w', encoding="utf-8") as fw:
