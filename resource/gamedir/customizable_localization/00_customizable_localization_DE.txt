@@ -840,6 +840,42 @@ defined_text = {
     }
 }
 
+defined_text = {
+    name = GetMvomvonder
+
+    text = {
+        localisation_key = string_vomvonder_male
+        trigger = {
+			is_female = no
+        }
+    }
+	
+	text = {
+        localisation_key = string_vomvonder_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
+defined_text = {
+    name = GetMVomVonder
+
+    text = {
+        localisation_key = string_VomVonder_male
+        trigger = {
+			is_female = no
+        }
+    }
+	
+	text = {
+        localisation_key = string_VomVonder_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
 ####################################
 #
 #Gemahlen

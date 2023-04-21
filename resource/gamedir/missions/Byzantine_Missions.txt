@@ -140,6 +140,10 @@ byz_western = {
 			}
 		}
 		effect = {
+			if = {
+				limit = { has_reform = byzantine_autocracy_reform }
+				add_government_reform = reformed_byzantine_monarchy_reform
+			}
 			apulia_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -294,7 +298,19 @@ byz_generic_slot_2 = {
 				limit = {
 					NOT = { has_dlc = "Purple Phoenix" }
 				}
-				country_event = { id = flavor_byz.2 }
+				add_country_modifier = {
+					name = "conversion_of_rome"
+					duration = 7300
+				}
+				hidden_effect = {
+					every_country = {
+						limit = { 
+							religion = catholic 
+							knows_country = BYZ
+						}
+						country_event = { id = flavor_byz.2 }
+					}
+				}
 			}
 		}
 		ai_weight = {
