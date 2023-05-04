@@ -283,8 +283,8 @@ emp_bra_pru_1 = {
 				has_tax_building_trigger = no
 				has_production_building_trigger = no
 				NOT = { development = 25 }
+				NOT = { owned_by = ROOT }
 			}
-			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			50 = {
@@ -550,6 +550,7 @@ emp_bra_pru_2 = {
 					has_country_flag = accepted_ANS_union_flag 
 					has_dlc = "Domination" 
 				}
+				clr_country_flag = accepted_ANS_union_flag
 				add_power_projection = {
 					type = pru_lords_franconia_power_projection
 					amount = 25
@@ -1102,17 +1103,15 @@ emp_bra_pru_3 = {
 						has_dlc = "Leviathan"
 					}
 					OR = {
-						has_construction = great_project 
 						has_great_project = {
 							type = kiel_canal
-							tier = 0
 						} 
 						development = 40
 					}
 				}
 				else = {
 					owned_by = ROOT
-					has_construction = kiel_canal
+					development = 40
 				}
 			}
 			4141 = {
@@ -1120,10 +1119,6 @@ emp_bra_pru_3 = {
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = "pru_construction_modifier"
-				duration = 7300
-			}
 			if = { 
 				limit = { 
 					has_dlc = "Domination" 
@@ -1136,17 +1131,28 @@ emp_bra_pru_3 = {
 							}
 						}
 					}
+					NOT = { adm_tech = 22 }
 				}
-				1775 = { 
-					add_great_project = {
-						type = kiel_canal
-						instant = yes 
+				custom_tooltip = brapru_enable_construction_kiel_canal_tt
+				hidden_effect = {
+					1775 = { 
+						add_great_project = {
+							type = kiel_canal
+						}
 					}
 				}
 			}
 			else = { 
+				add_years_of_income = 1
+				add_country_modifier = {
+					name = "pru_construction_modifier"
+					duration = 7300
+				}
 				1775 = {
-					add_construction_progress = 0.25
+					if = {
+						limit = { has_construction = great_project }
+						add_construction_progress = 0.25
+					}
 				}
 			}
 		}

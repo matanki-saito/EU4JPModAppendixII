@@ -372,29 +372,59 @@ estates_fund_industrialization = {
 			loyalty = 50 
 		}
 		any_owned_province = {
-			has_manufactory_trigger = no 
-			base_production = 10 
+			OR = {
+				has_province_flag = pol_province_needs_industry
+				AND = {
+					has_manufactory_trigger = no 
+					base_production = 5 
+				}
+			}
 		}
 	}
 	
 	on_issue_taken = {
-		random_owned_province = {
-			limit = { 
-				has_manufactory_trigger = no 
-				base_production = 10 
+		if = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						has_province_flag = pol_province_needs_industry
+					}
+				}
 			}
-			save_event_target_as = parliament_province
+			random_owned_province = {
+				limit = { 
+					has_manufactory_trigger = no 
+					base_production = 5
+				}
+				set_province_flag = pol_province_needs_industry
+			}
 		}
 	}
 
 	effect = {
-		event_target:parliament_province = {
-			add_manufactory = yes
+		if = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						has_province_flag = pol_province_needs_industry
+					}
+				}
+			}
+			custom_tooltip = estates_fund_industrialization_tt
+		}
+		else = {
+			tooltip = {
+				random_owned_province = { 
+					limit = { has_province_flag = pol_province_needs_industry }
+					add_manufactory = yes
+				}
+			}
 		}
 		hidden_effect = {
 			random_owned_province = { 
 				limit = { has_province_flag = pol_province_needs_industry }
 				clr_province_flag = pol_province_needs_industry 
+				add_manufactory = yes
 			}
 		}
 	}

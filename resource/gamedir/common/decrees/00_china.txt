@@ -6,6 +6,7 @@ expand_bureaucracy_decree = {
 	cost = 20
 	duration = 3650
 	potential = {
+		NOT = { has_country_flag = mng_expanded_palace_bureaucracy_flag } 
 	}
 	trigger = {
 	}
@@ -14,13 +15,13 @@ expand_bureaucracy_decree = {
 		core_creation = -0.1
 	}
 	effect = {
-		if = {
-			limit = { has_country_flag = mng_expanded_palace_bureaucracy_flag }
-			add_country_modifier = {
-				name = eoc_expanded_palace_bureaucracy_modifier
-				duration = 3650
-			}
-		}
+		# if = {
+			# limit = { has_country_flag = mng_expanded_palace_bureaucracy_flag }
+			# add_country_modifier = {
+				# name = eoc_expanded_palace_bureaucracy_modifier
+				# duration = 3650
+			# }
+		# }
 	}
 	removed_effect = {}
 	ai_will_do = {
@@ -28,10 +29,89 @@ expand_bureaucracy_decree = {
 	}
 }
 
+improved_expand_bureaucracy_decree = {
+	cost = 20
+	duration = 3650
+	potential = {
+		custom_trigger_tooltip = { 
+			tooltip = has_unlocked_this_decree_tt
+			has_country_flag = mng_expanded_palace_bureaucracy_flag
+		}
+	}
+	trigger = {
+	}
+	modifier = {
+		development_cost = -0.1
+		core_creation = -0.1
+		advisor_cost = -0.2
+	}
+	effect = {
+		
+	}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 100
+	}
+}
+
+improved_conduct_census_decree = {
+	cost = 20
+	duration = 3650
+	potential = {
+		has_country_flag = mng_empowered_pop_census_flag
+	}
+	trigger = {
+	}
+	modifier = {
+		global_tax_modifier = 0.25
+		state_governing_cost = -0.1
+		country_admin_power = 1 
+	}
+	effect = {
+	}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0.1
+			NOT = { tax_income_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 1.5
+			tax_income_percentage = 0.3
+		}
+		modifier = {
+			factor = 1.5
+			tax_income_percentage = 0.35
+		}
+		modifier = {
+			factor = 1.5
+			tax_income_percentage = 0.4
+		}
+		modifier = {
+			factor = 1.5
+			tax_income_percentage = 0.45
+		}
+		modifier = {
+			factor = 1.5
+			tax_income_percentage = 0.5
+		}
+		modifier = {
+			factor = 1.5
+			tax_income_percentage = 0.55
+		}
+		modifier = {
+			factor = 1.5
+			tax_income_percentage = 0.6
+		}
+	}
+}
+
 conduct_census_decree = {
 	cost = 20
 	duration = 3650
 	potential = {
+		NOT = { has_country_flag = mng_empowered_pop_census_flag }
 	}
 	trigger = {
 	}
@@ -40,13 +120,13 @@ conduct_census_decree = {
 		state_governing_cost = -0.1
 	}
 	effect = {
-		if = {
-			limit = { has_country_flag = mng_empowered_pop_census_flag }
-			add_country_modifier = {
-				name = eoc_census_modifier
-				duration = 3650
-			}
-		}
+		# if = {
+			# limit = { has_country_flag = mng_empowered_pop_census_flag }
+			# add_country_modifier = {
+				# name = eoc_census_modifier
+				# duration = 3650
+			# }
+		# }
 	}
 	removed_effect = {}
 	ai_will_do = {

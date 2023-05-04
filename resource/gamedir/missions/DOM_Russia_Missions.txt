@@ -1301,7 +1301,7 @@ nov_rus_eastern_europe = {
 			simple_dynamic_effect_without_alternative = {
 				first_custom_tooltip = nov_rus_involve_in_asian_trade_at
 				first_limit = "
-				507 = {
+				707 = {
 					trade_share = {
 						country = ROOT
 						share = 20
@@ -1332,7 +1332,7 @@ nov_rus_eastern_europe = {
 				}"
 				second_custom_tooltip = nov_rus_involve_in_asian_trade_bt
 				second_limit = "
-				707 = {
+				507 = {
 					trade_share = {
 						country = ROOT
 						share = 20
@@ -1639,11 +1639,30 @@ mos_rus_russian_consolidation = {
 			}
 			custom_tooltip = mos_rus_eliminate_the_minors_at
 			hidden_effect = {
+				#russia_region = {
+				#	limit = {
+				#		owned_by = ROOT
+				#	}
+				#	add_base_manpower = 1
+				#  
+				#	type = random
+				#	amount = 10
+				#}
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } region = russia_region } add_base_manpower = 1 set_province_flag = received_reward }
 				every_owned_province = {
-					limit = { region = russia_region }
-					add_base_manpower = 1
-					type = random
-					amount = 10
+					limit = {
+						has_province_flag = received_reward
+					}
+					clr_province_flag = received_reward
 				}
 			}
 
@@ -2364,10 +2383,35 @@ mos_rus_russian_steppes = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			NOT = { has_country_modifier = the_tatar_yoke }
-			owns_or_non_sovereign_subject_of = 466
+			OR = {
+				AND = {
+					NOT = { has_country_modifier = the_tatar_yoke }
+					owns_or_non_sovereign_subject_of = 466
+				}
+				AND = {
+					controls = 466
+					466 = {
+						owner = {
+							NOT = {
+								war_score_against = {
+									who = ROOT
+									value = -85
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 		effect = {
+			if = {
+				limit = {
+					has_country_modifier = the_tatar_yoke
+				}
+				country_event = {
+					id = flavor_mos.11
+				}
+			}
 			add_power_projection = {
 				type = mission_rewards_power_projection
 				amount = 50
@@ -3899,7 +3943,18 @@ rus_russian_streltsy = {
 					influence = 50
 				}
 			}
-			crown_land_share = 75
+			if = {
+				limit = {
+					has_any_estates = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = rus_increase_absolute_rule_tt
+					check_variable = {
+						which = seize_land_counter
+						value = 10
+					}
+				}
+			}
 		}
 		effect = {
 			add_adm_power = 50
@@ -4172,8 +4227,8 @@ rus_russian_government = {
 		}
 		trigger = {
 			num_of_completed_idea_groups_by_category = {
-				adm_ideas = yes
-				amount = 2
+				type = adm
+				amount = 1
 			}
 			has_adm_advisor_3 = yes
 			has_dip_advisor_3 = yes

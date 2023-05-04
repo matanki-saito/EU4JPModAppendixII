@@ -62,6 +62,7 @@ po_establish_eyalet = {
 					add_government_reform = eyalet_government
 				}
 				set_country_flag = has_eyalet_color
+				set_country_flag = has_overriden_color_flag
 				change_country_color = { country = ROOT }
 			}
 		}

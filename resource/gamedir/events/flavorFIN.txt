@@ -56,6 +56,7 @@ country_event = {
 
 		override_country_name = FB3 
 		set_country_flag = is_FBE_flag
+		set_country_flag = has_overriden_name_flag
 		ai_chance = {
 			factor = 0
 		}

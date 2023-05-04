@@ -3596,7 +3596,6 @@ country_event = {
 			change_dip = 3
 			change_mil = 3
 		}
-		
 		add_government_reform = japanese_divine_empire 
 	}
 }

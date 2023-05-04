@@ -4446,7 +4446,6 @@ achievement_big_blue_blob = {
 	
 	provinces_to_highlight = {
 		continent = europe
-		is_core = FRA
 		NOT = { owned_by = FRA }
 	}
 
@@ -9630,8 +9629,18 @@ achievement_forever_golden = {
 	localization = NEW_ACHIEVEMENT_39
 	
 	visible = {
-		has_dlc = "Golden Century"
-		has_mission = gc_cas_spa_plus_ultra
+		OR = {
+			AND = { 
+				capital_scope = { region = iberia_region }
+				religion_group = christian 
+				culture_group = iberian
+			}
+			tag = SPA 
+		}
+		OR = { 
+			has_dlc = "Domination"
+			has_dlc = "Golden Century" 
+		}
 	}
 	
 	possible = {
@@ -9687,6 +9696,25 @@ achievement_forever_golden = {
 					mission_completed = spa_rein_in_france
 					mission_completed = gc_spa_hre2
 					mission_completed = spa_law_and_order
+					mission_completed = spa_merchant_fleet
+					mission_completed = spa_dominate_sevilla
+					mission_completed = gc_cas_spa_la_plata2
+					mission_completed = dom_castile_circumnavigation
+					mission_completed = gc_cas_spa_conquer_philippines2
+					mission_completed = gc_cas_spa_new_granada2
+					mission_completed = spa_new_world_silver
+					mission_completed = gc_cas_spa_california2
+					mission_completed = gc_cas_spa_florida2
+					mission_completed = gc_cas_spa_native_reductions2
+				}
+				AND = {
+					mission_completed = dom_ara_catalan_nobility
+					mission_completed = gc_ara_provence2
+					mission_completed = gc_ara_athens2
+					mission_completed = dom_ara_med
+					mission_completed = gc_ara_tunis2
+					mission_completed = gc_ara_alexandria2
+					mission_completed = gc_ara_golden_age2
 					mission_completed = spa_merchant_fleet
 					mission_completed = spa_dominate_sevilla
 					mission_completed = gc_cas_spa_la_plata2
@@ -11842,7 +11870,7 @@ achievement_all_blue = {
 	localization = NEW_ACHIEVEMENT_101
 	provinces_to_highlight = {
 		continent = europe  
-		OR = {
+		AND = {
 			is_wasteland = no
 			is_sea = no
 			NOT = { owned_by = POR } 
@@ -12011,7 +12039,7 @@ achievement_brentry = {
 		OR = {
             culture_group = british
             primary_culture = anglois
-            tag = ENG
+            is_or_was_tag = { tag = ENG }
             tag = AVE
          }
 	}

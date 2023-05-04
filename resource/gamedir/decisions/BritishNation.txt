@@ -444,10 +444,6 @@ country_decisions = {
 					FRA = { NOT = { num_of_cities = 40 } }
 				}
 			}
-			num_of_owned_provinces_with = {
-				region = france_region
-				value = 25
-			}
 		}
 		effect = {
 			start_debate = english_french_act_of_union

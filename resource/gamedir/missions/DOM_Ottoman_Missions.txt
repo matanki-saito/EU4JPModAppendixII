@@ -1118,15 +1118,32 @@ tur_african_conquest = {
 			}
 			custom_tooltip = tur_establish_the_pashas_ct
 			hidden_effect = {
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
+				random_owned_province = { limit = { NOT = { has_province_flag = received_reward } NOT = { culture_group = ROOT }  if = { limit = { has_dlc = "Cradle of Civilization" } has_pasha = yes } else = { NOT = { nationalism = 1 } } } add_base_manpower = 1 set_province_flag = received_reward }
 				every_owned_province = {
 					limit = {
-						NOT = { culture_group = ROOT } 
-						has_pasha = yes
+						has_province_flag = received_reward
 					}
-					add_base_manpower = 1
-					type = random
-					amount = 10
+					clr_province_flag = received_reward
 				}
+				#For 1.36
+				#every_owned_province = {
+				#	limit = {
+				#		NOT = { culture_group = ROOT } 
+				#		has_pasha = yes
+				#	}
+				#	add_base_manpower = 1
+				#	type = random
+				#	amount = 10
+				#}
 			}
 		}
 
@@ -2528,31 +2545,33 @@ tur_egyptian_conquest = {
 			else = {
 				custom_tooltip = tur_handle_the_egyptian_eyalet_ct
 				hidden_effect = {
-					delta_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
+					#egypt_region = {
+					#	limit = {
+					#		country_or_non_sovereign_subject_holds = ROOT
+					#	}
+					#	add_base_production = 1
+					#  
+					#	type = random
+					#	amount = 10
+					#}
+					bahari_area = {
+						limit = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
 						add_base_production = 1
 					}
-					bahari_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
+					delta_area = {
+						limit = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
 						add_base_production = 1
 					}
 					vostani_area = {
-						limit = { country_or_non_sovereign_subject_holds = ROOT }
+						limit = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
 						add_base_production = 1
 					}
-					#Note: originally, the idea was to have true randomness in it.
-					#However, I could not think of a way to 
-					#a) ensure that only up to 10 provinces get buffed, 
-					#b) not use "random_province" (technically, I could use it 10 times here, but this would be a lag spike), 
-					#c) cover the case that your Egyptian Eyalet has the province
-					#d) and not bother the programmers for more code support
-					#in order to make it.
-					#So instead I use this chated version of it and ask for "random_owned_or_subject_province" as well as "<continent/superregion/region/area> = { type = random }"
-					#For 1.36
-					#for = {
-					#	amount = 10
-					#	effect = "egypt_region = { limit = { country_or_non_sovereign_subject_holds = ROOT } add_base_production = 1 }"
-					#}
 				}
 			}
 			country_event_with_insight = {
@@ -3199,7 +3218,7 @@ tur_arabian_conquest = {
 				}
 				add_country_modifier = {
 					name = tur_baghdad_city_of_learning
-					duration = 10850
+					duration = 10950
 				}"
 			}
 		}
@@ -5152,9 +5171,23 @@ tur_stagnation_slot_1 = {
 						has_country_flag = tur_had_janissary_coup
 					}
 					AND = {
-						num_of_completed_idea_groups_by_category = {
-							mil_ideas = yes
-							amount = 3
+						if = {
+							limit = { has_dlc = "Cradle of Civilization" }
+							OR = {
+								num_of_completed_idea_groups_by_category = {
+									type = mil
+									amount = 2
+								}
+								army_professionalism = 0.65
+							}
+						}
+
+						OR = {
+							num_of_completed_idea_groups_by_category = {
+								type = mil
+								amount = 2
+							}
+							army_tradition = 70
 						}
 						has_mil_advisor_3 = yes
 						stability = 3
@@ -5172,9 +5205,12 @@ tur_stagnation_slot_1 = {
 				}
 			}
 			else = {
-				num_of_completed_idea_groups_by_category = {
-					mil_ideas = yes
-					amount = 3
+				OR = {
+					num_of_completed_idea_groups_by_category = {
+						type = mil
+						amount = 2
+					}
+					army_tradition = 70
 				}
 				has_mil_advisor_3 = yes
 				stability = 3
@@ -5289,12 +5325,14 @@ tur_stagnation_slot_2 = {
 		}
 		trigger = {
 			NOT = { has_estate_privilege = estate_janissary_janissaries_from_muslims }
-			num_of_completed_idea_groups_by_category = {
-				mil_ideas = yes
-				amount = 3
+			OR = {
+				has_global_modifier_value = {
+					which = discipline
+					value = 0.25
+				}
+				land_morale = 5
+				army_size_percentage = 0.8
 			}
-			has_mil_advisor_3 = yes
-			stability = 3
 			NOT = { has_spawned_rebels = janissary_rebels }
 			if = {
 				limit = { NOT = { has_disaster = tur_disaster_ottoman_power_struggle } }
@@ -5419,7 +5457,7 @@ tur_stagnation_slot_3 = {
 			add_stability_or_adm_power = yes
 			add_country_modifier = {
 				name = tur_reigned_the_eyalets
-				duration = 19750
+				duration = 10950
 			}
 		}
 
@@ -5445,9 +5483,11 @@ tur_stagnation_slot_3 = {
 					region = persia_region
 					value = 40
 				}
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					superregion = europe_superregion
-					value = 50
+				if = {
+					limit = {
+						is_absolutism_active = yes
+					}
+					absolutism = 70
 				}
 				NOT = {
 					any_subject_country = {
@@ -5479,8 +5519,8 @@ tur_stagnation_slot_3 = {
 					value = 40
 				}
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					superregion = europe_superregion
-					value = 50
+					continent = europe
+					value = 60
 				}
 			}
 		}
@@ -5591,11 +5631,17 @@ tur_stagnation_slot_4 = {
 			else = {
 				monthly_adm = 11
 			}
-			num_of_completed_idea_groups_by_category = {
-				adm_ideas = yes
-				amount = 2
-			}
 			has_adm_advisor_3 = yes
+			OR = {
+				num_of_completed_idea_groups_by_category = {
+					type = adm
+					amount = 2
+				}
+				AND = {
+					NOT = { corruption = 0.5 }
+					NOT = { average_autonomy_above_min = 15 }
+				}
+			}
 		}
 		effect = {
 			country_event_with_insight = {
