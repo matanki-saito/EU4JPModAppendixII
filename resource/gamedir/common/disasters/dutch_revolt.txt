@@ -27,6 +27,7 @@ dutch_revolt_disaster = {
 		NOT = { capital_scope = { region = low_countries_region } }
 		is_free_or_tributary_trigger = yes
 		num_of_cities = 6
+		NOT = { has_government_attribute = no_more_dutch_revolt }
 	}
 	
 	can_start = {

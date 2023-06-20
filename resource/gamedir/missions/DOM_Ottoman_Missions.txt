@@ -1330,6 +1330,9 @@ tur_african_conquest = {
 					type = cb_ottoman_subjugation_war
 					target = WAL
 					months = 240
+				}		
+				WAL = {
+					set_country_flag = got_invasion_cb_fabricated_by_@ROOT
 				}
 			}
 			if = {
@@ -1344,6 +1347,9 @@ tur_african_conquest = {
 					target = HUN
 					months = 240
 				}
+				HUN = {
+					set_country_flag = got_invasion_cb_fabricated_by_@ROOT
+				}
 			}
 			if = {
 				limit = {
@@ -1356,6 +1362,9 @@ tur_african_conquest = {
 					type = cb_ottoman_subjugation_war
 					target = MOL
 					months = 240
+				}
+				MOL = {
+					set_country_flag = got_invasion_cb_fabricated_by_@ROOT
 				}
 			}
 		}
@@ -1474,7 +1483,7 @@ tur_african_conquest = {
 						monthly_mil = 11
 					}
 				}
-				reform_level = 6
+				reform_level = 5
 			}
 			else = {
 				NOT = { has_reform = ottoman_government }
@@ -1688,6 +1697,9 @@ tur_african_conquest = {
 					type = cb_ottoman_subjugation_war
 					target = MOR
 					months = 240
+				}
+				MOR = {
+					set_country_flag = got_invasion_cb_fabricated_by_@ROOT
 				}
 			}
 			western_morocco_area = {
@@ -1954,7 +1966,7 @@ tur_african_conquest = {
 		}
 		trigger = {
 			stability = 2
-			reform_level = 5
+			reform_level = 6
 			if = {
 				limit = { has_estate = estate_nobles }
 				num_of_estate_agendas_completed = {
@@ -2398,6 +2410,9 @@ tur_egyptian_conquest = {
 					target = TUN
 					months = 240
 				}
+				TUN = {
+					set_country_flag = got_invasion_cb_fabricated_by_@ROOT
+				}
 			}
 			tunisia_area = {
 				limit = {
@@ -2665,6 +2680,9 @@ tur_egyptian_conquest = {
 					type = cb_ottoman_subjugation_war
 					target = ADA
 					months = 240
+				}
+				ADA = {
+					set_country_flag = got_invasion_cb_fabricated_by_@ROOT
 				}
 			}
 			red_sea_coast_area = {
@@ -3483,6 +3501,9 @@ tur_arabian_conquest = {
 					type = cb_ottoman_subjugation_war
 					target = YEM
 					months = 240
+				}
+				YEM = {
+					set_country_flag = got_invasion_cb_fabricated_by_@ROOT
 				}
 			}
 			arabia_region = {
@@ -4545,7 +4566,7 @@ tur_persian_conquest = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			num_of_owned_provinces_with = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				region = persia_region
 				value = 20
 			}
@@ -5474,23 +5495,21 @@ tur_stagnation_slot_3 = {
 		}
 		trigger = {
 			if = {
-				limit = { has_disaster = tur_disaster_ottoman_power_struggle }
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					region = egypt_region
-					value = 25
+				limit = {
+					is_absolutism_active = yes
 				}
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					region = persia_region
-					value = 40
-				}
-				if = {
-					limit = {
-						is_absolutism_active = yes
-					}
-					absolutism = 70
-				}
+				absolutism = 70
+			}
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			if = {
+				limit = { has_disaster = tur_disaster_eyalet_rebellion }
 				NOT = {
 					any_subject_country = {
+						OR = {
+							is_subject_of_type = eyalet
+							is_subject_of_type = core_eyalet
+						}
 						OR = {
 							liberty_desire = 10
 							num_of_rebel_armies = 1
@@ -5499,28 +5518,12 @@ tur_stagnation_slot_3 = {
 					}
 				}
 				monthly_dip = 12
-				NOT = { num_of_rebel_armies = 1 }
-				NOT = { num_of_rebel_controlled_provinces = 1 }
 			}
 			else = {
 				NOT = {
 					any_subject_country = {
 						liberty_desire = 10
 					}
-				}
-				NOT = { num_of_rebel_armies = 1 }
-				NOT = { num_of_rebel_controlled_provinces = 1 }
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					region = egypt_region
-					value = 25
-				}
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					region = persia_region
-					value = 40
-				}
-				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					continent = europe
-					value = 60
 				}
 			}
 		}
@@ -5770,9 +5773,6 @@ tur_stagnation_slot_5 = {
 					has_adm_advisor_3 = yes
 					has_dip_advisor_3 = yes
 					has_mil_advisor_3 = yes
-					ruler_total_stats = {
-						stats = 10
-					}
 					legitimacy = 60
 				}
 			}
@@ -5807,9 +5807,6 @@ tur_stagnation_slot_5 = {
 		trigger = {
 			if = {
 				limit = { NOT = { has_country_modifier = tur_weakened_the_harem } }
-				ruler_total_stats = {
-					stats = 15
-				}
 				legitimacy = 90
 				NOT = { has_spawned_rebels = pretender_rebels }
 				stability = 3

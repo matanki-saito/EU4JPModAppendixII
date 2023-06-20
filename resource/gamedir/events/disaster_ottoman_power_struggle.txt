@@ -114,15 +114,15 @@ country_event = {
 			limit = { has_country_modifier = tur_weakened_the_harem }
 			remove_country_modifier = tur_weakened_the_harem
 			unlock_government_reform = {
-				government_reform = modernized_ottoman_government
-			}
-			add_government_reform = modernized_ottoman_government
-		}
-		else = {
-			unlock_government_reform = {
 				government_reform = reorganized_ottoman_government
 			}
 			add_government_reform = reorganized_ottoman_government
+		}
+		else = {
+			unlock_government_reform = {
+				government_reform = modernized_ottoman_government
+			}
+			add_government_reform = modernized_ottoman_government
 		}
 
 		ai_chance = {
@@ -153,12 +153,12 @@ country_event = {
 				limit = { has_country_modifier = tur_weakened_the_harem }
 				remove_country_modifier = tur_weakened_the_harem
 				unlock_government_reform = {
-					government_reform = modernized_ottoman_government
+					government_reform = reorganized_ottoman_government
 				}
 			}
 			else = {
 				unlock_government_reform = {
-					government_reform = reorganized_ottoman_government
+					government_reform = modernized_ottoman_government
 				}
 			}
 		}

@@ -295,6 +295,23 @@ defined_text = {
     }
 }
 
+defined_text = {
+    name = GetMZumZur
+
+   text = {
+        localisation_key = string_ZumZur_male
+        trigger = {
+			is_female = no
+        }
+    }
+	text = {
+        localisation_key = string_ZumZur_female
+        trigger = {
+			is_female = yes
+        }
+    }
+}
+
 ###Possessivpronomen
 #Bsp: "...unseres Königs", "...unserer Königin"
 defined_text = {

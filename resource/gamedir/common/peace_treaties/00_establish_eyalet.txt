@@ -26,7 +26,10 @@ po_establish_eyalet = {
 		always = yes
 	}
 	is_allowed = { # Defaults to equivalent of "always = yes"
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = IS_INVASION_TARGET_TT
+			# FROM = { has_country_flag = got_invasion_cb_fabricated_by_@ROOT }
+		}
 	}
 	effect = { # Defaults to empty effect (which makes error log entry but is safe)
 		create_subject = {
@@ -34,6 +37,7 @@ po_establish_eyalet = {
 			subject_type = eyalet
 		}		
 		FROM = {
+			# clr_country_flag = got_invasion_cb_fabricated_by_@ROOT
 			if = {
 				limit = {
 					NOT = { has_reform = papacy_reform }

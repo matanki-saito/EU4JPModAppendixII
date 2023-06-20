@@ -25,7 +25,7 @@ expand_bureaucracy_decree = {
 	}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -50,7 +50,7 @@ improved_expand_bureaucracy_decree = {
 	}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -71,7 +71,7 @@ improved_conduct_census_decree = {
 	}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 		modifier = {
 			factor = 0.1
 			NOT = { tax_income_percentage = 0.25 }
@@ -130,7 +130,7 @@ conduct_census_decree = {
 	}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 		modifier = {
 			factor = 0.1
 			NOT = { tax_income_percentage = 0.25 }
@@ -185,6 +185,10 @@ promote_naval_officers_decree = {
 			factor = 3
 			navy_tradition = 50
 		}
+		modifier = {
+			factor = 0
+			NOT = { imperial_mandate = 90 }
+		}
 	}
 }
 
@@ -202,7 +206,7 @@ increase_tariff_control_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 		modifier = {
 			factor = 0.1
 			NOT = { trade_income_percentage = 0.25 }
@@ -274,7 +278,7 @@ boost_officer_corps_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 		modifier = {
 			factor = 0.1
 			is_at_war = no
@@ -305,7 +309,7 @@ fund_new_centers_of_education_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -341,7 +345,7 @@ issue_the_great_warnings_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -353,7 +357,7 @@ issue_the_great_warnings_decree = {
 		# global_ship_cost = -0.1
 	# }
 	# ai_will_do = {
-		# factor = 100
+		# factor = 10
 	# }
 # }
 
@@ -371,7 +375,7 @@ six_ordinances_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -390,7 +394,7 @@ sacred_edict_of_confucianism_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -408,7 +412,7 @@ promote_taoist_studies_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -426,7 +430,7 @@ appoint_entrusted_eunuchs_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -438,7 +442,7 @@ appoint_entrusted_eunuchs_decree = {
 		# trade_efficiency = 0.15
 	# }
 	# ai_will_do = {
-		# factor = 100
+		# factor = 10
 	# }
 # }
 
@@ -456,7 +460,7 @@ increase_trade_cooperation_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -474,7 +478,7 @@ reinforce_the_inner_guard_decree = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
 
@@ -486,7 +490,7 @@ reinforce_the_inner_guard_decree = {
 		# colonist_placement_chance = 0.15
 	# }
 	# ai_will_do = {
-		# factor = 100
+		# factor = 10
 	# }
 # }
 
@@ -498,7 +502,7 @@ reinforce_the_inner_guard_decree = {
 		# culture_conversion_speed = 0.5 
 	# }
 	# ai_will_do = {
-		# factor = 100
+		# factor = 10
 	# }
 # }
 
@@ -516,7 +520,6 @@ issue_bureaucratic_imperial_seal = {
 	effect = {}
 	removed_effect = {}
 	ai_will_do = {
-		factor = 100
+		factor = 10
 	}
 }
-
