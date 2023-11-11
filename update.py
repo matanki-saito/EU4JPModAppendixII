@@ -77,26 +77,30 @@ def main():
     test = False
 
     ext_path = Path("resource/gamedir")
-    for f in ext_path.glob("**/*.txt"):
-        if test:
-            break
-        print(f)
-        pure = str(f.relative_to(ext_path)).replace("\\", "/")
+    for f in ext_path.glob("history/*.txt"):
 
-        if pure not in name2id:
-            update_new_file(
-                base_path=ext_path,
-                source_path=f,
-                secret=secret,
-                project_id=project_id)
-        else:
-            update_old_file(
-                file_id=name2id[pure],
-                source_path=f,
-                secret=secret,
-                project_id=project_id)
+        if re.match('resource\\gamedir\\common\\(countries|cultures|province_names)\\.*\.txt', f) 
+            or re.match('resource\\gamedir\\history\\(countries|province|wars)\\.*\.txt', f) 
 
-        test = True
+            if test:
+                break
+            print(f)  #sample  resource\gamedir\common\achievements.txt
+            pure = str(f.relative_to(ext_path)).replace("\\", "/")
+
+            if pure not in name2id:
+                update_new_file(
+                    base_path=ext_path,
+                    source_path=f,
+                    secret=secret,
+                    project_id=project_id)
+            else:
+                update_old_file(
+                    file_id=name2id[pure],
+                    source_path=f,
+                    secret=secret,
+                    project_id=project_id)
+
+            test = True
 
 
 if __name__ == "__main__":
