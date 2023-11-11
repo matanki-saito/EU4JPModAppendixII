@@ -1487,7 +1487,7 @@ korea_economic_social_political_path_3 = {
 			OR = {
 				crown_land_share = 90
 				custom_trigger_tooltip = {
-					tooltip = KOR_two_pleased_estates_tooltip #Two Â§YestatesÂ§! have at least Â§Y70 loyaltyÂ§!, the other has at least Â§Y50 loyaltyÂ§!.
+					tooltip = KOR_two_pleased_estates_tooltip #Two §Yestates§! have at least §Y70 loyalty§!, the other has at least §Y50 loyalty§!.
 					OR = {
 						AND = {
 							estate_loyalty = {
@@ -1594,9 +1594,9 @@ korea_economic_social_political_path_3 = {
 				custom_tooltip = kor_end_factional_strife_tt
 			}
 			remove_country_modifier = kor_factional_upheaval
-			remove_faction = nc_westerners
-			remove_faction = nc_easterners
-			remove_faction = nc_southerners
+			#remove_faction = nc_westerners
+			#remove_faction = nc_easterners
+			#remove_faction = nc_southerners
 		}
 	}
 }
@@ -2015,13 +2015,13 @@ korean_missions_eoc_2 = {
 			
 			if = {
 				limit = {
-					NOT = { has_harmonized_with = pagan }
+					NOT = { has_harmonized_with = tengri_pagan_reformed  }
 					NOT = { has_harmonized_with = vajrayana }
 					religion = confucianism
 				}
 				custom_tooltip = mng_db_reward_1_tt
 				tooltip = {
-					add_harmonized_religion = pagan
+					add_harmonized_religion = tengri_pagan_reformed 
 					add_harmonized_religion = vajrayana
 					add_harmony = 10
 				}
@@ -2168,16 +2168,15 @@ korean_missions_eoc_2 = {
 				if = {
 					limit = {
 						OR = {
-							NOT = { has_harmonized_with = pagan }
+							NOT = { has_harmonized_with = tengri_pagan_reformed  }
 							NOT = { has_harmonized_with = vajrayana }
 						}
 						religion = confucianism
 						has_reform = decentralize_reform
 					}
-					add_harmonized_religion = pagan
+					add_harmonized_religion = tengri_pagan_reformed 
 					add_harmonized_religion = vajrayana
 					add_harmony = 10 
-					change_government_reform_progress = -250
 				}
 				else_if = {
 					limit = { has_reform = decentralize_reform } 
@@ -2348,9 +2347,12 @@ korean_missions_eoc_2 = {
 							who = ROOT 
 							value = 150 
 						}
-						trust = {
-							who = ROOT 
-							value = 70
+						if = {
+							limit = { has_dlc = "Leviathan" }
+							trust = {
+								who = ROOT 
+								value = 70 
+							}
 						}
 					}
 					amount = 4 
@@ -2398,9 +2400,12 @@ korean_missions_eoc_2 = {
 									who = ROOT 
 									value = 150 
 								}
-								trust = {
-									who = ROOT 
-									value = 70
+								if = {
+									limit = { has_dlc = "Leviathan" }
+									trust = {
+										who = ROOT 
+										value = 70 
+									}
 								}
 							}
 							amount = 4 
@@ -2412,9 +2417,12 @@ korean_missions_eoc_2 = {
 								who = ROOT 
 								value = 150 
 							}
-							trust = {
-								who = ROOT 
-								value = 70
+							if = {
+								limit = { has_dlc = "Leviathan" }
+								trust = {
+									who = ROOT 
+									value = 70 
+								}
 							}
 						}
 						add_country_modifier = {
@@ -2435,9 +2443,12 @@ korean_missions_eoc_2 = {
 									who = ROOT 
 									value = 150 
 								}
-								trust = {
-									who = ROOT 
-									value = 70
+								if = {
+									limit = { has_dlc = "Leviathan" }
+									trust = {
+										who = ROOT 
+										value = 70 
+									}
 								}
 							}
 							ROOT = { add_mandate = 5 } 
@@ -2757,15 +2768,15 @@ korean_missions_eoc_3 = {
 				duration = 9125 
 			}
 			change_ruler_stat = {
-				stat = adm
+				type = adm
 				amount = 1
 			}
 			change_ruler_stat = {
-				stat = dip
+				type = dip
 				amount = 1
 			}
 			change_ruler_stat = {
-				stat = mil
+				type = mil
 				amount = 1
 			}
 		}
@@ -3292,21 +3303,30 @@ korean_missions_eoc_5 = {
 					set_country_flag = mng_trade_eff_per_dip_advisor_level_flag
 				}
 				else = {
-					add_province_modifier = {
-						name = mng_safe_coasts_modifier
-						duration = 9125 
+					every_owned_province = {
+						limit = {
+							has_coast_defense_building_trigger = yes 
+							development = 20 
+						}
+						add_province_modifier = {
+							name = mng_safe_coasts_modifier
+							duration = 9125 
+						}
+						if = {
+							limit = { has_dlc = "Mandate of Heaven" }
+							add_prosperity = 100 
+						}
+						else = { 
+							add_base_production = 1 
+						} 
 					}
 					set_country_flag = mng_dev_per_adm_advisor_level_flag
 					if = {
 						limit = { has_dlc = "Mandate of Heaven" }
-						add_prosperity = 100 
 						add_mandate = 5 
 					}
 					else = { 
-						add_base_production = 1 
-						owner = {
-							add_prestige_or_monarch_power = { amount = 35 }
-						}
+						add_prestige_or_monarch_power = { amount = 35 }
 					} 
 				}
 			}

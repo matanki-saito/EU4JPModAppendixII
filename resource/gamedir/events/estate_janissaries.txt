@@ -461,7 +461,7 @@ country_event = {
 	}
 }
 
-# The MehterÃ¢n  (march band of the Janissaries)
+# The Mehterân  (march band of the Janissaries)
 country_event = {
 	id = janissaries_estate_events.6
 	title = janissaries_estate_events.6.t

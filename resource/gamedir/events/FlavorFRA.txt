@@ -1203,7 +1203,7 @@ country_event = {
 		add_adm_power = 50
 		define_advisor = {
 			type = statesman
-			name = "Charles Fran?ois de Broglie"
+			name = "Charles François de Broglie"
 			culture = gascon
 			discount = yes
 			skill = 2
@@ -1990,9 +1990,11 @@ country_event = {
 	desc = {
 		trigger = {
 			NOT = {
-				has_adm_advisor = yes
-				has_dip_advisor = yes
-				has_mil_advisor = yes
+				AND = {
+					has_adm_advisor = yes
+					has_dip_advisor = yes
+					has_mil_advisor = yes
+				}
 			}
 		}
 		desc = emp_mission_events.7.d2
@@ -2198,11 +2200,11 @@ country_event = { #House de Valois
 		name = flavor_fra.106.a 
 		
 		ai_chance = { factor = 10 } 
-		FRA = { create_union = PRO }  
 		if = { 
 			limit = { LOR = { is_subject_of = PRO } }
 			inherit = LOR 
 		}
+		FRA = { create_union = PRO }  
 		add_stability_or_adm_power = yes 
 	}
 	
@@ -3297,7 +3299,7 @@ country_event = { #The Holy Lands of Jerusalem
 		
 		add_papal_influence = 50 
 		change_ruler_stat = {
-			stat = mil
+			type = mil
 			amount = 2
 		}
 	}
@@ -3310,6 +3312,11 @@ country_event = { #France in the 15th Century
 	picture = wihgfx_FEMALE_GENERAL_eventPicture
 	is_triggered_only = yes 
 	fire_only_once = yes 
+	trigger = {
+		has_dlc = "Domination"
+		tag = FRA
+		not = { is_year = 1445 }
+	}
 	immediate = {
 		hidden_effect = {
 			if = { 
@@ -3329,41 +3336,3 @@ country_event = { #France in the 15th Century
 		
 	}
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

@@ -14,7 +14,6 @@
 4126 = { "Bác" "Bác" }
 1954 = { "Vojvodina" "Velký Beckerek" }
 4173 = { "Sriem" "Sriemska Mitrovica" }
-4953 = { "Bystrica" "Bystrica" }
 158 = { "Maruša" "Marušské Trhovište" }
 1951 = { "Balhrad" "Balhrad" }
 4127 = { "Kluž" "Kluž" }
@@ -22,7 +21,6 @@
 157 = { "Velký Varadín" "Velký Varadín" }
 156 = { "Temešvár" "Temešvár" }
 4239 = { "Belehrad" "Belehrad" }
-4954 = { "Satmár" "Satmár" }
 264 = { "Vratislav" "Vratislav" }
 4759 = { "Horné Korutánsko" "Bielák" }
 128 = { "Dolné Korutánsko" "Celovec" }

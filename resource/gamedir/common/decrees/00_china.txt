@@ -291,8 +291,7 @@ boost_officer_corps_decree = {
 }
 
 ####################################
-# New Decrees for 1.35 made by     #
-# Big Boss                  #
+# New Decrees for 1.35
 ####################################
 
 fund_new_centers_of_education_decree = {
