@@ -80,7 +80,7 @@ def main():
     for f in ext_path.glob("**/*.txt"):
 
         if re.match('resource\\gamedir\\common\\(countries|cultures|province_names)\\.*\.txt', f) 
-            or re.match('resource\\gamedir\\history\\(countries|province|wars)\\.*\.txt', f) 
+            or re.match('resource\\gamedir\\history\\(countries|province|wars)\\.*\.txt', f):
 
             if test:
                 break
