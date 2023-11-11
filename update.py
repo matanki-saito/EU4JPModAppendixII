@@ -1,6 +1,7 @@
 import glob
 import json
 import os
+import re
 from os.path import join
 import requests
 from pathlib import Path
