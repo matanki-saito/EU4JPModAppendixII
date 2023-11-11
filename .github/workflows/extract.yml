@@ -85,7 +85,7 @@ jobs:
           git config --global user.email "matanki.saito@gmail.com"
           git config --global user.name "matanki.saito"
           git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
-          git add extract
+          git add resource/gamedir
           git commit -m "Extract files from game [ci skip]"
           git push origin HEAD:master
         shell: cmd
