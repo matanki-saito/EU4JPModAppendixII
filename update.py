@@ -1,10 +1,10 @@
-import glob
 import json
 import os
 import re
 from os.path import join
-import requests
 from pathlib import Path
+
+import requests
 
 _ = join
 
@@ -35,7 +35,7 @@ def update_old_file(file_id, source_path: Path, project_id, secret, base_url="ht
     file_name = source_path.name
     file_data_binary = open(source_path, 'rb').read()
     files = {
-        'file': (file_name, file_data_binary,  'application/json; charset=utf-8')
+        'file': (file_name, file_data_binary, 'application/json; charset=utf-8')
     }
 
     url = "{}/api/projects/{}/files/{}".format(base_url, project_id, file_id)
@@ -58,7 +58,7 @@ def update_new_file(base_path: Path, source_path: Path, project_id, secret, base
     file_data_binary = open(source_path, 'rb').read()
     data = {'path': str(Path("/").joinpath(source_path.relative_to(base_path).parent)).replace("\\", "/")}
     files = {
-        'file': (file_name, file_data_binary,  'application/text; charset=utf-8')
+        'file': (file_name, file_data_binary, 'application/text; charset=utf-8')
     }
 
     url = "{}/api/projects/{}/files".format(base_url, project_id)
@@ -75,16 +75,13 @@ def main():
 
     name2id = get_file_infos(secret=secret, project_id=project_id)
 
-    test = False
-
     ext_path = Path("resource/gamedir")
     for f in ext_path.glob("**/*.txt"):
+        a = re.match(r'resource\\gamedir\\common\\(countries|cultures|province_names)\\.*\.txt', str(f))
+        b = re.match(r'resource\\gamedir\\history\\(countries|province|wars)\\.*\.txt', str(f))
 
-        if re.match(r'resource\\gamedir\\common\\(countries|cultures|province_names)\\.*\.txt', f) or re.match(r'resource\\gamedir\\history\\(countries|province|wars)\\.*\.txt', f):
-
-            if test:
-                break
-            print(f)  #sample  resource\gamedir\common\achievements.txt
+        if a or b:
+            print(f)  # sample  resource\gamedir\common\achievements.txt
             pure = str(f.relative_to(ext_path)).replace("\\", "/")
 
             if pure not in name2id:
@@ -99,8 +96,6 @@ def main():
                     source_path=f,
                     secret=secret,
                     project_id=project_id)
-
-            test = True
 
 
 if __name__ == "__main__":
