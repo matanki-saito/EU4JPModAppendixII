@@ -229,7 +229,7 @@ def main():
         mod_title_name="JPMOD Sub 1: Characters, Cultures",
         mod_tags={"Translation", "Localisation"},
         mod_image_file_path="title.jpg",
-        mod_supported_version="1.35.*.*")
+        mod_supported_version="1.36.*.*")
 
     print("mod_pack_file_path:{}".format(mod_pack_file_path))
 
