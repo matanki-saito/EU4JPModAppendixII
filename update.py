@@ -78,7 +78,7 @@ def main():
     ext_path = Path("resource/gamedir")
     for f in ext_path.glob("**/*.txt"):
         a = re.match(r'resource\\gamedir\\common\\(countries|cultures|province_names)\\.*\.txt', str(f))
-        b = re.match(r'resource\\gamedir\\history\\(countries|province|wars)\\.*\.txt', str(f))
+        b = re.match(r'resource\\gamedir\\history\\(countries|provinces|wars)\\.*\.txt', str(f))
 
         if a or b:
             print(f)  # sample  resource\gamedir\common\achievements.txt
