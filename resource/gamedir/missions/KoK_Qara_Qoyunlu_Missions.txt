@@ -175,7 +175,10 @@ qara_qoyunlu_first = {
 			stability = 3
 			total_development = 500
 			prestige = 90
-			legitimacy = 90
+			if = {
+				limit = { has_dlc = "Common Sense" }
+				legitimacy_equivalent = 90
+			}
 			religious_unity = 0.75
 			if = {
 				limit = {
@@ -1841,7 +1844,10 @@ qara_qoyunlu_fourth = {
 		trigger = {
 			stability = 3
 			prestige = 90
-			legitimacy = 90
+			if = {
+				limit = { has_dlc = "Common Sense" }
+				legitimacy_equivalent = 90
+			}
 			is_at_war = no
 		}
 		
@@ -2139,6 +2145,25 @@ qara_qoyunlu_fifth = {
 			else = {
 				custom_tooltip = turkoman_no_timurids_tt_no
 				tooltip = {
+					add_power_projection = {
+						type = mission_rewards_power_projection
+						amount = 25
+					}
+					add_ruler_modifier = {
+						name = "turkoman_tamerlane_bloodline"
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							any_country = {
+								dynasty = "Timurid"
+							}
+						}
+					}
 					add_power_projection = {
 						type = mission_rewards_power_projection
 						amount = 25

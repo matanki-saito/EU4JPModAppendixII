@@ -839,9 +839,11 @@ poland_sca_slot_2_a = {
 					country_or_non_sovereign_subject_holds = ROOT 
 					custom_trigger_tooltip = {
 						tooltip = owned_by_ally_or_ally_subject_tt
-						OR = {
-							alliance_with = ROOT
-							overlord = { alliance_with = ROOT }
+						owner = {
+							OR = {
+								overlord = { alliance_with = ROOT }
+								alliance_with = ROOT
+							}
 						}
 					}
 				}
@@ -852,9 +854,11 @@ poland_sca_slot_2_a = {
 					country_or_non_sovereign_subject_holds = ROOT 
 					custom_trigger_tooltip = {
 						tooltip = owned_by_ally_or_ally_subject_tt
-						OR = {
-							alliance_with = ROOT
-							overlord = { alliance_with = ROOT }
+						owner = {
+							OR = {
+								overlord = { alliance_with = ROOT }
+								alliance_with = ROOT
+							}
 						}
 					}
 				}
@@ -865,9 +869,11 @@ poland_sca_slot_2_a = {
 					country_or_non_sovereign_subject_holds = ROOT 
 					custom_trigger_tooltip = {
 						tooltip = owned_by_ally_or_ally_subject_tt
-						OR = {
-							alliance_with = ROOT
-							overlord = { alliance_with = ROOT }
+						owner = {
+							OR = {
+								overlord = { alliance_with = ROOT }
+								alliance_with = ROOT
+							}
 						}
 					}
 				}
@@ -878,9 +884,11 @@ poland_sca_slot_2_a = {
 					country_or_non_sovereign_subject_holds = ROOT 
 					custom_trigger_tooltip = {
 						tooltip = owned_by_ally_or_ally_subject_tt
-						OR = {
-							alliance_with = ROOT
-							overlord = { alliance_with = ROOT }
+						owner = {
+							OR = {
+								overlord = { alliance_with = ROOT }
+								alliance_with = ROOT
+							}
 						}
 					}
 				}
@@ -891,9 +899,11 @@ poland_sca_slot_2_a = {
 					country_or_non_sovereign_subject_holds = ROOT 
 					custom_trigger_tooltip = {
 						tooltip = owned_by_ally_or_ally_subject_tt
-						OR = {
-							alliance_with = ROOT
-							overlord = { alliance_with = ROOT }
+						owner = {
+							OR = {
+								overlord = { alliance_with = ROOT }
+								alliance_with = ROOT
+							}
 						}
 					}
 				}
@@ -904,9 +914,11 @@ poland_sca_slot_2_a = {
 					country_or_non_sovereign_subject_holds = ROOT 
 					custom_trigger_tooltip = {
 						tooltip = owned_by_ally_or_ally_subject_tt
-						OR = {
-							alliance_with = ROOT
-							overlord = { alliance_with = ROOT }
+						owner = {
+							OR = {
+								overlord = { alliance_with = ROOT }
+								alliance_with = ROOT
+							}
 						}
 					}
 				}
@@ -917,9 +929,11 @@ poland_sca_slot_2_a = {
 					country_or_non_sovereign_subject_holds = ROOT 
 					custom_trigger_tooltip = {
 						tooltip = owned_by_ally_or_ally_subject_tt
-						OR = {
-							alliance_with = ROOT
-							overlord = { alliance_with = ROOT }
+						owner = {
+							OR = {
+								overlord = { alliance_with = ROOT }
+								alliance_with = ROOT
+							}
 						}
 					}
 				}
@@ -4576,6 +4590,7 @@ poland_sca_slot_5_branching_lit_east = {
 		}	
 		position = 2 
 		trigger = { 
+			not_in_mission_preview_mode = { key = POL }
 			west_dniepr_area = {
 				type = all 
 				country_or_non_sovereign_subject_holds = ROOT 
@@ -4703,6 +4718,7 @@ poland_sca_slot_5_branching_lit_east = {
 			}
 		}
 		trigger = { 
+			not_in_mission_preview_mode = { key = POL }
 			lithuania_area = {
 				type = all 
 				country_or_non_sovereign_subject_holds = ROOT
@@ -4780,6 +4796,7 @@ poland_sca_slot_5_branching_lit_east = {
 		required_missions = { pol_tend_east } 
 		position = 4 
 		trigger = {
+			not_in_mission_preview_mode = { key = POL }
 			tag = PLC 
 			total_development = 1500
 			if = {
@@ -4825,6 +4842,7 @@ poland_sca_slot_5_branching_hre_west = {
 		required_missions = { pol_varna_aftermath } 
 		position = 2 
 		trigger = {
+			not_in_mission_preview_mode = { key = POL }
 			if = {
 				limit = { is_emperor = yes } 
 				is_emperor = yes 
@@ -4905,6 +4923,7 @@ poland_sca_slot_5_branching_hre_west = {
 		required_missions = { pol_delegate_emperor } 
 		position = 3
 		trigger = {
+			not_in_mission_preview_mode = { key = POL }
 			OR = {
 				is_elector = yes 
 				is_emperor = yes 
@@ -4984,6 +5003,7 @@ poland_sca_slot_5_branching_hre_west = {
 		required_missions = { pol_place_sun } 
 		position = 4 
 		trigger = {
+			not_in_mission_preview_mode = { key = POL }
 			if = {
 				limit = { hre_size = 1 }
 				is_emperor = yes 

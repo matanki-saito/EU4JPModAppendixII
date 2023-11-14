@@ -1679,7 +1679,10 @@ aq_qoyunlu_fourth = {
 		trigger = {
 			stability = 3
 			prestige = 90
-			legitimacy = 90
+			if = {
+				limit = { has_dlc = "Common Sense" }
+				legitimacy_equivalent = 90
+			}
 			is_at_war = no
 		}
 		
@@ -1996,7 +1999,10 @@ aq_qoyunlu_fifth = {
 			stability = 3
 			total_development = 500
 			prestige = 90
-			legitimacy = 90
+			if = {
+				limit = { has_dlc = "Common Sense" }
+				legitimacy_equivalent = 90
+			}
 			religious_unity = 0.75
 			if = {
 				limit = {
