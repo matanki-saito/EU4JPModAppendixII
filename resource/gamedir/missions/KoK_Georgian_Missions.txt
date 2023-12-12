@@ -2441,7 +2441,7 @@ geo_fifth_branch = {
 			num_of_owned_provinces_with = {
 				has_tax_building_trigger = yes
 				religion = ROOT
-				value = 20
+				value = 15
 			}
 			if = {
 				limit = {
@@ -2451,7 +2451,7 @@ geo_fifth_branch = {
 				num_of_owned_provinces_with = {
 					has_state_patriach = yes
 					religion = orthodox
-					value = 40
+					value = 25
 				}
 			}
 		}

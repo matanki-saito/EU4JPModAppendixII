@@ -1,4 +1,4 @@
-﻿#############################
+#############################
 # 7 VERY EASY ACHIEVEMENTS
 #############################
 achievement_for_the_glory = {
@@ -1250,14 +1250,14 @@ achievement_norwegian_wood = {
 	
 	provinces_to_highlight = {
 		trade_goods = naval_supplies
-		NOT = { country_or_non_sovereign_subject_holds = NOR}
+		NOT = { country_or_non_sovereign_subject_holds = ROOT }
 	}
 	
 	happened = {
 		NOT = {
 			any_province = {
 				trade_goods = naval_supplies
-				NOT = { country_or_non_sovereign_subject_holds = NOR }
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			}
 		}
 	}
@@ -3807,28 +3807,38 @@ achievement_this_is_persia = {
 		has_switched_nation = no
 		anatolia_region = {
 			type = all
-			owned_by = PER
-			is_core = PER
+			OR = {
+				AND = { owned_by = PER is_core = PER }
+				AND = { owned_by = ERS is_core = ERS }
+			}
 		}
 		morea_area = {
 			type = all
-			owned_by = PER
-			is_core = PER
+			OR = {
+				AND = { owned_by = PER is_core = PER }
+				AND = { owned_by = ERS is_core = ERS }
+			}
 		}
 		northern_greece_area = {
 			type = all
-			owned_by = PER
-			is_core = PER
+			OR = {
+				AND = { owned_by = PER is_core = PER }
+				AND = { owned_by = ERS is_core = ERS }
+			}
 		}
 		macedonia_area = {
 			type = all
-			owned_by = PER
-			is_core = PER
+			OR = {
+				AND = { owned_by = PER is_core = PER }
+				AND = { owned_by = ERS is_core = ERS }
+			}
 		}
 		egypt_region = {
 			type = all
-			owned_by = PER
-			is_core = PER
+			OR = {
+				AND = { owned_by = PER is_core = PER }
+				AND = { owned_by = ERS is_core = ERS }
+			}
 		}
 
 	}
@@ -12281,10 +12291,22 @@ achievement_legacy_saint_george = {
 	}
 	happened = {
 		tag = GEO
-		GEN = { is_subject_of = GEO }
-		ARA = { is_subject_of = GEO }
-		ENG = { is_subject_of = GEO }
-		TRI = { is_subject_of = GEO }
+		any_subject_country = {
+			is_or_was_tag = { tag = GEN }
+			is_subject_of_type = vassal
+		}
+		any_subject_country = {
+			is_or_was_tag = { tag = ARA }
+			is_subject_of_type = vassal
+		}
+		any_subject_country = {
+			is_or_was_tag = { tag = ENG }
+			is_subject_of_type = vassal
+		}
+		any_subject_country = {
+			is_or_was_tag = { tag = TRI }
+			is_subject_of_type = vassal
+		}
 		wales_area = {
 			type = all
 			country_or_non_sovereign_subject_holds = ROOT
