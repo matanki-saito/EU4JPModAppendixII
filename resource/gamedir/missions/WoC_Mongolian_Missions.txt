@@ -92,7 +92,7 @@ WoC_Mongols_1 = {
 			
 			custom_tooltip = SEPERATOR_TOOLTIP
 			
-			add_legitimacy_equivalent = { amount = 10 }
+			add_legitimacy_equivalent = { amount = 10 republican_tradition = 5 }
 		}
 	}
 
@@ -268,7 +268,30 @@ WoC_Mongols_2 = {
 		position = 1
 
 		trigger = {  
-			OR = {
+			if = {
+				limit = {
+					tag = OIR
+				}
+				OR = {
+					has_won_war_against = {
+						who = MNG
+						max_years_since = 25
+					}
+					war_score_against = {
+						who = MNG
+						value = 50
+					}
+					1816 = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					custom_trigger_tooltip = {
+						tooltip = MONGOLS_CAPTURED_EMPEROR
+						has_country_modifier = oir_captured_mng_emperor
+					}
+				}
+				
+			}
+			else = {
 				has_won_war_against = {
 					who = MNG
 					max_years_since = 25
@@ -280,18 +303,8 @@ WoC_Mongols_2 = {
 				1816 = {
 					country_or_non_sovereign_subject_holds = ROOT
 				}
-				if = {
-					limit = {
-						tag = OIR
-					}
-					custom_trigger_tooltip = {
-						tooltip = MONGOLS_CAPTURED_EMPEROR
-						has_country_modifier = oir_captured_mng_emperor
-					}
-				}
 			}
-		} 
-	
+		}	
 		effect = {  
 			give_claims = { region = north_china_region }
 			give_claims = { region = south_china_region }
@@ -472,7 +485,7 @@ WoC_Mongols_2 = {
 				age = age_of_reformation
 			}
 			
-			add_legitimacy_equivalent = { amount = 15 }
+			add_legitimacy_equivalent = { amount = 15 republican_tradition = 10 }
 			
 			custom_tooltip = SEPERATOR_TOOLTIP
 			
@@ -847,7 +860,7 @@ WoC_Mongols_3 = {
 						}
 					}
 					owner = {
-						add_legitimacy_equivalent = { amount = 2 }
+						add_legitimacy_equivalent = { amount = 2 republican_tradition = 1 }
 					}
 				}
 			}
@@ -893,7 +906,7 @@ WoC_Mongols_3 = {
 				duration = 5475
 			}
 			
-			add_legitimacy_equivalent = { amount = 10 }
+			add_legitimacy_equivalent = { amount = 10 republican_tradition = 5 }
 		} 
 	}
 

@@ -71,7 +71,16 @@ country_event = {
 		days = 1
 	}
 	
-	immediate = { set_global_flag = death_of_shah_rukh }
+	immediate = {
+        set_global_flag = death_of_shah_rukh
+        hidden_effect = {
+            country_event = { 
+                id = flavor_tim.20 
+                days = 30
+                random = 60
+            }
+        }
+    }
 	
 	option = { 
 		name = "flavor_tim.1.a" # My time has come!
@@ -105,16 +114,6 @@ country_event = {
 	picture = DEATH_OF_HEIR_eventPicture
 	
 	is_triggered_only = yes
-	
-	immediate = {
-		hidden_effect = {
-			country_event = { 
-				id = flavor_tim.20 
-				days = 30
-				random = 60
-			}
-		}
-	}
 
 	option = {
 		name = "flavor_tim.2.a" # My time has come!
@@ -1168,8 +1167,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = { has_country_flag = TIM_muhammad_juki_no_longer_candidate }
-	}
+        tag = TIM
+        NOT = { has_country_flag = TIM_muhammad_juki_no_longer_candidate }
+    } 
 	
 	immediate = {
 		hidden_effect = {

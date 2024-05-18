@@ -849,11 +849,13 @@ feo_3 = {
 				}
 			}
 			else = {
-				country_event_with_insight = {
-					id = flavor_feo.5
-					insight_tooltip = FEO_GENOA_WILL_BE_ASKED_TO_GIVE_THEIR_PROVINCES
+				GEN = {
+					country_event_with_insight = {
+						id = flavor_feo.5
+						insight_tooltip = FEO_GENOA_WILL_BE_ASKED_TO_GIVE_THEIR_PROVINCES
+					}
 				}
-			}
+			} 
 		} 
 	}
 
@@ -1193,8 +1195,13 @@ feo_4 = {
 			give_claims = { region = caucasia_region }
 			give_claims = { region = ural_region }
 			give_claims = { region = central_asia_region }
-			custom_tooltip = " "
-			custom_tooltip = FEO_MODIFY_FREEDOM_OF_STEPPES_PRIVILEGE
+			if = {
+				limit = {
+					has_estate = estate_cossacks
+				}
+				custom_tooltip = " "
+				custom_tooltip = FEO_MODIFY_FREEDOM_OF_STEPPES_PRIVILEGE
+			}
 			set_country_flag = feo_buffed_freedom_of_steppes_flag
 			custom_tooltip = " "
 			466 = {

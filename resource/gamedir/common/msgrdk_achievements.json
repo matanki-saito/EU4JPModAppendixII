@@ -1451,6 +1451,46 @@
         {
             "pdx_id": "achievement_zoroaustrians",
             "xbla_id": "364"
+        },
+        {
+            "pdx_id": "achievement_its_all_coming_together",
+            "xbla_id": "365"
+        },
+        {
+            "pdx_id": "achievement_doge_coins",
+            "xbla_id": "366"
+        },
+        {
+            "pdx_id": "achievement_veritas_vincit",
+            "xbla_id": "367"
+        },
+        {
+            "pdx_id": "achievement_the_eagle_flies_alone",
+            "xbla_id": "368"
+        },
+        {
+            "pdx_id": "achievement_mayapahit",
+            "xbla_id": "369"
+        },
+        {
+            "pdx_id": "achievement_there_khan_only_be_one",
+            "xbla_id": "370"
+        },
+        {
+            "pdx_id": "achievement_baborg",
+            "xbla_id": "371"
+        },
+        {
+            "pdx_id": "achievement_get_out_of_my_swamp",
+            "xbla_id": "372"
+        },
+        {
+            "pdx_id": "achievement_timurizz",
+            "xbla_id": "373"
+        },
+        {
+            "pdx_id": "achievement_the_hungarian_games",
+            "xbla_id": "374"
         }
     ]
 }

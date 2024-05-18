@@ -251,27 +251,27 @@ WoC_yuan_flavor_2 = {
 		} 
 
 		trigger = {  
-			reform_level = 7
-			num_of_owned_provinces_with = {
-				has_courthouse_building_trigger = yes
-				value = 35
-			}
-			legitimacy_equivalent = 95
-			if = {
-				limit = { has_dlc = "Mandate of Heaven" }
-				OR = {
-					full_idea_group = innovativeness_ideas
-					monthly_adm = 12
-					empire_of_china_has_active_decree = fund_new_centers_of_education_decree
-				}
-			}
-			else = {
-				OR = {
-					full_idea_group = innovativeness_ideas
-					monthly_adm = 12
-				}
-			}
-		} 
+            reform_level = 6
+            num_of_owned_provinces_with = {
+                has_courthouse_building_trigger = yes
+                value = 35
+            }
+            legitimacy_equivalent = 95
+            if = {
+                limit = { has_dlc = "Mandate of Heaven" }
+                OR = {
+                    full_idea_group = innovativeness_ideas
+                    monthly_adm = 12
+                    empire_of_china_has_active_decree = fund_new_centers_of_education_decree
+                }
+            }
+            else = {
+                OR = {
+                    full_idea_group = innovativeness_ideas
+                    monthly_adm = 12
+                }
+            }
+        } 
 
 		effect = {  
 			add_country_modifier = {

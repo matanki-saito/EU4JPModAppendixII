@@ -21,7 +21,7 @@ country_event = {
 		name = flavor_yua.1.b
 		
 		add_prestige_or_monarch_power = { amount = 10 }
-		add_legitimacy_equivalent = { amount = 10 }
+		add_legitimacy_equivalent = { amount = 10 republican_tradition = 5 }
 	}
 	
 	option = {

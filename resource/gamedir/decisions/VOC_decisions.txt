@@ -69,6 +69,7 @@ country_decisions = {
 					owned_by = VOC
 				}
 			}
+			has_estate_privilege = estate_burghers_voc_privilege
 		}
 		allow = {
 			if = {

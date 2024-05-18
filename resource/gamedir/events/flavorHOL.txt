@@ -198,7 +198,11 @@ country_event = {
 	
 	trigger = {
 		tag = NED
-		NOT = {	has_government_attribute = has_dutch_election }
+		OR = {
+			NOT = { has_reform = dutch_republic }
+			NOT = {	has_government_attribute = has_dutch_election }
+			NOT = { has_reform = stadthalter_monarchy_reform }
+		}
 		NOT = { has_reform = celestial_empire }
 		is_revolutionary = no
 		is_subject = no
@@ -243,21 +247,6 @@ country_event = {
 			remove_government_reform = parliamentary_reform
 		}
 		add_government_reform = stadthalter_monarchy_reform
-	}
-	option = {
-		name = "flavor_hol.EVTOPTC3502" #Centralized Monarchy
-		ai_chance = { factor = 0 }
-		trigger = { 
-			always = no
-			NOT = { government = monarchy }
-			NOT = { has_dlc = "Dharma" }
-			NOT = { has_dlc = "Emperor" }
-		}
-		if = {
-			limit = { NOT = { government = monarchy } }
-			change_government = monarchy
-		}
-		#set_legacy_government = administrative_monarchy
 	}
 	option = {
 		name = "flavor_hol.EVTOPTD3502" #Keep current government
@@ -441,13 +430,13 @@ country_event = {
 	
 	option = {
 		name = "flavor_hol.EVTOPTA3513" #Yes, we need Order!
-		add_legitimacy_equivalent = { amount = -20 }
+		add_legitimacy_equivalent = { amount = -20 republican_tradition = -10 }
 		add_stability_or_adm_power = yes
 		set_country_flag = ned_hereditary_stadtholder
 	}
 	option = {
 		name = "flavor_hol.EVTOPTB3513" #No, we need Freedom!
-		add_legitimacy_equivalent = { amount = 10 }
+		add_legitimacy_equivalent = { amount = 10 republican_tradition = 5 }
 	}
 }
 

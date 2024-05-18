@@ -3200,7 +3200,10 @@ achievement_gothic_invasion = {
 
 	happened = {
 		has_switched_nation = no
-		primary_culture = goths
+		OR = {
+			primary_culture = goths
+			primary_culture = gothic_ger
+		}
 		NOT = {
 			any_province = {
 				culture_group = germanic
@@ -9870,7 +9873,10 @@ achievement_the_league_of_mayapan = {
 	localization = NEW_ACHIEVEMENT_43
 	
 	visible = {
-		tag = HST
+		OR = {
+			tag = HST
+			is_or_was_tag = { tag = MAY }
+		}
 	}
 	
 	possible = {
@@ -12447,10 +12453,18 @@ achievement_its_all_coming_together = {
 	visible = {
 		has_dlc = "Winds of Change"
 		OR = {
-			tag = CSU
-			tag = INC
+			has_mission = INC_runasimi
+			AND = {
+				was_never_end_game_tag_trigger = yes
+				religion_group = pagan
+				OR = {
+					culture_group = andean_group
+					primary_culture = cara
+					primary_culture = chachapoyan
+				}
+			}
 		}
-	}	
+	}
 	possible = {
 		normal_or_historical_nations = yes
 		normal_province_values = yes
@@ -12511,7 +12525,6 @@ achievement_doge_coins = {
 	localization = NEW_ACHIEVEMENT_116
 	visible = {
 		has_dlc = "Emperor"
-		is_or_was_tag = { tag = VEN }
 	}
 	possible = {
 		normal_or_historical_nations = yes
@@ -12530,8 +12543,8 @@ achievement_veritas_vincit = {
 	id = 367
 	localization = NEW_ACHIEVEMENT_117
 	visible = {
-		has_dlc = "Winds of Change"
-		is_or_was_tag = { tag = BOH }
+		has_dlc = "Art of War"
+		has_dlc = "Emperor"
 	}
 	possible = {
 		normal_or_historical_nations = yes
@@ -12551,9 +12564,6 @@ achievement_veritas_vincit = {
 achievement_the_eagle_flies_alone = {
 	id = 368
 	localization = NEW_ACHIEVEMENT_118
-	visible = {
-		is_or_was_tag = { tag = HSN }
-	}
 	possible = {
 		normal_or_historical_nations = yes
 		normal_province_values = yes
@@ -12570,9 +12580,6 @@ achievement_the_eagle_flies_alone = {
 achievement_mayapahit = {
 	id = 369
 	localization = NEW_ACHIEVEMENT_119
-	visible = {
-		religion = mesoamerican_religion
-	}
 	possible = {
 		normal_or_historical_nations = yes
 		normal_province_values = yes
@@ -12592,7 +12599,7 @@ achievement_mayapahit = {
 		NOT = { country_or_non_sovereign_subject_holds = ROOT }
 	}
 	happened = {
-		tag = MAY
+		is_or_was_tag = { tag = MAY }
 		banten_area = {
 			type = all
 			country_or_non_sovereign_subject_holds = ROOT
@@ -12607,7 +12614,10 @@ achievement_mayapahit = {
 		}
 		surabaya_area = {
 			type = all
-			country_or_non_sovereign_subject_holds = ROOT
+			OR = {
+				country_or_non_sovereign_subject_holds = ROOT
+				province_id = 2692
+			}
 		}
 		west_java_area = {
 			type = all
@@ -12619,9 +12629,6 @@ achievement_mayapahit = {
 achievement_there_khan_only_be_one = {
 	id = 370
 	localization = NEW_ACHIEVEMENT_120
-	visible = {
-		always = yes
-	}
 	possible = {
 		normal_or_historical_nations = yes
 		normal_province_values = yes
@@ -12640,14 +12647,21 @@ achievement_there_khan_only_be_one = {
 		}
 	}
 	happened = {
-		NOT = {
-			any_country = {
-				NOT = { tag = ROOT }
-				OR = {
-					has_reform = steppe_horde
-					has_reform = great_mongol_state_reform
+		custom_trigger_tooltip = {
+			tooltip = achievement_there_khan_only_be_one_tooltip
+			NOT = {
+				any_country = {
+					NOT = { tag = ROOT }
+					OR = {
+						has_reform = steppe_horde
+						has_reform = great_mongol_state_reform
+					}
 				}
 			}
+		}
+		OR = {
+			has_reform = steppe_horde
+			has_reform = great_mongol_state_reform
 		}
 	}
 }
@@ -12661,8 +12675,18 @@ achievement_baborg = {
 			has_dlc = "King of Kings"
 			has_dlc = "Winds of Change"
 		}
-		NOT = { map_setup = map_setup_random }
-		tag = MUG
+		OR = {
+			tag = MUG
+			AND = {
+				was_never_end_game_tag_trigger = yes
+				OR = {
+					culture_group = iranian
+					primary_culture = turkmeni
+					primary_culture = uzbehk
+					primary_culture = kirgiz
+				}
+			}
+		}
 	}
 	possible = {
 		normal_or_historical_nations = yes
@@ -12688,7 +12712,17 @@ achievement_get_out_of_my_swamp = {
 	id = 372
 	localization = NEW_ACHIEVEMENT_122
 	visible = {
-		is_or_was_tag = { tag = NED }
+		OR = {
+			is_or_was_tag = { tag = NED }
+			AND = {
+				was_never_end_game_tag_trigger = yes
+				OR = {
+					primary_culture = dutch
+					primary_culture = flemish
+					tag = BUR
+				}
+			}
+		}
 	}
 	provinces_to_highlight = {
 		region = low_countries_region
@@ -12717,9 +12751,6 @@ achievement_get_out_of_my_swamp = {
 achievement_timurizz = {
 	id = 373
 	localization = NEW_ACHIEVEMENT_123
-	visible = {
-		is_or_was_tag = { tag = TIM }
-	}
 	possible = {
 		normal_or_historical_nations = yes
 		normal_province_values = yes
@@ -12749,15 +12780,11 @@ achievement_timurizz = {
 		}
 	}
 	happened = {
-		is_or_was_tag = { tag = TIM }
 		prestige = 75
-		num_of_trusted_allies = 5
 		calc_true_if = {
 			all_ally = {
-				has_opinion = {
-					who = ROOT
-					value = 150
-				}
+				trust = { who = ROOT value = 100 }
+				has_opinion = { who = ROOT value = 150 }
 			}
 			amount = 5
 		}
@@ -12767,12 +12794,6 @@ achievement_timurizz = {
 achievement_the_hungarian_games = {
 	id = 374
 	localization = NEW_ACHIEVEMENT_124
-	visible = {
-		OR = {
-			is_or_was_tag = { tag = HUN }
-			tag = AUH
-		}
-	}
 	possible = {
 		normal_or_historical_nations = yes
 		normal_province_values = yes
@@ -12784,15 +12805,15 @@ achievement_the_hungarian_games = {
 	provinces_to_highlight = {
 		is_capital = yes
 		owner = {
-            war_with = ROOT
-		    NOT = { has_country_flag = hun_uniqe_defeated_country }
+			NOT = {
+				check_variable = {
+					which = hun_uniqe_defeated_country
+					value = 3
+				}
+			}
         }
 	}
 	happened = {
-		OR = {
-			is_or_was_tag = { tag = HUN }
-			tag = AUH
-		}
 		any_hired_mercenary_company = {
 			OR = {
 				template = merc_black_army

@@ -201,6 +201,10 @@ country_decisions = {
 				limit = { has_custom_ideas = no }
 				country_event = { id = ideagroups.1 }
 			}
+			add_country_modifier = {
+				name = ned_man_o_war_modifier
+				duration = -1
+			} 
 		}
 		ai_will_do = {
 			factor = 100

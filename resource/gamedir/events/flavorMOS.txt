@@ -50,16 +50,80 @@ country_event = {
 		desc = flavor_mos.2.desc_horde
 	}
 	desc = {
+		trigger = {
+			NOT = { has_country_flag = was_horde_flag }
+			owns = 466
+			has_global_flag = mos_too_powerful
+			NOT = { has_country_flag = is_mos }
+		}
+		desc = flavor_mos.2.desc_mos_too_strong
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = was_horde_flag }
+			NOT = { owns = 466 }
+			has_global_flag = mos_too_powerful
+		}
+		desc = flavor_mos.2.desc_mos
+	}
+	desc = {
 		trigger = { NOT = { has_country_flag = was_horde_flag } }
 		desc = flavor_mos.2.desc
 	}
 	picture = GOOD_WITH_MONARCH_eventPicture
 	is_triggered_only = yes
 	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			random_country = {
+				limit = { has_country_flag = is_mos }
+				save_event_target_as = target_country
+			}
+		}
+	}
+	after = {
+		clr_global_flag = mos_too_powerful
+		every_country = {
+			limit = { has_country_flag = is_mos }
+			clr_country_flag = is_mos
+		}
+	}
 
 	option = {
 		name = flavor_mos.2.a
-		trigger = { NOT = { has_country_flag = was_horde_flag } }
+		trigger = {
+			NOT = { has_country_flag = was_horde_flag }
+			OR = {
+				NOT = { owns = 466 }
+				NOT = { has_global_flag = mos_too_powerful }
+				has_country_flag = is_mos
+			}
+		}
+		if = {
+			limit = { has_country_modifier = the_tatar_yoke }
+			remove_country_modifier = the_tatar_yoke
+			add_stability_or_adm_power = yes
+		}
+		else = {
+			every_country = {
+				limit = { has_country_modifier = the_tatar_yoke }
+				remove_country_modifier = the_tatar_yoke
+				add_stability_or_adm_power = yes
+			}
+		}
+
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = flavor_mos.2.c
+		trigger = {
+			NOT = { has_country_flag = was_horde_flag }
+			owns = 466
+			has_global_flag = mos_too_powerful
+			NOT = { has_country_flag = is_mos }
+		}
 		if = {
 			limit = { has_country_modifier = the_tatar_yoke }
 			remove_country_modifier = the_tatar_yoke
@@ -492,6 +556,15 @@ country_event = {
 	}
 	mean_time_to_happen = {
 		months = 3
+	}
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { total_development = 450 }
+				set_global_flag = mos_too_powerful
+				set_country_flag = is_mos
+			}
+		}
 	}
 
 	option = {

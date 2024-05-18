@@ -211,6 +211,7 @@ country_decisions = {
 			vassalize = DEC
 			DEC = {
 				hidden_effect = { complete_mission = city_of_victory }
+				change_religion = ROOT
 				change_government = monarchy
 				#set_legacy_government = indian_sultanate_legacy
 				add_opinion  = { who = ROOT modifier = opinion_viceroyalty_of_deccan }

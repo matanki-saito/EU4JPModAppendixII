@@ -82,7 +82,7 @@ country_event = {
 	trigger = {
 		has_country_modifier = dutch_india_trade_co
 		NOT = {
-			any_owned_province = {
+			any_province = {
 				OR = {
 					region = west_india_region
 					region = coromandel_region
@@ -97,6 +97,7 @@ country_event = {
 					region = south_china_region
 					region = north_china_region
 				}
+				country_or_non_sovereign_subject_holds = ROOT
 				has_port = yes
 			}
 		}
