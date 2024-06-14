@@ -732,12 +732,6 @@ crown_colony = {
 		modifier = crown_colony_subject
 	}
 	
-	modifier_subject = {
-		modifier = ITA_extra_goods_produced_for_colonies
-		trigger = {
-			overlord = { has_country_flag = ITA_trades_to_come_flag }
-		}
-	}
 }
 
 private_enterprise = {
@@ -772,12 +766,6 @@ private_enterprise = {
 		modifier = private_enterprise_subject
 	}
 	
-	modifier_subject = {
-		modifier = ITA_extra_goods_produced_for_colonies
-		trigger = {
-			overlord = { has_country_flag = ITA_trades_to_come_flag }
-		}
-	}
 }
 
 self_governing_colony = {
@@ -813,12 +801,6 @@ self_governing_colony = {
 		modifier = self_governing_colony_subject
 	}
 	
-	modifier_subject = {
-		modifier = ITA_extra_goods_produced_for_colonies
-		trigger = {
-			overlord = { has_country_flag = ITA_trades_to_come_flag }
-		}
-	}
 }
 
 
@@ -1679,7 +1661,8 @@ european_colony = {
 			}
 		}
 	}
-
+	seize_territory = yes
+	replace_governor = no
 	start_colonial_war = no
 	customize_subject = no
 	sprite = GFX_icon_european_colony

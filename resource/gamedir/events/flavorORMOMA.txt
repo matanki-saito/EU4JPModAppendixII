@@ -50,7 +50,6 @@ country_event = {
 	picture = COLONIZATION_eventPicture
 
 	is_triggered_only = yes
-
 	option = {
 		name = "flavor_ormoma.2.a"
 		

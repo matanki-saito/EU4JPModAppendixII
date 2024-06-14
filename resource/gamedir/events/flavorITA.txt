@@ -282,6 +282,7 @@ country_event = {
 		}
 		
 		custom_tooltip = ITA_cruelty_of_mercenaries_event_will_no_longer_happen
+		set_country_flag = disable_cruelty_of_mercs
 	}
 	
 	option = {
@@ -295,7 +296,7 @@ country_event = {
 			duration = -1
 		}
 	}
-}
+} 
 
 country_event = {
 	id = flavor_ita.7

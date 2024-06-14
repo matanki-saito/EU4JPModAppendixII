@@ -41,6 +41,7 @@ country_decisions = {
 					set_prestige_to_zero = yes
 					add_republican_tradition = 100
 					swap_free_idea_group = yes
+					adopt_technology_group_from_target = { target = root }
 				}
 				india_superregion = { 
 					limit = { 	

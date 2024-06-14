@@ -1146,6 +1146,7 @@ estate_vaisyas_discover_X_in_america = {
 			num_of_conquistadors = 1
 			num_of_explorers = 1
 		}
+		has_any_exploration_idea = yes
 		num_of_ports = 1
 		any_province = {
 			range = root
@@ -1248,7 +1249,7 @@ estate_vaisyas_discover_X_in_america = {
 	fail_if = {
 		OR = {
 			NOT = { num_of_ports = 1 }
-			NOT = { has_idea = quest_for_the_new_world }
+			has_not_any_exploration_ideas = yes
 		}
 	}
     failing_effect = {

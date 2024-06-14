@@ -20,7 +20,13 @@ german_revolt = {
 		NOT = { exists = AUH }
 		NOT = { has_country_flag = hun_austria_hungary_revolt_flag }
 		has_estate = estate_nobles
-		NOT = { exists = HAB } 
+		OR = {
+			NOT = { exists = HAB }
+			HAB = {
+				is_subject = yes
+				NOT = { is_subject_of = ROOT }
+			}
+		}
 	}
 	
 	can_start = {

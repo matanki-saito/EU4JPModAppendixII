@@ -63,8 +63,8 @@ defined_text = {
 	text = { localisation_key = ITA_genoa_missions							trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = ITA_TRADE branch = 2 } } }
 	text = { localisation_key = feo_russian_conquest_branch 				trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = FEO branch = 1 } } }
 	text = { localisation_key = feo_russian_alliance_branch 				trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = FEO branch = 2 } } }
-	text = { localisation_key = TIM_persian_missions 						trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = TIM branch = 1 } } }
-	text = { localisation_key = TIM_nomad_missions 							trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = TIM branch = 2 } } }
+	text = { localisation_key = TIM_nomad_missions 							trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = TIM branch = 1 } } }
+	text = { localisation_key = TIM_persian_missions 						trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = TIM branch = 2 } } }
 	text = { localisation_key = ven_standing_army_missions 					trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = VEN branch = 1 } } }
 	text = { localisation_key = ven_mercenary_army_missions 				trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = VEN branch = 2 } } } 
 	text = { localisation_key = ven_navy_missions 							trigger = { has_country_flag = has_batch_1_active has_preview_missions_of_key_for_branch_in_batch = { batch = 1 key = VEN branch = 3 } } }

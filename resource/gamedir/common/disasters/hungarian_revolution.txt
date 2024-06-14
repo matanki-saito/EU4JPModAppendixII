@@ -17,7 +17,13 @@ hungarian_revolt = {
 		}
 		is_free_or_tributary_trigger = yes
 		tag = HAB
-		NOT = { exists = HUN }
+		OR = {
+			NOT = { exists = HUN }
+			HUN = {
+				is_subject = yes
+				NOT = { is_subject_of = ROOT }
+			}
+		}
 		NOT = { exists = AUH }
 		NOT = { has_country_flag = hab_austria_hungary_revolt_flag }
 		has_estate = estate_nobles
@@ -98,6 +104,7 @@ hungarian_revolt = {
 			custom_trigger_tooltip = {
 				tooltip = HUNGARIAN_REVOLUTION_VICTORY_OF_THE_REVOLUTION
 				exists = HUN
+				HUN = { is_subject = no }
 			}
 		}
 	}

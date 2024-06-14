@@ -229,7 +229,7 @@
 1763 = "Dolni Luzice"
 1765 = "Sofie"
 1767 = "Slavonie"
-1768 = "Linec"
+1768 = "Lienz"
 1769 = "Gorice"
 1770 = "Rakusy"
 1771 = "Rudohori"

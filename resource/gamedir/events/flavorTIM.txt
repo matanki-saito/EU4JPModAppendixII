@@ -72,15 +72,15 @@ country_event = {
 	}
 	
 	immediate = {
-        set_global_flag = death_of_shah_rukh
-        hidden_effect = {
-            country_event = { 
-                id = flavor_tim.20 
-                days = 30
-                random = 60
-            }
-        }
-    }
+		set_global_flag = death_of_shah_rukh
+		hidden_effect = {
+			country_event = { 
+				id = flavor_tim.20 
+				days = 30
+				random = 60
+			}
+		}
+	}
 	
 	option = { 
 		name = "flavor_tim.1.a" # My time has come!
@@ -676,6 +676,7 @@ country_event = {
 				}
 			}
 			cede_province = YUA 
+			add_core = YUA
 		}
 		
 		custom_tooltip = " "
@@ -1167,9 +1168,9 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-        tag = TIM
-        NOT = { has_country_flag = TIM_muhammad_juki_no_longer_candidate }
-    } 
+		tag = TIM
+		NOT = { has_country_flag = TIM_muhammad_juki_no_longer_candidate }
+	} 
 	
 	immediate = {
 		hidden_effect = {

@@ -8210,9 +8210,9 @@ achievement_narcissism = {
 				any_army = {
 					general_with_steam_name = yes
 				}
-				has_country_flag = general_with_steam_name_won_battle
 				custom_trigger_tooltip = {
 					tooltip = general_with_steam_name_won_battle_tt
+					has_country_flag = general_with_steam_name_won_battle
 				}
 			}
 			OR = {
@@ -8232,7 +8232,7 @@ achievement_narcissism = {
 				has_leader = "Hawky"
 				#Tinto
 				has_leader = "Johan"
-				has_leader = "Pavía"
+				has_leader = "Pavï¿½a"
 				has_leader = "Aldaron"
 				has_leader = "SaintDaveUK"
 				has_leader = "Gnivom"
@@ -12644,6 +12644,8 @@ achievement_there_khan_only_be_one = {
 				has_reform = steppe_horde
 				has_reform = great_mongol_state_reform
 			}
+			NOT = { has_country_flag = was_native_country }	#Just to make sure that natives which get steppe hordes from other hordes does not break the achievement
+			NOT = { has_country_flag = populists_in_government }
 		}
 	}
 	happened = {
@@ -12656,6 +12658,8 @@ achievement_there_khan_only_be_one = {
 						has_reform = steppe_horde
 						has_reform = great_mongol_state_reform
 					}
+					NOT = { has_country_flag = was_native_country }
+					NOT = { has_country_flag = populists_in_government }
 				}
 			}
 		}

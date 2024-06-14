@@ -121,7 +121,6 @@ country_event = {
 						has_country_flag = received_burgundian_marriage
 						marriage_with = ROOT
 					}
-					government = monarchy
 					is_free_or_tributary_trigger = yes
 					NOT = {
 						any_country = {
@@ -417,6 +416,7 @@ country_event = {
 	option = { #strong ally
 		name = "incidents_bur_inheritance.1.d"
 		trigger = {
+			has_saved_event_target = bur_strongest_ally
 			any_country = {
 				is_free_or_tributary_trigger = yes
 				government = monarchy
@@ -460,6 +460,12 @@ country_event = {
 				OR = {
 					is_rival = FRA
 					FRA = { is_rival = ROOT }
+				}
+			}
+			modifier = {
+				factor = 0.1
+				event_target:bur_strongest_ally = {
+					NOT = { government = monarchy }
 				}
 			}
 		}

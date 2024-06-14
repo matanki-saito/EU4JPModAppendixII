@@ -82,49 +82,52 @@ country_event = {
 		custom_tooltip = SUN_destroy_french_monuments
 		
 		hidden_effect = {
-			random_owned_province = {
+			random_province = {
 				limit = {
 					has_great_project = {
 						type = notre_dame_cathedral
 						tier = 0
 					}
+					country_or_non_sovereign_subject_holds = ROOT
 				}
 				destroy_great_project = {
 					type = notre_dame_cathedral
 				}
-				owner = {
+				ROOT = {
 					add_adm_power = 100
 					add_dip_power = 100
 					add_mil_power = 100
 				}
 			}
-			random_owned_province = {
+			random_province = {
 				limit = {
 					has_great_project = {
 						type = versailles
 						tier = 0
 					}
+					country_or_non_sovereign_subject_holds = ROOT
 				}
 				destroy_great_project = {
 					type = versailles
 				}
-				owner = {
+				ROOT = {
 					add_adm_power = 100
 					add_dip_power = 100
 					add_mil_power = 100
 				}
 			}
-			random_owned_province = {
+			random_province = {
 				limit = {
 					has_great_project = {
 						type = palace_of_the_popes
 						tier = 0
 					}
+					country_or_non_sovereign_subject_holds = ROOT
 				}
 				destroy_great_project = {
 					type = palace_of_the_popes
 				}
-				owner = {
+				ROOT = {
 					add_adm_power = 100
 					add_dip_power = 100
 					add_mil_power = 100

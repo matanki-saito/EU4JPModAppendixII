@@ -416,6 +416,7 @@ country_event = {
 		add_prestige = -10
 		add_imperial_influence = -20
 		set_global_flag = italians_leave_hre
+		custom_tooltip = shadow_kingdom_incident_penalty_tt
 		hidden_effect = {
 			every_country = {
 				limit = {

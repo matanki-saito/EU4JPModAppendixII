@@ -275,6 +275,24 @@ hinduism_rebels = {
 		}
 		if = {
 			limit = {
+				religion = hinduism
+				has_estate = estate_brahmins
+				NOT = {
+					has_estate_influence_modifier = {
+						estate = estate_brahmins
+						modifier = EST_VAL_RELIGIOUS_ZEALOTS_TRIUMPH
+					}
+				}
+			}
+			add_estate_influence_modifier = {
+				estate = estate_brahmins
+				desc = EST_VAL_RELIGIOUS_ZEALOTS_TRIUMPH
+				duration = 3650
+				influence = 15
+			}
+		}
+		if = {
+			limit = {
 				has_idea_group = indian_muslim_ideas 
 			}
 			swap_free_idea_group = yes

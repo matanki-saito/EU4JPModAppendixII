@@ -36,7 +36,7 @@ eunuch_rebels = {
 		modifier = {
 			factor = 0
 			owner = {
-				NOT = { has_estate = estate_janissaries }
+				NOT = { has_estate = estate_eunuchs }
 			}
 		}
 		modifier = {
@@ -88,9 +88,9 @@ eunuch_rebels = {
 		add_local_autonomy = 10
 		owner = {
 			if = {
-				limit = { has_estate = estate_janissaries }
+				limit = { has_estate = estate_eunuchs }
 				change_estate_land_share = {
-					estate = estate_janissaries
+					estate = estate_eunuchs
 					share = 1
 					province = ROOT
 				}
@@ -109,7 +109,7 @@ eunuch_rebels = {
 	}
 	
 	# Localisation for their demands
-	demands_description = janissary_rebels_demands
+	demands_description = eunuch_rebels_demands
 	
 	# Country Scope	
 	demands_enforced_effect = {
@@ -122,16 +122,16 @@ eunuch_rebels = {
 		}
 		if = {
 			limit = {
-				has_estate = estate_janissaries
+				has_estate = estate_eunuchs
 				NOT = {
 					has_estate_influence_modifier = {
-						estate = estate_janissaries
+						estate = estate_eunuchs
 						modifier = EST_VAL_NOBLES_EXTORTED_RIGHTS
 					}
 				}
 			}
 			add_estate_influence_modifier = {
-				estate = estate_janissaries
+				estate = estate_eunuchs
 				desc = EST_VAL_NOBLES_EXTORTED_RIGHTS
 				influence = 15
 				duration = 5475
@@ -157,9 +157,9 @@ eunuch_rebels = {
 			end_disaster = court_and_country
 		}
 		if = {
-			limit = { has_estate = estate_janissaries }
+			limit = { has_estate = estate_eunuchs }
 			change_estate_land_share = {
-				estate = estate_janissaries
+				estate = estate_eunuchs
 				share = 100
 			}
 		}

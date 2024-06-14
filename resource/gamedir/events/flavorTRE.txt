@@ -119,7 +119,7 @@ country_event = {
 		trigger = {
 			has_dlc = "Purple Phoenix"
 		}
-		picture = BYZANTINE_EAGLE_eventPicture
+		picture = BYZ_BYZANTINE_EAGLE_eventPicture
 	}
 	picture = {	
 		trigger = {

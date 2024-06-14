@@ -22,7 +22,12 @@ WoC_cuzco_1 = {
 		provinces_to_highlight = {
 		}
 		trigger = {
-			authority = 20
+			if = {
+				limit = {
+					NOT = { is_religion_reformed = yes }
+				}
+				authority = 20
+			}
 			army_size = 12
 			legitimacy_equivalent = 90
 		}
@@ -36,7 +41,7 @@ WoC_cuzco_1 = {
 				duration = 10950
 			}
 		}
-	}
+	} 
 
 	CSU_oracle = {
 		icon = mission_found_udaipur
@@ -173,27 +178,27 @@ WoC_cuzco_2 = {
 		icon = mission_nah_ravine_dwellers
 		required_missions = { CSU_wanka }
 		position = 4
-        provinces_to_highlight = {
-            OR = {
-                owned_by = CHM
-                AND = {
-                    OR = {
-                        province_id = 2821
-                        province_id = 2822
-                        province_id = 812
-                        province_id = 2826
-                    }
-                    NOT = { country_or_non_sovereign_subject_holds = ROOT }
-                }
-            }
-        }
-        trigger = {
-            NOT = { exists = CHM }
-            2821 = { country_or_non_sovereign_subject_holds = ROOT }
-            2822 = { country_or_non_sovereign_subject_holds = ROOT }
-            812 = { country_or_non_sovereign_subject_holds = ROOT }
-            2826 = { country_or_non_sovereign_subject_holds = ROOT }
-        } 
+		provinces_to_highlight = {
+			OR = {
+				owned_by = CHM
+				AND = {
+					OR = {
+						province_id = 2821
+						province_id = 2822
+						province_id = 812
+						province_id = 2826
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+		}
+		trigger = {
+			NOT = { exists = CHM }
+			2821 = { country_or_non_sovereign_subject_holds = ROOT }
+			2822 = { country_or_non_sovereign_subject_holds = ROOT }
+			812 = { country_or_non_sovereign_subject_holds = ROOT }
+			2826 = { country_or_non_sovereign_subject_holds = ROOT }
+		} 
 		effect = {
 			INC_upgrade_pachakuti = { type = mil }
 			

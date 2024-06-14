@@ -55,7 +55,6 @@ country_decisions = {
 		effect = {
 			change_tag = SIL
 			on_change_tag_effect = yes
-			swap_non_generic_missions = yes
 			silesia_area = {
 				limit = {
 					NOT = { owned_by = ROOT }

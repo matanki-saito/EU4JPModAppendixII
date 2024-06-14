@@ -40,10 +40,6 @@ has_globally_unlocked_merc_company = {
 
 }
 
-has_unlocked_government_reform = {
-	has_country_flag = unlocked_$government_reform$
-}
-
 #This trigger is used for enabled estates which should be active, but can naturally disappear (like through revolutions)
 has_unlocked_estate = {
 	has_country_flag = unlocked_$estate$_flag
@@ -78,7 +74,63 @@ has_disabled_estate = {
 # livonian_general_controlled_monarchy
 # livonian_absolute_monarchy
 # livonian_enlightened_monarchy
-has_unlocked_government_reform_tooltip = {
+# absolutist_france_reform
+# irish_highkingdom_reform
+# caliphate_reform
+# modernized_ottoman_government
+# reorganized_ottoman_government
+# ottoman_conscription_reform
+# TIM_plunder_economy
+# legacy_of_timur_reform
+# timurid_diwan_reform
+# standardized_millets_reform
+# direct_royal_administration_reform
+# administration_of_the_parliament_reform
+# legacy_of_eranshahr_reform
+# court_of_art_and_culture_reform
+# ottoman_siyasah_tax_reform
+# crusader_nobility_reform
+# ven_promissione_ducale_reform
+# crusading_kingdom_reform
+# militarized_crusader_order_reform
+# holy_horde_reform
+# merchant_theocracy_reform
+# reformer_state_reform
+# tysyatsky_reform
+# namestnik_reform
+# oprichnina_reform
+# governing_senate_reform
+# enforced_autocracy_reform
+# holy_synod_reform
+# strengthened_the_patriarchy_reform
+# head_of_the_patriarchy_reform
+# peters_government_reform
+# fiqh_laws_reform
+# sufism_decree_reform
+# anglican_state_church_reform
+# english_conciliarism_reform
+# legacy_of_the_safavid_reform
+# professional_navy_reform
+# expanded_devshirme_system_reform
+# reformed_ottoman_conscription_reform
+# mansure_army_reform
+# janissary_military_reform
+# legacy_of_the_seljuk_reform
+# the_cawa_regiments_reform
+# theme_system_reform
+# thalassocracy_reform
+# royal_charters_reform
+# commercial_trade_empire_reform
+# modernized_furusiyya_reform
+# karimi_stations_reform
+# state_madrasas_reform
+# integrated_ottoman_officials
+# merchant_representation_reform
+# imperial_hungarian_government
+# bergordnung_reforms_reform
+# vozove_hradby_reform
+# divided_aristocracy_reform
+has_unlocked_government_reform = {
 	custom_trigger_tooltip = {
 		tooltip = unlocked_$government_reform$_tt
 		has_country_flag = unlocked_$government_reform$
