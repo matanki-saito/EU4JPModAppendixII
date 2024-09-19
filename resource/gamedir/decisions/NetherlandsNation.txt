@@ -164,9 +164,8 @@ country_decisions = {
 				}
 	  		}
 			change_tag = NED
-			on_change_tag_effect = yes
-			restore_country_name = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			low_countries_region = {
 				limit = {
 					NOT = { owned_by = ROOT }

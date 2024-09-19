@@ -82,8 +82,6 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			change_tag = BYZ
-			on_change_tag_effect = yes
-			restore_country_name = yes
 			if = {
 				limit = {
 					NOT = { culture_group = byzantine }
@@ -92,6 +90,7 @@ country_decisions = {
 				add_accepted_culture = greek
 			}
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			give_area_claims = { group = anatolia_region tag = BYZ }
 			give_area_claims = { group = bulgaria_area tag = BYZ }
 			give_area_claims = { group = silistria_area tag = BYZ }

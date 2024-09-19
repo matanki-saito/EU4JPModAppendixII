@@ -59,7 +59,6 @@ country_decisions = {
 				limit = { has_dlc = "King of Kings" }
 				set_country_flag = egyptian_government_reform_flag
 			}
-			on_change_tag_effect = yes
 			if = {
 				limit = {
 					has_reform = mamluk_government
@@ -108,6 +107,7 @@ country_decisions = {
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 		}
 		ai_will_do = {
 			factor = 0
@@ -163,8 +163,8 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			change_tag = MAM
-			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			if = {
 				limit = { NOT = { government_rank = 2 } }
 				set_government_rank = 2

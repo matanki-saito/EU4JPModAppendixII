@@ -77,8 +77,8 @@ country_decisions = {
 		effect = {
 			add_prestige = 25
 			change_tag = MCH
-			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			if = {
 				limit = {
 					NOT = { government_rank = 2 }
@@ -259,9 +259,8 @@ country_decisions = {
 				add_core = QNG
 			}
 			change_tag = QNG
-			on_change_tag_effect = yes
-			restore_country_name = yes 
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			set_government_rank = 3
 			south_china_region = {
 				limit = {

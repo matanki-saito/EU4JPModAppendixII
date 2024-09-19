@@ -211,7 +211,7 @@ byz_pp_italian = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			owns = 118
+			118 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		effect = {
 			add_country_modifier = {
@@ -848,11 +848,11 @@ byz_pp_religion = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			owns = 118 #Rome
-			owns = 151 #Constantinople
-			owns = 358 #Alexandria
-			owns = 379 #Jerusalem
-			owns = 2313 #Antioch
+			118 = { country_or_non_sovereign_subject_holds = ROOT } #Rome
+			151 = { country_or_non_sovereign_subject_holds = ROOT } #Constantinople
+			358 = { country_or_non_sovereign_subject_holds = ROOT } #Alexandria
+			379 = { country_or_non_sovereign_subject_holds = ROOT } #Jerusalem
+			2313 = { country_or_non_sovereign_subject_holds = ROOT } #Antioch
 		}
 		effect = {
 			add_patriarch_authority = 0.1
@@ -883,6 +883,7 @@ byz_pp_religion = {
 		trigger = {
 			religion = orthodox
 			118 = {
+				country_or_non_sovereign_subject_holds = ROOT
 				religion = orthodox
 			}
 		}

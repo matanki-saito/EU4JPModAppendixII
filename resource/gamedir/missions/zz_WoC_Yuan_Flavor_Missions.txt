@@ -59,7 +59,7 @@ WoC_yuan_flavor_1 = {
 			development_in_provinces = {
 				value = 75
 				has_manpower_building_trigger = yes
-				culture_group = altaic
+				culture = altaic_new
 			}
 		} 
 	

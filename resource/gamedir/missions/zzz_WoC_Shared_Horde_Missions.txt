@@ -404,11 +404,6 @@ woc_hordes_1_devout = {
 				
 				custom_tooltip = SEPERATOR_TOOLTIP
 				
-				custom_tooltip = HORDES_RENAME_CLERGY_TO_SHAMANS
-				set_country_flag = hordes_devout_tengri_completion_flag
-				
-				custom_tooltip = SEPERATOR_TOOLTIP
-				
 				add_prestige_or_monarch_power = { amount = 15 }
 			}
 			else_if = {

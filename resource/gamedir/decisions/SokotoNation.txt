@@ -102,7 +102,6 @@ country_decisions = {
 			add_prestige = 25
 			add_piety = 0.25
 			change_tag = SOK
-			on_change_tag_effect = yes
 			if = {
 				limit = {
 					NOT = { government = monarchy }
@@ -131,6 +130,7 @@ country_decisions = {
 				limit = { has_dlc = "Origins" }
 				swap_non_generic_missions = yes
 			}
+			on_change_tag_effect = yes
 		}
 		ai_importance = 400 #The countries that qualify will hate the holder of Sokoto.
 		ai_will_do = {

@@ -16,7 +16,10 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_dlc = "El Dorado"
+		or = {
+			has_dlc = "El Dorado"
+			has_dlc = "Winds of Change"
+		}
 		religion = nahuatl
 	}
 	
@@ -86,7 +89,10 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_dlc = "El Dorado"
+		or = {
+			has_dlc = "El Dorado"
+			has_dlc = "Winds of Change"
+		}
 		religion = inti
 	}
 	
@@ -166,7 +172,10 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		has_dlc = "El Dorado"
+		or = {
+			has_dlc = "El Dorado"
+			has_dlc = "Winds of Change"
+		}
 		religion = mesoamerican_religion
 	}
 	

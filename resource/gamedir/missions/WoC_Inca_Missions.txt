@@ -12,6 +12,7 @@ WoC_cuzco_1 = {
 		}
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 
@@ -97,6 +98,7 @@ WoC_cuzco_2 = {
 		}
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -239,6 +241,7 @@ WoC_cuzco_3 = {
 		}
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -279,6 +282,7 @@ WoC_cuzco_3 = {
 							limit = {
 								has_dlc = \"Leviathan\"
 								NOT = { is_year = 1480 }
+								tag = CSU
 							}
 							custom_tooltip = CSU_if_we_form_inca_before_1480_machu_picchu
 						}
@@ -350,6 +354,7 @@ WoC_cuzco_4 = {
 		}
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -457,6 +462,7 @@ WoC_cuzco_5 = {
 		}
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -570,6 +576,7 @@ WoC_inca_1 = {
 		tag = INC
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -839,6 +846,7 @@ WoC_inca_2 = {
 		tag = INC
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -1130,6 +1138,7 @@ WoC_inca_3 = {
 		tag = INC
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -1391,6 +1400,7 @@ WoC_inca_4 = {
 		tag = INC
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -1747,6 +1757,7 @@ WoC_inca_5 = {
 		tag = INC
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Winds of Change"
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 

@@ -486,7 +486,6 @@ country_event = {
 		name = flavor_teu.5.a
 		end_disaster = prussian_confederation_disaster
 		change_tag = DNZ
-		on_change_tag_effect = yes
 		if = {
 			limit = {
 				owns = 43
@@ -502,6 +501,7 @@ country_event = {
 			}
 			swap_non_generic_missions = yes
 		}
+		on_change_tag_effect = yes
 		add_stability = -1
 		add_prestige = -25
 		if = {
@@ -2012,7 +2012,6 @@ country_event = {
 	option = {
 		name = flavor_teu.35.a
 		change_tag = GER
-		on_change_tag_effect = yes
 		restore_country_name_effect = yes
 		if = {
 			limit = {
@@ -2070,6 +2069,7 @@ country_event = {
 			country_event = { id = ideagroups.1 } #Swap Ideas
 		}
 		swap_non_generic_missions = yes
+		on_change_tag_effect = yes
 		ai_chance = {
 			factor = 100
 		}

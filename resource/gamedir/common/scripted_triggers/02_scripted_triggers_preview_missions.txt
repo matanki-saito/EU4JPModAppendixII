@@ -37,6 +37,45 @@ has_branching_missions = {
 	}
 }
 
+has_mission_and_key_mismatch = {
+	NOT = { has_mission = $mission$ }
+	can_preview_mission_of_key = { key = $key$ }
+}
+
+has_any_mission_and_key_mismatch = {
+	OR = {
+		has_mission_and_key_mismatch = { mission = mal_pick_religious_direction				key = MAL }
+		has_mission_and_key_mismatch = { mission = son_conquer_the_mossi					key = SON }
+		has_mission_and_key_mismatch = { mission = kon_annex_vassals						key = KON }
+		has_mission_and_key_mismatch = { mission = swe_the_theologian_discussions			key = SWE }
+		has_mission_and_key_mismatch = { mission = dan_the_age_of_reformation				key = DAN }
+		has_mission_and_key_mismatch = { mission = nor_religious_path_mission				key = NOR }
+		has_mission_and_key_mismatch = { mission = teu_defeat_the_poles						key = TEU }
+		has_mission_and_key_mismatch = { mission = teu_pru_teutonic_order_and_the_empire	key = TEU_PRU }
+		has_mission_and_key_mismatch = { mission = liv_strengthen_ruling_authority			key = LIV }
+		has_mission_and_key_mismatch = { mission = pol_varna_aftermath						key = POL }
+		has_mission_and_key_mismatch = { mission = tur_seize_the_caliphate					key = TUR }
+		has_mission_and_key_mismatch = { mission = mng_inward_perfection					key = MNG }
+		has_mission_and_key_mismatch = { mission = qng_regulate_trade						key = QNG }
+		has_mission_and_key_mismatch = { mission = gbr_ave_hundred_years_war				key = GBR }
+		has_mission_and_key_mismatch = { mission = fra_ducal_lands_avignon					key = FRA }
+		has_mission_and_key_mismatch = { mission = fra_border_empire						key = FRA_HRE }
+		has_mission_and_key_mismatch = { mission = jap_bushido_code							key = JAP }
+		has_mission_and_key_mismatch = { mission = jap_new_buddha							key = JAP_RELI }
+		has_mission_and_key_mismatch = { mission = BYZ_theme_system							key = BYZ }
+		has_mission_and_key_mismatch = { mission = per_our_religious_direction				key = PER }
+		has_mission_and_key_mismatch = { mission = hab_secure_electors						key = HAB }
+		has_mission_and_key_mismatch = { mission = boh_hussite_regency						key = BOH_RELIGION }
+		has_mission_and_key_mismatch = { mission = hsn_fate_of_anatolia						key = HSN }
+		has_mission_and_key_mismatch = { mission = hsn_sultan_shah							key = HSN2 }
+		has_mission_and_key_mismatch = { mission = ITA_the_trades_to_come					key = ITA_TRADE }
+		has_mission_and_key_mismatch = { mission = feo_crimea								key = FEO }
+		has_mission_and_key_mismatch = { mission = TIM_mushasha								key = TIM }
+		has_mission_and_key_mismatch = { mission = ven_army_republic						key = VEN }
+		has_mission_and_key_mismatch = { mission = tatars_religious_question				key = HORDES }
+	}
+}
+
 has_preview_mission_flag = {
 	check_variable = {
 		which = can_preview_missions_var
@@ -46,6 +85,22 @@ has_preview_mission_flag = {
 
 can_preview_batch = {
 	has_country_flag = has_batch_$batch$_active
+}
+
+has_any_previewable_batch_active = {
+	OR = {
+		can_preview_batch = { batch = 1 }
+		can_preview_batch = { batch = 2 }
+		can_preview_batch = { batch = 3 }
+	}
+}
+
+has_mission_and_key_mismatch = {
+	OR = {
+		NOT = { has_mission = $mission$ }
+		mission_completed = $mission$
+	}
+	can_preview_mission_of_key = { key = $key$ }
 }
 
 can_preview_mission_of_key_and_batch = {

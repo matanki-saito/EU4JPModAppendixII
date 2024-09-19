@@ -199,7 +199,6 @@ english_scottish_act_of_union = {
 		change_tag = GBR
 		hidden_effect = {
 			on_change_tag_effect = yes
-			restore_country_name = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

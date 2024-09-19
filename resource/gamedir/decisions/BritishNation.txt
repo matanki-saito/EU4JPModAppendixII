@@ -96,9 +96,9 @@ country_decisions = {
 				}	
 			}
 			change_tag = GBR
-			on_change_tag_effect = yes
 			restore_country_name = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {
@@ -270,9 +270,9 @@ country_decisions = {
 				}	
 			}
 			change_tag = GBR
-			on_change_tag_effect = yes
 			restore_country_name = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = {

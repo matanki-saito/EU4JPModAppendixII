@@ -285,7 +285,7 @@ emp_ita_gallia_branch = {
 		
 		provinces_to_highlight = {
 			province_id = 2972
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
 			2972 = {

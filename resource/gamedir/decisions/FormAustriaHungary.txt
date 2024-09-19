@@ -82,7 +82,7 @@ country_decisions = {
 					adm_tech = 15
 				}
 				else = {
-					adm_tech = 20
+					adm_tech = 18
 				}
 			}
 			is_free_or_tributary_trigger = yes
@@ -146,7 +146,6 @@ country_decisions = {
 				set_government_rank = 3
 			}
 			on_change_tag_effect = yes
-			restore_country_name_effect = yes
 			if = {
 				limit = {
 					primary_culture = hungarian

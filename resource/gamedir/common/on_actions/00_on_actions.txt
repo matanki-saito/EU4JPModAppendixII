@@ -331,6 +331,19 @@ on_war_won = {
 		which = num_of_wars_won_var
 		value = 1
 	}
+	if = {
+		limit = {
+			NOT = {
+				can_be_overlord = nahuatl_tributary
+			}
+		}
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = nahuatl_tributary
+			}
+			grant_independence = yes
+		}
+	}
 }
 
 # country
@@ -1294,6 +1307,9 @@ on_death_election = {
 			hidden = yes
 		}
 	}
+	set_country_flag = INC_republic_death
+	country_event = { id = flavor_inc.27 }
+	clr_country_flag = INC_republic_death
 }
 
 # country
@@ -4582,7 +4598,6 @@ on_province_owner_change = {
 			add_province_modifier = {
 				name = ned_seven_provinces_organization_positive_modifier
 				duration = -1
-				hidden = yes
 			}
 		}
 		else_if = {
@@ -4593,7 +4608,6 @@ on_province_owner_change = {
 			add_province_modifier = {
 				name = ned_seven_provinces_organization_negative_modifier
 				duration = -1
-				hidden = yes
 			}
 		}
 	}
@@ -4849,6 +4863,21 @@ on_province_owner_change = {
             name = estate_nobles_vegvar_system_modifier
             duration = -1
         }
+	}
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = enable_gothic_invasion_cb_flag
+			}
+			OR = {
+				region = north_german_region
+				region = south_german_region
+			}
+		}
+		add_province_modifier = {
+			name = feo_return_to_gothic_ways
+			duration = -1
+		}
 	}
 }
 
@@ -6071,6 +6100,8 @@ on_expanded_infrastructure = {
 			}
 		}
 	}
+}
+on_expanded_infrastructure_removed = {
 }
 
 #ROOT = province that was centralized in

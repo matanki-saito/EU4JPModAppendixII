@@ -198,12 +198,8 @@ dutch_revolt_disaster = {
 			NOT = { stability = -1 }
 		}
 		modifier = {
-			factor = 3
-			NOT = { stability = -2 }
-		}
-		modifier = {
 			factor = 10
-			NOT = { stability = -3 }
+			NOT = { stability = -2 }
 		}
 	}
 	

@@ -15,6 +15,12 @@ country_decisions = {
 			}
 			has_country_flag = boh_ownership_nitra
 			is_colonial_nation = no
+			NOT = {
+				slovakia_area = {
+					type = all
+					owned_by = ROOT
+				}
+			}
 		}
 		provinces_to_highlight = {
 			area = slovakia_area

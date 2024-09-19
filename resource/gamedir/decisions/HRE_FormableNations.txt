@@ -106,7 +106,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = BAV
-			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			if = {
 				limit = {
@@ -173,6 +172,7 @@ country_decisions = {
 				}
 				swap_non_generic_missions = yes
 			}
+			on_change_tag_effect = yes
 		}
 		ai_will_do = {
 			factor = 10
@@ -288,7 +288,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = POM
-			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			add_country_modifier = {
 				name = "centralization_modifier"
@@ -307,6 +306,7 @@ country_decisions = {
 				}
 				swap_non_generic_missions = yes
 			}
+			on_change_tag_effect = yes
 
 			if = {
 				limit = {
@@ -476,7 +476,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = FKN
-			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			franconia_area = {
 				limit = {
@@ -511,6 +510,7 @@ country_decisions = {
 			}
 
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			
 			if = {
 				limit = {
@@ -591,7 +591,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SWA
-			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			lower_swabia_area = {
 				limit = {
@@ -657,6 +656,7 @@ country_decisions = {
 			}
 
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 
 			if = {
 				limit = {
@@ -769,7 +769,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SAX
-			on_change_tag_effect = yes
 			restore_country_name_effect = yes
 			south_saxony_area = {
 				limit = {
@@ -812,6 +811,7 @@ country_decisions = {
 				}
 				swap_non_generic_missions = yes
 			}
+			on_change_tag_effect = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -907,8 +907,6 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			change_tag = HAN
-			on_change_tag_effect = yes
-			restore_country_name_effect = yes
 			1758 = {
 				add_base_tax = 1
 			}
@@ -947,6 +945,7 @@ country_decisions = {
 				set_government_rank = 2
 			}
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			if = {
 				limit = {
 					is_playing_custom_nation = no
@@ -1087,8 +1086,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = WES
-			on_change_tag_effect = yes
-			restore_country_name_effect = yes
 			set_country_flag = formed_westphalia_flag
 			if = {
 				limit = {
@@ -1160,6 +1157,7 @@ country_decisions = {
 				add_permanent_claim = WES
 			}
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			add_prestige = 25
 			if = {
 				limit = {

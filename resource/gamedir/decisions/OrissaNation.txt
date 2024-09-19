@@ -68,8 +68,8 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = ORI
-			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			orissa_area = {
 				limit = {
 					NOT = { owned_by = ROOT }

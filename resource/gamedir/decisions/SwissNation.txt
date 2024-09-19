@@ -61,8 +61,8 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = SWI
-			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			# add swiss government reform if you don't already have it
 			switzerland_area = {
 				limit = {

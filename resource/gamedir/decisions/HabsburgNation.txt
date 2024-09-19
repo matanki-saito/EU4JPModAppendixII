@@ -63,7 +63,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = HAB
-			on_change_tag_effect = yes
 			add_prestige = 10
 			austria_proper_area = {
 				limit = {
@@ -102,6 +101,7 @@ country_decisions = {
 				}
 			}
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			set_country_flag = formed_austria_flag
 
 			if = {

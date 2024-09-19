@@ -80,7 +80,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = GEO
-			on_change_tag_effect = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			if = {
 				limit = { NOT = { government_rank = 2 } }
@@ -124,6 +123,7 @@ country_decisions = {
 				limit = { has_dlc = "King of Kings" }
 				swap_non_generic_missions = yes
 			}
+			on_change_tag_effect = yes
 		}
 		ai_will_do = {
 			factor = 1
@@ -147,6 +147,9 @@ country_decisions = {
 			owns = 151
 			NOT = { capital = 151 }
 			is_at_war = no
+			151 = {
+				is_state = yes
+			}
 		}
 		provinces_to_highlight = {
 			province_id = 151

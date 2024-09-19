@@ -163,7 +163,6 @@ country_decisions = {
 				}
 			}
 			change_tag = INC
-			on_change_tag_effect = yes
 			change_religion = inti
 			peru_region = {
 				limit = {
@@ -227,6 +226,7 @@ country_decisions = {
 			}
 			set_country_flag = formed_inca_flag
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 		}
 		ai_will_do = {
 			factor = 1

@@ -39,6 +39,24 @@ country_decisions = {
 				exists = SPA
 			}
 			valid_for_personal_unions_trigger = yes
+			if = {
+				limit = {
+					exists = SPA
+				}
+				SPA = {
+					is_subject = no
+					valid_for_personal_unions_trigger = yes
+				}
+			}
+			else_if = {
+				limit = {
+					exists = CAS
+				}
+				CAS = {
+					is_subject = no
+					valid_for_personal_unions_trigger = yes
+				}
+			}
 		}
 		allow = {
 			if = {

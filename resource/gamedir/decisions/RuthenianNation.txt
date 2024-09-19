@@ -111,8 +111,8 @@ country_decisions = {
 			}
 			add_prestige = 25
 			change_tag = UKR
-			on_change_tag_effect = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			if = {
 				limit = {
 					technology_group = nomad_group

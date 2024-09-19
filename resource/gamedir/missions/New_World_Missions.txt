@@ -6,6 +6,7 @@ inc_mission_group = {
 		tag = CSU
 		NOT = { has_dlc = "Winds of Change" }
 		NOT = { map_setup = map_setup_random }
+		is_random_new_world = no
 	}
 	has_country_shield = yes
 	

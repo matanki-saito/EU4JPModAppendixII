@@ -106,7 +106,6 @@ country_event = {
 	option = {
 		name = "EVTOPTA9075"
 		change_tag = HLR
-		on_change_tag_effect = yes
 		restore_country_name_effect = yes
 		add_country_modifier = {
 			name = "rome_reborn"
@@ -151,6 +150,7 @@ country_event = {
 			country_event = { id = ideagroups.1 } #Swap Ideas
 		}
 		swap_non_generic_missions = yes
+		on_change_tag_effect = yes
 	}
 }
 

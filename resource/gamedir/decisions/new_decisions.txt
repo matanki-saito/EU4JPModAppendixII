@@ -50,6 +50,15 @@ country_decisions = {
 				}
 			}
 		}
+		provinces_to_highlight = {
+            OR = {
+                AND = {
+                    province_id = 852
+                    NOT = { country_or_non_sovereign_subject_holds = ROOT }
+                }
+                owned_by = AZT 
+            }
+        }
 		allow = {
 			NOT = { exists = AZT }
 			852 = { country_or_non_sovereign_subject_holds = ROOT }

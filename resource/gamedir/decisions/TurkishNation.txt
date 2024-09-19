@@ -68,8 +68,6 @@ country_decisions = {
 		}
 		effect = {
 			change_tag = RUM
-			on_change_tag_effect = yes
-			restore_country_name = yes
 			RUM = {
 				if = {
 					limit = {
@@ -120,6 +118,7 @@ country_decisions = {
 			add_prestige = 25
 			set_country_flag = formed_rum_flag
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 		}
 		ai_will_do = {
 			factor = 1

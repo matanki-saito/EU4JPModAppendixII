@@ -3291,6 +3291,9 @@ woc_hun_fifth_branch = {
 			OR = {
 				NOT = { exists = HAB }
 				HAB = {
+					is_subject_of = ROOT
+				}
+				HAB = {
 					custom_trigger_tooltip = {
 						tooltip = emp_hun_weaken_austria_trigger_tooltip
 						NOT = {

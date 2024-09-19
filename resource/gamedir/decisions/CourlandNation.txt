@@ -60,9 +60,8 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			change_tag = KUR
-			on_change_tag_effect = yes
-			restore_country_name_effect = yes
 			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
 			add_prestige = 10	
 			if = {
 				limit = { has_custom_ideas = no }
@@ -157,6 +156,7 @@ country_decisions = {
 				move_capital_effect = yes
 			}
 			change_tag = KUR
+			swap_non_generic_missions = yes
 			on_change_tag_effect = yes
 			if = {
 				limit = {
@@ -164,8 +164,6 @@ country_decisions = {
 				}
 				add_accepted_culture = latvian
 			}
-			restore_country_name_effect = yes
-			swap_non_generic_missions = yes
 			remove_non_electors_emperors_from_empire_effect = yes
 			add_prestige = 10	
 			if = {
